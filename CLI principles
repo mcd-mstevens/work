@@ -1,0 +1,230 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+.doc{background:#F7F6F3;color:#1A1A1A;font-family:'IBM Plex Sans',sans-serif}
+.cover{padding:56px 56px 48px;border-bottom:1px solid #E0DDD6;position:relative;overflow:hidden}
+.section{padding:44px 56px;border-bottom:1px solid #E0DDD6}
+.section:last-child{border-bottom:none}
+.pnum{font-size:10px;color:#FF5C00;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;font-family:'IBM Plex Mono',monospace}
+.title{font-size:22px;font-weight:600;color:#1A1A1A;margin-bottom:12px;line-height:1.3}
+.body{font-size:14px;color:#666;line-height:1.8;max-width:640px;margin-bottom:28px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.tm{background:#1C1C1E;border-radius:6px;padding:16px 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8}
+.e{color:#E05050}.w{color:#CC8800}.g{color:#4CAF50}.d{color:#555}.c{color:#CCC}
+.lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#AAA;margin-bottom:8px;font-family:'IBM Plex Mono',monospace}
+.logo{position:absolute;top:24px;right:52px;font-size:10px;letter-spacing:2px;color:#CCC;font-family:'IBM Plex Mono',monospace}
+.cap{font-size:12px;color:#999;margin-top:8px;line-height:1.5}
+</style>
+<div class="doc">
+
+<div class="cover">
+  <div class="logo">MONTE CARLO</div>
+  <div style="max-width:560px;position:relative;z-index:1">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#AAA;margin-bottom:18px;letter-spacing:1px">CLI DESIGN · APRIL 2026</div>
+    <div style="font-size:34px;font-weight:600;color:#1A1A1A;line-height:1;margin-bottom:16px;white-space:nowrap">Principles for a better CLI</div>
+    <div style="font-size:14px;color:#888;line-height:1.75">Seven principles for building a CLI that works well — for the data engineer running it in a terminal, and for the agent running it in a pipeline.</div>
+  </div>
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:88px;font-weight:500;color:#E8E5DF;position:absolute;right:40px;bottom:0;line-height:1;pointer-events:none">CLI</div>
+</div>
+
+<div class="section">
+  <div class="pnum">01</div>
+  <div class="title">Design for both humans and automation.</div>
+  <div class="body">A CLI isn't just used by a person at a terminal anymore. It's also run by scripts, CI jobs, and other tools. The same commands, flags, and outputs should work in both cases. If something only works interactively or only makes sense to a human, it becomes harder to test and automate. Designing for both use cases usually improves the tool overall.</div>
+</div>
+
+<div class="section">
+  <div class="pnum">02</div>
+  <div class="title">Prefer flags over prompts.</div>
+  <div class="body">If a command needs input, that input should be passable as a flag. Prompts can still exist, but they shouldn't be required. In practice, there are three ways to provide values: flags, environment variables, or prompts. Once the value is provided, execution should be the same.</div>
+  <div class="two">
+    <div>
+      <div class="lbl">From today's session</div>
+      <div class="tm">
+        <div class="c">$ montecarlo configure</div>
+        <div class="c">Key ID: █</div>
+        <div class="c">Secret: █</div>
+        <div class="e">Error — mcd_token received should</div>
+        <div class="e">have 56 length but received 112</div>
+      </div>
+      <div class="cap">The configure command has no --id or --token flag. The only path is interactive. When the paste failed, the secret ran as a shell command and became visible in terminal history.</div>
+    </div>
+    <div>
+      <div class="lbl">What it could look like</div>
+      <div class="tm">
+        <div class="c">$ montecarlo configure \</div>
+        <div class="g">    --id KEY --token TOKEN</div>
+        <div class="g">✓ Authenticated</div>
+        <br>
+        <div class="d"># or via env vars:</div>
+        <div class="g">MCD_ID=KEY MCD_TOKEN=TOKEN \</div>
+        <div class="g">  montecarlo monitors list</div>
+        <br>
+        <div class="d"># interactive prompt still available</div>
+        <div class="d"># but no longer the only path</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="pnum">03</div>
+  <div class="title">Make the command structure reflect the product.</div>
+  <div class="body">The top-level commands should show what the tool manages. Use nouns at the top level and verbs for actions beneath them. Mixing everything together or adding commands without structure makes the CLI harder to understand as it grows.</div>
+  <div class="two">
+    <div>
+      <div class="lbl">From today's session</div>
+      <div class="tm">
+        <div class="w">configure  export  import  validate</div>
+        <div class="d"># verbs at the top level, mixed with nouns</div>
+        <br>
+        <div class="e">add-airflow-callbacks</div>
+        <div class="e">add-athena</div>
+        <div class="e">add-bigquery</div>
+        <div class="e">add-databricks</div>
+        <div class="e">add-snowflake</div>
+        <div class="e">add-spark-binary-mode</div>
+        <div class="e">add-spark-http-mode</div>
+        <div class="d"># 50+ commands under integrations</div>
+        <div class="d"># one per integration, grows forever</div>
+      </div>
+      <div class="cap">Running montecarlo incidents --help returns "No such command." Alerts exist only as a bulk export. The most important things MC does are not queryable from the CLI.</div>
+    </div>
+    <div>
+      <div class="lbl">What it could look like</div>
+      <div class="tm">
+        <div class="g">monitors      List, get, create, delete.</div>
+        <div class="g">incidents     View active incidents.</div>
+        <div class="g">assets        Browse data assets.</div>
+        <div class="g">integrations  Manage connections.</div>
+        <div class="g">agents        Manage MC agents.</div>
+        <div class="g">auth          Configure credentials.</div>
+        <br>
+        <div class="d"># integrations add --type snowflake</div>
+        <div class="d"># new integrations don't add new commands</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="pnum">04</div>
+  <div class="title">Make output usable by both people and programs.</div>
+  <div class="body">Output should be readable and structured. That usually means separating data from presentation internally, so commands can return structured data and format it as needed. This makes it easier to support formats like JSON without extra work later.</div>
+  <div class="two">
+    <div>
+      <div class="lbl">From today's session</div>
+      <div class="tm">
+        <div class="c">$ montecarlo monitors list</div>
+        <br>
+        <div class="w">| 8df0d2ce | STATS | benya_ns   |</div>
+        <div class="w">| Monitor for anomalous changes  |</div>
+        <div class="w">| in f_sales row count           |</div>
+        <br>
+        <div class="e">There are more monitors available.</div>
+        <div class="e">Increase the limit to view them.</div>
+      </div>
+      <div class="cap">Rows wrap mid-row at normal terminal widths. There is no status column. The truncation message doesn't mention --limit. There is no --json flag anywhere in the CLI.</div>
+    </div>
+    <div>
+      <div class="lbl">What it could look like</div>
+      <div class="tm">
+        <div class="c">$ montecarlo monitors list</div>
+        <br>
+        <div class="g">NAME                  TYPE   STATUS</div>
+        <div class="g">──────────────────────────────────</div>
+        <div class="e">orders.daily_revenue  STATS  FAILING</div>
+        <div class="e">users.signup_rate     STATS  FAILING</div>
+        <div class="g">inventory.stock       TABLE  OK</div>
+        <br>
+        <div class="g">Showing 3 of 247 — use --limit 247</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="pnum">05</div>
+  <div class="title">Make errors actionable.</div>
+  <div class="body">Error messages should explain what went wrong and what to do next. When possible, point to the exact command or fix. Use distinct exit codes so scripts can tell different failure cases apart.</div>
+  <div class="two">
+    <div>
+      <div class="lbl">From today's session</div>
+      <div class="tm">
+        <div class="e">Failed to find configuration for</div>
+        <div class="e">'default'. Please setup using</div>
+        <div class="e">'configure' first</div>
+        <div class="e">Aborted!</div>
+        <br>
+        <div class="e">log_error — https://api.getmontecarlo</div>
+        <div class="e">.com/graphql: 403 Client Error:</div>
+        <div class="e">Forbidden for url: https://api.</div>
+        <div class="e">getmontecarlo.com/graphql</div>
+      </div>
+      <div class="cap">The first error tells you to run configure but not what configure needs or where to get a key. The second exposes an internal GraphQL URL. Both exit with code 1 — the same code used for every other failure.</div>
+    </div>
+    <div>
+      <div class="lbl">What it could look like</div>
+      <div class="tm">
+        <div class="e">Error: not authenticated.</div>
+        <div class="g">Run: montecarlo auth \</div>
+        <div class="g">     --id KEY --token TOKEN</div>
+        <div class="g">Get a key: app.getmontecarlo.com/</div>
+        <div class="g">           settings/api-keys</div>
+        <br>
+        <div class="e">Error: invalid credentials.</div>
+        <div class="g">Your key may have expired.</div>
+        <div class="g">Generate a new one at the same URL.</div>
+        <div class="d"># exit code 3 = auth failure</div>
+        <div class="d"># scripts can branch on this</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="pnum">06</div>
+  <div class="title">Keep behavior visible.</div>
+  <div class="body">Users should be able to see how the tool is configured and what it's doing. Things like credential sources, active accounts, and config precedence shouldn't be hidden or require digging through files or source code.</div>
+</div>
+
+<div class="section">
+  <div class="pnum">07</div>
+  <div class="title">Make the CLI self-describing.</div>
+  <div class="body">Commands, flags, and concepts should be clearly explained in the built-in help. A user should be able to understand how to use the tool without leaving the terminal. This also helps automated systems that rely on help text to figure out how the CLI works.</div>
+  <div class="two">
+    <div>
+      <div class="lbl">From today's session</div>
+      <div class="tm">
+        <div class="w">convert-to-mac</div>
+        <div class="w">"Convert monitors from UI to</div>
+        <div class="w"> monitors..."</div>
+        <br>
+        <div class="w">export-as-latest</div>
+        <div class="w">"Export monitors in a monitor as</div>
+        <div class="w"> code namespace..."</div>
+        <br>
+        <div class="w">run</div>
+        <div class="w">"Run a circuit breaker monitor</div>
+        <div class="w"> and wait for the..."</div>
+      </div>
+      <div class="cap">Every description in the monitors group trails off mid-sentence. "mac" means monitors-as-code, not macOS — you would not know that from the help text.</div>
+    </div>
+    <div>
+      <div class="lbl">What it could look like</div>
+      <div class="tm">
+        <div class="g">export-as-code</div>
+        <div class="g">"Export monitors to a YAML file</div>
+        <div class="g"> for use with monitors as code.</div>
+        <div class="g"> Outputs to ./montecarlo.yml"</div>
+        <br>
+        <div class="g">run</div>
+        <div class="g">"Run a circuit breaker monitor</div>
+        <div class="g"> and wait for it to complete.</div>
+        <div class="g"> Exits 0 on pass, 1 on fail."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
