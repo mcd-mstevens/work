@@ -162,6 +162,8 @@ body {
 }
 
 .proto-name:hover { color: #FF5C00; }
+.proto-name::after { content: ' ↗'; font-size: 12px; color: #CCC; }
+.proto-name:hover::after { color: #FF5C00; }
 
 .proto-desc {
   font-size: 13px;
