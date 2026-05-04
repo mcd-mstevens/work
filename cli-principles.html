@@ -1,30 +1,22 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-.doc{background:#F7F6F3;color:#1A1A1A;font-family:'IBM Plex Sans',sans-serif}
-.cover{padding:56px 56px 48px;border-bottom:1px solid #E0DDD6;position:relative;overflow:hidden}
-.section{padding:44px 56px;border-bottom:1px solid #E0DDD6}
-.section:last-child{border-bottom:none}
-.pnum{font-size:10px;color:#FF5C00;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;font-family:'IBM Plex Mono',monospace}
-.title{font-size:22px;font-weight:600;color:#1A1A1A;margin-bottom:12px;line-height:1.3}
-.body{font-size:14px;color:#666;line-height:1.8;max-width:640px;margin-bottom:28px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
-.tm{background:#1C1C1E;border-radius:6px;padding:16px 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8}
-.e{color:#E05050}.w{color:#CC8800}.g{color:#4CAF50}.d{color:#555}.c{color:#CCC}
-.lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#AAA;margin-bottom:8px;font-family:'IBM Plex Mono',monospace}
-.logo{position:absolute;top:24px;right:52px;font-size:10px;letter-spacing:2px;color:#CCC;font-family:'IBM Plex Mono',monospace}
-.cap{font-size:12px;color:#999;margin-top:8px;line-height:1.5}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Principles for a better CLI — Monte Carlo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 <div class="doc">
 
 <div class="cover">
   <div class="logo">MONTE CARLO</div>
   <div style="max-width:560px;position:relative;z-index:1">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#AAA;margin-bottom:18px;letter-spacing:1px">CLI DESIGN · APRIL 2026</div>
-    <div style="font-size:34px;font-weight:600;color:#1A1A1A;line-height:1;margin-bottom:16px;white-space:nowrap">Principles for a better CLI</div>
-    <div style="font-size:14px;color:#888;line-height:1.75">Seven principles for building a CLI that works well — for the data engineer running it in a terminal, and for the agent running it in a pipeline.</div>
+    <div class="eyebrow">CLI Design · April 2026</div>
+    <div class="cover-title">Principles for a better CLI</div>
+    <div class="subtitle">Seven principles for building a CLI that works well — for the data engineer running it in a terminal, and for the agent running it in a pipeline.</div>
   </div>
-  <div style="font-family:'IBM Plex Mono',monospace;font-size:88px;font-weight:500;color:#E8E5DF;position:absolute;right:40px;bottom:0;line-height:1;pointer-events:none">CLI</div>
+  <div class="watermark" style="font-size:88px">CLI</div>
 </div>
 
 <div class="section">
@@ -228,3 +220,5 @@
 </div>
 
 </div>
+</body>
+</html>

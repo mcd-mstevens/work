@@ -1,143 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MC Tooling Cheat Sheet</title>
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #f5f5f5;
-    color: #1a1a1a;
-    padding: 24px 20px;
-    max-width: 640px;
-    margin: 0 auto;
-    line-height: 1.5;
-  }
-  h1 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    color: #111;
-  }
-  h2 {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #888;
-    margin: 32px 0 12px;
-  }
-  .card {
-    background: white;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 10px;
-    border: 1px solid #e8e8e8;
-  }
-  .card-title {
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 4px;
-  }
-  .card-body {
-    font-size: 14px;
-    color: #444;
-  }
-  .diagram {
-    background: #1a1a1a;
-    border-radius: 12px;
-    padding: 16px;
-    font-family: 'SF Mono', monospace;
-    font-size: 13px;
-    color: #e0e0e0;
-    margin-bottom: 10px;
-    line-height: 1.8;
-  }
-  .diagram .label {
-    color: #888;
-    font-size: 11px;
-  }
-  .compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-  .compare .card {
-    margin-bottom: 0;
-  }
-  .tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 20px;
-    margin-bottom: 6px;
-  }
-  .tag.today { background: #fff0e0; color: #c06000; }
-  .tag.future { background: #e0f0ff; color: #0060c0; }
-</style>
+<title>MC Tooling Cheat Sheet — Monte Carlo</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="doc">
 
-<h1>MC Tooling Cheat Sheet</h1>
-
-<h2>The Tools</h2>
-
-<div class="card">
-  <div class="card-title">MC API</div>
-  <div class="card-body">The underlying thing everything talks to. All roads lead here.</div>
-</div>
-
-<div class="card">
-  <div class="card-title">MC CLI</div>
-  <div class="card-body">Command line tool specifically for Monte Carlo. Human-operated today. Widely considered not great.</div>
-</div>
-
-<div class="card">
-  <div class="card-title">MCP Server</div>
-  <div class="card-body">Open protocol (Anthropic invented it) that lets AI agents talk to MC's API in a language they natively understand. The mc-agent-toolkit runs on top of this.</div>
-</div>
-
-<div class="card">
-  <div class="card-title">Claude Code</div>
-  <div class="card-body">Anthropic's coding agent in your terminal. Talks to MC via MCP. Also what Clorg drones run on.</div>
-</div>
-
-<div class="card">
-  <div class="card-title">Cursor</div>
-  <div class="card-body">Same idea as Claude Code, different product. Also supports MCP. Recently got caught secretly building their model on a Chinese open source base (Kimi).</div>
-</div>
-
-<h2>How They Relate</h2>
-
-<div class="diagram">
-  <span class="label">Human</span><br>
-  Human → MC CLI → MC API<br><br>
-  <span class="label">Agent</span><br>
-  Claude Code / Cursor → MCP Server → MC API
-</div>
-
-<h2>GraphQL vs REST</h2>
-
-<div class="compare">
-  <div class="card">
-    <span class="tag today">Today</span>
-    <div class="card-title">GraphQL</div>
-    <div class="card-body">One URL for everything. You write a query describing what you want. Powerful but you have to already know the schema. Hard for agents to discover. Menu in a foreign language.</div>
+<div class="cover">
+  <div class="logo">MONTE CARLO</div>
+  <div style="position:relative;z-index:1">
+    <div class="eyebrow">Tooling Reference · April 2026</div>
+    <div class="cover-title">MC Tooling Cheat Sheet</div>
+    <div class="subtitle">A quick guide to the tools that connect humans and AI agents to Monte Carlo's platform.</div>
   </div>
+  <div class="watermark" style="font-size:88px">MC</div>
+</div>
+
+<div class="section">
+  <div class="title">The Tools</div>
+
   <div class="card">
-    <span class="tag future">Call-1</span>
-    <div class="card-title">REST</div>
-    <div class="card-body">Every action has its own URL. Predictable and boring in a good way. Agents discover it automatically. Menu with pictures.</div>
+    <div class="card-title">MC API</div>
+    <div class="card-body">The underlying thing everything talks to. All roads lead here.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">MC CLI</div>
+    <div class="card-body">Command line tool specifically for Monte Carlo. Human-operated today. Widely considered not great.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">MCP Server</div>
+    <div class="card-body">Open protocol (Anthropic invented it) that lets AI agents talk to MC's API in a language they natively understand. The mc-agent-toolkit runs on top of this.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Claude Code</div>
+    <div class="card-body">Anthropic's coding agent in your terminal. Talks to MC via MCP. Also what Clorg drones run on.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Cursor</div>
+    <div class="card-body">Same idea as Claude Code, different product. Also supports MCP. Recently got caught secretly building their model on a Chinese open source base (Kimi).</div>
   </div>
 </div>
 
-<div class="card" style="margin-top:10px">
-  <div class="card-title">Why it matters</div>
-  <div class="card-body">Call-1 redesigns the platform as a composable REST layer, then auto-generates the CLI, MCP server, and IaC from it. One source of truth, everything stays in sync.</div>
+<div class="section">
+  <div class="title">How They Relate</div>
+
+  <div class="tm">
+    <span class="d">Human</span><br>
+    <span class="c">Human → MC CLI → MC API</span><br><br>
+    <span class="d">Agent</span><br>
+    <span class="c">Claude Code / Cursor → MCP Server → MC API</span>
+  </div>
 </div>
 
+<div class="section">
+  <div class="title">GraphQL vs REST</div>
+
+  <div class="two">
+    <div class="card">
+      <span class="tag tag-today">Today</span>
+      <div class="card-title">GraphQL</div>
+      <div class="card-body">One URL for everything. You write a query describing what you want. Powerful but you have to already know the schema. Hard for agents to discover. Menu in a foreign language.</div>
+    </div>
+    <div class="card">
+      <span class="tag tag-future">Call-1</span>
+      <div class="card-title">REST</div>
+      <div class="card-body">Every action has its own URL. Predictable and boring in a good way. Agents discover it automatically. Menu with pictures.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:10px">
+    <div class="card-title">Why it matters</div>
+    <div class="card-body">Call-1 redesigns the platform as a composable REST layer, then auto-generates the CLI, MCP server, and IaC from it. One source of truth, everything stays in sync.</div>
+  </div>
+</div>
+
+</div>
 </body>
 </html>
