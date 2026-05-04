@@ -133,6 +133,58 @@ body {
 .tag-today  { background: #FFF0E0; color: #CC6000; }
 .tag-future { background: #EEF4FF; color: #2255BB; }
 
+/* ─── Section label ─── */
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #AAA;
+  margin-bottom: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ─── Prototype entries ─── */
+
+.proto-entry {
+  padding: 16px 0;
+  border-bottom: 1px solid #E0DDD6;
+}
+
+.proto-entry:first-of-type { border-top: 1px solid #E0DDD6; }
+
+.proto-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1A1A;
+  text-decoration: none;
+}
+
+.proto-name:hover { color: #FF5C00; }
+
+.proto-desc {
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
+  margin: 4px 0 10px;
+}
+
+.changelog {
+  font-size: 12px;
+  color: #888;
+  border-collapse: collapse;
+}
+
+.changelog tr + tr td { padding-top: 2px; }
+
+.changelog-date {
+  color: #BBB;
+  font-family: 'IBM Plex Mono', monospace;
+  width: 80px;
+  vertical-align: top;
+}
+
 /* ─── Nav (index) ─── */
 
 .nav-list { list-style: none; margin-top: 24px; }
