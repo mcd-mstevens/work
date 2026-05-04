@@ -151,9 +151,12 @@ body {
 
 .proto-entry {
   border-bottom: 1px solid #E0DDD6;
+  transition: background 0.15s ease;
 }
 
 .proto-entry:first-child { border-top: 1px solid #E0DDD6; }
+.proto-entry:hover { background: white; }
+.proto-entry:hover .proto-name { color: #FF5C00; }
 
 .proto-link {
   display: block;
@@ -162,16 +165,6 @@ body {
   cursor: pointer;
 }
 
-.proto-entry {
-  transition: background 0.15s ease;
-  margin: 0 -48px;
-  padding: 0 48px;
-}
-
-.proto-entry:hover { background: white; }
-.proto-entry:hover .proto-name { color: #FF5C00; }
-
-/* dotted line separating link area from changelog */
 .proto-entry:has(.changelog) .proto-link {
   padding-bottom: 10px;
   border-bottom: 1px dotted #D0CCC6;
@@ -213,16 +206,10 @@ body {
 
 .nav-list li {
   border-bottom: 1px solid #E0DDD6;
+  transition: background 0.15s ease;
 }
 
 .nav-list li:first-child { border-top: 1px solid #E0DDD6; }
-
-.nav-list li {
-  transition: background 0.15s ease;
-  margin: 0 -48px;
-  padding: 0 48px;
-}
-
 .nav-list li:hover { background: white; }
 
 .nav-list a {
