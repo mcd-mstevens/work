@@ -151,19 +151,20 @@ body {
 
 .proto-entry {
   border-bottom: 1px solid #E0DDD6;
-  transition: background 0.15s ease;
 }
 
 .proto-entry:first-child { border-top: 1px solid #E0DDD6; }
-.proto-entry:hover { background: white; }
-.proto-entry:hover .proto-name { color: #FF5C00; }
 
 .proto-link {
   display: block;
   padding: 14px 8px 12px;
   text-decoration: none;
   cursor: pointer;
+  transition: background 0.15s ease;
 }
+
+.proto-link:hover { background: white; }
+.proto-link:hover .proto-name { color: #FF5C00; }
 
 .proto-entry:has(.changelog) .proto-link {
   padding-bottom: 10px;
