@@ -28,6 +28,13 @@
       </li>
 
       <li class="proto-entry">
+        <a href="https://github.com/monte-carlo-data/frontend/pulls" class="proto-link" target="_blank" rel="noopener">
+          <div class="proto-name">Frontend pull requests</div>
+        </a>
+        <div id="pr-list" class="pr-list"><span class="pr-loading">Loading…</span></div>
+      </li>
+
+      <li class="proto-entry">
         <a href="https://mc-ia.lovable.app/" class="proto-link" target="_blank" rel="noopener">
           <div class="proto-name">Monte Carlo (slight push)</div>
           <div class="proto-desc">A less faithful, not quite end-to-end look at where MC might push in the near future.</div>
@@ -59,5 +66,43 @@
   </div>
 
 </div>
+
+<script>
+(async function () {
+  const el = document.getElementById('pr-list');
+  const token = localStorage.getItem('gh_token');
+  const username = localStorage.getItem('gh_username') || 'mcd-mstevens';
+
+  if (!token) {
+    el.innerHTML = '<span class="pr-note">To load PRs, run in the browser console:<br><code>localStorage.setItem(\'gh_token\', \'YOUR_PAT\')</code><br>Token needs <code>repo</code> scope.</span>';
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      `https://api.github.com/search/issues?q=type:pr+author:${username}+repo:monte-carlo-data/frontend&sort=updated&order=desc&per_page=20`,
+      { headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' } }
+    );
+    const { items } = await res.json();
+
+    if (!items?.length) {
+      el.innerHTML = '<span class="pr-note">No PRs found.</span>';
+      return;
+    }
+
+    el.innerHTML = items.map(pr => {
+      const state = pr.pull_request?.merged_at ? 'merged' : pr.state;
+      const date = new Date(pr.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      return `<div class="pr-row">
+        <span class="pr-state pr-${state}">${state}</span>
+        <a href="${pr.html_url}" class="pr-title" target="_blank" rel="noopener">${pr.title}</a>
+        <span class="pr-date">${date}</span>
+      </div>`;
+    }).join('');
+  } catch (e) {
+    el.innerHTML = '<span class="pr-note">Failed to load PRs.</span>';
+  }
+})();
+</script>
 </body>
 </html>

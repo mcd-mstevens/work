@@ -166,9 +166,69 @@ body {
 .proto-link:hover { background: white; }
 .proto-link:hover .proto-name { color: #FF5C00; }
 
-.proto-entry:has(.changelog) .proto-link {
+.proto-entry:has(.changelog) .proto-link,
+.proto-entry:has(.pr-list) .proto-link {
   padding-bottom: 10px;
   border-bottom: 1px dotted #D0CCC6;
+}
+
+/* ─── PR list ─── */
+
+.pr-list { padding: 12px 16px 18px; }
+
+.pr-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.pr-state {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.pr-open   { background: #E8F5E9; color: #388E3C; }
+.pr-merged { background: #EDE7F6; color: #7B1FA2; }
+.pr-closed { background: #F0F0F0; color: #999; }
+
+.pr-title {
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.pr-title:hover { color: #FF5C00; }
+
+.pr-date {
+  font-size: 11px;
+  color: #BBB;
+  font-family: 'IBM Plex Mono', monospace;
+  flex-shrink: 0;
+}
+
+.pr-note {
+  display: block;
+  font-size: 12px;
+  color: #AAA;
+  font-family: 'IBM Plex Mono', monospace;
+  line-height: 1.8;
+}
+
+.pr-note code { color: #888; }
+
+.pr-loading {
+  font-size: 12px;
+  color: #CCC;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .proto-name {
