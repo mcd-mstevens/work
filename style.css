@@ -152,7 +152,7 @@ body {
   border-bottom: 1px solid #E0DDD6;
 }
 
-.proto-entry:first-of-type { border-top: 1px solid #E0DDD6; }
+.section-label + .proto-entry { border-top: 1px solid #E0DDD6; }
 
 .proto-name {
   font-size: 16px;
@@ -186,7 +186,7 @@ body {
 
 /* ─── Nav (index) ─── */
 
-.nav-list { list-style: none; margin-top: 24px; }
+.nav-list { list-style: none; }
 
 .nav-list li { border-bottom: 1px solid #E0DDD6; }
 .nav-list li:first-child { border-top: 1px solid #E0DDD6; }
