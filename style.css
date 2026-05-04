@@ -157,16 +157,19 @@ body {
 
 .proto-link {
   display: block;
-  padding: 14px 10px;
-  margin: 0 -10px;
-  border-radius: 6px;
+  padding: 14px 0 12px;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.15s ease;
 }
 
-.proto-link:hover { background: white; }
-.proto-link:hover .proto-name { color: #FF5C00; }
+.proto-entry {
+  transition: background 0.15s ease;
+  margin: 0 -48px;
+  padding: 0 48px;
+}
+
+.proto-entry:hover { background: white; }
+.proto-entry:hover .proto-name { color: #FF5C00; }
 
 /* dotted line separating link area from changelog */
 .proto-entry:has(.changelog) .proto-link {
@@ -214,16 +217,22 @@ body {
 
 .nav-list li:first-child { border-top: 1px solid #E0DDD6; }
 
+.nav-list li {
+  transition: background 0.15s ease;
+  margin: 0 -48px;
+  padding: 0 48px;
+}
+
+.nav-list li:hover { background: white; }
+
 .nav-list a {
   display: block;
-  padding: 14px 10px;
-  margin: 0 -10px;
-  border-radius: 6px;
+  padding: 14px 0;
   text-decoration: none;
   color: #1A1A1A;
   font-size: 16px;
   font-weight: 500;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: color 0.15s ease;
 }
 
-.nav-list a:hover { background: white; color: #FF5C00; }
+.nav-list li:hover a { color: #FF5C00; }
