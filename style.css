@@ -147,12 +147,18 @@ body {
 
 /* ─── Prototype entries ─── */
 
+.proto-list { list-style: none; }
+
 .proto-entry {
-  padding: 16px 0;
+  padding: 16px 12px;
   border-bottom: 1px solid #E0DDD6;
+  border-radius: 6px;
+  margin: 0 -12px;
+  transition: background 0.15s ease;
 }
 
-.section-label + .proto-entry { border-top: 1px solid #E0DDD6; }
+.proto-entry:first-child { border-top: 1px solid #E0DDD6; }
+.proto-entry:hover { background: white; }
 
 .proto-name {
   display: flex;
