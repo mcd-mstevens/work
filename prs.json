@@ -1,1 +1,162 @@
-[]
+[
+  {
+    "number": 13210,
+    "title": "Add data product filter to DQ dashboard and alerts",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13210",
+    "state": "open",
+    "updated_at": "2026-05-04T21:47:47Z",
+    "merged_at": null
+  },
+  {
+    "number": 13078,
+    "title": "Add json-schema-to-typescript to apps/observe devDependencies",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13078",
+    "state": "closed",
+    "updated_at": "2026-05-04T20:20:06Z",
+    "merged_at": "2026-05-04T20:20:04Z"
+  },
+  {
+    "number": 13217,
+    "title": "Show Jobs filter search results unchecked and add \"Select all matching\"",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13217",
+    "state": "open",
+    "updated_at": "2026-05-02T22:18:55Z",
+    "merged_at": null
+  },
+  {
+    "number": 13222,
+    "title": "Standardize empty states across the app",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13222",
+    "state": "open",
+    "updated_at": "2026-05-02T22:10:08Z",
+    "merged_at": null
+  },
+  {
+    "number": 13214,
+    "title": "Persistent search results panel in domain add flow",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13214",
+    "state": "closed",
+    "updated_at": "2026-05-01T22:52:47Z",
+    "merged_at": "2026-05-01T22:52:46Z"
+  },
+  {
+    "number": 13070,
+    "title": "Re-enable dashboard filters for Data Quality and Coverage",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13070",
+    "state": "closed",
+    "updated_at": "2026-05-01T16:55:06Z",
+    "merged_at": null
+  },
+  {
+    "number": 13085,
+    "title": "Bob job detail page UI polish",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13085",
+    "state": "closed",
+    "updated_at": "2026-04-27T20:39:12Z",
+    "merged_at": "2026-04-27T20:39:11Z"
+  },
+  {
+    "number": 13087,
+    "title": "Bob agent detail page polish",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13087",
+    "state": "closed",
+    "updated_at": "2026-04-27T17:29:41Z",
+    "merged_at": "2026-04-27T17:29:39Z"
+  },
+  {
+    "number": 13045,
+    "title": "Bob table detail page UI improvements",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13045",
+    "state": "closed",
+    "updated_at": "2026-04-24T20:59:45Z",
+    "merged_at": "2026-04-24T20:59:44Z"
+  },
+  {
+    "number": 13047,
+    "title": "Bob job pages UI polish",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13047",
+    "state": "closed",
+    "updated_at": "2026-04-24T20:59:45Z",
+    "merged_at": "2026-04-24T20:59:44Z"
+  },
+  {
+    "number": 13063,
+    "title": "Agentic-platform agent pages UI polish",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13063",
+    "state": "closed",
+    "updated_at": "2026-04-24T20:34:44Z",
+    "merged_at": "2026-04-24T20:34:43Z"
+  },
+  {
+    "number": 13051,
+    "title": "Convert Bob tables tree drawer from fixed overlay to flex panel",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13051",
+    "state": "closed",
+    "updated_at": "2026-04-24T20:34:44Z",
+    "merged_at": "2026-04-24T20:34:43Z"
+  },
+  {
+    "number": 13027,
+    "title": "Fix duplicate toast when copying API key or secret",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13027",
+    "state": "closed",
+    "updated_at": "2026-04-23T15:43:50Z",
+    "merged_at": "2026-04-23T15:43:48Z"
+  },
+  {
+    "number": 13003,
+    "title": "Bob findings: remove noisy metadata from finding detail",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13003",
+    "state": "closed",
+    "updated_at": "2026-04-22T21:41:51Z",
+    "merged_at": "2026-04-22T21:41:50Z"
+  },
+  {
+    "number": 13002,
+    "title": "Bob findings: hide table and paging in initial empty state",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13002",
+    "state": "closed",
+    "updated_at": "2026-04-22T19:54:39Z",
+    "merged_at": "2026-04-22T19:54:37Z"
+  },
+  {
+    "number": 12998,
+    "title": "Bob triage agent: indent expanded content, rename Rationale, remove Batch Triage",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12998",
+    "state": "closed",
+    "updated_at": "2026-04-22T19:47:44Z",
+    "merged_at": "2026-04-22T19:47:43Z"
+  },
+  {
+    "number": 13001,
+    "title": "Bob nav: persist sort + filters when returning to findings list",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13001",
+    "state": "closed",
+    "updated_at": "2026-04-22T19:44:36Z",
+    "merged_at": "2026-04-22T19:44:34Z"
+  },
+  {
+    "number": 12992,
+    "title": "Bob monitors added: clean up created-monitor display names",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12992",
+    "state": "closed",
+    "updated_at": "2026-04-22T19:35:17Z",
+    "merged_at": "2026-04-22T19:35:16Z"
+  },
+  {
+    "number": 12990,
+    "title": "Bob finding detail: rename section titles",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12990",
+    "state": "closed",
+    "updated_at": "2026-04-22T17:03:52Z",
+    "merged_at": "2026-04-22T17:03:50Z"
+  },
+  {
+    "number": 12989,
+    "title": "Bob findings: hide table and pagination when filters return no results",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12989",
+    "state": "closed",
+    "updated_at": "2026-04-22T16:25:13Z",
+    "merged_at": "2026-04-22T16:25:12Z"
+  }
+]
