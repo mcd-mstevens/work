@@ -15,20 +15,20 @@
     <p class="section-label">Lovable</p>
     <div class="group">
       <a href="https://mc-1.lovable.app/" class="group-link" target="_blank" rel="noopener">
-        <div class="group-name">Monte Carlo (today)</div>
-        <div class="group-desc">A faithful, end-to-end representation of MC as it stands. Key differences: filtering and metric representation on alert and monitor detail pages.</div>
+        <span class="group-name">Monte Carlo (today)</span>
+        <span class="link-badge">Current</span>
       </a>
       <a href="https://mc-ia.lovable.app/" class="group-link" target="_blank" rel="noopener">
-        <div class="group-name">Monte Carlo (slight push)</div>
-        <div class="group-desc">A less faithful, not quite end-to-end look at where MC might push in the near future.</div>
+        <span class="group-name">Monte Carlo (slight push)</span>
+        <span class="link-badge">Near-term</span>
       </a>
       <a href="https://b0b.lovable.app/" class="group-link" target="_blank" rel="noopener">
-        <div class="group-name">Bob</div>
-        <div class="group-desc">Where Bob landed just before being absorbed into MC.</div>
+        <span class="group-name">Bob</span>
+        <span class="link-badge">Archive</span>
       </a>
       <a href="https://mc-2.lovable.app/" class="group-link" target="_blank" rel="noopener">
-        <div class="group-name">Bob (early)</div>
-        <div class="group-desc">A very early pipe dream version of Bob.</div>
+        <span class="group-name">Bob (early)</span>
+        <span class="link-badge">Archive</span>
       </a>
     </div>
   </div>
@@ -44,10 +44,10 @@
     <p class="section-label">Miscellaneous</p>
     <div class="group">
       <a href="cli-principles.html" class="group-link">
-        <div class="group-name">Principles for a better CLI</div>
+        <span class="group-name">Principles for a better CLI</span>
       </a>
       <a href="api-reference.html" class="group-link">
-        <div class="group-name">MC Tooling Cheat Sheet</div>
+        <span class="group-name">MC Tooling Cheat Sheet</span>
       </a>
     </div>
   </div>
@@ -66,9 +66,9 @@
       const date = new Date(pr.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
       const label = state[0].toUpperCase() + state.slice(1);
       return `<div class="pr-row">
-        <span class="pr-state pr-${state}">${label}</span>
-        <a href="${pr.html_url}" class="pr-title" target="_blank" rel="noopener">${pr.title}</a>
         <span class="pr-date">${date}</span>
+        <a href="${pr.html_url}" class="pr-title" target="_blank" rel="noopener">${pr.title}</a>
+        <span class="pr-state pr-${state}">${label}</span>
       </div>`;
     }).join('');
   } catch (e) {

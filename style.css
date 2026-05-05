@@ -31,7 +31,9 @@ body {
 .group { border: 1px solid #E2E2E2; border-radius: 12px; overflow: hidden; }
 
 .group-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 16px 18px;
   text-decoration: none;
   color: #21242C;
@@ -46,7 +48,16 @@ body {
 .group-row:last-child { border-bottom: none; }
 
 .group-name { font-weight: 500; }
-.group-desc { color: #676F7E; margin-top: 4px; line-height: 1.65; }
+
+.link-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: #F0F0F0;
+  color: #888;
+  flex-shrink: 0;
+}
 
 .pr-row {
   display: flex;
@@ -76,7 +87,7 @@ body {
 
 .pr-title { flex: 1; color: #21242C; text-decoration: none; line-height: 1.6; }
 
-.pr-date { color: #676F7E; flex-shrink: 0; }
+.pr-date { color: #676F7E; flex-shrink: 0; width: 52px; }
 .pr-loading { color: #676F7E; padding: 12px 18px; }
 
 .pnum { color: #676F7E; margin-bottom: 4px; }
