@@ -59,6 +59,9 @@ body {
   flex-shrink: 0;
 }
 
+.link-badge-green { background: #E8F4EC; color: #276334; }
+.link-badge-purple { background: #F0EAFF; color: #6E3AB3; }
+
 .pr-row {
   display: flex;
   align-items: baseline;
