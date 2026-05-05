@@ -6,7 +6,7 @@ body {
   background: #FAFAFA;
   color: #21242C;
   font-family: 'Inter', -apple-system, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -58,11 +58,21 @@ body {
 
 .pr-row:last-child { border-bottom: none; }
 
-.pr-state { font-size: 11px; font-weight: 600; width: 46px; flex-shrink: 0; color: #676F7E; }
-.pr-open { color: #21242C; }
+.pr-row:hover { background: #fff; }
+
+.pr-state {
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+
+.pr-open   { background: #E8F4EC; color: #276334; }
+.pr-merged { background: #F0EAFF; color: #6E3AB3; }
+.pr-closed { background: #F0F0F0; color: #666; }
 
 .pr-title { flex: 1; color: #21242C; text-decoration: none; line-height: 1.6; }
-.pr-title:hover { text-decoration: underline; text-underline-offset: 2px; }
 
 .pr-date { color: #676F7E; flex-shrink: 0; }
 .pr-loading { color: #676F7E; padding: 12px 18px; }

@@ -64,8 +64,9 @@
     el.innerHTML = items.map(pr => {
       const state = pr.merged_at ? 'merged' : pr.state;
       const date = new Date(pr.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      const label = state[0].toUpperCase() + state.slice(1);
       return `<div class="pr-row">
-        <span class="pr-state pr-${state}">${state}</span>
+        <span class="pr-state pr-${state}">${label}</span>
         <a href="${pr.html_url}" class="pr-title" target="_blank" rel="noopener">${pr.title}</a>
         <span class="pr-date">${date}</span>
       </div>`;
