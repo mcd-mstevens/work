@@ -60,6 +60,7 @@ body {
 }
 
 .link-badge-green { background: #E8F4EC; color: #276334; }
+.link-badge-orange { background: #FFF0E0; color: #CC6000; }
 .link-badge-purple { background: #F0EAFF; color: #6E3AB3; }
 
 .pr-row {
