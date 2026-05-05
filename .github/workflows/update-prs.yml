@@ -1,0 +1,36 @@
+name: Update PRs
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch PRs
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          curl -sf \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/search/issues?q=type:pr+author:mcd-mstevens+repo:monte-carlo-data/frontend&sort=updated&order=desc&per_page=20" \
+            | jq '[.items[] | {number: .number, title: .title, html_url: .html_url, state: .state, updated_at: .updated_at, merged_at: .pull_request.merged_at}]' \
+            > prs.json
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add prs.json
+          if ! git diff --staged --quiet; then
+            git commit -m "Update PR data"
+            git push
+          fi

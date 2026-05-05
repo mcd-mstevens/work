@@ -70,28 +70,15 @@
 <script>
 (async function () {
   const el = document.getElementById('pr-list');
-  const token = localStorage.getItem('gh_token');
-  const username = localStorage.getItem('gh_username') || 'mcd-mstevens';
-
-  if (!token) {
-    el.innerHTML = '<span class="pr-note">To load PRs, run in the browser console:<br><code>localStorage.setItem(\'gh_token\', \'YOUR_PAT\')</code><br>Token needs <code>repo</code> scope.</span>';
-    return;
-  }
-
   try {
-    const res = await fetch(
-      `https://api.github.com/search/issues?q=type:pr+author:${username}+repo:monte-carlo-data/frontend&sort=updated&order=desc&per_page=20`,
-      { headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' } }
-    );
-    const { items } = await res.json();
-
+    const res = await fetch('prs.json');
+    const items = await res.json();
     if (!items?.length) {
-      el.innerHTML = '<span class="pr-note">No PRs found.</span>';
+      el.innerHTML = '<span class="pr-note">No PRs yet.</span>';
       return;
     }
-
     el.innerHTML = items.map(pr => {
-      const state = pr.pull_request?.merged_at ? 'merged' : pr.state;
+      const state = pr.merged_at ? 'merged' : pr.state;
       const date = new Date(pr.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
       return `<div class="pr-row">
         <span class="pr-state pr-${state}">${state}</span>
