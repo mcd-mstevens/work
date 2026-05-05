@@ -9,43 +9,37 @@
 <body>
 <div class="doc">
 
-<div class="cover">
-  <div class="cover-title">MC Tooling Cheat Sheet</div>
-  <div class="subtitle">A quick guide to the tools that connect humans and AI agents to Monte Carlo's platform.</div>
-</div>
+<h1 class="cover-title">MC Tooling Cheat Sheet</h1>
+<p class="subtitle">A quick guide to the tools that connect humans and AI agents to Monte Carlo's platform.</p>
 
 <div class="section">
-  <div class="title">The Tools</div>
-
-  <div class="card">
-    <div class="card-title">MC API</div>
-    <div class="card-body">The underlying thing everything talks to. All roads lead here.</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">MC CLI</div>
-    <div class="card-body">Command line tool specifically for Monte Carlo. Human-operated today. Widely considered not great.</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">MCP Server</div>
-    <div class="card-body">Open protocol (Anthropic invented it) that lets AI agents talk to MC's API in a language they natively understand. The mc-agent-toolkit runs on top of this.</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Claude Code</div>
-    <div class="card-body">Anthropic's coding agent in your terminal. Talks to MC via MCP. Also what Clorg drones run on.</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Cursor</div>
-    <div class="card-body">Same idea as Claude Code, different product. Also supports MCP. Recently got caught secretly building their model on a Chinese open source base (Kimi).</div>
+  <p class="section-label">The Tools</p>
+  <div class="group">
+    <div class="group-row">
+      <p class="group-name">MC API</p>
+      <p class="group-desc">The underlying thing everything talks to. All roads lead here.</p>
+    </div>
+    <div class="group-row">
+      <p class="group-name">MC CLI</p>
+      <p class="group-desc">Command line tool specifically for Monte Carlo. Human-operated today. Widely considered not great.</p>
+    </div>
+    <div class="group-row">
+      <p class="group-name">MCP Server</p>
+      <p class="group-desc">Open protocol (Anthropic invented it) that lets AI agents talk to MC's API in a language they natively understand. The mc-agent-toolkit runs on top of this.</p>
+    </div>
+    <div class="group-row">
+      <p class="group-name">Claude Code</p>
+      <p class="group-desc">Anthropic's coding agent in your terminal. Talks to MC via MCP. Also what Clorg drones run on.</p>
+    </div>
+    <div class="group-row">
+      <p class="group-name">Cursor</p>
+      <p class="group-desc">Same idea as Claude Code, different product. Also supports MCP. Recently got caught secretly building their model on a Chinese open source base (Kimi).</p>
+    </div>
   </div>
 </div>
 
 <div class="section">
-  <div class="title">How They Relate</div>
-
+  <p class="section-label">How They Relate</p>
   <div class="tm">
     <span class="d">Human</span><br>
     <span class="c">Human → MC CLI → MC API</span><br><br>
@@ -55,25 +49,21 @@
 </div>
 
 <div class="section">
-  <div class="title">GraphQL vs REST</div>
-
+  <p class="section-label">GraphQL vs REST</p>
   <div class="two">
-    <div class="card">
+    <div>
       <span class="tag tag-today">Today</span>
-      <div class="card-title">GraphQL</div>
-      <div class="card-body">One URL for everything. You write a query describing what you want. Powerful but you have to already know the schema. Hard for agents to discover. Menu in a foreign language.</div>
+      <p class="group-name">GraphQL</p>
+      <p class="group-desc">One URL for everything. You write a query describing what you want. Powerful but you have to already know the schema. Hard for agents to discover. Menu in a foreign language.</p>
     </div>
-    <div class="card">
+    <div>
       <span class="tag tag-future">Call-1</span>
-      <div class="card-title">REST</div>
-      <div class="card-body">Every action has its own URL. Predictable and boring in a good way. Agents discover it automatically. Menu with pictures.</div>
+      <p class="group-name">REST</p>
+      <p class="group-desc">Every action has its own URL. Predictable and boring in a good way. Agents discover it automatically. Menu with pictures.</p>
     </div>
   </div>
-
-  <div class="card" style="margin-top:10px">
-    <div class="card-title">Why it matters</div>
-    <div class="card-body">Call-1 redesigns the platform as a composable REST layer, then auto-generates the CLI, MCP server, and IaC from it. One source of truth, everything stays in sync.</div>
-  </div>
+  <p class="group-name" style="margin-top:32px">Why it matters</p>
+  <p class="group-desc">Call-1 redesigns the platform as a composable REST layer, then auto-generates the CLI, MCP server, and IaC from it. One source of truth, everything stays in sync.</p>
 </div>
 
 </div>

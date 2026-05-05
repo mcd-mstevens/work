@@ -9,65 +9,47 @@
 <body>
 <div class="doc">
 
-  <div class="cover-title">Work</div>
+  <h1 class="cover-title">Work</h1>
 
   <div class="section">
-    <div class="section-label">Lovable</div>
-
-    <ul class="proto-list">
-      <li class="proto-entry">
-        <a href="https://mc-1.lovable.app/" class="proto-link" target="_blank" rel="noopener">
-          <div class="proto-name">Monte Carlo (today)</div>
-          <div class="proto-desc">A faithful, end-to-end representation of MC as it stands. Key differences: filtering and metric representation on alert and monitor detail pages.</div>
-        </a>
-        <table class="changelog">
-          <tr><td class="changelog-date">May 1</td><td>Triage agent</td></tr>
-          <tr><td class="changelog-date">Apr 28</td><td>Informatica mappings</td></tr>
-          <tr><td class="changelog-date">Apr 19</td><td>Custom integrations</td></tr>
-        </table>
-      </li>
-
-      <li class="proto-entry">
-        <a href="https://mc-ia.lovable.app/" class="proto-link" target="_blank" rel="noopener">
-          <div class="proto-name">Monte Carlo (slight push)</div>
-          <div class="proto-desc">A less faithful, not quite end-to-end look at where MC might push in the near future.</div>
-        </a>
-      </li>
-
-      <li class="proto-entry">
-        <a href="https://b0b.lovable.app/" class="proto-link" target="_blank" rel="noopener">
-          <div class="proto-name">Bob</div>
-          <div class="proto-desc">Where Bob landed just before being absorbed into MC.</div>
-        </a>
-      </li>
-
-      <li class="proto-entry">
-        <a href="https://mc-2.lovable.app/" class="proto-link" target="_blank" rel="noopener">
-          <div class="proto-name">Bob (early)</div>
-          <div class="proto-desc">A very early pipe dream version of Bob.</div>
-        </a>
-      </li>
-    </ul>
+    <p class="section-label">Lovable</p>
+    <div class="group">
+      <a href="https://mc-1.lovable.app/" class="group-link" target="_blank" rel="noopener">
+        <div class="group-name">Monte Carlo (today)</div>
+        <div class="group-desc">A faithful, end-to-end representation of MC as it stands. Key differences: filtering and metric representation on alert and monitor detail pages.</div>
+      </a>
+      <a href="https://mc-ia.lovable.app/" class="group-link" target="_blank" rel="noopener">
+        <div class="group-name">Monte Carlo (slight push)</div>
+        <div class="group-desc">A less faithful, not quite end-to-end look at where MC might push in the near future.</div>
+      </a>
+      <a href="https://b0b.lovable.app/" class="group-link" target="_blank" rel="noopener">
+        <div class="group-name">Bob</div>
+        <div class="group-desc">Where Bob landed just before being absorbed into MC.</div>
+      </a>
+      <a href="https://mc-2.lovable.app/" class="group-link" target="_blank" rel="noopener">
+        <div class="group-name">Bob (early)</div>
+        <div class="group-desc">A very early pipe dream version of Bob.</div>
+      </a>
+    </div>
   </div>
 
   <div class="section">
-    <div class="section-label">Frontend pull requests</div>
-    <ul class="proto-list">
-      <li class="proto-entry">
-        <a href="https://github.com/monte-carlo-data/frontend/pulls" class="proto-link" target="_blank" rel="noopener">
-          <div class="proto-name">Authored by me</div>
-        </a>
-        <div id="pr-list" class="pr-list"><span class="pr-loading">Loading…</span></div>
-      </li>
-    </ul>
+    <p class="section-label">Frontend pull requests</p>
+    <div class="group">
+      <div id="pr-list"><span class="pr-loading">Loading…</span></div>
+    </div>
   </div>
 
   <div class="section">
-    <div class="section-label">Miscellaneous</div>
-    <ul class="nav-list">
-      <li><a href="cli-principles.html">Principles for a better CLI</a></li>
-      <li><a href="api-reference.html">MC Tooling Cheat Sheet</a></li>
-    </ul>
+    <p class="section-label">Miscellaneous</p>
+    <div class="group">
+      <a href="cli-principles.html" class="group-link">
+        <div class="group-name">Principles for a better CLI</div>
+      </a>
+      <a href="api-reference.html" class="group-link">
+        <div class="group-name">MC Tooling Cheat Sheet</div>
+      </a>
+    </div>
   </div>
 
 </div>
@@ -78,10 +60,7 @@
   try {
     const res = await fetch('prs.json');
     const items = await res.json();
-    if (!items?.length) {
-      el.innerHTML = '<span class="pr-note">No PRs yet.</span>';
-      return;
-    }
+    if (!items?.length) { el.innerHTML = '<span class="pr-loading">No PRs yet.</span>'; return; }
     el.innerHTML = items.map(pr => {
       const state = pr.merged_at ? 'merged' : pr.state;
       const date = new Date(pr.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
@@ -92,7 +71,7 @@
       </div>`;
     }).join('');
   } catch (e) {
-    el.innerHTML = '<span class="pr-note">Failed to load PRs.</span>';
+    el.innerHTML = '<span class="pr-loading">Failed to load PRs.</span>';
   }
 })();
 </script>

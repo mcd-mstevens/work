@@ -9,24 +9,22 @@
 <body>
 <div class="doc">
 
-<div class="cover">
-  <div class="cover-title">Principles for a better CLI</div>
-  <div class="subtitle">Seven principles for building a CLI that works well — for the data engineer running it in a terminal, and for the agent running it in a pipeline.</div>
+<h1 class="cover-title">Principles for a better CLI</h1>
+<p class="subtitle">Seven principles for building a CLI that works well — for the data engineer running it in a terminal, and for the agent running it in a pipeline.</p>
+
+<div class="section">
+  <p class="pnum">01</p>
+  <h2 class="title">Design for both humans and automation.</h2>
+  <p class="body">A CLI isn't just used by a person at a terminal anymore. It's also run by scripts, CI jobs, and other tools. The same commands, flags, and outputs should work in both cases. If something only works interactively or only makes sense to a human, it becomes harder to test and automate. Designing for both use cases usually improves the tool overall.</p>
 </div>
 
 <div class="section">
-  <div class="pnum">01</div>
-  <div class="title">Design for both humans and automation.</div>
-  <div class="body">A CLI isn't just used by a person at a terminal anymore. It's also run by scripts, CI jobs, and other tools. The same commands, flags, and outputs should work in both cases. If something only works interactively or only makes sense to a human, it becomes harder to test and automate. Designing for both use cases usually improves the tool overall.</div>
-</div>
-
-<div class="section">
-  <div class="pnum">02</div>
-  <div class="title">Prefer flags over prompts.</div>
-  <div class="body">If a command needs input, that input should be passable as a flag. Prompts can still exist, but they shouldn't be required. In practice, there are three ways to provide values: flags, environment variables, or prompts. Once the value is provided, execution should be the same.</div>
+  <p class="pnum">02</p>
+  <h2 class="title">Prefer flags over prompts.</h2>
+  <p class="body">If a command needs input, that input should be passable as a flag. Prompts can still exist, but they shouldn't be required. In practice, there are three ways to provide values: flags, environment variables, or prompts. Once the value is provided, execution should be the same.</p>
   <div class="two">
     <div>
-      <div class="lbl">From today's session</div>
+      <p class="lbl">From today's session</p>
       <div class="tm">
         <div class="c">$ montecarlo configure</div>
         <div class="c">Key ID: █</div>
@@ -34,10 +32,10 @@
         <div class="e">Error — mcd_token received should</div>
         <div class="e">have 56 length but received 112</div>
       </div>
-      <div class="cap">The configure command has no --id or --token flag. The only path is interactive. When the paste failed, the secret ran as a shell command and became visible in terminal history.</div>
+      <p class="cap">The configure command has no --id or --token flag. The only path is interactive. When the paste failed, the secret ran as a shell command and became visible in terminal history.</p>
     </div>
     <div>
-      <div class="lbl">What it could look like</div>
+      <p class="lbl">What it could look like</p>
       <div class="tm">
         <div class="c">$ montecarlo configure \</div>
         <div class="g">    --id KEY --token TOKEN</div>
@@ -55,12 +53,12 @@
 </div>
 
 <div class="section">
-  <div class="pnum">03</div>
-  <div class="title">Make the command structure reflect the product.</div>
-  <div class="body">The top-level commands should show what the tool manages. Use nouns at the top level and verbs for actions beneath them. Mixing everything together or adding commands without structure makes the CLI harder to understand as it grows.</div>
+  <p class="pnum">03</p>
+  <h2 class="title">Make the command structure reflect the product.</h2>
+  <p class="body">The top-level commands should show what the tool manages. Use nouns at the top level and verbs for actions beneath them. Mixing everything together or adding commands without structure makes the CLI harder to understand as it grows.</p>
   <div class="two">
     <div>
-      <div class="lbl">From today's session</div>
+      <p class="lbl">From today's session</p>
       <div class="tm">
         <div class="w">configure  export  import  validate</div>
         <div class="d"># verbs at the top level, mixed with nouns</div>
@@ -75,10 +73,10 @@
         <div class="d"># 50+ commands under integrations</div>
         <div class="d"># one per integration, grows forever</div>
       </div>
-      <div class="cap">Running montecarlo incidents --help returns "No such command." Alerts exist only as a bulk export. The most important things MC does are not queryable from the CLI.</div>
+      <p class="cap">Running montecarlo incidents --help returns "No such command." Alerts exist only as a bulk export. The most important things MC does are not queryable from the CLI.</p>
     </div>
     <div>
-      <div class="lbl">What it could look like</div>
+      <p class="lbl">What it could look like</p>
       <div class="tm">
         <div class="g">monitors      List, get, create, delete.</div>
         <div class="g">incidents     View active incidents.</div>
@@ -95,12 +93,12 @@
 </div>
 
 <div class="section">
-  <div class="pnum">04</div>
-  <div class="title">Make output usable by both people and programs.</div>
-  <div class="body">Output should be readable and structured. That usually means separating data from presentation internally, so commands can return structured data and format it as needed. This makes it easier to support formats like JSON without extra work later.</div>
+  <p class="pnum">04</p>
+  <h2 class="title">Make output usable by both people and programs.</h2>
+  <p class="body">Output should be readable and structured. That usually means separating data from presentation internally, so commands can return structured data and format it as needed. This makes it easier to support formats like JSON without extra work later.</p>
   <div class="two">
     <div>
-      <div class="lbl">From today's session</div>
+      <p class="lbl">From today's session</p>
       <div class="tm">
         <div class="c">$ montecarlo monitors list</div>
         <br>
@@ -111,10 +109,10 @@
         <div class="e">There are more monitors available.</div>
         <div class="e">Increase the limit to view them.</div>
       </div>
-      <div class="cap">Rows wrap mid-row at normal terminal widths. There is no status column. The truncation message doesn't mention --limit. There is no --json flag anywhere in the CLI.</div>
+      <p class="cap">Rows wrap mid-row at normal terminal widths. There is no status column. The truncation message doesn't mention --limit. There is no --json flag anywhere in the CLI.</p>
     </div>
     <div>
-      <div class="lbl">What it could look like</div>
+      <p class="lbl">What it could look like</p>
       <div class="tm">
         <div class="c">$ montecarlo monitors list</div>
         <br>
@@ -131,12 +129,12 @@
 </div>
 
 <div class="section">
-  <div class="pnum">05</div>
-  <div class="title">Make errors actionable.</div>
-  <div class="body">Error messages should explain what went wrong and what to do next. When possible, point to the exact command or fix. Use distinct exit codes so scripts can tell different failure cases apart.</div>
+  <p class="pnum">05</p>
+  <h2 class="title">Make errors actionable.</h2>
+  <p class="body">Error messages should explain what went wrong and what to do next. When possible, point to the exact command or fix. Use distinct exit codes so scripts can tell different failure cases apart.</p>
   <div class="two">
     <div>
-      <div class="lbl">From today's session</div>
+      <p class="lbl">From today's session</p>
       <div class="tm">
         <div class="e">Failed to find configuration for</div>
         <div class="e">'default'. Please setup using</div>
@@ -148,10 +146,10 @@
         <div class="e">Forbidden for url: https://api.</div>
         <div class="e">getmontecarlo.com/graphql</div>
       </div>
-      <div class="cap">The first error tells you to run configure but not what configure needs or where to get a key. The second exposes an internal GraphQL URL. Both exit with code 1 — the same code used for every other failure.</div>
+      <p class="cap">The first error tells you to run configure but not what configure needs or where to get a key. The second exposes an internal GraphQL URL. Both exit with code 1 — the same code used for every other failure.</p>
     </div>
     <div>
-      <div class="lbl">What it could look like</div>
+      <p class="lbl">What it could look like</p>
       <div class="tm">
         <div class="e">Error: not authenticated.</div>
         <div class="g">Run: montecarlo auth \</div>
@@ -170,35 +168,32 @@
 </div>
 
 <div class="section">
-  <div class="pnum">06</div>
-  <div class="title">Keep behavior visible.</div>
-  <div class="body">Users should be able to see how the tool is configured and what it's doing. Things like credential sources, active accounts, and config precedence shouldn't be hidden or require digging through files or source code.</div>
+  <p class="pnum">06</p>
+  <h2 class="title">Keep behavior visible.</h2>
+  <p class="body">Users should be able to see how the tool is configured and what it's doing. Things like credential sources, active accounts, and config precedence shouldn't be hidden or require digging through files or source code.</p>
 </div>
 
 <div class="section">
-  <div class="pnum">07</div>
-  <div class="title">Make the CLI self-describing.</div>
-  <div class="body">Commands, flags, and concepts should be clearly explained in the built-in help. A user should be able to understand how to use the tool without leaving the terminal. This also helps automated systems that rely on help text to figure out how the CLI works.</div>
+  <p class="pnum">07</p>
+  <h2 class="title">Make the CLI self-describing.</h2>
+  <p class="body">Commands, flags, and concepts should be clearly explained in the built-in help. A user should be able to understand how to use the tool without leaving the terminal. This also helps automated systems that rely on help text to figure out how the CLI works.</p>
   <div class="two">
     <div>
-      <div class="lbl">From today's session</div>
+      <p class="lbl">From today's session</p>
       <div class="tm">
         <div class="w">convert-to-mac</div>
-        <div class="w">"Convert monitors from UI to</div>
-        <div class="w"> monitors..."</div>
+        <div class="w">"Convert monitors from UI to monitors..."</div>
         <br>
         <div class="w">export-as-latest</div>
-        <div class="w">"Export monitors in a monitor as</div>
-        <div class="w"> code namespace..."</div>
+        <div class="w">"Export monitors in a monitor as code namespace..."</div>
         <br>
         <div class="w">run</div>
-        <div class="w">"Run a circuit breaker monitor</div>
-        <div class="w"> and wait for the..."</div>
+        <div class="w">"Run a circuit breaker monitor and wait for the..."</div>
       </div>
-      <div class="cap">Every description in the monitors group trails off mid-sentence. "mac" means monitors-as-code, not macOS — you would not know that from the help text.</div>
+      <p class="cap">Every description in the monitors group trails off mid-sentence. "mac" means monitors-as-code, not macOS — you would not know that from the help text.</p>
     </div>
     <div>
-      <div class="lbl">What it could look like</div>
+      <p class="lbl">What it could look like</p>
       <div class="tm">
         <div class="g">export-as-code</div>
         <div class="g">"Export monitors to a YAML file</div>
