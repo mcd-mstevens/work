@@ -154,25 +154,24 @@ body {
 
 .proto-list { list-style: none; }
 
-.proto-entry { padding: 14px 0; }
+.proto-entry { padding: 2px 0; }
 
 .proto-link {
   display: block;
+  padding: 10px 12px;
+  margin: 0 -12px;
+  border-radius: 8px;
   text-decoration: none;
   cursor: pointer;
+  transition: background 0.12s;
 }
+
+.proto-link:hover { background: #EFEFEF; }
 
 .proto-name {
   font-size: 15px;
   font-weight: 500;
   color: #111;
-  transition: color 0.1s;
-}
-
-.proto-link:hover .proto-name {
-  color: #555;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .proto-desc {
@@ -185,8 +184,8 @@ body {
 /* dotted separator above changelog/pr-list */
 .proto-entry:has(.changelog) .proto-link,
 .proto-entry:has(.pr-list) .proto-link {
-  padding-bottom: 10px;
   border-bottom: 1px dotted #DDD;
+  border-radius: 8px 8px 0 0;
 }
 
 /* ─── Changelog ─── */
@@ -270,18 +269,18 @@ body {
 
 .nav-list { list-style: none; }
 
-.nav-list li { padding: 10px 0; }
+.nav-list li { padding: 2px 0; }
 
 .nav-list a {
+  display: block;
+  padding: 10px 12px;
+  margin: 0 -12px;
+  border-radius: 8px;
   font-size: 15px;
   font-weight: 500;
   color: #111;
   text-decoration: none;
-  transition: color 0.1s;
+  transition: background 0.12s;
 }
 
-.nav-list a:hover {
-  color: #555;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+.nav-list a:hover { background: #EFEFEF; }
