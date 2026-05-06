@@ -1,19 +1,19 @@
 [
   {
+    "number": 13210,
+    "title": "Add data product filter to DQ dashboard and alerts",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13210",
+    "state": "open",
+    "updated_at": "2026-05-06T22:13:08Z",
+    "merged_at": null
+  },
+  {
     "number": 13222,
     "title": "Standardize empty states across the app",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13222",
     "state": "closed",
     "updated_at": "2026-05-06T10:18:40Z",
     "merged_at": "2026-05-06T10:18:39Z"
-  },
-  {
-    "number": 13210,
-    "title": "Add data product filter to DQ dashboard and alerts",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13210",
-    "state": "open",
-    "updated_at": "2026-05-05T17:00:20Z",
-    "merged_at": null
   },
   {
     "number": 13258,
