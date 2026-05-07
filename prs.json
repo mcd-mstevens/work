@@ -1,5 +1,13 @@
 [
   {
+    "number": 13217,
+    "title": "Show Jobs filter search results unchecked and add \"Select all matching\"",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13217",
+    "state": "open",
+    "updated_at": "2026-05-07T17:03:42Z",
+    "merged_at": null
+  },
+  {
     "number": 13210,
     "title": "Add data product filter to DQ dashboard and alerts",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13210",
@@ -30,14 +38,6 @@
     "state": "closed",
     "updated_at": "2026-05-04T20:20:06Z",
     "merged_at": "2026-05-04T20:20:04Z"
-  },
-  {
-    "number": 13217,
-    "title": "Show Jobs filter search results unchecked and add \"Select all matching\"",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13217",
-    "state": "open",
-    "updated_at": "2026-05-02T22:18:55Z",
-    "merged_at": null
   },
   {
     "number": 13214,
