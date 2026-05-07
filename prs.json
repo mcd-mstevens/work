@@ -3,9 +3,9 @@
     "number": 13210,
     "title": "Add data product filter to DQ dashboard and alerts",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13210",
-    "state": "open",
-    "updated_at": "2026-05-07T00:43:24Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-05-07T10:44:55Z",
+    "merged_at": "2026-05-07T10:44:54Z"
   },
   {
     "number": 13222,
