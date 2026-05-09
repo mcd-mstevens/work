@@ -1,5 +1,13 @@
 [
   {
+    "number": 13227,
+    "title": "DES-505 Fix sloppy table layouts in cards across Settings, Profile, and Assets pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13227",
+    "state": "closed",
+    "updated_at": "2026-05-09T10:16:03Z",
+    "merged_at": "2026-05-09T10:16:02Z"
+  },
+  {
     "number": 13217,
     "title": "Show Jobs filter search results unchecked and add \"Select all matching\"",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13217",
@@ -72,17 +80,17 @@
     "merged_at": "2026-04-27T17:29:39Z"
   },
   {
-    "number": 13045,
-    "title": "Bob table detail page UI improvements",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13045",
+    "number": 13047,
+    "title": "Bob job pages UI polish",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13047",
     "state": "closed",
     "updated_at": "2026-04-24T20:59:45Z",
     "merged_at": "2026-04-24T20:59:44Z"
   },
   {
-    "number": 13047,
-    "title": "Bob job pages UI polish",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13047",
+    "number": 13045,
+    "title": "Bob table detail page UI improvements",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13045",
     "state": "closed",
     "updated_at": "2026-04-24T20:59:45Z",
     "merged_at": "2026-04-24T20:59:44Z"
@@ -150,13 +158,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T19:35:17Z",
     "merged_at": "2026-04-22T19:35:16Z"
-  },
-  {
-    "number": 12990,
-    "title": "Bob finding detail: rename section titles",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12990",
-    "state": "closed",
-    "updated_at": "2026-04-22T17:03:52Z",
-    "merged_at": "2026-04-22T17:03:50Z"
   }
 ]
