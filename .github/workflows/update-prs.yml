@@ -18,12 +18,43 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          curl -sf \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/search/issues?q=type:pr+author:mcd-mstevens+repo:monte-carlo-data/frontend&sort=updated&order=desc&per_page=20" \
-            | jq '[.items[] | {number: .number, title: .title, html_url: .html_url, state: .state, updated_at: .updated_at, merged_at: .pull_request.merged_at}]' \
-            > prs.json
+          set -euo pipefail
+
+          AUTH_HEADER="Authorization: Bearer $GH_TOKEN"
+          ACCEPT_HEADER="Accept: application/vnd.github+json"
+          REPO="monte-carlo-data/frontend"
+          USER="mcd-mstevens"
+
+          # 1. PRs authored by the user
+          curl -sf -H "$AUTH_HEADER" -H "$ACCEPT_HEADER" \
+            "https://api.github.com/search/issues?q=type:pr+author:${USER}+repo:${REPO}&sort=updated&order=desc&per_page=20" \
+            | jq '[.items[] | {number, title, html_url, state, updated_at, merged_at: .pull_request.merged_at}]' \
+            > /tmp/authored.json
+
+          # 2. Branches the user has recently pushed to in this repo (PushEvents)
+          curl -sf -H "$AUTH_HEADER" -H "$ACCEPT_HEADER" \
+            "https://api.github.com/users/${USER}/events?per_page=100" \
+            | jq --arg repo "$REPO" '[
+                .[] | select(.type == "PushEvent" and .repo.name == $repo)
+                    | .payload.ref | sub("^refs/heads/"; "")
+              ] | unique' \
+            > /tmp/branches.json
+
+          # 3. For each branch, look up its PR (any state)
+          echo "[]" > /tmp/committed.json
+          for branch in $(jq -r '.[] | @uri' /tmp/branches.json); do
+            curl -sf -H "$AUTH_HEADER" -H "$ACCEPT_HEADER" \
+              "https://api.github.com/repos/${REPO}/pulls?head=monte-carlo-data:${branch}&state=all&per_page=1" \
+              > /tmp/pr.json || echo "[]" > /tmp/pr.json
+            jq -s '.[0] + (.[1] | map({number, title, html_url, state, updated_at, merged_at}))' \
+              /tmp/committed.json /tmp/pr.json > /tmp/committed.tmp.json
+            mv /tmp/committed.tmp.json /tmp/committed.json
+          done
+
+          # 4. Merge authored + committed, dedupe by number, sort by updated_at desc, take 20
+          jq -s '
+            add | unique_by(.number) | sort_by(.updated_at) | reverse | .[0:20]
+          ' /tmp/authored.json /tmp/committed.json > prs.json
 
       - name: Commit if changed
         run: |
