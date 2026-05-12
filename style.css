@@ -13,6 +13,17 @@ body {
 
 .doc { max-width: 1000px; margin: 0 auto; padding: 56px 40px; }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #676F7E;
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.back-link:hover { color: #21242C; }
+
 .cover-title { font-size: 24px; font-weight: 500; }
 
 .subtitle { color: #676F7E; line-height: 1.8; margin-top: 10px; }
