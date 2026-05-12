@@ -256,12 +256,13 @@
       data: {
         labels: MONTHS,
         datasets: [
-          stackedDataset('Freshness',      [310, 332, 358, 410, 446, 470, 502, 552, 624, 698, 820, 912], C.blue),
-          stackedDataset('Volume',         [218, 235, 254, 289, 318, 332, 354, 388, 438, 488, 572, 632], C.purple),
-          stackedDataset('Field health',   [132, 142, 154, 178, 196, 208, 222, 248, 282, 318, 372, 420], C.green),
-          stackedDataset('Dimension',      [86, 92, 100, 116, 128, 134, 144, 162, 184, 208, 244, 274], C.orange),
-          stackedDataset('Schema changes', [44, 47, 50, 58, 64, 68, 72, 80, 91, 102, 120, 134], C.teal),
-          stackedDataset('Custom SQL',     [30, 32, 34, 39, 43, 46, 48, 54, 61, 69, 81, 90], C.pink),
+          stackedDataset('Table',        [310, 335, 365, 425, 470, 498, 530, 590, 670, 760, 890, 960], C.blue),
+          stackedDataset('Custom SQL',   [200, 215, 235, 265, 290, 308, 326, 360, 410, 460, 530, 580], C.purple),
+          stackedDataset('Metric',       [110, 118, 128, 150, 165, 175, 185, 208, 235, 260, 290, 320], C.green),
+          stackedDataset('SQL template', [80, 86, 92, 110, 121, 128, 138, 154, 175, 195, 220, 240], C.orange),
+          stackedDataset('Validation',   [50, 60, 75, 95, 115, 135, 158, 185, 215, 250, 280, 310], C.teal),
+          stackedDataset('JSON schema',  [45, 48, 52, 58, 63, 67, 72, 80, 90, 100, 115, 125], C.pink),
+          stackedDataset('Comparison',   [25, 27, 30, 35, 40, 43, 47, 52, 60, 65, 75, 85], C.gray),
         ],
       },
       options: {
@@ -281,12 +282,13 @@
       data: {
         labels: MONTHS,
         datasets: [
-          lineDataset('Freshness',      [3.5, 3.5, 3.4, 3.4, 3.3, 3.3, 3.3, 3.2, 3.2, 3.2, 3.2, 3.2], C.blue),
-          lineDataset('Volume',         [5.2, 5.1, 5.0, 5.0, 4.9, 4.9, 4.9, 4.8, 4.8, 4.8, 4.8, 4.8], C.purple),
-          lineDataset('Field health',   [7.8, 7.6, 7.4, 7.2, 7.0, 6.9, 6.8, 6.8, 6.7, 6.6, 6.6, 6.5], C.green),
-          lineDataset('Dimension',      [9.5, 9.4, 9.2, 9.1, 8.9, 8.8, 8.7, 8.6, 8.6, 8.5, 8.5, 8.4], C.orange),
-          lineDataset('Schema changes', [11.4, 11.0, 10.6, 10.2, 9.9, 9.7, 9.5, 9.4, 9.3, 9.2, 9.1, 9.1], C.teal),
-          lineDataset('Custom SQL',     [28.5, 27.8, 26.9, 26.0, 25.3, 24.7, 24.1, 23.7, 23.3, 23.0, 22.8, 22.7], C.pink),
+          lineDataset('Table',        [3.5, 3.5, 3.4, 3.4, 3.3, 3.3, 3.3, 3.2, 3.2, 3.2, 3.2, 3.2], C.blue),
+          lineDataset('Custom SQL',   [28.5, 27.8, 26.9, 26.0, 25.3, 24.7, 24.1, 23.7, 23.3, 23.0, 22.8, 22.7], C.purple),
+          lineDataset('Metric',       [6.5, 6.4, 6.2, 6.1, 6.0, 5.9, 5.8, 5.7, 5.6, 5.5, 5.5, 5.4], C.green),
+          lineDataset('SQL template', [5.5, 5.4, 5.3, 5.2, 5.1, 5.0, 5.0, 4.9, 4.9, 4.8, 4.8, 4.8], C.orange),
+          lineDataset('Validation',   [8.2, 8.0, 7.7, 7.5, 7.3, 7.1, 6.9, 6.8, 6.7, 6.7, 6.6, 6.5], C.teal),
+          lineDataset('JSON schema',  [9.5, 9.3, 9.1, 8.9, 8.8, 8.7, 8.6, 8.5, 8.5, 8.4, 8.4, 8.4], C.pink),
+          lineDataset('Comparison',   [12.5, 12.2, 11.9, 11.6, 11.4, 11.1, 10.9, 10.7, 10.5, 10.4, 10.3, 10.2], C.gray),
         ],
       },
       options: {
