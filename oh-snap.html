@@ -323,11 +323,10 @@
       data: {
         labels: MONTHS,
         datasets: [
-          stackedDataset('Auto-freshness',  [18, 38, 88, 162, 248, 348, 482, 624, 802, 1010, 1268, 1564], C.blue),
-          stackedDataset('Auto-volume',     [10, 22, 56, 108, 178, 256, 358, 466, 596, 748, 932, 1146], C.purple),
-          stackedDataset('Anomaly detected',[0, 6, 18, 38, 70, 112, 168, 232, 308, 396, 502, 624], C.green),
-          stackedDataset('Drift detected',  [0, 3, 12, 26, 50, 82, 124, 174, 232, 298, 374, 462], C.orange),
-          stackedDataset('Schema-aware',    [0, 0, 4, 12, 26, 46, 72, 104, 142, 188, 240, 298], C.teal),
+          stackedDataset('Agent evaluation', [18, 38, 88, 162, 248, 348, 482, 624, 802, 1010, 1268, 1564], C.blue),
+          stackedDataset('Agent trajectory', [10, 22, 56, 108, 178, 256, 358, 466, 596, 748, 932, 1146], C.purple),
+          stackedDataset('Agent metric',     [0, 6, 18, 38, 70, 112, 168, 232, 308, 396, 502, 624], C.green),
+          stackedDataset('Agent validation', [0, 3, 16, 38, 76, 128, 196, 278, 374, 486, 614, 760], C.orange),
         ],
       },
       options: {
@@ -347,11 +346,10 @@
       data: {
         labels: MONTHS,
         datasets: [
-          lineDataset('Auto-freshness',   [22, 20, 18, 17, 16, 15, 14, 14, 13, 13, 12, 12], C.blue),
-          lineDataset('Auto-volume',      [30, 28, 26, 24, 23, 22, 21, 20, 19, 19, 18, 18], C.purple),
-          lineDataset('Anomaly detected', [42, 38, 35, 33, 31, 29, 28, 27, 26, 25, 24, 24], C.green),
-          lineDataset('Drift detected',   [48, 45, 42, 40, 38, 36, 35, 34, 33, 32, 31, 31], C.orange),
-          lineDataset('Schema-aware',     [44, 41, 38, 36, 34, 33, 31, 30, 30, 29, 28, 28], C.teal),
+          lineDataset('Agent evaluation', [22, 20, 18, 17, 16, 15, 14, 14, 13, 13, 12, 12], C.blue),
+          lineDataset('Agent trajectory', [30, 28, 26, 24, 23, 22, 21, 20, 19, 19, 18, 18], C.purple),
+          lineDataset('Agent metric',     [42, 38, 35, 33, 31, 29, 28, 27, 26, 25, 24, 24], C.green),
+          lineDataset('Agent validation', [48, 45, 42, 40, 38, 36, 35, 34, 33, 32, 31, 31], C.orange),
         ],
       },
       options: {
