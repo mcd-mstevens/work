@@ -202,13 +202,16 @@
   function stackedDataset(label, data, color) {
     return {
       label, data,
-      borderColor: color,
-      backgroundColor: alpha(color, 0.28),
+      borderColor: '#fff',
+      backgroundColor: alpha(color, 0.92),
       fill: true,
-      tension: 0.28,
+      tension: 0.32,
       borderWidth: 1.5,
       pointRadius: 0,
       pointHoverRadius: 4,
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: color,
+      pointHoverBorderWidth: 2,
     };
   }
 
