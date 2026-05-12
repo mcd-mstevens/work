@@ -243,10 +243,27 @@
   // Shared monthly labels — trailing 12 months ending May 2026
   const MONTHS = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
 
+  // Deterministic wobble — adds a shared subtle seasonal dip (Aug, Dec) plus
+  // per-series pseudo-random noise so every line / area has its own wiggle.
+  // Each call increments the seed so adjacent series get different patterns.
+  let _wobbleSeed = 0;
+  function wobble(arr) {
+    const seed = _wobbleSeed++;
+    const season = [1.0, 0.98, 0.94, 1.04, 1.0, 1.0, 0.92, 1.05, 1.0, 1.02, 1.03, 1.01];
+    return arr.map((v, i) => {
+      const k = (i * 37 + seed * 53 + i * seed * 7) % 13;
+      const noise = 1 + (k - 6) / 100; // ±6%
+      const result = v * season[i] * noise;
+      if (Number.isInteger(v)) return Math.max(0, Math.round(result));
+      return Math.max(0, Math.round(result * 10) / 10);
+    });
+  }
+
   // Helper: stacked area / line dataset shortcut
   function lineDataset(label, data, color, fill) {
     return {
-      label, data,
+      label,
+      data: wobble(data),
       borderColor: color,
       backgroundColor: fill ? alpha(color, 0.18) : color,
       fill: !!fill,
@@ -262,7 +279,8 @@
 
   function stackedDataset(label, data, color) {
     return {
-      label, data,
+      label,
+      data: wobble(data),
       borderColor: '#fff',
       backgroundColor: alpha(color, 0.92),
       fill: true,
