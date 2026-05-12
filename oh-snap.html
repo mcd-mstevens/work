@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oh snap — Alert Detail Page Analytics</title>
+<title>Oh snap — Product Analytics</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,7 +13,7 @@
   .back-link:visited { color: #676F7E; }
   .back-link:hover { color: #21242C; }
 
-  .report-header { margin-bottom: 28px; }
+  .report-header { margin-bottom: 8px; }
   .report-header h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.4px; color: #21242C; margin-bottom: 6px; }
   .report-header p { color: #676F7E; line-height: 1.7; }
   .meta-pills { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
@@ -21,36 +21,22 @@
   .meta-pill strong { color: #21242C; font-weight: 600; }
   .meta-pill-warn { background: #FFF0E0; border-color: #FFD9B0; color: #CC6000; }
 
-  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
-  .stat-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 18px 20px; }
-  .stat-label { font-size: 12px; color: #676F7E; margin-bottom: 6px; font-weight: 500; }
-  .stat-value-row { display: flex; align-items: baseline; gap: 10px; }
-  .stat-value { font-size: 26px; font-weight: 600; color: #21242C; line-height: 1.1; letter-spacing: -0.4px; }
-  .stat-delta { font-size: 12px; font-weight: 600; }
-  .stat-delta-up { color: #276334; }
-  .stat-delta-down { color: #B0341C; }
-  .stat-sub { font-size: 12px; color: #676F7E; margin-top: 4px; }
+  .section-heading { font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; color: #676F7E; margin: 36px 0 12px; }
+  .section-heading:first-of-type { margin-top: 32px; }
 
-  .chart-grid { display: grid; gap: 12px; }
+  .chart-grid { display: grid; gap: 12px; margin-bottom: 12px; }
   .chart-grid.cols-2 { grid-template-columns: 1fr 1fr; }
-  .chart-grid.cols-3 { grid-template-columns: 2fr 1fr; }
 
   .chart-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 20px 22px; }
   .chart-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 6px; gap: 16px; }
   .chart-title { font-size: 14px; font-weight: 600; color: #21242C; }
   .chart-sub { font-size: 12px; color: #676F7E; margin-bottom: 14px; }
-  .chart-legend-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: #676F7E; font-weight: 500; background: #FAFAFA; border: 1px solid #E8E8E8; border-radius: 20px; padding: 2px 9px; }
-  .chart-legend-dot { width: 7px; height: 7px; border-radius: 50%; }
 
   .chart-canvas-wrap { position: relative; height: 280px; }
   .chart-canvas-wrap.tall { height: 340px; }
-  .chart-canvas-wrap.short { height: 220px; }
-
-  .section { margin-top: 12px; }
 
   @media (max-width: 880px) {
-    .stat-grid { grid-template-columns: repeat(2, 1fr); }
-    .chart-grid.cols-2, .chart-grid.cols-3 { grid-template-columns: 1fr; }
+    .chart-grid.cols-2 { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -60,118 +46,129 @@
 
 <div class="report-header">
   <h1>Oh snap</h1>
-  <p>What the Alert Detail Page analytics could look like once the APIs are wired up.</p>
+  <p>What product analytics could look like across Monte Carlo once the APIs are wired up.</p>
   <div class="meta-pills">
     <span class="meta-pill-warn meta-pill">⚠︎ Fake data — for design only</span>
-    <span class="meta-pill">Last <strong>30 days</strong></span>
-    <span class="meta-pill">vs previous <strong>30 days</strong></span>
   </div>
 </div>
 
-<!-- Stat cards -->
-<div class="stat-grid">
-  <div class="stat-card">
-    <div class="stat-label">Page visitors</div>
-    <div class="stat-value-row">
-      <div class="stat-value">8,433</div>
-      <div class="stat-delta stat-delta-up">+12.4%</div>
+<!-- =================================================================== MONITORS -->
+<h2 class="section-heading">Monitors</h2>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Monitors created over time</div>
+        <div class="chart-sub">Per month, excluding agent-created</div>
+      </div>
     </div>
-    <div class="stat-sub">vs previous period</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-label">Median time on page</div>
-    <div class="stat-value-row">
-      <div class="stat-value">3m 28s</div>
-      <div class="stat-delta stat-delta-up">+8%</div>
-    </div>
-    <div class="stat-sub">since the redesign</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-label">Troubleshoot CTR</div>
-    <div class="stat-value-row">
-      <div class="stat-value">14.5%</div>
-      <div class="stat-delta stat-delta-up">+3.2 pts</div>
-    </div>
-    <div class="stat-sub">1,220 clicks</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-label">Time-to-acknowledge</div>
-    <div class="stat-value-row">
-      <div class="stat-value">4m 12s</div>
-      <div class="stat-delta stat-delta-down">−18%</div>
-    </div>
-    <div class="stat-sub">faster is better</div>
+    <div class="chart-canvas-wrap"><canvas id="monTotal"></canvas></div>
   </div>
 </div>
 
-<!-- Big trend line -->
-<div class="section">
+<div class="chart-grid cols-2">
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Visitors per day</div>
-        <div class="chart-sub">Distinct users who opened an alert detail page</div>
+        <div class="chart-title">Monitors by type</div>
+        <div class="chart-sub">Monthly, excluding agent</div>
       </div>
-      <span class="chart-legend-pill"><span class="chart-legend-dot" style="background:#1576d8"></span>Daily visitors</span>
     </div>
-    <div class="chart-canvas-wrap tall"><canvas id="visitorsChart"></canvas></div>
+    <div class="chart-canvas-wrap tall"><canvas id="monByType"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Time to complete</div>
+        <div class="chart-sub">Median minutes, by monitor type</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="monTtc"></canvas></div>
   </div>
 </div>
 
-<!-- Two-up: feature adoption + CTA trends -->
-<div class="section chart-grid cols-2">
+<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Top actions</div>
-        <div class="chart-sub">% of visitors who used each action</div>
+        <div class="chart-title">Agent monitors created over time</div>
+        <div class="chart-sub">Per month, by customer (top 5)</div>
       </div>
     </div>
-    <div class="chart-canvas-wrap tall"><canvas id="actionsChart"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">CTA performance over time</div>
-        <div class="chart-sub">Click-through rate, weekly</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="ctaChart"></canvas></div>
+    <div class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
   </div>
 </div>
 
-<!-- Stacked role breakdown -->
-<div class="section">
+<div class="chart-grid cols-2">
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Visitors by role</div>
-        <div class="chart-sub">Weekly breakdown of who's opening alert details</div>
+        <div class="chart-title">Agent monitors by type</div>
+        <div class="chart-sub">Monthly</div>
       </div>
     </div>
-    <div class="chart-canvas-wrap"><canvas id="rolesChart"></canvas></div>
+    <div class="chart-canvas-wrap tall"><canvas id="agentByType"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Time to complete — agent</div>
+        <div class="chart-sub">Median seconds, by type</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="agentTtc"></canvas></div>
   </div>
 </div>
 
-<!-- Investigate panel split -->
-<div class="section chart-grid cols-3">
+<!-- =================================================================== ALERTS -->
+<h2 class="section-heading">Alerts</h2>
+
+<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Investigate button — panel selections</div>
-        <div class="chart-sub">Where users land after clicking Investigate</div>
+        <div class="chart-title">Action adoption</div>
+        <div class="chart-sub">% of alert viewers who took each action, monthly</div>
       </div>
     </div>
-    <div class="chart-canvas-wrap"><canvas id="investigateChart"></canvas></div>
+    <div class="chart-canvas-wrap tall"><canvas id="alertsAdoption"></canvas></div>
+  </div>
+</div>
+
+<!-- =================================================================== DASHBOARDS -->
+<h2 class="section-heading">Dashboards</h2>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Dashboard adoption</div>
+        <div class="chart-sub">Monthly active viewers, by dashboard</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="dashByDashboard"></canvas></div>
+  </div>
+</div>
+
+<div class="chart-grid cols-2">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Custom dashboards</div>
+        <div class="chart-sub">Users with at least one custom dashboard</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap"><canvas id="customDash"></canvas></div>
   </div>
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Triage outcomes</div>
-        <div class="chart-sub">Last 30 days</div>
+        <div class="chart-title">Custom dashboard widgets</div>
+        <div class="chart-sub">Instances created per month, by widget</div>
       </div>
     </div>
-    <div class="chart-canvas-wrap"><canvas id="outcomesChart"></canvas></div>
+    <div class="chart-canvas-wrap"><canvas id="customWidgets"></canvas></div>
   </div>
 </div>
 
@@ -182,126 +179,92 @@
   const SERIES = window.MC_SERIES_PALETTE;
   const alpha = window.mcAlpha;
 
-  // 1) Visitors per day — last 30 days
+  // Shared monthly labels — trailing 12 months ending May 2026
+  const MONTHS = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
+
+  // Helper: stacked area / line dataset shortcut
+  function lineDataset(label, data, color, fill) {
+    return {
+      label, data,
+      borderColor: color,
+      backgroundColor: fill ? alpha(color, 0.18) : alpha(color, 0.08),
+      fill: !!fill,
+      tension: 0.32,
+      borderWidth: 2,
+      pointRadius: 0,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: color,
+      pointHoverBorderWidth: 2,
+    };
+  }
+
+  function stackedDataset(label, data, color) {
+    return {
+      label, data,
+      borderColor: color,
+      backgroundColor: alpha(color, 0.28),
+      fill: true,
+      tension: 0.28,
+      borderWidth: 1.5,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+    };
+  }
+
+  function hBarDataset(data, colors) {
+    return {
+      data, backgroundColor: colors, borderRadius: 4, barPercentage: 0.78, categoryPercentage: 0.85,
+    };
+  }
+
+  const trendOpts = (yOpts = {}) => ({
+    interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { display: true } },
+    scales: {
+      x: { grid: { display: false } },
+      y: { beginAtZero: true, ...yOpts },
+    },
+  });
+
+  // ============ MONITORS ============
+
+  // 1. Total monitors created per month (excluding agent)
   (function () {
-    const labels = [];
-    const today = new Date();
-    for (let i = 29; i >= 0; i--) {
-      const d = new Date(today);
-      d.setDate(today.getDate() - i);
-      labels.push(d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
-    }
-    // Mostly upward-trending fake data with some realistic wobble
-    const data = [
-      198, 215, 232, 211, 168, 142, 178,
-      241, 253, 268, 281, 263, 188, 162,
-      275, 298, 312, 326, 318, 224, 196,
-      308, 333, 351, 367, 358, 268, 240,
-      378, 412,
-    ];
-
-    const ctx = document.getElementById('visitorsChart');
-    const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 320);
-    gradient.addColorStop(0, alpha(C.blue, 0.25));
-    gradient.addColorStop(1, alpha(C.blue, 0));
-
+    const ctx = document.getElementById('monTotal');
+    const g = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
+    g.addColorStop(0, alpha(C.blue, 0.25));
+    g.addColorStop(1, alpha(C.blue, 0));
     new Chart(ctx, {
       type: 'line',
       data: {
-        labels,
+        labels: MONTHS,
         datasets: [{
-          label: 'Visitors',
-          data,
-          borderColor: C.blue,
-          backgroundColor: gradient,
+          ...lineDataset('Monitors created', [820, 870, 940, 1080, 1180, 1240, 1310, 1450, 1640, 1830, 2150, 2390], C.blue, false),
+          backgroundColor: g,
           fill: true,
-          tension: 0.35,
-          pointRadius: 0,
-          pointHoverRadius: 5,
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: C.blue,
-          pointHoverBorderWidth: 2,
         }],
       },
       options: {
+        ...trendOpts(),
         plugins: { legend: { display: false } },
-        interaction: { mode: 'index', intersect: false },
-        scales: {
-          x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
-          y: { beginAtZero: true, ticks: { stepSize: 100 } },
-        },
       },
     });
   })();
 
-  // 2) Top actions — horizontal bar
+  // 2. Monitors by type — stacked area
   (function () {
-    const labels = ['Status update', 'Investigate', 'Acknowledge', 'Troubleshoot CTA', 'Owner assignment', 'Comment', 'Mark as incident', 'Merge alert', 'Jira', 'ServiceNow'];
-    const data = [27.9, 27.2, 22.1, 14.5, 13.9, 9.6, 4.8, 1.6, 1.3, 0.2];
-    const colors = [C.blue, C.purple, C.blue, C.purple, C.blue, C.blue, C.blue, C.blue, C.green, C.green];
-
-    new Chart(document.getElementById('actionsChart'), {
-      type: 'bar',
-      data: {
-        labels,
-        datasets: [{
-          data,
-          backgroundColor: colors,
-          borderRadius: 4,
-          barPercentage: 0.78,
-          categoryPercentage: 0.85,
-        }],
-      },
-      options: {
-        indexAxis: 'y',
-        plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { label: (item) => `${item.parsed.x}%` } },
-        },
-        scales: {
-          x: { ticks: { callback: (v) => v + '%' }, max: 35 },
-          y: { grid: { display: false } },
-        },
-      },
-    });
-  })();
-
-  // 3) CTA performance over time — multi-series line
-  (function () {
-    const labels = ['Wk 1', 'Wk 2', 'Wk 3', 'Wk 4', 'Wk 5', 'Wk 6', 'Wk 7', 'Wk 8'];
-    new Chart(document.getElementById('ctaChart'), {
+    new Chart(document.getElementById('monByType'), {
       type: 'line',
       data: {
-        labels,
+        labels: MONTHS,
         datasets: [
-          { label: 'Troubleshoot',  data: [9.8, 10.4, 11.1, 11.6, 12.3, 13.0, 13.8, 14.5], borderColor: C.purple, backgroundColor: alpha(C.purple, 0.08), pointHoverBackgroundColor: '#fff', pointHoverBorderColor: C.purple, pointHoverBorderWidth: 2 },
-          { label: 'Investigate',   data: [22.4, 23.1, 24.0, 24.8, 25.6, 26.3, 26.9, 27.2], borderColor: C.blue,   backgroundColor: alpha(C.blue, 0.08),   pointHoverBackgroundColor: '#fff', pointHoverBorderColor: C.blue,   pointHoverBorderWidth: 2 },
-          { label: 'Acknowledge',   data: [18.1, 19.2, 19.8, 20.3, 20.6, 21.1, 21.7, 22.1], borderColor: C.green,  backgroundColor: alpha(C.green, 0.08),  pointHoverBackgroundColor: '#fff', pointHoverBorderColor: C.green,  pointHoverBorderWidth: 2 },
-        ],
-      },
-      options: {
-        interaction: { mode: 'index', intersect: false },
-        plugins: { tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y}%` } } },
-        scales: {
-          x: { grid: { display: false } },
-          y: { ticks: { callback: (v) => v + '%' }, beginAtZero: true, max: 35 },
-        },
-      },
-    });
-  })();
-
-  // 4) Visitors by role — stacked bar
-  (function () {
-    const labels = ['Wk 1', 'Wk 2', 'Wk 3', 'Wk 4', 'Wk 5', 'Wk 6', 'Wk 7', 'Wk 8'];
-    new Chart(document.getElementById('rolesChart'), {
-      type: 'bar',
-      data: {
-        labels,
-        datasets: [
-          { label: 'Owner / on-call',   data: [320, 348, 362, 391, 412, 408, 446, 472], backgroundColor: C.blue },
-          { label: 'Data engineer',     data: [218, 232, 246, 261, 280, 274, 298, 314], backgroundColor: C.purple },
-          { label: 'Data steward',      data: [128, 142, 151, 161, 174, 168, 182, 193], backgroundColor: C.green },
-          { label: 'Analyst / viewer',  data: [88, 92, 99, 104, 112, 109, 121, 128], backgroundColor: C.orange },
+          stackedDataset('Freshness',      [310, 332, 358, 410, 446, 470, 502, 552, 624, 698, 820, 912], C.blue),
+          stackedDataset('Volume',         [218, 235, 254, 289, 318, 332, 354, 388, 438, 488, 572, 632], C.purple),
+          stackedDataset('Field health',   [132, 142, 154, 178, 196, 208, 222, 248, 282, 318, 372, 420], C.green),
+          stackedDataset('Dimension',      [86, 92, 100, 116, 128, 134, 144, 162, 184, 208, 244, 274], C.orange),
+          stackedDataset('Schema changes', [44, 47, 50, 58, 64, 68, 72, 80, 91, 102, 120, 134], C.teal),
+          stackedDataset('Custom SQL',     [30, 32, 34, 39, 43, 46, 48, 54, 61, 69, 81, 90], C.pink),
         ],
       },
       options: {
@@ -314,56 +277,176 @@
     });
   })();
 
-  // 5) Investigate panel selections — bar
+  // 3. Time to complete — horizontal bar (median minutes)
   (function () {
-    const labels = ['Monitor', 'Asset', 'Code', 'Monitor notes', 'Data', 'Sample spans'];
-    const data = [66.0, 21.3, 7.5, 2.2, 1.2, 0.9];
-    const colors = [C.blue, C.purple, C.green, C.orange, C.gray, '#E07A4A'];
-
-    new Chart(document.getElementById('investigateChart'), {
+    new Chart(document.getElementById('monTtc'), {
       type: 'bar',
       data: {
-        labels,
-        datasets: [{
-          data,
-          backgroundColor: colors,
-          borderRadius: 4,
-          barPercentage: 0.65,
-        }],
+        labels: ['Freshness', 'Volume', 'Field health', 'Dimension', 'Schema changes', 'Custom SQL'],
+        datasets: [hBarDataset([3.2, 4.8, 6.5, 8.4, 9.1, 22.7], [C.blue, C.purple, C.green, C.orange, C.teal, C.pink])],
       },
       options: {
+        indexAxis: 'y',
         plugins: {
           legend: { display: false },
-          tooltip: { callbacks: { label: (item) => `${item.parsed.y}% of clicks` } },
+          tooltip: { callbacks: { label: (i) => `${i.parsed.x} min (median)` } },
         },
         scales: {
-          x: { grid: { display: false } },
-          y: { ticks: { callback: (v) => v + '%' }, beginAtZero: true, max: 80 },
+          x: { beginAtZero: true, ticks: { callback: (v) => v + ' min' } },
+          y: { grid: { display: false } },
         },
       },
     });
   })();
 
-  // 6) Triage outcomes — donut
+  // 4. Agent monitors created by customer — multi-line
   (function () {
-    new Chart(document.getElementById('outcomesChart'), {
-      type: 'doughnut',
+    new Chart(document.getElementById('agentByCustomer'), {
+      type: 'line',
       data: {
-        labels: ['Resolved', 'Acknowledged', 'Escalated', 'Stale / no action'],
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Acme',    [12, 28, 64, 112, 168, 226, 318, 410, 524, 658, 824, 1010], C.blue),
+          lineDataset('Globex',  [8, 18, 42, 78, 132, 188, 258, 332, 410, 502, 612, 738], C.purple),
+          lineDataset('Wayne',   [5, 14, 32, 58, 96, 142, 198, 264, 332, 412, 496, 588], C.green),
+          lineDataset('Initech', [2, 8, 22, 44, 78, 118, 168, 220, 278, 342, 408, 478], C.orange),
+          lineDataset('Stark',   [0, 4, 14, 30, 56, 88, 130, 178, 228, 282, 338, 396], C.teal),
+        ],
+      },
+      options: trendOpts(),
+    });
+  })();
+
+  // 5. Agent monitors by type — stacked area
+  (function () {
+    new Chart(document.getElementById('agentByType'), {
+      type: 'line',
+      data: {
+        labels: MONTHS,
+        datasets: [
+          stackedDataset('Auto-freshness',  [18, 38, 88, 162, 248, 348, 482, 624, 802, 1010, 1268, 1564], C.blue),
+          stackedDataset('Auto-volume',     [10, 22, 56, 108, 178, 256, 358, 466, 596, 748, 932, 1146], C.purple),
+          stackedDataset('Anomaly detected',[0, 6, 18, 38, 70, 112, 168, 232, 308, 396, 502, 624], C.green),
+          stackedDataset('Drift detected',  [0, 3, 12, 26, 50, 82, 124, 174, 232, 298, 374, 462], C.orange),
+          stackedDataset('Schema-aware',    [0, 0, 4, 12, 26, 46, 72, 104, 142, 188, 240, 298], C.teal),
+        ],
+      },
+      options: {
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: { stacked: true, grid: { display: false } },
+          y: { stacked: true, beginAtZero: true },
+        },
+      },
+    });
+  })();
+
+  // 6. Time to complete — agent (median seconds)
+  (function () {
+    new Chart(document.getElementById('agentTtc'), {
+      type: 'bar',
+      data: {
+        labels: ['Auto-freshness', 'Auto-volume', 'Anomaly detected', 'Drift detected', 'Schema-aware'],
+        datasets: [hBarDataset([12, 18, 24, 31, 28], [C.blue, C.purple, C.green, C.orange, C.teal])],
+      },
+      options: {
+        indexAxis: 'y',
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: (i) => `${i.parsed.x}s (median)` } },
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { callback: (v) => v + 's' } },
+          y: { grid: { display: false } },
+        },
+      },
+    });
+  })();
+
+  // ============ ALERTS ============
+
+  // 7. Action adoption — multi-line
+  (function () {
+    new Chart(document.getElementById('alertsAdoption'), {
+      type: 'line',
+      data: {
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Status update',    [18.4, 19.6, 21.0, 22.3, 23.4, 24.5, 25.4, 26.2, 26.8, 27.3, 27.6, 27.9], C.blue),
+          lineDataset('Acknowledge',      [14.2, 15.1, 16.4, 17.5, 18.6, 19.4, 20.1, 20.7, 21.2, 21.6, 21.9, 22.1], C.purple),
+          lineDataset('Owner assignment', [7.8, 8.6, 9.4, 10.2, 11.0, 11.7, 12.3, 12.8, 13.2, 13.5, 13.7, 13.9], C.green),
+          lineDataset('Comment',          [5.4, 5.8, 6.3, 6.8, 7.3, 7.8, 8.3, 8.7, 9.0, 9.3, 9.5, 9.6], C.orange),
+          lineDataset('Mark as incident', [2.1, 2.4, 2.8, 3.1, 3.5, 3.8, 4.0, 4.2, 4.4, 4.6, 4.7, 4.8], C.teal),
+          lineDataset('Merge alert',      [0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.55, 1.6], C.pink),
+        ],
+      },
+      options: {
+        ...trendOpts({ ticks: { callback: (v) => v + '%' } }),
+        plugins: {
+          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y}%` } },
+        },
+      },
+    });
+  })();
+
+  // ============ DASHBOARDS ============
+
+  // 8. Dashboard adoption by dashboard — multi-line
+  (function () {
+    new Chart(document.getElementById('dashByDashboard'), {
+      type: 'line',
+      data: {
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Daily',           [1820, 1968, 2110, 2280, 2398, 2530, 2678, 2810, 2942, 3068, 3210, 3358], C.blue),
+          lineDataset('Coverage',        [932, 1018, 1112, 1228, 1320, 1418, 1518, 1612, 1718, 1820, 1928, 2042], C.purple),
+          lineDataset('Performance',     [428, 482, 552, 624, 692, 754, 822, 884, 952, 1018, 1098, 1184], C.green),
+          lineDataset('Lineage health',  [218, 246, 282, 320, 358, 396, 432, 468, 510, 552, 598, 648], C.orange),
+          lineDataset('Domain',          [88, 102, 122, 142, 168, 196, 224, 252, 282, 318, 358, 402], C.teal),
+        ],
+      },
+      options: trendOpts(),
+    });
+  })();
+
+  // 9. Custom dashboards — single line
+  (function () {
+    const ctx = document.getElementById('customDash');
+    const g = ctx.getContext('2d').createLinearGradient(0, 0, 0, 280);
+    g.addColorStop(0, alpha(C.purple, 0.25));
+    g.addColorStop(1, alpha(C.purple, 0));
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: MONTHS,
         datasets: [{
-          data: [2354, 1866, 401, 612],
-          backgroundColor: [C.green, C.blue, C.orange, C.gray],
-          borderColor: '#fff',
-          borderWidth: 2,
+          ...lineDataset('Users with custom dashboards', [142, 168, 198, 232, 268, 308, 352, 398, 448, 502, 562, 628], C.purple, false),
+          backgroundColor: g,
+          fill: true,
         }],
       },
       options: {
-        cutout: '62%',
-        plugins: {
-          legend: { position: 'right', align: 'center' },
-          tooltip: { callbacks: { label: (i) => `${i.label}: ${i.parsed.toLocaleString()} alerts` } },
-        },
+        ...trendOpts(),
+        plugins: { legend: { display: false } },
       },
+    });
+  })();
+
+  // 10. Custom dashboard widgets — multi-line
+  (function () {
+    new Chart(document.getElementById('customWidgets'), {
+      type: 'line',
+      data: {
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Alerts list',  [88, 102, 120, 142, 168, 196, 226, 258, 292, 328, 368, 412], C.blue),
+          lineDataset('Asset health', [62, 74, 88, 106, 128, 152, 178, 204, 232, 262, 296, 332], C.purple),
+          lineDataset('Tags',         [34, 42, 52, 64, 78, 94, 112, 130, 150, 172, 196, 222], C.green),
+          lineDataset('Quality score',[18, 24, 32, 42, 54, 68, 84, 100, 118, 138, 160, 184], C.orange),
+          lineDataset('Custom SQL',   [12, 16, 22, 30, 40, 52, 66, 82, 100, 120, 142, 166], C.teal),
+        ],
+      },
+      options: trendOpts(),
     });
   })();
 </script>
