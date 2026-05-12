@@ -74,7 +74,7 @@
 <!-- =================================================================== AGENT ADOPTION -->
 <h2 class="section-heading">Agent adoption</h2>
 
-<div class="chart-grid">
+<div class="chart-grid cols-2">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -84,12 +84,6 @@
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentAdoption"></canvas></div>
   </div>
-</div>
-
-<!-- =================================================================== MCP ADOPTION -->
-<h2 class="section-heading">MCP adoption</h2>
-
-<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -104,7 +98,7 @@
 <!-- =================================================================== MONITORS -->
 <h2 class="section-heading">Monitors</h2>
 
-<div class="chart-grid">
+<div class="chart-grid cols-2">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -112,7 +106,16 @@
         <div class="chart-sub">Per month, excluding agent-created</div>
       </div>
     </div>
-    <div class="chart-canvas-wrap"><canvas id="monTotal"></canvas></div>
+    <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Agent monitors created over time</div>
+        <div class="chart-sub">Per month, by customer (top 5)</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
   </div>
 </div>
 
@@ -129,35 +132,11 @@
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Time to complete</div>
-        <div class="chart-sub">Median minutes by type, monthly</div>
+        <div class="chart-title">Agent monitors by type</div>
+        <div class="chart-sub">Monthly</div>
       </div>
     </div>
-    <div class="chart-canvas-wrap tall"><canvas id="monTtc"></canvas></div>
-  </div>
-</div>
-
-<div class="chart-grid">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Completion rate</div>
-        <div class="chart-sub">% of monitor creations completed, by type, monthly</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="monCompletion"></canvas></div>
-  </div>
-</div>
-
-<div class="chart-grid">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Agent monitors created over time</div>
-        <div class="chart-sub">Per month, by customer (top 5)</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
+    <div class="chart-canvas-wrap tall"><canvas id="agentByType"></canvas></div>
   </div>
 </div>
 
@@ -165,11 +144,11 @@
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Agent monitors by type</div>
-        <div class="chart-sub">Monthly</div>
+        <div class="chart-title">Time to complete</div>
+        <div class="chart-sub">Median minutes by type, monthly</div>
       </div>
     </div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentByType"></canvas></div>
+    <div class="chart-canvas-wrap tall"><canvas id="monTtc"></canvas></div>
   </div>
   <div class="chart-card">
     <div class="chart-header">
@@ -182,7 +161,16 @@
   </div>
 </div>
 
-<div class="chart-grid">
+<div class="chart-grid cols-2">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Completion rate</div>
+        <div class="chart-sub">% of monitor creations completed, by type, monthly</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="monCompletion"></canvas></div>
+  </div>
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -212,7 +200,7 @@
 <!-- =================================================================== DASHBOARDS -->
 <h2 class="section-heading">Dashboards</h2>
 
-<div class="chart-grid">
+<div class="chart-grid cols-2">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -222,9 +210,18 @@
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="dashByDashboard"></canvas></div>
   </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Custom dashboard widgets</div>
+        <div class="chart-sub">Instances created per month, by widget</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="customWidgets"></canvas></div>
+  </div>
 </div>
 
-<div class="chart-grid cols-2">
+<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -234,21 +231,12 @@
     </div>
     <div class="chart-canvas-wrap"><canvas id="customDash"></canvas></div>
   </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Custom dashboard widgets</div>
-        <div class="chart-sub">Instances created per month, by widget</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap"><canvas id="customWidgets"></canvas></div>
-  </div>
 </div>
 
-<!-- =================================================================== PERFORMANCE -->
-<h2 class="section-heading">Performance</h2>
+<!-- =================================================================== PERFORMANCE & INTEGRATIONS -->
+<h2 class="section-heading">Performance & integrations</h2>
 
-<div class="chart-grid">
+<div class="chart-grid cols-2">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -258,12 +246,6 @@
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="perfAdoption"></canvas></div>
   </div>
-</div>
-
-<!-- =================================================================== INTEGRATIONS -->
-<h2 class="section-heading">Integrations</h2>
-
-<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
