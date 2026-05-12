@@ -81,7 +81,7 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Time to complete</div>
-        <div class="chart-sub">Median minutes, by monitor type</div>
+        <div class="chart-sub">Median minutes by type, monthly</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="monTtc"></canvas></div>
@@ -114,7 +114,7 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Time to complete — agent</div>
-        <div class="chart-sub">Median seconds, by type</div>
+        <div class="chart-sub">Median seconds by type, monthly</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentTtc"></canvas></div>
@@ -215,12 +215,6 @@
     };
   }
 
-  function hBarDataset(data, colors) {
-    return {
-      data, backgroundColor: colors, borderRadius: 4, barPercentage: 0.78, categoryPercentage: 0.85,
-    };
-  }
-
   const trendOpts = (yOpts = {}) => ({
     interaction: { mode: 'index', intersect: false },
     plugins: { legend: { display: true } },
@@ -280,23 +274,25 @@
     });
   })();
 
-  // 3. Time to complete — horizontal bar (median minutes)
+  // 3. Time to complete — multi-line (median minutes by type)
   (function () {
     new Chart(document.getElementById('monTtc'), {
-      type: 'bar',
+      type: 'line',
       data: {
-        labels: ['Freshness', 'Volume', 'Field health', 'Dimension', 'Schema changes', 'Custom SQL'],
-        datasets: [hBarDataset([3.2, 4.8, 6.5, 8.4, 9.1, 22.7], [C.blue, C.purple, C.green, C.orange, C.teal, C.pink])],
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Freshness',      [3.5, 3.5, 3.4, 3.4, 3.3, 3.3, 3.3, 3.2, 3.2, 3.2, 3.2, 3.2], C.blue),
+          lineDataset('Volume',         [5.2, 5.1, 5.0, 5.0, 4.9, 4.9, 4.9, 4.8, 4.8, 4.8, 4.8, 4.8], C.purple),
+          lineDataset('Field health',   [7.8, 7.6, 7.4, 7.2, 7.0, 6.9, 6.8, 6.8, 6.7, 6.6, 6.6, 6.5], C.green),
+          lineDataset('Dimension',      [9.5, 9.4, 9.2, 9.1, 8.9, 8.8, 8.7, 8.6, 8.6, 8.5, 8.5, 8.4], C.orange),
+          lineDataset('Schema changes', [11.4, 11.0, 10.6, 10.2, 9.9, 9.7, 9.5, 9.4, 9.3, 9.2, 9.1, 9.1], C.teal),
+          lineDataset('Custom SQL',     [28.5, 27.8, 26.9, 26.0, 25.3, 24.7, 24.1, 23.7, 23.3, 23.0, 22.8, 22.7], C.pink),
+        ],
       },
       options: {
-        indexAxis: 'y',
+        ...trendOpts({ ticks: { callback: (v) => v + ' min' } }),
         plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { label: (i) => `${i.parsed.x} min (median)` } },
-        },
-        scales: {
-          x: { beginAtZero: true, ticks: { callback: (v) => v + ' min' } },
-          y: { grid: { display: false } },
+          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y} min` } },
         },
       },
     });
@@ -344,23 +340,24 @@
     });
   })();
 
-  // 6. Time to complete — agent (median seconds)
+  // 6. Time to complete — agent (multi-line, median seconds)
   (function () {
     new Chart(document.getElementById('agentTtc'), {
-      type: 'bar',
+      type: 'line',
       data: {
-        labels: ['Auto-freshness', 'Auto-volume', 'Anomaly detected', 'Drift detected', 'Schema-aware'],
-        datasets: [hBarDataset([12, 18, 24, 31, 28], [C.blue, C.purple, C.green, C.orange, C.teal])],
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Auto-freshness',   [22, 20, 18, 17, 16, 15, 14, 14, 13, 13, 12, 12], C.blue),
+          lineDataset('Auto-volume',      [30, 28, 26, 24, 23, 22, 21, 20, 19, 19, 18, 18], C.purple),
+          lineDataset('Anomaly detected', [42, 38, 35, 33, 31, 29, 28, 27, 26, 25, 24, 24], C.green),
+          lineDataset('Drift detected',   [48, 45, 42, 40, 38, 36, 35, 34, 33, 32, 31, 31], C.orange),
+          lineDataset('Schema-aware',     [44, 41, 38, 36, 34, 33, 31, 30, 30, 29, 28, 28], C.teal),
+        ],
       },
       options: {
-        indexAxis: 'y',
+        ...trendOpts({ ticks: { callback: (v) => v + 's' } }),
         plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { label: (i) => `${i.parsed.x}s (median)` } },
-        },
-        scales: {
-          x: { beginAtZero: true, ticks: { callback: (v) => v + 's' } },
-          y: { grid: { display: false } },
+          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y}s` } },
         },
       },
     });
