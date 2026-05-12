@@ -103,7 +103,7 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Monitors created over time</div>
-        <div class="chart-sub">Per month, excluding agent-created</div>
+        <div class="chart-sub">Per month, by status (excludes agent)</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
@@ -403,26 +403,18 @@
 
   // ============ MONITORS ============
 
-  // 1. Total monitors created per month (excluding agent)
+  // 1. Monitors created per month — Draft vs Enabled (excluding agent)
   (function () {
-    const ctx = document.getElementById('monTotal');
-    const g = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
-    g.addColorStop(0, alpha(C.blue, 0.25));
-    g.addColorStop(1, alpha(C.blue, 0));
-    new Chart(ctx, {
+    new Chart(document.getElementById('monTotal'), {
       type: 'line',
       data: {
         labels: MONTHS,
-        datasets: [{
-          ...lineDataset('Monitors created', [820, 870, 940, 1080, 1180, 1240, 1310, 1450, 1640, 1830, 2150, 2390], C.blue, false),
-          backgroundColor: g,
-          fill: true,
-        }],
+        datasets: [
+          lineDataset('Enabled', [680, 730, 800, 920, 1010, 1060, 1130, 1260, 1420, 1580, 1860, 2070], C.blue),
+          lineDataset('Draft',   [140, 140, 140, 160, 170, 180, 180, 190, 220, 250, 290, 320], C.purple),
+        ],
       },
-      options: {
-        ...trendOpts(),
-        plugins: { legend: { display: false } },
-      },
+      options: trendOpts(),
     });
   })();
 
