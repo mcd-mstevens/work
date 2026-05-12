@@ -71,6 +71,21 @@
   <div class="hero-chart"><canvas id="wauChart"></canvas></div>
 </div>
 
+<!-- =================================================================== AGENT ADOPTION -->
+<h2 class="section-heading">Agent adoption</h2>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Agent adoption over time</div>
+        <div class="chart-sub">Monthly active users, by agent</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="agentAdoption"></canvas></div>
+  </div>
+</div>
+
 <!-- =================================================================== MONITORS -->
 <h2 class="section-heading">Monitors</h2>
 
@@ -327,6 +342,24 @@
           y: { beginAtZero: false, ticks: { callback: (v) => (v / 1000) + 'k' } },
         },
       },
+    });
+  })();
+
+  // ============ AGENT ADOPTION ============
+  (function () {
+    new Chart(document.getElementById('agentAdoption'), {
+      type: 'line',
+      data: {
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Operations agent',      [250, 380, 540, 720, 900, 1080, 1250, 1410, 1560, 1690, 1790, 1850], C.blue),
+          lineDataset('Troubleshooting agent', [180, 260, 380, 510, 650, 790, 920, 1050, 1170, 1280, 1360, 1400], C.purple),
+          lineDataset('Cost agent',            [80, 120, 170, 220, 280, 340, 400, 460, 510, 560, 600, 620], C.green),
+          lineDataset('Monitoring agent',      [20, 45, 90, 140, 200, 260, 320, 370, 410, 445, 470, 480], C.orange),
+          lineDataset('PII/Compliance agent',  [40, 60, 90, 125, 160, 195, 225, 250, 275, 295, 305, 310], C.teal),
+        ],
+      },
+      options: trendOpts(),
     });
   })();
 
