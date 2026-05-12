@@ -15,6 +15,7 @@
     red: "#E05050",
     teal: "#1098AD",
     pink: "#D6336C",
+    amber: "#C99700",
     gray: "#748492",
     grayLight: "#E2E2E2",
     grayMid: "#676F7E",

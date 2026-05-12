@@ -213,6 +213,21 @@
   </div>
 </div>
 
+<!-- =================================================================== INTEGRATIONS -->
+<h2 class="section-heading">Integrations</h2>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Most popular integrations over time</div>
+        <div class="chart-sub">Active setups per month, by integration</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="integrationsChart"></canvas></div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="charts.js"></script>
 <script>
@@ -544,6 +559,30 @@
           lineDataset('Read queries',    [180, 210, 250, 300, 340, 380, 420, 470, 530, 600, 690, 790], C.blue),
           lineDataset('Write queries',   [120, 140, 168, 200, 230, 258, 290, 325, 365, 410, 470, 540], C.purple),
           lineDataset('Job performance', [60, 75, 95, 120, 145, 172, 200, 230, 265, 300, 350, 410], C.green),
+        ],
+      },
+      options: trendOpts(),
+    });
+  })();
+
+  // ============ INTEGRATIONS ============
+
+  // 12. Most popular integrations over time — multi-line, 9 series
+  (function () {
+    new Chart(document.getElementById('integrationsChart'), {
+      type: 'line',
+      data: {
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Snowflake',      [1200, 1268, 1342, 1430, 1518, 1610, 1712, 1820, 1922, 2010, 2090, 2150], C.blue),
+          lineDataset('Databricks',     [480, 548, 622, 712, 808, 902, 998, 1098, 1190, 1268, 1334, 1380], C.red),
+          lineDataset('BigQuery',       [850, 890, 932, 968, 1002, 1042, 1082, 1118, 1158, 1192, 1220, 1240], C.green),
+          lineDataset('dbt',            [180, 240, 312, 388, 470, 552, 632, 712, 790, 850, 898, 920], C.orange),
+          lineDataset('Redshift',       [620, 648, 678, 704, 732, 758, 782, 802, 822, 838, 846, 850], C.purple),
+          lineDataset('PostgreSQL',     [380, 412, 446, 482, 520, 556, 590, 622, 656, 686, 708, 720], C.teal),
+          lineDataset('Airflow',        [220, 248, 282, 318, 354, 388, 420, 452, 482, 508, 528, 540], C.pink),
+          lineDataset('SQL Server',     [280, 296, 312, 332, 352, 370, 388, 408, 424, 438, 446, 450], C.gray),
+          lineDataset('Salesforce CRM', [140, 155, 172, 192, 212, 232, 252, 272, 290, 304, 314, 320], C.amber),
         ],
       },
       options: trendOpts(),
