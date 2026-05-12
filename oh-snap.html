@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oh snap — Alert Detail Page Analytics</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #FAFAFA; color: #21242C; font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 56px 40px; max-width: 1200px; margin: 0 auto; }
+
+  .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 24px; }
+  .back-link:hover { color: #21242C; }
+
+  .report-header { margin-bottom: 28px; }
+  .report-header h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.4px; color: #21242C; margin-bottom: 6px; }
+  .report-header p { color: #676F7E; line-height: 1.7; }
+  .meta-pills { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .meta-pill { background: #fff; border: 1px solid #E2E2E2; border-radius: 20px; padding: 3px 11px; font-size: 12px; font-weight: 500; color: #676F7E; }
+  .meta-pill strong { color: #21242C; font-weight: 600; }
+  .meta-pill-warn { background: #FFF0E0; border-color: #FFD9B0; color: #CC6000; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+  .stat-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 18px 20px; }
+  .stat-label { font-size: 12px; color: #676F7E; margin-bottom: 6px; font-weight: 500; }
+  .stat-value-row { display: flex; align-items: baseline; gap: 10px; }
+  .stat-value { font-size: 26px; font-weight: 600; color: #21242C; line-height: 1.1; letter-spacing: -0.4px; }
+  .stat-delta { font-size: 12px; font-weight: 600; }
+  .stat-delta-up { color: #276334; }
+  .stat-delta-down { color: #B0341C; }
+  .stat-sub { font-size: 12px; color: #676F7E; margin-top: 4px; }
+
+  .chart-grid { display: grid; gap: 12px; }
+  .chart-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .chart-grid.cols-3 { grid-template-columns: 2fr 1fr; }
+
+  .chart-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 20px 22px; }
+  .chart-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 6px; gap: 16px; }
+  .chart-title { font-size: 14px; font-weight: 600; color: #21242C; }
+  .chart-sub { font-size: 12px; color: #676F7E; margin-bottom: 14px; }
+  .chart-legend-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: #676F7E; font-weight: 500; background: #FAFAFA; border: 1px solid #E8E8E8; border-radius: 20px; padding: 2px 9px; }
+  .chart-legend-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+  .chart-canvas-wrap { position: relative; height: 280px; }
+  .chart-canvas-wrap.tall { height: 340px; }
+  .chart-canvas-wrap.short { height: 220px; }
+
+  .section { margin-top: 12px; }
+
+  .note { font-size: 12px; color: #676F7E; margin-top: 24px; padding: 14px 18px; background: #FFF8E6; border: 1px solid #FFE9A3; border-radius: 10px; }
+  .note strong { color: #6B4F00; font-weight: 600; }
+
+  @media (max-width: 880px) {
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .chart-grid.cols-2, .chart-grid.cols-3 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="index.html">← Back</a>
+
+<div class="report-header">
+  <h1>Oh snap</h1>
+  <p>What the Alert Detail Page analytics could look like once the APIs are wired up.</p>
+  <div class="meta-pills">
+    <span class="meta-pill-warn meta-pill">⚠︎ Fake data — for design only</span>
+    <span class="meta-pill">Last <strong>30 days</strong></span>
+    <span class="meta-pill">vs previous <strong>30 days</strong></span>
+  </div>
+</div>
+
+<!-- Stat cards -->
+<div class="stat-grid">
+  <div class="stat-card">
+    <div class="stat-label">Page visitors</div>
+    <div class="stat-value-row">
+      <div class="stat-value">8,433</div>
+      <div class="stat-delta stat-delta-up">+12.4%</div>
+    </div>
+    <div class="stat-sub">vs previous period</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Median time on page</div>
+    <div class="stat-value-row">
+      <div class="stat-value">3m 28s</div>
+      <div class="stat-delta stat-delta-up">+8%</div>
+    </div>
+    <div class="stat-sub">since the redesign</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Troubleshoot CTR</div>
+    <div class="stat-value-row">
+      <div class="stat-value">14.5%</div>
+      <div class="stat-delta stat-delta-up">+3.2 pts</div>
+    </div>
+    <div class="stat-sub">1,220 clicks</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Time-to-acknowledge</div>
+    <div class="stat-value-row">
+      <div class="stat-value">4m 12s</div>
+      <div class="stat-delta stat-delta-down">−18%</div>
+    </div>
+    <div class="stat-sub">faster is better</div>
+  </div>
+</div>
+
+<!-- Big trend line -->
+<div class="section">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Visitors per day</div>
+        <div class="chart-sub">Distinct users who opened an alert detail page</div>
+      </div>
+      <span class="chart-legend-pill"><span class="chart-legend-dot" style="background:#1576d8"></span>Daily visitors</span>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="visitorsChart"></canvas></div>
+  </div>
+</div>
+
+<!-- Two-up: feature adoption + CTA trends -->
+<div class="section chart-grid cols-2">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Top actions</div>
+        <div class="chart-sub">% of visitors who used each action</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="actionsChart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">CTA performance over time</div>
+        <div class="chart-sub">Click-through rate, weekly</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="ctaChart"></canvas></div>
+  </div>
+</div>
+
+<!-- Stacked role breakdown -->
+<div class="section">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Visitors by role</div>
+        <div class="chart-sub">Weekly breakdown of who's opening alert details</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap"><canvas id="rolesChart"></canvas></div>
+  </div>
+</div>
+
+<!-- Investigate panel split -->
+<div class="section chart-grid cols-3">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Investigate button — panel selections</div>
+        <div class="chart-sub">Where users land after clicking Investigate</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap"><canvas id="investigateChart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Triage outcomes</div>
+        <div class="chart-sub">Last 30 days</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap"><canvas id="outcomesChart"></canvas></div>
+  </div>
+</div>
+
+<div class="note">
+  <strong>Heads up:</strong> all numbers and charts on this page are fabricated. Once Mixpanel → Snowflake and the product-analytics API are wired up to the Alert Detail page, this layout is the target.
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="charts.js"></script>
+<script>
+  const C = window.MC_CHART_COLORS;
+  const SERIES = window.MC_SERIES_PALETTE;
+  const alpha = window.mcAlpha;
+
+  // 1) Visitors per day — last 30 days
+  (function () {
+    const labels = [];
+    const today = new Date();
+    for (let i = 29; i >= 0; i--) {
+      const d = new Date(today);
+      d.setDate(today.getDate() - i);
+      labels.push(d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+    }
+    // Mostly upward-trending fake data with some realistic wobble
+    const data = [
+      198, 215, 232, 211, 168, 142, 178,
+      241, 253, 268, 281, 263, 188, 162,
+      275, 298, 312, 326, 318, 224, 196,
+      308, 333, 351, 367, 358, 268, 240,
+      378, 412,
+    ];
+
+    const ctx = document.getElementById('visitorsChart');
+    const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 320);
+    gradient.addColorStop(0, alpha(C.blue, 0.25));
+    gradient.addColorStop(1, alpha(C.blue, 0));
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Visitors',
+          data,
+          borderColor: C.blue,
+          backgroundColor: gradient,
+          fill: true,
+          tension: 0.35,
+          pointRadius: 0,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: C.blue,
+          pointHoverBorderWidth: 2,
+        }],
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+          y: { beginAtZero: true, ticks: { stepSize: 100 } },
+        },
+      },
+    });
+  })();
+
+  // 2) Top actions — horizontal bar
+  (function () {
+    const labels = ['Status update', 'Investigate', 'Acknowledge', 'Troubleshoot CTA', 'Owner assignment', 'Comment', 'Mark as incident', 'Merge alert', 'Jira', 'ServiceNow'];
+    const data = [27.9, 27.2, 22.1, 14.5, 13.9, 9.6, 4.8, 1.6, 1.3, 0.2];
+    const colors = [C.blue, C.purple, C.blue, C.purple, C.blue, C.blue, C.blue, C.blue, C.green, C.green];
+
+    new Chart(document.getElementById('actionsChart'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{
+          data,
+          backgroundColor: colors,
+          borderRadius: 4,
+          barPercentage: 0.78,
+          categoryPercentage: 0.85,
+        }],
+      },
+      options: {
+        indexAxis: 'y',
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: (item) => `${item.parsed.x}%` } },
+        },
+        scales: {
+          x: { ticks: { callback: (v) => v + '%' }, max: 35 },
+          y: { grid: { display: false } },
+        },
+      },
+    });
+  })();
+
+  // 3) CTA performance over time — multi-series line
+  (function () {
+    const labels = ['Wk 1', 'Wk 2', 'Wk 3', 'Wk 4', 'Wk 5', 'Wk 6', 'Wk 7', 'Wk 8'];
+    new Chart(document.getElementById('ctaChart'), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Troubleshoot',  data: [9.8, 10.4, 11.1, 11.6, 12.3, 13.0, 13.8, 14.5], borderColor: C.purple, backgroundColor: alpha(C.purple, 0.08), pointHoverBackgroundColor: '#fff', pointHoverBorderColor: C.purple, pointHoverBorderWidth: 2 },
+          { label: 'Investigate',   data: [22.4, 23.1, 24.0, 24.8, 25.6, 26.3, 26.9, 27.2], borderColor: C.blue,   backgroundColor: alpha(C.blue, 0.08),   pointHoverBackgroundColor: '#fff', pointHoverBorderColor: C.blue,   pointHoverBorderWidth: 2 },
+          { label: 'Acknowledge',   data: [18.1, 19.2, 19.8, 20.3, 20.6, 21.1, 21.7, 22.1], borderColor: C.green,  backgroundColor: alpha(C.green, 0.08),  pointHoverBackgroundColor: '#fff', pointHoverBorderColor: C.green,  pointHoverBorderWidth: 2 },
+        ],
+      },
+      options: {
+        interaction: { mode: 'index', intersect: false },
+        plugins: { tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y}%` } } },
+        scales: {
+          x: { grid: { display: false } },
+          y: { ticks: { callback: (v) => v + '%' }, beginAtZero: true, max: 35 },
+        },
+      },
+    });
+  })();
+
+  // 4) Visitors by role — stacked bar
+  (function () {
+    const labels = ['Wk 1', 'Wk 2', 'Wk 3', 'Wk 4', 'Wk 5', 'Wk 6', 'Wk 7', 'Wk 8'];
+    new Chart(document.getElementById('rolesChart'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Owner / on-call',   data: [320, 348, 362, 391, 412, 408, 446, 472], backgroundColor: C.blue },
+          { label: 'Data engineer',     data: [218, 232, 246, 261, 280, 274, 298, 314], backgroundColor: C.purple },
+          { label: 'Data steward',      data: [128, 142, 151, 161, 174, 168, 182, 193], backgroundColor: C.green },
+          { label: 'Analyst / viewer',  data: [88, 92, 99, 104, 112, 109, 121, 128], backgroundColor: C.orange },
+        ],
+      },
+      options: {
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: { stacked: true, grid: { display: false } },
+          y: { stacked: true, beginAtZero: true },
+        },
+      },
+    });
+  })();
+
+  // 5) Investigate panel selections — bar
+  (function () {
+    const labels = ['Monitor', 'Asset', 'Code', 'Monitor notes', 'Data', 'Sample spans'];
+    const data = [66.0, 21.3, 7.5, 2.2, 1.2, 0.9];
+    const colors = [C.blue, C.purple, C.green, C.orange, C.gray, '#E07A4A'];
+
+    new Chart(document.getElementById('investigateChart'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{
+          data,
+          backgroundColor: colors,
+          borderRadius: 4,
+          barPercentage: 0.65,
+        }],
+      },
+      options: {
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: (item) => `${item.parsed.y}% of clicks` } },
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { ticks: { callback: (v) => v + '%' }, beginAtZero: true, max: 80 },
+        },
+      },
+    });
+  })();
+
+  // 6) Triage outcomes — donut
+  (function () {
+    new Chart(document.getElementById('outcomesChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Resolved', 'Acknowledged', 'Escalated', 'Stale / no action'],
+        datasets: [{
+          data: [2354, 1866, 401, 612],
+          backgroundColor: [C.green, C.blue, C.orange, C.gray],
+          borderColor: '#fff',
+          borderWidth: 2,
+        }],
+      },
+      options: {
+        cutout: '62%',
+        plugins: {
+          legend: { position: 'right', align: 'center' },
+          tooltip: { callbacks: { label: (i) => `${i.label}: ${i.parsed.toLocaleString()} alerts` } },
+        },
+      },
+    });
+  })();
+</script>
+
+</body>
+</html>
