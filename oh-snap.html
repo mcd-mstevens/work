@@ -16,10 +16,12 @@
   .report-header { margin-bottom: 8px; }
   .report-header h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.4px; color: #21242C; margin-bottom: 6px; }
   .report-header p { color: #676F7E; line-height: 1.7; }
-  .meta-pills { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-  .meta-pill { background: #fff; border: 1px solid #E2E2E2; border-radius: 20px; padding: 3px 11px; font-size: 12px; font-weight: 500; color: #676F7E; }
-  .meta-pill strong { color: #21242C; font-weight: 600; }
-  .meta-pill-warn { background: #FFF0E0; border-color: #FFD9B0; color: #CC6000; }
+  .header-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 6px; flex-wrap: wrap; }
+
+  .date-picker { display: inline-flex; background: #F4F4F5; border-radius: 8px; padding: 2px; }
+  .date-picker-btn { padding: 5px 10px; font-size: 12px; font-weight: 500; color: #676F7E; background: transparent; border: none; border-radius: 6px; cursor: pointer; transition: background 0.1s ease, color 0.1s ease; font-family: inherit; }
+  .date-picker-btn:hover { color: #21242C; }
+  .date-picker-btn.is-active { background: #fff; color: #21242C; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06); }
 
   .section-heading { font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; color: #676F7E; margin: 36px 0 12px; }
   .section-heading:first-of-type { margin-top: 32px; }
@@ -52,11 +54,18 @@
 <a class="back-link" href="index.html">← Back</a>
 
 <div class="report-header">
-  <h1>Oh snap</h1>
-  <p>What product analytics could look like across Monte Carlo once the APIs are wired up.</p>
-  <div class="meta-pills">
-    <span class="meta-pill-warn meta-pill">⚠︎ Fake data — for design only</span>
+  <div class="header-row">
+    <h1>Oh snap</h1>
+    <div class="date-picker" id="datePicker">
+      <button class="date-picker-btn" type="button">1 week</button>
+      <button class="date-picker-btn" type="button">2 weeks</button>
+      <button class="date-picker-btn" type="button">1 month</button>
+      <button class="date-picker-btn" type="button">3 months</button>
+      <button class="date-picker-btn" type="button">6 months</button>
+      <button class="date-picker-btn is-active" type="button">1 year</button>
+    </div>
   </div>
+  <p>What product analytics could look like across Monte Carlo once the APIs are wired up.</p>
 </div>
 
 <!-- =================================================================== HERO: WAU -->
@@ -207,6 +216,18 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="charts.js"></script>
 <script>
+  // Date picker — visual toggle only (no data refetch in this prototype)
+  (function () {
+    const picker = document.getElementById('datePicker');
+    if (!picker) return;
+    picker.addEventListener('click', (e) => {
+      const btn = e.target.closest('.date-picker-btn');
+      if (!btn) return;
+      picker.querySelectorAll('.date-picker-btn').forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    });
+  })();
+
   const C = window.MC_CHART_COLORS;
   const SERIES = window.MC_SERIES_PALETTE;
   const alpha = window.mcAlpha;
