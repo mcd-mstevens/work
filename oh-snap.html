@@ -86,6 +86,21 @@
   </div>
 </div>
 
+<!-- =================================================================== MCP ADOPTION -->
+<h2 class="section-heading">MCP adoption</h2>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">MCP adoption over time</div>
+        <div class="chart-sub">Monthly active MCP connections, by client</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="mcpAdoption"></canvas></div>
+  </div>
+</div>
+
 <!-- =================================================================== MONITORS -->
 <h2 class="section-heading">Monitors</h2>
 
@@ -381,6 +396,23 @@
           lineDataset('Cost agent',            [80, 120, 170, 220, 280, 340, 400, 460, 510, 560, 600, 620], C.green),
           lineDataset('Monitoring agent',      [20, 45, 90, 140, 200, 260, 320, 370, 410, 445, 470, 480], C.orange),
           lineDataset('PII',                   [40, 60, 90, 125, 160, 195, 225, 250, 275, 295, 305, 310], C.teal),
+        ],
+      },
+      options: trendOpts(),
+    });
+  })();
+
+  // ============ MCP ADOPTION ============
+  (function () {
+    new Chart(document.getElementById('mcpAdoption'), {
+      type: 'line',
+      data: {
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Claude Desktop', [40, 80, 140, 220, 310, 410, 520, 640, 770, 910, 1060, 1220], C.blue),
+          lineDataset('Cursor',         [60, 120, 200, 290, 380, 480, 580, 690, 810, 940, 1080, 1230], C.purple),
+          lineDataset('Continue',       [10, 25, 50, 80, 120, 165, 215, 270, 325, 380, 435, 490], C.green),
+          lineDataset('Other / API',    [5, 15, 30, 50, 75, 105, 140, 180, 220, 260, 295, 325], C.orange),
         ],
       },
       options: trendOpts(),
