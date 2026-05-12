@@ -24,6 +24,13 @@
   .section-heading { font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; color: #676F7E; margin: 36px 0 12px; }
   .section-heading:first-of-type { margin-top: 32px; }
 
+  .hero-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 22px 26px; margin-top: 24px; }
+  .hero-label { font-size: 12px; color: #676F7E; font-weight: 500; margin-bottom: 6px; }
+  .hero-value-row { display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px; }
+  .hero-value { font-size: 38px; font-weight: 600; letter-spacing: -0.6px; color: #21242C; line-height: 1.05; }
+  .hero-delta { font-size: 13px; font-weight: 600; color: #276334; }
+  .hero-chart { height: 180px; position: relative; }
+
   .chart-grid { display: grid; gap: 12px; margin-bottom: 12px; }
   .chart-grid.cols-2 { grid-template-columns: 1fr 1fr; }
 
@@ -50,6 +57,16 @@
   <div class="meta-pills">
     <span class="meta-pill-warn meta-pill">⚠︎ Fake data — for design only</span>
   </div>
+</div>
+
+<!-- =================================================================== HERO: WAU -->
+<div class="hero-card">
+  <div class="hero-label">Weekly active users</div>
+  <div class="hero-value-row">
+    <div class="hero-value" id="wauValue">12,847</div>
+    <div class="hero-delta" id="wauDelta">+18% vs last year</div>
+  </div>
+  <div class="hero-chart"><canvas id="wauChart"></canvas></div>
 </div>
 
 <!-- =================================================================== MONITORS -->
@@ -172,6 +189,21 @@
   </div>
 </div>
 
+<!-- =================================================================== PERFORMANCE -->
+<h2 class="section-heading">Performance</h2>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Performance adoption over time</div>
+        <div class="chart-sub">Performance monitors created, by metric type, monthly</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="perfAdoption"></canvas></div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="charts.js"></script>
 <script>
@@ -223,6 +255,33 @@
       y: { beginAtZero: true, ...yOpts },
     },
   });
+
+  // ============ HERO: WAU ============
+  (function () {
+    const ctx = document.getElementById('wauChart');
+    const g = ctx.getContext('2d').createLinearGradient(0, 0, 0, 200);
+    g.addColorStop(0, alpha(C.blue, 0.32));
+    g.addColorStop(1, alpha(C.blue, 0));
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: MONTHS,
+        datasets: [{
+          ...lineDataset('Weekly active users', [8420, 8650, 9020, 9450, 9780, 10250, 10580, 10960, 11380, 11820, 12410, 12847], C.blue, false),
+          backgroundColor: g,
+          fill: true,
+        }],
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: { grid: { display: false }, ticks: { maxRotation: 0 } },
+          y: { beginAtZero: false, ticks: { callback: (v) => (v / 1000) + 'k' } },
+        },
+      },
+    });
+  })();
 
   // ============ MONITORS ============
 
@@ -446,6 +505,24 @@
           lineDataset('Table',          [34, 42, 52, 64, 78, 94, 112, 130, 150, 172, 196, 222], C.green),
           lineDataset('Monitor status', [18, 24, 32, 42, 54, 68, 84, 100, 118, 138, 160, 184], C.orange),
           lineDataset('Text',           [12, 16, 22, 30, 40, 52, 66, 82, 100, 120, 142, 166], C.teal),
+        ],
+      },
+      options: trendOpts(),
+    });
+  })();
+
+  // ============ PERFORMANCE ============
+
+  // 11. Performance adoption — read queries, write queries, job performance
+  (function () {
+    new Chart(document.getElementById('perfAdoption'), {
+      type: 'line',
+      data: {
+        labels: MONTHS,
+        datasets: [
+          lineDataset('Read queries',    [180, 210, 250, 300, 340, 380, 420, 470, 530, 600, 690, 790], C.blue),
+          lineDataset('Write queries',   [120, 140, 168, 200, 230, 258, 290, 325, 365, 410, 470, 540], C.purple),
+          lineDataset('Job performance', [60, 75, 95, 120, 145, 172, 200, 230, 265, 300, 350, 410], C.green),
         ],
       },
       options: trendOpts(),
