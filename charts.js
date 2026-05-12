@@ -69,7 +69,21 @@
   Chart.defaults.plugins.tooltip.cornerRadius = 6;
   Chart.defaults.plugins.tooltip.displayColors = true;
   Chart.defaults.plugins.tooltip.boxPadding = 6;
+  Chart.defaults.plugins.tooltip.boxWidth = 8;
+  Chart.defaults.plugins.tooltip.boxHeight = 8;
   Chart.defaults.plugins.tooltip.usePointStyle = true;
+
+  // Tooltip swatch: solid filled dot, no stroke, matching the legend.
+  // Stacked-area datasets use white borderColor for layer separators, so fall back
+  // to backgroundColor in that case to get the actual series color.
+  Chart.defaults.plugins.tooltip.callbacks.labelColor = function (context) {
+    const ds = context.dataset;
+    let color = ds.borderColor;
+    if (color === "#fff" || color === "#FFFFFF" || color === "rgb(255, 255, 255)") {
+      color = ds.backgroundColor;
+    }
+    return { backgroundColor: color, borderColor: color, borderWidth: 0 };
+  };
 
   // Line/Bar element defaults
   Chart.defaults.elements.line.tension = 0.32;
