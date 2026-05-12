@@ -69,6 +69,7 @@
   Chart.defaults.plugins.tooltip.cornerRadius = 6;
   Chart.defaults.plugins.tooltip.displayColors = true;
   Chart.defaults.plugins.tooltip.boxPadding = 6;
+  Chart.defaults.plugins.tooltip.usePointStyle = true;
 
   // Line/Bar element defaults
   Chart.defaults.elements.line.tension = 0.32;
