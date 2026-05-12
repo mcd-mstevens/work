@@ -14,9 +14,7 @@
   .back-link:hover { color: #21242C; }
 
   .report-header { margin-bottom: 8px; }
-  .report-header h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.4px; color: #21242C; margin-bottom: 6px; }
-  .report-header p { color: #676F7E; line-height: 1.7; }
-  .header-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 6px; flex-wrap: wrap; }
+  .report-header h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.4px; color: #21242C; margin-bottom: 14px; }
 
   .date-picker { display: inline-flex; background: #F4F4F5; border-radius: 8px; padding: 2px; }
   .date-picker-btn { padding: 5px 10px; font-size: 12px; font-weight: 500; color: #676F7E; background: transparent; border: none; border-radius: 6px; cursor: pointer; transition: background 0.1s ease, color 0.1s ease; font-family: inherit; }
@@ -54,18 +52,13 @@
 <a class="back-link" href="index.html">← Back</a>
 
 <div class="report-header">
-  <div class="header-row">
-    <h1>Oh snap</h1>
-    <div class="date-picker" id="datePicker">
-      <button class="date-picker-btn" type="button">1 week</button>
-      <button class="date-picker-btn" type="button">2 weeks</button>
-      <button class="date-picker-btn" type="button">1 month</button>
-      <button class="date-picker-btn" type="button">3 months</button>
-      <button class="date-picker-btn" type="button">6 months</button>
-      <button class="date-picker-btn is-active" type="button">1 year</button>
-    </div>
+  <h1>Oh snap</h1>
+  <div class="date-picker" id="datePicker">
+    <button class="date-picker-btn" type="button">1 month</button>
+    <button class="date-picker-btn" type="button">3 months</button>
+    <button class="date-picker-btn" type="button">6 months</button>
+    <button class="date-picker-btn is-active" type="button">1 year</button>
   </div>
-  <p>What product analytics could look like across Monte Carlo once the APIs are wired up.</p>
 </div>
 
 <!-- =================================================================== HERO: WAU -->
