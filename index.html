@@ -20,7 +20,7 @@
       </a>
       <a href="https://mc-ia.lovable.app/" class="group-link" target="_blank" rel="noopener">
         <span class="group-name">Monte Carlo</span>
-        <span class="link-badge link-badge-orange">WIP</span>
+        <span class="link-badge link-badge-green">WIP</span>
       </a>
       <a href="https://b0b.lovable.app/" class="group-link" target="_blank" rel="noopener">
         <span class="group-name">Bob</span>
@@ -28,7 +28,7 @@
       </a>
       <a href="https://mc-2.lovable.app/" class="group-link" target="_blank" rel="noopener">
         <span class="group-name">Bob</span>
-        <span class="link-badge link-badge-purple">Exploration</span>
+        <span class="link-badge">Exploration</span>
       </a>
     </div>
   </div>
@@ -69,7 +69,7 @@
   const el = document.getElementById('pr-list');
   try {
     const res = await fetch('prs.json');
-    const items = await res.json();
+    const items = (await res.json()).filter(pr => pr.merged_at || pr.state === 'open');
     if (!items?.length) { el.innerHTML = '<span class="pr-loading">No PRs yet.</span>'; return; }
     el.innerHTML = items.map(pr => {
       const state = pr.merged_at ? 'merged' : pr.state;
