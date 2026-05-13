@@ -1,19 +1,19 @@
 [
   {
+    "number": 13217,
+    "title": "Show Jobs filter search results unchecked and add \"Select all matching\"",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13217",
+    "state": "closed",
+    "updated_at": "2026-05-13T14:10:37Z",
+    "merged_at": null
+  },
+  {
     "number": 13227,
     "title": "DES-505 Fix sloppy table layouts in cards across Settings, Profile, and Assets pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13227",
     "state": "closed",
     "updated_at": "2026-05-09T10:16:03Z",
     "merged_at": "2026-05-09T10:16:02Z"
-  },
-  {
-    "number": 13217,
-    "title": "Show Jobs filter search results unchecked and add \"Select all matching\"",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13217",
-    "state": "open",
-    "updated_at": "2026-05-07T18:48:39Z",
-    "merged_at": null
   },
   {
     "number": 13210,
