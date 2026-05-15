@@ -16,14 +16,6 @@
     "merged_at": null
   },
   {
-    "number": 13227,
-    "title": "DES-505 Fix sloppy table layouts in cards across Settings, Profile, and Assets pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13227",
-    "state": "closed",
-    "updated_at": "2026-05-09T10:16:03Z",
-    "merged_at": "2026-05-09T10:16:02Z"
-  },
-  {
     "number": 13210,
     "title": "Add data product filter to DQ dashboard and alerts",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13210",
@@ -158,5 +150,13 @@
     "state": "closed",
     "updated_at": "2026-04-22T19:44:36Z",
     "merged_at": "2026-04-22T19:44:34Z"
+  },
+  {
+    "number": 12992,
+    "title": "Bob monitors added: clean up created-monitor display names",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12992",
+    "state": "closed",
+    "updated_at": "2026-04-22T19:35:17Z",
+    "merged_at": "2026-04-22T19:35:16Z"
   }
 ]
