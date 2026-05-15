@@ -1,5 +1,13 @@
 [
   {
+    "number": 13521,
+    "title": "fix: restore user menu hover in dark mode",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13521",
+    "state": "closed",
+    "updated_at": "2026-05-15T16:17:44Z",
+    "merged_at": "2026-05-15T16:17:42Z"
+  },
+  {
     "number": 13442,
     "title": "Jobs Performance: search input above charts (replaces Job name facet)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13442",
@@ -150,13 +158,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T19:47:44Z",
     "merged_at": "2026-04-22T19:47:43Z"
-  },
-  {
-    "number": 13001,
-    "title": "Bob nav: persist sort + filters when returning to findings list",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13001",
-    "state": "closed",
-    "updated_at": "2026-04-22T19:44:36Z",
-    "merged_at": "2026-04-22T19:44:34Z"
   }
 ]
