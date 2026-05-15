@@ -68,7 +68,7 @@
 (async function () {
   const el = document.getElementById('pr-list');
   try {
-    const res = await fetch('prs.json');
+    const res = await fetch('prs.json', { cache: 'no-store' });
     const items = (await res.json()).filter(pr => pr.merged_at || pr.state === 'open');
     if (!items?.length) { el.innerHTML = '<span class="pr-loading">No PRs yet.</span>'; return; }
     el.innerHTML = items.map(pr => {
