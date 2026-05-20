@@ -206,7 +206,7 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Action adoption</div>
-        <div class="chart-sub">% of alert viewers who took each action, monthly</div>
+        <div class="chart-sub">Alerts with each action taken</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="alertsAdoption"></canvas></div>
@@ -267,6 +267,11 @@
     dashCoverage:[226,243,295,318,260,238,229,205,172,177,169,152,161,156,156,174],
     dashActivity:[164,178,208,221,193,154,183,180,154,170,142,126,123,98,111,133],
     dashCustom:  [10,167,146,162,135,122,131,148,124,140,114,94,103,102,86,115],
+    alertStatus: [20925,41744,31108,20811,21606,20516,21084,21824,22386,21105,22074,36069,23280,23315,22981,25633],
+    alertOwner:  [3520,4415,4675,3627,4128,3663,3608,4422,4730,3871,4518,5125,3744,3787,4748,4997],
+    alertComment:[2471,2299,2619,2417,2458,2549,2388,2384,2573,2613,3327,3118,2531,2155,2361,2748],
+    alertFb:     [646,769,719,940,1144,762,888,876,974,787,876,1056,804,601,617,796],
+    alertJira:   [161,132,181,215,279,184,194,169,242,181,137,167,159,189,168,214],
   };
 
   // Monthly data: Jun 2025 – Apr 2026 (11 complete months; May excluded — month in progress)
@@ -297,17 +302,16 @@
     agCustMorn:  [0,0,0,0,0,0,0,0,3,16,4],
     agCustEnt:   [0,0,0,0,0,0,0,0,0,0,13],
     agCustVel:   [0,0,0,0,0,0,0,0,0,0,0],
-    agCustOther: [0,0,0,54,33,12,35,39,67,59,81],
-    agEval:      [0,0,0,56,29,7,19,31,36,53,61],
-    agMetric:    [0,0,0,7,4,6,16,10,24,17,46],
-    agTraj:      [0,0,0,0,0,0,0,0,10,4,9],
-    agValidat:   [0,0,0,0,0,0,0,0,0,20,7],
-    alertStatus: [57.4,55.8,55.6,54.1,52.2,53,54.6,53.1,51.5,52.3,53.6],
-    alertComment:[11.3,11.5,9.3,9,9.5,9.5,9.2,9.9,10.3,9.8,10.5],
-    alertOwner:  [10.2,9.4,9.1,8.7,8.2,8.6,8.1,8.2,8.4,8.1,8.4],
-    alertSev:    [7.4,7,7.2,7.2,6.3,5.7,4.9,5.2,4.9,4.9,5.1],
-    alertFb:     [4.8,5.8,6.3,6.2,5.9,6.1,6.3,5.8,5.7,5.8,5.7],
-    alertJira:   [1.5,1.8,1.5,1.6,1.4,1.5,1.5,1.4,1.3,1.2,1.2],
+    agCustOther: [0,0,0,0,0,0,0,0,3,4,9],
+    agEval:      [0,0,0,8,0,1,0,2,5,31,19],
+    agMetric:    [0,0,0,1,0,0,0,0,1,5,27],
+    agTraj:      [0,0,0,0,0,0,0,0,0,0,2],
+    agValidat:   [0,0,0,0,0,0,0,0,0,3,3],
+    alertStatus: [74489,80196,80779,81727,90808,81945,90931,115163,91542,95412,109292],
+    alertOwner:  [13743,15143,15436,16984,16626,14581,15677,14817,15857,18770,18008],
+    alertComment:[8726,9009,8828,9354,12046,9513,10428,9354,9735,11082,11025],
+    alertFb:     [1953,2264,2444,2999,3463,3068,3701,3027,3534,3959,3352],
+    alertJira:   [684,667,614,652,638,697,623,654,859,867,711],
     dashDataOps: [2121,2161,2042,1980,1586,1209,928,998,1073,1024,787],
     dashDQ:      [736,760,698,838,1255,1099,881,937,987,954,747],
     dashDaily:   [565,568,532,645,995,830,664,720,721,691,500],
@@ -403,11 +407,10 @@
 
   CHARTS.alertsAdoption = new Chart(document.getElementById('alertsAdoption'), { type:'line',
     data:{ labels:[], datasets:[
-      line('Status update',[],C.blue), line('Comment',[],C.purple),
-      line('Owner update',[],C.green), line('Severity update',[],C.orange),
-      line('Feedback',[],C.teal), line('Jira ticket',[],C.pink),
-    ]}, options:{...opts({ticks:{callback:(v)=>v+'%'}}),
-      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}%`}}}} });
+      line('Status update',[],C.blue), line('Owner update',[],C.green),
+      line('Comment',[],C.purple), line('Feedback',[],C.teal),
+      line('Jira ticket',[],C.pink),
+    ]}, options:opts() });
 
   CHARTS.dashByDashboard = new Chart(document.getElementById('dashByDashboard'), { type:'line',
     data:{ labels:[], datasets:[
@@ -469,7 +472,7 @@
     // Trend charts: always show full history so bars never collapse to 1
     upd(CHARTS.agentByCustomer, ALL_MONTHS, [D.agCustOther,D.agCustXom,D.agCustAxios,D.agCustMorn,D.agCustEnt,D.agCustVel]);
     upd(CHARTS.agentByType,     ALL_MONTHS, [D.agEval,D.agMetric,D.agTraj,D.agValidat]);
-    upd(CHARTS.alertsAdoption,  mLabels, [ms(D.alertStatus),ms(D.alertComment),ms(D.alertOwner),ms(D.alertSev),ms(D.alertFb),ms(D.alertJira)]);
+    upd(CHARTS.alertsAdoption,  labels,  [s(src.alertStatus),s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
   }
 
   // ── Wire picker ──────────────────────────────────────────────────────────
