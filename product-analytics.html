@@ -58,9 +58,10 @@
 <div class="report-header">
   <h1>Product analytics</h1>
   <div class="date-picker" id="datePicker">
+    <button class="date-picker-btn" type="button">1 week</button>
+    <button class="date-picker-btn" type="button">2 weeks</button>
     <button class="date-picker-btn" type="button">1 month</button>
     <button class="date-picker-btn is-active" type="button">3 months</button>
-    <button class="date-picker-btn" type="button">6 months</button>
     <button class="date-picker-btn" type="button">12 months</button>
   </div>
 </div>
@@ -272,7 +273,37 @@
   const C = window.MC_CHART_COLORS;
   const alpha = window.mcAlpha;
 
-  // All data: Jun 2025 – May 2026 (12 months)
+  // Weekly data: Mar 2 – May 11 2026 (11 complete weeks; May 18 excluded — partial)
+  const ALL_WEEKS = ['Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4','May 11'];
+  const WD = {
+    wau:         [2992,2977,2769,2887,2735,2730,2898,2896,2776,2948,2895],
+    tsaAgent:    [259,275,226,213,202,212,212,202,213,201,212],
+    oaAlert:     [353,360,325,290,262,291,309,297,285,300,163],
+    oaSidebar:   [69,67,70,88,75,84,86,82,92,108,154],
+    oaFullPage:  [119,147,114,141,108,126,120,146,101,90,86],
+    oaMonitor:   [83,82,63,55,40,59,60,57,54,59,52],
+    mcpOther:    [0,0,0,0,0,0,145,611,592,548,452],
+    mcpClaude:   [0,0,0,0,0,0,0,0,18,67,79],
+    mcpNode:     [0,0,0,0,0,0,0,0,13,32,30],
+    mcpCursor:   [0,0,0,0,0,0,0,0,4,15,26],
+    mcpVscode:   [0,0,0,0,0,0,0,0,1,12,7],
+    mcpPython:   [0,0,0,0,0,0,0,0,1,2,3],
+    monStats:    [2512,2154,614,491,479,25255,25268,1743,1087,756,6380],
+    monSql:      [3852,3348,4683,1512,3156,3118,2979,3195,2838,1587,3768],
+    monTable:    [1056,1659,754,733,823,2490,904,583,396,533,880],
+    monValid:    [219,274,461,137,326,286,611,254,240,291,292],
+    monVol:      [183,113,273,73,192,130,112,125,75,854,152],
+    monFresh:    [319,309,261,62,424,163,111,106,105,234,88],
+    monMetric:   [766,54,39,99,63,43,49,67,32,268,28],
+    dashDataOps: [337,340,283,287,247,234,244,256,229,275,279],
+    dashDQ:      [313,338,265,279,223,221,238,254,214,261,275],
+    dashDaily:   [219,217,163,167,148,129,142,131,150,171,162],
+    dashCoverage:[229,205,172,177,169,152,161,156,156,174,188],
+    dashActivity:[183,180,154,170,142,126,123,98,111,133,154],
+    dashCustom:  [131,148,124,140,114,94,103,102,86,115,117],
+  };
+
+  // Monthly data: Jun 2025 – May 2026 (12 months)
   const ALL_MONTHS = ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'];
 
   const D = {
@@ -501,56 +532,72 @@
       line('Jira',[],C.purple), line('Opsgenie',[],C.teal),
     ]}, options:opts() });
 
-  // ── Update all charts to a given month window ────────────────────────────
+  // ── Update all charts ────────────────────────────────────────────────────
   function avg(arr) { return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
 
-  function upd(chart, datasets) {
+  function upd(chart, labels, datasets) {
+    chart.data.labels = labels;
     datasets.forEach((d, i) => { chart.data.datasets[i].data = d; });
     chart.update('none');
   }
 
-  function updateCharts(n) {
-    const s = (arr) => arr.slice(-n);
-    const labels = ALL_MONTHS.slice(-n);
+  function updateCharts(w) {
+    // w = { n, src: 'weekly' | 'monthly' }
+    const weekly  = w.src === 'weekly';
+    const src     = weekly ? WD : D;
+    const allLbls = weekly ? ALL_WEEKS : ALL_MONTHS;
+    const labels  = allLbls.slice(-w.n);
+    const s       = (arr) => arr.slice(-w.n);
 
-    // Update hero
-    const wauWindow = D.wau.slice(-n);
-    const wauPrior  = D.wau.slice(-2*n, -n);
-    const wauAvg    = Math.round(avg(wauWindow));
-    document.getElementById('wauValue').textContent = wauAvg.toLocaleString();
+    // Charts without weekly data fall back to 3 months of monthly data
+    const mn      = weekly ? 3 : w.n;
+    const mLabels = ALL_MONTHS.slice(-mn);
+    const ms      = (arr) => arr.slice(-mn);
+
+    // Hero: last value in window + delta vs prior same-length window
+    const wauArr    = src.wau;
+    const wauWindow = wauArr.slice(-w.n);
+    const wauPrior  = wauArr.slice(-2 * w.n, -w.n);
+    document.getElementById('wauValue').textContent = wauWindow[wauWindow.length - 1].toLocaleString();
     const deltaEl = document.getElementById('wauDelta');
-    if (wauPrior.length === n) {
-      const pct = (wauAvg - avg(wauPrior)) / avg(wauPrior) * 100;
+    if (wauPrior.length === w.n) {
+      const pct = (avg(wauWindow) - avg(wauPrior)) / avg(wauPrior) * 100;
       deltaEl.textContent = `${pct >= 0 ? '+' : ''}${pct.toFixed(1)}% vs prior period`;
       deltaEl.style.color = pct >= 0 ? '#276334' : '#B71C1C';
     } else {
       deltaEl.textContent = '';
     }
 
-    // Update all chart labels then data
-    Object.values(CHARTS).forEach((c) => { c.data.labels = labels; });
+    // Charts that have both weekly and monthly data
+    upd(CHARTS.wau,            labels, [s(src.wau)]);
+    upd(CHARTS.agentAdoption,  labels, [s(src.tsaAgent),s(src.oaAlert),s(src.oaSidebar),s(src.oaFullPage),s(src.oaMonitor)]);
+    upd(CHARTS.mcpAdoption,    labels, [s(src.mcpOther),s(src.mcpClaude),s(src.mcpNode),s(src.mcpCursor),s(src.mcpVscode),s(src.mcpPython)]);
+    upd(CHARTS.monTotal,       labels, [s(src.monStats),s(src.monSql),s(src.monTable),s(src.monValid),s(src.monVol),s(src.monFresh),s(src.monMetric)]);
+    upd(CHARTS.monByType,      labels, [s(src.monStats),s(src.monSql),s(src.monTable),s(src.monValid),s(src.monVol),s(src.monFresh),s(src.monMetric)]);
+    upd(CHARTS.dashByDashboard,labels, [s(src.dashDataOps),s(src.dashDQ),s(src.dashDaily),s(src.dashCoverage),s(src.dashActivity),s(src.dashCustom)]);
 
-    upd(CHARTS.wau,             [s(D.wau)]);
-    upd(CHARTS.agentAdoption,   [s(D.tsaAgent),s(D.oaAlert),s(D.oaSidebar),s(D.oaFullPage),s(D.oaMonitor)]);
-    upd(CHARTS.mcpAdoption,     [s(D.mcpOther),s(D.mcpClaude),s(D.mcpNode),s(D.mcpCursor),s(D.mcpVscode),s(D.mcpPython)]);
-    upd(CHARTS.monTotal,        [s(D.monStats),s(D.monSql),s(D.monTable),s(D.monValid),s(D.monVol),s(D.monFresh),s(D.monMetric)]);
-    upd(CHARTS.agentByCustomer, [s(D.agCustXom),s(D.agCustAxios),s(D.agCustMorn),s(D.agCustEnt),s(D.agCustVel)]);
-    upd(CHARTS.monByType,       [s(D.monStats),s(D.monSql),s(D.monTable),s(D.monValid),s(D.monVol),s(D.monFresh),s(D.monMetric)]);
-    upd(CHARTS.agentByType,     [s(D.agEval),s(D.agMetric),s(D.agTraj),s(D.agValidat)]);
-    upd(CHARTS.monTtc,          [s(FK.monTtcSql),s(FK.monTtcValid),s(FK.monTtcMet),s(FK.monTtcTable)]);
-    upd(CHARTS.agentTtc,        [s(FK.agTtcEval),s(FK.agTtcTraj),s(FK.agTtcMet),s(FK.agTtcValid)]);
-    upd(CHARTS.monCompletion,   [s(FK.monCompTable),s(FK.monCompSql),s(FK.monCompMet),s(FK.monCompValid)]);
-    upd(CHARTS.agentCompletion, [s(FK.agCompEval),s(FK.agCompTraj),s(FK.agCompMet),s(FK.agCompValid)]);
-    upd(CHARTS.alertsAdoption,  [s(D.alertStatus),s(D.alertComment),s(D.alertOwner),s(D.alertSev),s(D.alertFb),s(D.alertJira)]);
-    upd(CHARTS.dashByDashboard, [s(D.dashDataOps),s(D.dashDQ),s(D.dashDaily),s(D.dashCoverage),s(D.dashActivity),s(D.dashCustom)]);
-    upd(CHARTS.customDash,      [s(D.customDash)]);
-    upd(CHARTS.customWidgets,   [s(D.customWdg)]);
-    upd(CHARTS.perfAdoption,    [s(D.perfStats),s(D.perfQuery)]);
-    upd(CHARTS.integrationsChart,[s(D.intDataConn),s(D.intDatabricks),s(D.intPager),s(D.intTableau),s(D.intJira),s(D.intOpsgenie)]);
+    // Monthly-only charts (always use mLabels / ms)
+    upd(CHARTS.agentByCustomer, mLabels, [ms(D.agCustXom),ms(D.agCustAxios),ms(D.agCustMorn),ms(D.agCustEnt),ms(D.agCustVel)]);
+    upd(CHARTS.agentByType,     mLabels, [ms(D.agEval),ms(D.agMetric),ms(D.agTraj),ms(D.agValidat)]);
+    upd(CHARTS.monTtc,          mLabels, [ms(FK.monTtcSql),ms(FK.monTtcValid),ms(FK.monTtcMet),ms(FK.monTtcTable)]);
+    upd(CHARTS.agentTtc,        mLabels, [ms(FK.agTtcEval),ms(FK.agTtcTraj),ms(FK.agTtcMet),ms(FK.agTtcValid)]);
+    upd(CHARTS.monCompletion,   mLabels, [ms(FK.monCompTable),ms(FK.monCompSql),ms(FK.monCompMet),ms(FK.monCompValid)]);
+    upd(CHARTS.agentCompletion, mLabels, [ms(FK.agCompEval),ms(FK.agCompTraj),ms(FK.agCompMet),ms(FK.agCompValid)]);
+    upd(CHARTS.alertsAdoption,  mLabels, [ms(D.alertStatus),ms(D.alertComment),ms(D.alertOwner),ms(D.alertSev),ms(D.alertFb),ms(D.alertJira)]);
+    upd(CHARTS.customDash,      mLabels, [ms(D.customDash)]);
+    upd(CHARTS.customWidgets,   mLabels, [ms(D.customWdg)]);
+    upd(CHARTS.perfAdoption,    mLabels, [ms(D.perfStats),ms(D.perfQuery)]);
+    upd(CHARTS.integrationsChart,mLabels,[ms(D.intDataConn),ms(D.intDatabricks),ms(D.intPager),ms(D.intTableau),ms(D.intJira),ms(D.intOpsgenie)]);
   }
 
   // ── Wire picker ──────────────────────────────────────────────────────────
-  const WINDOWS = { '1 month':1, '3 months':3, '6 months':6, '12 months':12 };
+  const WINDOWS = {
+    '1 week':   { n: 2,  src: 'weekly' },
+    '2 weeks':  { n: 4,  src: 'weekly' },
+    '1 month':  { n: 5,  src: 'weekly' },
+    '3 months': { n: 3,  src: 'monthly' },
+    '12 months':{ n: 12, src: 'monthly' },
+  };
   document.getElementById('datePicker').addEventListener('click', (e) => {
     const btn = e.target.closest('.date-picker-btn');
     if (!btn) return;
@@ -559,8 +606,8 @@
     updateCharts(WINDOWS[btn.textContent.trim()]);
   });
 
-  // Initial render
-  updateCharts(3);
+  // Initial render — 3 months
+  updateCharts(WINDOWS['3 months']);
 })();
 </script>
 
