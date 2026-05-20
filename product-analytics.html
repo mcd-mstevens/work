@@ -105,7 +105,6 @@
       <a class="nav-link" href="#sec-monitors">Monitors</a>
       <a class="nav-link" href="#sec-alerts">Alerts</a>
       <a class="nav-link" href="#sec-dashboards">Dashboards</a>
-      <a class="nav-link" href="#sec-performance">Performance</a>
     </div>
   </nav>
 </aside>
@@ -230,20 +229,6 @@
 </div>
 
 
-<!-- =================================================================== PERFORMANCE & INTEGRATIONS -->
-<h2 class="section-heading" id="sec-performance">Performance</h2>
-
-<div class="chart-grid">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Performance adoption over time</div>
-        <div class="chart-sub">Query performance monitors created, per month</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="perfAdoption"></canvas></div>
-  </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="charts.js"></script>
@@ -275,6 +260,7 @@
     monVol:      [122,122,221,121,340,122,183,113,273,73,192,130,112,125,75,854],
     monFresh:    [131,174,151,90,302,107,319,309,261,62,424,163,111,106,105,234],
     monMetric:   [33,36,671,77,647,556,766,54,39,99,63,43,49,67,32,268],
+    monPerf:     [2,2,1,2,2,1,2,2,1,2,1,1,1,2,1,1],
     dashDataOps: [317,333,351,395,323,320,337,340,283,287,247,234,244,256,229,275],
     dashDQ:      [280,322,341,362,322,290,313,338,265,279,223,221,238,254,214,261],
     dashDaily:   [189,221,224,256,220,177,219,217,163,167,148,129,142,131,150,171],
@@ -331,6 +317,7 @@
     customDash:  [0,0,0,0,0,0,0,47,44,56,30],
     customWdg:   [0,0,0,0,0,0,0,97,100,131,140],
     perfQuery:   [13,10,6,13,9,10,8,4,6,8,5],
+    monPerf:     [13,10,6,13,9,10,8,4,6,8,5],
     intDatabricks:[12,9,11,9,11,4,10,7,17,11,9],
     intPager:    [9,8,3,12,8,4,8,7,12,14,3],
     intJira:     [5,16,4,12,6,5,3,5,4,10,8],
@@ -388,6 +375,7 @@
       stacked('Table',[],C.green), stacked('Validation',[],C.orange),
       stacked('Volume',[],C.teal), stacked('Freshness',[],C.red),
       stacked('Metric comparison',[],C.pink),
+      stacked('Query performance',[],C.gray),
     ]}, options:stackedOpts });
 
   CHARTS.agentByCustomer = new Chart(document.getElementById('agentByCustomer'), { type:'bar',
@@ -429,11 +417,6 @@
     ]}, options:opts() });
 
 
-
-  CHARTS.perfAdoption = new Chart(document.getElementById('perfAdoption'), { type:'line',
-    data:{ labels:[], datasets:[
-      line('Query performance',[],C.purple),
-    ]}, options:{...opts(), plugins:{legend:{display:false}}} });
 
   // ── Update all charts ────────────────────────────────────────────────────
   function avg(arr) { return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
@@ -479,7 +462,7 @@
     upd(CHARTS.wau,            labels, [s(src.wau)]);
     upd(CHARTS.agentAdoption,  labels, [s(src.tsaAgent),s(src.oaAlert),s(src.oaSidebar),s(src.oaFullPage),s(src.oaMonitor)]);
     upd(CHARTS.mcpAdoption,    labels, [s(src.mcpOther),s(src.mcpClaude),s(src.mcpNode),s(src.mcpCursor),s(src.mcpVscode),s(src.mcpPython)]);
-    upd(CHARTS.monTotal,       labels, [s(src.monStats),s(src.monSql),s(src.monTable),s(src.monValid),s(src.monVol),s(src.monFresh),s(src.monMetric)]);
+    upd(CHARTS.monTotal,       labels, [s(src.monStats),s(src.monSql),s(src.monTable),s(src.monValid),s(src.monVol),s(src.monFresh),s(src.monMetric),s(src.monPerf)]);
     upd(CHARTS.dashByDashboard,labels, [s(src.dashDataOps),s(src.dashDQ),s(src.dashDaily),s(src.dashCoverage),s(src.dashActivity),s(src.dashCustom)]);
 
     // Monthly-only charts (always use mLabels / ms)
@@ -487,7 +470,6 @@
     upd(CHARTS.agentByCustomer, ALL_MONTHS, [D.agCustOther,D.agCustXom,D.agCustAxios,D.agCustMorn,D.agCustEnt,D.agCustVel]);
     upd(CHARTS.agentByType,     ALL_MONTHS, [D.agEval,D.agMetric,D.agTraj,D.agValidat]);
     upd(CHARTS.alertsAdoption,  mLabels, [ms(D.alertStatus),ms(D.alertComment),ms(D.alertOwner),ms(D.alertSev),ms(D.alertFb),ms(D.alertJira)]);
-    upd(CHARTS.perfAdoption,    mLabels, [ms(D.perfQuery)]);
   }
 
   // ── Wire picker ──────────────────────────────────────────────────────────
