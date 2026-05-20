@@ -42,6 +42,10 @@
   .chart-canvas-wrap { position: relative; height: 280px; }
   .chart-canvas-wrap.tall { height: 340px; }
 
+  .data-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; flex-shrink: 0; line-height: 1.6; }
+  .data-badge.ready { background: #FFF3E0; color: #BF5000; border: 1px solid #FFCC80; }
+  .data-badge.unavailable { background: #FDE8E8; color: #B71C1C; border: 1px solid #EF9A9A; }
+
   @media (max-width: 880px) {
     .chart-grid.cols-2 { grid-template-columns: 1fr; }
   }
@@ -63,7 +67,7 @@
 
 <!-- =================================================================== HERO: WAU -->
 <div class="hero-card">
-  <div class="hero-label">Weekly active users</div>
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="hero-label" style="margin-bottom:0">Weekly active users</span><span class="data-badge ready">Fake · SQL ready</span></div>
   <div class="hero-value-row">
     <div class="hero-value" id="wauValue">12,847</div>
     <div class="hero-delta" id="wauDelta">+18% vs last year</div>
@@ -81,6 +85,7 @@
         <div class="chart-title">Agent adoption over time</div>
         <div class="chart-sub">Monthly active users, by agent</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentAdoption"></canvas></div>
   </div>
@@ -90,6 +95,7 @@
         <div class="chart-title">MCP adoption over time</div>
         <div class="chart-sub">Monthly active MCP connections, by client</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="mcpAdoption"></canvas></div>
   </div>
@@ -105,6 +111,7 @@
         <div class="chart-title">Monitors created over time</div>
         <div class="chart-sub">Per month, by status (excludes agent)</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
   </div>
@@ -114,6 +121,7 @@
         <div class="chart-title">Agent monitors created over time</div>
         <div class="chart-sub">Per month, by customer (top 5)</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
   </div>
@@ -126,6 +134,7 @@
         <div class="chart-title">Monitors by type</div>
         <div class="chart-sub">Monthly, excluding agent</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="monByType"></canvas></div>
   </div>
@@ -135,6 +144,7 @@
         <div class="chart-title">Agent monitors by type</div>
         <div class="chart-sub">Monthly</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentByType"></canvas></div>
   </div>
@@ -147,6 +157,7 @@
         <div class="chart-title">Time to complete</div>
         <div class="chart-sub">Median minutes by type, monthly</div>
       </div>
+      <span class="data-badge unavailable">Fake · no data</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="monTtc"></canvas></div>
   </div>
@@ -156,6 +167,7 @@
         <div class="chart-title">Time to complete — agent</div>
         <div class="chart-sub">Median seconds by type, monthly</div>
       </div>
+      <span class="data-badge unavailable">Fake · no data</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentTtc"></canvas></div>
   </div>
@@ -168,6 +180,7 @@
         <div class="chart-title">Completion rate</div>
         <div class="chart-sub">% of monitor creations completed, by type, monthly</div>
       </div>
+      <span class="data-badge unavailable">Fake · no data</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="monCompletion"></canvas></div>
   </div>
@@ -177,6 +190,7 @@
         <div class="chart-title">Completion rate — agent</div>
         <div class="chart-sub">% of agent monitor creations completed, by type, monthly</div>
       </div>
+      <span class="data-badge unavailable">Fake · no data</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentCompletion"></canvas></div>
   </div>
@@ -192,6 +206,7 @@
         <div class="chart-title">Action adoption</div>
         <div class="chart-sub">% of alert viewers who took each action, monthly</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="alertsAdoption"></canvas></div>
   </div>
@@ -207,6 +222,7 @@
         <div class="chart-title">Dashboard adoption</div>
         <div class="chart-sub">Monthly active viewers, by dashboard</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="dashByDashboard"></canvas></div>
   </div>
@@ -219,6 +235,7 @@
         <div class="chart-title">Custom dashboards</div>
         <div class="chart-sub">Users with at least one custom dashboard</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="customDash"></canvas></div>
   </div>
@@ -228,6 +245,7 @@
         <div class="chart-title">Custom dashboard widgets</div>
         <div class="chart-sub">Instances created per month, by widget</div>
       </div>
+      <span class="data-badge unavailable">Fake · no data</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="customWidgets"></canvas></div>
   </div>
@@ -243,6 +261,7 @@
         <div class="chart-title">Performance adoption over time</div>
         <div class="chart-sub">Performance monitors created, by metric type, monthly</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="perfAdoption"></canvas></div>
   </div>
@@ -252,6 +271,7 @@
         <div class="chart-title">Most popular integrations over time</div>
         <div class="chart-sub">Active setups per month, by integration</div>
       </div>
+      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="integrationsChart"></canvas></div>
   </div>
