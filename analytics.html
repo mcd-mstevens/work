@@ -7,7 +7,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #FAFAFA; color: #21242C; font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 56px 40px; max-width: 720px; margin: 0 auto; }
+  body { background: #FAFAFA; color: #21242C; font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 56px 40px; max-width: 1200px; margin: 0 auto; }
 
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
   .back-link:visited { color: #676F7E; }
@@ -40,6 +40,20 @@
   table.accounts td.num-down { color: #DC4E45; }
   tr.divider td { padding: 14px 0 6px; border-top: 0; font-size: 12px; color: #676F7E; font-style: italic; }
   tr.long-tail td { padding-top: 14px; border-top: 1px dashed #CFCFCF; color: #676F7E; font-style: italic; }
+
+  .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .row-2 .card { padding: 24px 28px 24px; }
+  .card-with-tabs { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .tabs { display: inline-flex; background: #F4F4F5; border-radius: 8px; padding: 3px; }
+  .tab { padding: 5px 11px; font-size: 12px; font-weight: 500; color: #676F7E; background: transparent; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; transition: background 0.1s, color 0.1s; }
+  .tab:hover { color: #21242C; }
+  .tab.is-active { background: #21242C; color: #fff; }
+
+  .wau-wrap { max-width: 720px; }
+
+  @media (max-width: 880px) {
+    .row-2 { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -47,6 +61,7 @@
 <a class="back-link" href="index.html">← Back</a>
 <h1 class="page-title">Analytics</h1>
 
+<div class="wau-wrap">
 <div class="card">
   <div class="card-title">WAU</div>
   <div class="chart-wrap"><canvas id="wauChart"></canvas></div>
@@ -85,6 +100,37 @@
     </tbody>
   </table>
 </div>
+</div>
+
+<div class="row-2">
+  <div class="card">
+    <div class="card-title">Trailing Revenue Trend</div>
+    <div class="chart-wrap"><canvas id="revTrend"></canvas></div>
+    <div class="chart-legend">
+      <span class="chart-legend-item" style="color:#1DAF6E"><span class="chart-legend-marker"></span>7-Day Avg</span>
+      <span class="chart-legend-item" style="color:#5670F0"><span class="chart-legend-marker dashed"></span>Target</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-with-tabs">
+      <div class="card-title" style="margin-bottom:0;">Monthly Revenue to Plan</div>
+      <div class="tabs" id="revPlanTabs">
+        <button type="button" class="tab is-active">Monthly</button>
+        <button type="button" class="tab">EOQ</button>
+        <button type="button" class="tab">Quarterly</button>
+      </div>
+    </div>
+    <div class="chart-wrap"><canvas id="revPlan"></canvas></div>
+    <div class="chart-legend" style="flex-wrap:wrap;">
+      <span class="chart-legend-item" style="color:#E97A2E"><span class="chart-legend-marker"></span>Breakage (actual)</span>
+      <span class="chart-legend-item" style="color:#F4A95F"><span class="chart-legend-marker"></span>Breakage (forecast)</span>
+      <span class="chart-legend-item" style="color:#B8E7CA"><span class="chart-legend-marker"></span>Expected Revenue</span>
+      <span class="chart-legend-item" style="color:#1DAF6E"><span class="chart-legend-marker"></span>Revenue</span>
+      <span class="chart-legend-item" style="color:#5670F0"><span class="chart-legend-marker dashed"></span>Target</span>
+    </div>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="charts.js"></script>
@@ -115,6 +161,18 @@
     1880, 2050, 2180, 2260, 2280, 2275, 2290, 2310, 2305, 2290, 2278,
     2270, 2265, 2275, 2280, 2282, 2285, 2280, 2278,
   ];
+
+  // Tabs (visual only — Monthly is the populated view).
+  (function () {
+    const tabs = document.getElementById('revPlanTabs');
+    if (!tabs) return;
+    tabs.addEventListener('click', (e) => {
+      const btn = e.target.closest('.tab');
+      if (!btn) return;
+      tabs.querySelectorAll('.tab').forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    });
+  })();
 
   new Chart(document.getElementById('wauChart'), {
     type: 'line',
@@ -186,6 +244,173 @@
       },
     },
   });
+
+  // ===== Trailing Revenue Trend =====
+  (function () {
+    const GREEN = '#1DAF6E';
+    const BLUE = '#5670F0';
+    const LABELS = [
+      'Feb 11','Feb 14','Feb 17','Feb 20','Feb 24','Feb 27','Mar 3','Mar 7','Mar 10','Mar 13',
+      'Mar 17','Mar 20','Mar 24','Mar 27','Mar 31','Apr 3','Apr 6','Apr 10','Apr 14','Apr 18',
+      'Apr 22','Apr 25','Apr 28','May 1','May 5','May 8','May 11','May 14','May 18','May 22',
+      'May 25','May 28','May 31',
+    ];
+    // 7-day avg: hovers around 65K then steps up matching target plateaus.
+    const AVG = [
+      64500, 65800, 66200, 66500, 66800, 66200, 66400, 67000, 67800, 67500,
+      67200, 67800, 68000, 67600, 66800, 67200, 67800, 67400, 66800, 65800,
+      66400, 67800, 70500, 73000, 74800, 75200, 75800, 76200, 76800, 77400,
+      78000, 78400, 78600,
+    ];
+    // Target: stepwise — $58K, $65K, $72K, $78K — bumps at quarter / period boundaries.
+    const TARGET = [
+      58000, 58000, 58000, 58000, 58000, 58000, 58000, 58000, 65000, 65000,
+      65000, 65000, 65000, 65000, 65000, 65000, 65000, 65000, 65000, 65000,
+      72000, 72000, 72000, 72000, 72000, 72000, 72000, 72000, 78000, 78000,
+      78000, 78000, 78000,
+    ];
+
+    new Chart(document.getElementById('revTrend'), {
+      type: 'line',
+      data: {
+        labels: LABELS,
+        datasets: [
+          {
+            label: '7-Day Avg',
+            data: AVG,
+            borderColor: GREEN,
+            backgroundColor: GREEN,
+            borderWidth: 2,
+            tension: 0.3,
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: GREEN,
+            pointHoverBorderWidth: 2,
+          },
+          {
+            label: 'Target',
+            data: TARGET,
+            borderColor: BLUE,
+            backgroundColor: BLUE,
+            borderDash: [6, 5],
+            borderWidth: 2,
+            stepped: 'before',
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: BLUE,
+            pointHoverBorderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: { label: (i) => `${i.dataset.label}: $${(i.parsed.y / 1000).toFixed(1)}K` },
+          },
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: {
+              maxRotation: 0,
+              autoSkip: false,
+              callback(value, index) {
+                // ~every 4th label.
+                const show = [0, 4, 8, 12, 16, 23, 26, 31];
+                return show.includes(index) ? this.getLabelForValue(value) : '';
+              },
+            },
+          },
+          y: {
+            beginAtZero: true,
+            suggestedMax: 85000,
+            ticks: { stepSize: 20000, callback: (v) => '$' + (v / 1000) + 'K' },
+          },
+        },
+      },
+    });
+  })();
+
+  // ===== Monthly Revenue to Plan (stacked bars + target line) =====
+  (function () {
+    const GREEN = '#1DAF6E';
+    const EXPECTED_GREEN = '#B8E7CA';
+    const ORANGE_DARK = '#E97A2E';
+    const ORANGE_LIGHT = '#F4A95F';
+    const BLUE = '#5670F0';
+
+    const MONTHS = ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
+    // Realized revenue (closed/recorded). May is partial — actuals so far.
+    const REVENUE = [1400000, 1500000, 1660000, 1640000, 1830000, 1850000, 1900000, 1860000, 1400000];
+    // Expected revenue (only for the in-progress month).
+    const EXPECTED = [0, 0, 0, 0, 0, 0, 0, 0, 800000];
+    const BREAKAGE_ACTUAL = [80000, 60000, 130000, 70000, 110000, 130000, 180000, 60000, 50000];
+    const BREAKAGE_FORECAST = [0, 0, 50000, 30000, 30000, 150000, 230000, 280000, 320000];
+    const TARGET = [null, null, null, null, null, 2050000, 2200000, 2400000, 2600000];
+
+    new Chart(document.getElementById('revPlan'), {
+      type: 'bar',
+      data: {
+        labels: MONTHS,
+        datasets: [
+          { label: 'Revenue', data: REVENUE, backgroundColor: GREEN, stack: 's', borderRadius: 0, borderWidth: 0 },
+          { label: 'Expected Revenue', data: EXPECTED, backgroundColor: EXPECTED_GREEN, stack: 's', borderRadius: 0, borderWidth: 0 },
+          { label: 'Breakage (actual)', data: BREAKAGE_ACTUAL, backgroundColor: ORANGE_DARK, stack: 's', borderRadius: 0, borderWidth: 0 },
+          { label: 'Breakage (forecast)', data: BREAKAGE_FORECAST, backgroundColor: ORANGE_LIGHT, stack: 's', borderRadius: { topLeft: 4, topRight: 4 }, borderSkipped: false, borderWidth: 0 },
+          {
+            type: 'line',
+            label: 'Target',
+            data: TARGET,
+            borderColor: BLUE,
+            backgroundColor: BLUE,
+            borderDash: [6, 5],
+            borderWidth: 2,
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: BLUE,
+            pointHoverBorderWidth: 2,
+            tension: 0,
+            spanGaps: false,
+          },
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (i) => {
+                if (i.parsed.y == null || i.parsed.y === 0) return null;
+                return `${i.dataset.label}: $${(i.parsed.y / 1_000_000).toFixed(2)}M`;
+              },
+            },
+          },
+        },
+        scales: {
+          x: { stacked: true, grid: { display: false } },
+          y: {
+            stacked: true,
+            beginAtZero: true,
+            suggestedMax: 2800000,
+            ticks: {
+              stepSize: 700000,
+              callback: (v) => v >= 1000000 ? '$' + (v / 1000000).toFixed(1) + 'M' : '$' + (v / 1000) + 'K',
+            },
+          },
+        },
+      },
+    });
+  })();
 </script>
 
 </body>
