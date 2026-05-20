@@ -67,10 +67,10 @@
 
 <!-- =================================================================== HERO: WAU -->
 <div class="hero-card">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span class="hero-label" style="margin-bottom:0">Weekly active users</span><span class="data-badge ready">Fake · SQL ready</span></div>
+  <div class="hero-label">Weekly active users</div>
   <div class="hero-value-row">
-    <div class="hero-value" id="wauValue">12,847</div>
-    <div class="hero-delta" id="wauDelta">+18% vs last year</div>
+    <div class="hero-value" id="wauValue">2,895</div>
+    <div class="hero-delta" id="wauDelta"></div>
   </div>
   <div class="hero-chart"><canvas id="wauChart"></canvas></div>
 </div>
@@ -85,7 +85,6 @@
         <div class="chart-title">Agent adoption over time</div>
         <div class="chart-sub">Monthly active users, by agent</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentAdoption"></canvas></div>
   </div>
@@ -95,7 +94,6 @@
         <div class="chart-title">MCP adoption over time</div>
         <div class="chart-sub">Monthly active MCP connections, by client</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="mcpAdoption"></canvas></div>
   </div>
@@ -109,9 +107,8 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Monitors created over time</div>
-        <div class="chart-sub">Per month, by status (excludes agent)</div>
+        <div class="chart-sub">Per month, by type (excludes agent)</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
   </div>
@@ -121,7 +118,6 @@
         <div class="chart-title">Agent monitors created over time</div>
         <div class="chart-sub">Per month, by customer (top 5)</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
   </div>
@@ -134,7 +130,6 @@
         <div class="chart-title">Monitors by type</div>
         <div class="chart-sub">Monthly, excluding agent</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="monByType"></canvas></div>
   </div>
@@ -144,7 +139,6 @@
         <div class="chart-title">Agent monitors by type</div>
         <div class="chart-sub">Monthly</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentByType"></canvas></div>
   </div>
@@ -206,7 +200,6 @@
         <div class="chart-title">Action adoption</div>
         <div class="chart-sub">% of alert viewers who took each action, monthly</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="alertsAdoption"></canvas></div>
   </div>
@@ -222,7 +215,6 @@
         <div class="chart-title">Dashboard adoption</div>
         <div class="chart-sub">Monthly active viewers, by dashboard</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="dashByDashboard"></canvas></div>
   </div>
@@ -233,9 +225,8 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Custom dashboards</div>
-        <div class="chart-sub">Users with at least one custom dashboard</div>
+        <div class="chart-sub">Users creating dashboards per month</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="customDash"></canvas></div>
   </div>
@@ -243,9 +234,8 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Custom dashboard widgets</div>
-        <div class="chart-sub">Instances created per month, by widget</div>
+        <div class="chart-sub">Total widgets added per month</div>
       </div>
-      <span class="data-badge unavailable">Fake · no data</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="customWidgets"></canvas></div>
   </div>
@@ -261,7 +251,6 @@
         <div class="chart-title">Performance adoption over time</div>
         <div class="chart-sub">Performance monitors created, by metric type, monthly</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="perfAdoption"></canvas></div>
   </div>
@@ -271,7 +260,6 @@
         <div class="chart-title">Most popular integrations over time</div>
         <div class="chart-sub">Active setups per month, by integration</div>
       </div>
-      <span class="data-badge ready">Fake · SQL ready</span>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="integrationsChart"></canvas></div>
   </div>
@@ -280,7 +268,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="charts.js"></script>
 <script>
-  // Date picker — visual toggle only (no data refetch in this prototype)
   (function () {
     const picker = document.getElementById('datePicker');
     if (!picker) return;
@@ -293,441 +280,228 @@
   })();
 
   const C = window.MC_CHART_COLORS;
-  const SERIES = window.MC_SERIES_PALETTE;
   const alpha = window.mcAlpha;
 
-  // Shared monthly labels — trailing 12 months ending May 2026
+  // Jun 2025 – May 2026
   const MONTHS = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
 
-  // Deterministic wobble — adds a shared subtle seasonal dip (Aug, Dec) plus
-  // per-series pseudo-random noise so every line / area has its own wiggle.
-  // Each call increments the seed so adjacent series get different patterns.
-  let _wobbleSeed = 0;
+  function line(label, data, color, fill) {
+    return { label, data, borderColor: color, backgroundColor: fill ? alpha(color, 0.18) : color,
+      fill: !!fill, tension: 0.32, borderWidth: 2, pointRadius: 0, pointHoverRadius: 5,
+      pointHoverBackgroundColor: '#fff', pointHoverBorderColor: color, pointHoverBorderWidth: 2 };
+  }
+  function stacked(label, data, color) {
+    return { label, data, borderColor: '#fff', backgroundColor: alpha(color, 0.92),
+      fill: true, tension: 0.32, borderWidth: 1.5, pointRadius: 0, pointHoverRadius: 4,
+      pointHoverBackgroundColor: '#fff', pointHoverBorderColor: color, pointHoverBorderWidth: 2 };
+  }
+
+  // wobble only used by the 4 remaining fake charts
+  let _s = 0;
   function wobble(arr) {
-    const seed = _wobbleSeed++;
-    const season = [1.0, 0.98, 0.94, 1.04, 1.0, 1.0, 0.92, 1.05, 1.0, 1.02, 1.03, 1.01];
-    return arr.map((v, i) => {
-      const k = (i * 37 + seed * 53 + i * seed * 7) % 13;
-      const noise = 1 + (k - 6) / 100; // ±6%
-      const result = v * season[i] * noise;
-      if (Number.isInteger(v)) return Math.max(0, Math.round(result));
-      return Math.max(0, Math.round(result * 10) / 10);
-    });
+    const s = _s++, sea = [1,.98,.94,1.04,1,1,.92,1.05,1,1.02,1.03,1.01];
+    return arr.map((v,i) => { const k=(i*37+s*53+i*s*7)%13, n=1+(k-6)/100, r=v*sea[i]*n;
+      return Number.isInteger(v)?Math.max(0,Math.round(r)):Math.max(0,Math.round(r*10)/10); });
   }
 
-  // Helper: stacked area / line dataset shortcut
-  function lineDataset(label, data, color, fill) {
-    return {
-      label,
-      data: wobble(data),
-      borderColor: color,
-      backgroundColor: fill ? alpha(color, 0.18) : color,
-      fill: !!fill,
-      tension: 0.32,
-      borderWidth: 2,
-      pointRadius: 0,
-      pointHoverRadius: 5,
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: color,
-      pointHoverBorderWidth: 2,
-    };
-  }
+  const opts = (yOpts={}) => ({ interaction:{mode:'index',intersect:false},
+    plugins:{legend:{display:true}}, scales:{x:{grid:{display:false}},y:{beginAtZero:true,...yOpts}} });
 
-  function stackedDataset(label, data, color) {
-    return {
-      label,
-      data: wobble(data),
-      borderColor: '#fff',
-      backgroundColor: alpha(color, 0.92),
-      fill: true,
-      tension: 0.32,
-      borderWidth: 1.5,
-      pointRadius: 0,
-      pointHoverRadius: 4,
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: color,
-      pointHoverBorderWidth: 2,
-    };
-  }
-
-  const trendOpts = (yOpts = {}) => ({
-    interaction: { mode: 'index', intersect: false },
-    plugins: { legend: { display: true } },
-    scales: {
-      x: { grid: { display: false } },
-      y: { beginAtZero: true, ...yOpts },
-    },
-  });
-
-  // ============ HERO: WAU ============
-  (function () {
-    const ctx = document.getElementById('wauChart');
-    const g = ctx.getContext('2d').createLinearGradient(0, 0, 0, 200);
-    g.addColorStop(0, alpha(C.blue, 0.32));
-    g.addColorStop(1, alpha(C.blue, 0));
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [{
-          ...lineDataset('Weekly active users', [8420, 8650, 9020, 9450, 9780, 10250, 10580, 10960, 11380, 11820, 12410, 12847], C.blue, false),
-          backgroundColor: g,
-          fill: true,
-        }],
-      },
-      options: {
-        plugins: { legend: { display: false } },
-        interaction: { mode: 'index', intersect: false },
-        scales: {
-          x: { grid: { display: false }, ticks: { maxRotation: 0 } },
-          y: { beginAtZero: false, ticks: { callback: (v) => (v / 1000) + 'k' } },
-        },
-      },
-    });
+  // ── WAU (real — monthly avg, source: gut_summary) ──────────────────────────
+  (function(){
+    const ctx=document.getElementById('wauChart');
+    const g=ctx.getContext('2d').createLinearGradient(0,0,0,200);
+    g.addColorStop(0,alpha(C.blue,0.32)); g.addColorStop(1,alpha(C.blue,0));
+    new Chart(ctx,{ type:'line', data:{ labels:MONTHS, datasets:[{
+      ...line('WAU',[2803,2917,2955,3045,2997,2939,2474,2838,2947,2872,2825,2922],C.blue,false),
+      backgroundColor:g, fill:true }]},
+      options:{ plugins:{legend:{display:false}}, interaction:{mode:'index',intersect:false},
+        scales:{ x:{grid:{display:false},ticks:{maxRotation:0}},
+                 y:{beginAtZero:false,ticks:{callback:(v)=>(v/1000).toFixed(1)+'k'}} } } });
   })();
 
-  // ============ AGENT ADOPTION ============
-  (function () {
-    new Chart(document.getElementById('agentAdoption'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Operations agent',      [250, 380, 540, 720, 900, 1080, 1250, 1410, 1560, 1690, 1790, 1850], C.blue),
-          lineDataset('Troubleshooting agent', [180, 260, 380, 510, 650, 790, 920, 1050, 1170, 1280, 1360, 1400], C.purple),
-          lineDataset('Cost agent',            [80, 120, 170, 220, 280, 340, 400, 460, 510, 560, 600, 620], C.green),
-          lineDataset('Monitoring agent',      [20, 45, 90, 140, 200, 260, 320, 370, 410, 445, 470, 480], C.orange),
-          lineDataset('PII',                   [40, 60, 90, 125, 160, 195, 225, 250, 275, 295, 305, 310], C.teal),
-        ],
-      },
-      options: trendOpts(),
-    });
+  // ── Agent adoption (real — source: gut_agent_sessions) ────────────────────
+  (function(){
+    new Chart(document.getElementById('agentAdoption'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('TSA',                 [0,0,0,0,680,755,696,699,705,778,655,440],C.blue),
+      line('OA: Alert explain',   [0,0,0,0,0,0,0,0,718,1163,1067,530],C.purple),
+      line('OA: Sidebar',         [0,0,0,0,0,0,0,0,130,267,314,310],C.teal),
+      line('OA: Full page',       [0,0,0,0,0,0,0,0,229,404,371,192],C.green),
+      line('OA: Monitor explain', [0,0,0,0,0,0,0,0,181,273,215,133],C.orange),
+    ]}, options:opts() });
   })();
 
-  // ============ MCP ADOPTION ============
-  (function () {
-    new Chart(document.getElementById('mcpAdoption'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Claude Desktop', [40, 80, 140, 220, 310, 410, 520, 640, 770, 910, 1060, 1220], C.blue),
-          lineDataset('Cursor',         [60, 120, 200, 290, 380, 480, 580, 690, 810, 940, 1080, 1230], C.purple),
-          lineDataset('Other / API',    [5, 15, 30, 50, 75, 105, 140, 180, 220, 260, 295, 325], C.orange),
-        ],
-      },
-      options: trendOpts(),
-    });
+  // ── MCP adoption (real — source: gut_mcp_tool_calls) ──────────────────────
+  (function(){
+    new Chart(document.getElementById('mcpAdoption'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Other / Unknown',[0,0,0,0,0,0,0,0,0,0,1019,1079],C.gray),
+      line('claude_code',    [0,0,0,0,0,0,0,0,0,0,8,140],C.blue),
+      line('node',           [0,0,0,0,0,0,0,0,0,0,3,49],C.orange),
+      line('cursor',         [0,0,0,0,0,0,0,0,0,0,2,37],C.purple),
+      line('vscode',         [0,0,0,0,0,0,0,0,0,0,0,17],C.green),
+      line('python',         [0,0,0,0,0,0,0,0,0,0,0,5],C.teal),
+    ]}, options:opts() });
   })();
 
-  // ============ MONITORS ============
-
-  // 1. Monitors created per month — Draft vs Enabled (excluding agent)
-  (function () {
-    new Chart(document.getElementById('monTotal'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Enabled', [680, 730, 800, 920, 1010, 1060, 1130, 1260, 1420, 1580, 1860, 2070], C.blue),
-          lineDataset('Draft',   [140, 140, 140, 160, 170, 180, 180, 190, 220, 250, 290, 320], C.purple),
-        ],
-      },
-      options: trendOpts(),
-    });
+  // ── Monitors created over time (real — source: gut_monitor_creation) ──────
+  (function(){
+    new Chart(document.getElementById('monTotal'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      stacked('Stats',            [2106,3316,1873,2231,2397,3792,13879,2060,4865,5968,53467,19957],C.blue),
+      stacked('Custom SQL',       [9381,11857,13760,17029,9564,14625,9355,9692,10120,15730,12765,6531],C.purple),
+      stacked('Table',            [53,87,1870,810,3373,2383,886,1223,5240,4589,4771,1851],C.green),
+      stacked('Validation',       [810,2405,1274,855,1005,915,2950,702,670,1146,1647,814],C.orange),
+      stacked('Volume',           [815,1158,763,468,826,711,2623,3010,806,693,565,1213],C.teal),
+      stacked('Freshness',        [757,1175,1103,1280,1606,1801,1627,1688,649,1044,805,449],C.red),
+      stacked('Metric comparison',[239,178,207,246,389,284,212,140,1955,961,234,322],C.pink),
+    ]}, options:{ interaction:{mode:'index',intersect:false},
+      scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}} } });
   })();
 
-  // 2. Monitors by type — stacked area
-  (function () {
-    new Chart(document.getElementById('monByType'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          stackedDataset('Table',        [310, 335, 365, 425, 470, 498, 530, 590, 670, 760, 890, 960], C.blue),
-          stackedDataset('Custom SQL',   [200, 215, 235, 265, 290, 308, 326, 360, 410, 460, 530, 580], C.purple),
-          stackedDataset('Metric',       [110, 118, 128, 150, 165, 175, 185, 208, 235, 260, 290, 320], C.green),
-          stackedDataset('Performance',  [70, 75, 85, 105, 120, 130, 140, 160, 185, 210, 245, 275], C.red),
-          stackedDataset('SQL template', [80, 86, 92, 110, 121, 128, 138, 154, 175, 195, 220, 240], C.orange),
-          stackedDataset('Validation',   [50, 60, 75, 95, 115, 135, 158, 185, 215, 250, 280, 310], C.teal),
-          stackedDataset('JSON schema',  [45, 48, 52, 58, 63, 67, 72, 80, 90, 100, 115, 125], C.pink),
-          stackedDataset('Comparison',   [25, 27, 30, 35, 40, 43, 47, 52, 60, 65, 75, 85], C.gray),
-        ],
-      },
-      options: {
-        interaction: { mode: 'index', intersect: false },
-        scales: {
-          x: { stacked: true, grid: { display: false } },
-          y: { stacked: true, beginAtZero: true },
-        },
-      },
-    });
+  // ── Agent monitors by customer (real — source: gut_monitor_creation + client_hub_master) ──
+  (function(){
+    new Chart(document.getElementById('agentByCustomer'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Xometry',        [0,0,0,0,0,0,0,0,0,4,25,10],C.blue),
+      line('Axios2',         [0,0,0,9,0,1,0,2,0,15,0,0],C.purple),
+      line('Morningstar',    [0,0,0,0,0,0,0,0,3,16,4,0],C.green),
+      line('entain',         [0,0,0,0,0,0,0,0,0,0,13,0],C.orange),
+      line('Velocity Global',[0,0,0,0,0,0,0,0,0,0,0,16],C.teal),
+    ]}, options:opts() });
   })();
 
-  // 3. Time to complete — multi-line (median minutes by type)
-  (function () {
-    new Chart(document.getElementById('monTtc'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Table',        [3.5, 3.5, 3.4, 3.4, 3.3, 3.3, 3.3, 3.2, 3.2, 3.2, 3.2, 3.2], C.blue),
-          lineDataset('Custom SQL',   [28.5, 27.8, 26.9, 26.0, 25.3, 24.7, 24.1, 23.7, 23.3, 23.0, 22.8, 22.7], C.purple),
-          lineDataset('Metric',       [6.5, 6.4, 6.2, 6.1, 6.0, 5.9, 5.8, 5.7, 5.6, 5.5, 5.5, 5.4], C.green),
-          lineDataset('Performance',  [8.0, 7.8, 7.6, 7.4, 7.2, 7.1, 7.0, 6.9, 6.8, 6.7, 6.6, 6.5], C.red),
-          lineDataset('SQL template', [5.5, 5.4, 5.3, 5.2, 5.1, 5.0, 5.0, 4.9, 4.9, 4.8, 4.8, 4.8], C.orange),
-          lineDataset('Validation',   [8.2, 8.0, 7.7, 7.5, 7.3, 7.1, 6.9, 6.8, 6.7, 6.7, 6.6, 6.5], C.teal),
-          lineDataset('JSON schema',  [9.5, 9.3, 9.1, 8.9, 8.8, 8.7, 8.6, 8.5, 8.5, 8.4, 8.4, 8.4], C.pink),
-          lineDataset('Comparison',   [12.5, 12.2, 11.9, 11.6, 11.4, 11.1, 10.9, 10.7, 10.5, 10.4, 10.3, 10.2], C.gray),
-        ],
-      },
-      options: {
-        ...trendOpts({ ticks: { callback: (v) => v + ' min' } }),
-        plugins: {
-          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y} min` } },
-        },
-      },
-    });
+  // ── Monitor type breakdown (real — same source) ────────────────────────────
+  (function(){
+    new Chart(document.getElementById('monByType'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      stacked('Stats',            [2106,3316,1873,2231,2397,3792,13879,2060,4865,5968,53467,19957],C.blue),
+      stacked('Custom SQL',       [9381,11857,13760,17029,9564,14625,9355,9692,10120,15730,12765,6531],C.purple),
+      stacked('Table',            [53,87,1870,810,3373,2383,886,1223,5240,4589,4771,1851],C.green),
+      stacked('Validation',       [810,2405,1274,855,1005,915,2950,702,670,1146,1647,814],C.orange),
+      stacked('Volume',           [815,1158,763,468,826,711,2623,3010,806,693,565,1213],C.teal),
+      stacked('Freshness',        [757,1175,1103,1280,1606,1801,1627,1688,649,1044,805,449],C.red),
+      stacked('Metric comparison',[239,178,207,246,389,284,212,140,1955,961,234,322],C.pink),
+    ]}, options:{ interaction:{mode:'index',intersect:false},
+      scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}} } });
   })();
 
-  // 4. Agent monitors created by customer — multi-line
-  (function () {
-    new Chart(document.getElementById('agentByCustomer'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Acme',    [12, 28, 64, 112, 168, 226, 318, 410, 524, 658, 824, 1010], C.blue),
-          lineDataset('Globex',  [8, 18, 42, 78, 132, 188, 258, 332, 410, 502, 612, 738], C.purple),
-          lineDataset('Wayne',   [5, 14, 32, 58, 96, 142, 198, 264, 332, 412, 496, 588], C.green),
-          lineDataset('Initech', [2, 8, 22, 44, 78, 118, 168, 220, 278, 342, 408, 478], C.orange),
-          lineDataset('Stark',   [0, 4, 14, 30, 56, 88, 130, 178, 228, 282, 338, 396], C.teal),
-        ],
-      },
-      options: trendOpts(),
-    });
+  // ── Agent monitor types (real — same source) ───────────────────────────────
+  (function(){
+    new Chart(document.getElementById('agentByType'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      stacked('Agent evaluation',[0,0,0,56,29,7,19,31,36,53,61,37],C.blue),
+      stacked('Agent metric',    [0,0,0,7,4,6,16,10,24,17,46,49],C.purple),
+      stacked('Agent trajectory',[0,0,0,0,0,0,0,0,10,4,9,4],C.green),
+      stacked('Agent validation',[0,0,0,0,0,0,0,0,0,20,7,8],C.orange),
+    ]}, options:{ interaction:{mode:'index',intersect:false},
+      scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}} } });
   })();
 
-  // 5. Agent monitors by type — stacked area
-  (function () {
-    new Chart(document.getElementById('agentByType'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          stackedDataset('Agent evaluation', [18, 38, 88, 162, 248, 348, 482, 624, 802, 1010, 1268, 1564], C.blue),
-          stackedDataset('Agent trajectory', [10, 22, 56, 108, 178, 256, 358, 466, 596, 748, 932, 1146], C.purple),
-          stackedDataset('Agent metric',     [0, 6, 18, 38, 70, 112, 168, 232, 308, 396, 502, 624], C.green),
-          stackedDataset('Agent validation', [0, 3, 16, 38, 76, 128, 196, 278, 374, 486, 614, 760], C.orange),
-        ],
-      },
-      options: {
-        interaction: { mode: 'index', intersect: false },
-        scales: {
-          x: { stacked: true, grid: { display: false } },
-          y: { stacked: true, beginAtZero: true },
-        },
-      },
-    });
+  // ── Time to complete — FAKE (draft→create is instant in real data) ─────────
+  (function(){
+    new Chart(document.getElementById('monTtc'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Custom SQL', wobble([28.5,27.8,26.9,26,25.3,24.7,24.1,23.7,23.3,23,22.8,22.7]),C.purple),
+      line('Validation', wobble([8.2,8,7.7,7.5,7.3,7.1,6.9,6.8,6.7,6.7,6.6,6.5]),C.teal),
+      line('Metric',     wobble([6.5,6.4,6.2,6.1,6,5.9,5.8,5.7,5.6,5.5,5.5,5.4]),C.green),
+      line('Table',      wobble([3.5,3.5,3.4,3.4,3.3,3.3,3.3,3.2,3.2,3.2,3.2,3.2]),C.blue),
+    ]}, options:{...opts({ticks:{callback:(v)=>v+' min'}}),
+      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y} min`}}}} });
   })();
 
-  // 3b. Completion rate — non-agent (multi-line, %)
-  (function () {
-    new Chart(document.getElementById('monCompletion'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Table',        [85, 86, 87, 88, 89, 89, 90, 90, 91, 91, 91, 92], C.blue),
-          lineDataset('Custom SQL',   [52, 54, 56, 58, 59, 60, 61, 62, 63, 64, 64, 65], C.purple),
-          lineDataset('Metric',       [78, 79, 80, 81, 82, 83, 84, 85, 86, 86, 87, 88], C.green),
-          lineDataset('Performance',  [66, 68, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79], C.red),
-          lineDataset('SQL template', [82, 83, 84, 85, 86, 87, 87, 88, 88, 89, 89, 90], C.orange),
-          lineDataset('Validation',   [80, 81, 82, 84, 85, 86, 87, 88, 88, 89, 89, 90], C.teal),
-          lineDataset('JSON schema',  [65, 66, 67, 69, 70, 71, 72, 73, 74, 75, 76, 77], C.pink),
-          lineDataset('Comparison',   [56, 57, 59, 60, 62, 63, 64, 65, 67, 68, 69, 70], C.gray),
-        ],
-      },
-      options: {
-        ...trendOpts({ ticks: { callback: (v) => v + '%' }, max: 100 }),
-        plugins: {
-          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y}%` } },
-        },
-      },
-    });
+  // ── Agent time to complete — FAKE ─────────────────────────────────────────
+  (function(){
+    new Chart(document.getElementById('agentTtc'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Agent evaluation',wobble([22,20,18,17,16,15,14,14,13,13,12,12]),C.blue),
+      line('Agent trajectory',wobble([30,28,26,24,23,22,21,20,19,19,18,18]),C.purple),
+      line('Agent metric',    wobble([42,38,35,33,31,29,28,27,26,25,24,24]),C.green),
+      line('Agent validation',wobble([48,45,42,40,38,36,35,34,33,32,31,31]),C.orange),
+    ]}, options:{...opts({ticks:{callback:(v)=>v+'s'}}),
+      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}s`}}}} });
   })();
 
-  // 6. Time to complete — agent (multi-line, median seconds)
-  (function () {
-    new Chart(document.getElementById('agentTtc'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Agent evaluation', [22, 20, 18, 17, 16, 15, 14, 14, 13, 13, 12, 12], C.blue),
-          lineDataset('Agent trajectory', [30, 28, 26, 24, 23, 22, 21, 20, 19, 19, 18, 18], C.purple),
-          lineDataset('Agent metric',     [42, 38, 35, 33, 31, 29, 28, 27, 26, 25, 24, 24], C.green),
-          lineDataset('Agent validation', [48, 45, 42, 40, 38, 36, 35, 34, 33, 32, 31, 31], C.orange),
-        ],
-      },
-      options: {
-        ...trendOpts({ ticks: { callback: (v) => v + 's' } }),
-        plugins: {
-          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y}s` } },
-        },
-      },
-    });
+  // ── Completion rate — FAKE ────────────────────────────────────────────────
+  (function(){
+    new Chart(document.getElementById('monCompletion'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Table',      wobble([85,86,87,88,89,89,90,90,91,91,91,92]),C.blue),
+      line('Custom SQL', wobble([52,54,56,58,59,60,61,62,63,64,64,65]),C.purple),
+      line('Metric',     wobble([78,79,80,81,82,83,84,85,86,86,87,88]),C.green),
+      line('Validation', wobble([80,81,82,84,85,86,87,88,88,89,89,90]),C.teal),
+    ]}, options:{...opts({ticks:{callback:(v)=>v+'%'},max:100}),
+      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}%`}}}} });
   })();
 
-  // 6b. Completion rate — agent (multi-line, %)
-  (function () {
-    new Chart(document.getElementById('agentCompletion'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Agent evaluation', [89, 90, 91, 91, 92, 92, 93, 93, 94, 94, 95, 96], C.blue),
-          lineDataset('Agent trajectory', [86, 87, 88, 88, 89, 89, 90, 91, 91, 92, 93, 94], C.purple),
-          lineDataset('Agent metric',     [83, 84, 85, 85, 86, 87, 87, 88, 89, 90, 91, 92], C.green),
-          lineDataset('Agent validation', [80, 81, 82, 83, 84, 85, 86, 86, 87, 88, 89, 90], C.orange),
-        ],
-      },
-      options: {
-        ...trendOpts({ ticks: { callback: (v) => v + '%' }, max: 100 }),
-        plugins: {
-          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y}%` } },
-        },
-      },
-    });
+  // ── Agent completion rate — FAKE ──────────────────────────────────────────
+  (function(){
+    new Chart(document.getElementById('agentCompletion'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Agent evaluation',wobble([89,90,91,91,92,92,93,93,94,94,95,96]),C.blue),
+      line('Agent trajectory',wobble([86,87,88,88,89,89,90,91,91,92,93,94]),C.purple),
+      line('Agent metric',    wobble([83,84,85,85,86,87,87,88,89,90,91,92]),C.green),
+      line('Agent validation',wobble([80,81,82,83,84,85,86,86,87,88,89,90]),C.orange),
+    ]}, options:{...opts({ticks:{callback:(v)=>v+'%'},max:100}),
+      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}%`}}}} });
   })();
 
-  // ============ ALERTS ============
-
-  // 7. Action adoption — multi-line
-  (function () {
-    new Chart(document.getElementById('alertsAdoption'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Status update',    [18.4, 19.6, 21.0, 22.3, 23.4, 24.5, 25.4, 26.2, 26.8, 27.3, 27.6, 27.9], C.blue),
-          lineDataset('Acknowledge',      [14.2, 15.1, 16.4, 17.5, 18.6, 19.4, 20.1, 20.7, 21.2, 21.6, 21.9, 22.1], C.purple),
-          lineDataset('Owner assignment', [7.8, 8.6, 9.4, 10.2, 11.0, 11.7, 12.3, 12.8, 13.2, 13.5, 13.7, 13.9], C.green),
-          lineDataset('Comment',          [5.4, 5.8, 6.3, 6.8, 7.3, 7.8, 8.3, 8.7, 9.0, 9.3, 9.5, 9.6], C.orange),
-          lineDataset('Mark as incident', [2.1, 2.4, 2.8, 3.1, 3.5, 3.8, 4.0, 4.2, 4.4, 4.6, 4.7, 4.8], C.teal),
-          lineDataset('Merge alert',      [0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.55, 1.6], C.pink),
-        ],
-      },
-      options: {
-        ...trendOpts({ ticks: { callback: (v) => v + '%' } }),
-        plugins: {
-          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.parsed.y}%` } },
-        },
-      },
-    });
+  // ── Alert action adoption (real — source: gut_incidents_engagement + clickthrough) ──
+  (function(){
+    new Chart(document.getElementById('alertsAdoption'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Status update',   [57.4,55.8,55.6,54.1,52.2,53,54.6,53.1,51.5,52.3,53.6,53.9],C.blue),
+      line('Comment',         [11.3,11.5,9.3,9,9.5,9.5,9.2,9.9,10.3,9.8,10.5,10.3],C.purple),
+      line('Owner update',    [10.2,9.4,9.1,8.7,8.2,8.6,8.1,8.2,8.4,8.1,8.4,8.1],C.green),
+      line('Severity update', [7.4,7,7.2,7.2,6.3,5.7,4.9,5.2,4.9,4.9,5.1,4.7],C.orange),
+      line('Feedback',        [4.8,5.8,6.3,6.2,5.9,6.1,6.3,5.8,5.7,5.8,5.7,5.6],C.teal),
+      line('Jira ticket',     [1.5,1.8,1.5,1.6,1.4,1.5,1.5,1.4,1.3,1.2,1.2,1.2],C.pink),
+    ]}, options:{...opts({ticks:{callback:(v)=>v+'%'}}),
+      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}%`}}}} });
   })();
 
-  // ============ DASHBOARDS ============
-
-  // 8. Dashboard adoption by dashboard — multi-line
-  (function () {
-    new Chart(document.getElementById('dashByDashboard'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Data operations', [1820, 1968, 2110, 2280, 2398, 2530, 2678, 2810, 2942, 3068, 3210, 3358], C.blue),
-          lineDataset('Data quality',    [932, 1018, 1112, 1228, 1320, 1418, 1518, 1612, 1718, 1820, 1928, 2042], C.purple),
-          lineDataset('Coverage',        [428, 482, 552, 624, 692, 754, 822, 884, 952, 1018, 1098, 1184], C.green),
-          lineDataset('Table health',    [218, 246, 282, 320, 358, 396, 432, 468, 510, 552, 598, 648], C.orange),
-          lineDataset('Activity',        [88, 102, 122, 142, 168, 196, 224, 252, 282, 318, 358, 402], C.teal),
-        ],
-      },
-      options: trendOpts(),
-    });
+  // ── Dashboard adoption (real — source: gut_dashboards_sessions_fs) ────────
+  (function(){
+    new Chart(document.getElementById('dashByDashboard'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Data operations',   [2121,2161,2042,1980,1586,1209,928,998,1073,1024,787,559],C.blue),
+      line('Data quality',      [736,760,698,838,1255,1099,881,937,987,954,747,522],C.purple),
+      line('Daily table health',[565,568,532,645,995,830,664,720,721,691,500,354],C.green),
+      line('Coverage',          [0,0,0,34,48,494,449,651,905,694,568,377],C.orange),
+      line('Activity',          [521,511,501,548,843,745,525,590,638,632,417,306],C.teal),
+      line('Custom',            [0,0,0,0,0,0,0,168,484,495,359,251],C.pink),
+    ]}, options:opts() });
   })();
 
-  // 9. Custom dashboards — single line
-  (function () {
-    const ctx = document.getElementById('customDash');
-    const g = ctx.getContext('2d').createLinearGradient(0, 0, 0, 280);
-    g.addColorStop(0, alpha(C.purple, 0.25));
-    g.addColorStop(1, alpha(C.purple, 0));
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [{
-          ...lineDataset('Users with custom dashboards', [142, 168, 198, 232, 268, 308, 352, 398, 448, 502, 562, 628], C.purple, false),
-          backgroundColor: g,
-          fill: true,
-        }],
-      },
-      options: {
-        ...trendOpts(),
-        plugins: { legend: { display: false } },
-      },
-    });
+  // ── Custom dashboards (real — source: self_service_mixpanel) ──────────────
+  (function(){
+    const ctx=document.getElementById('customDash');
+    const g=ctx.getContext('2d').createLinearGradient(0,0,0,280);
+    g.addColorStop(0,alpha(C.purple,0.25)); g.addColorStop(1,alpha(C.purple,0));
+    new Chart(ctx,{ type:'line', data:{ labels:MONTHS, datasets:[{
+      ...line('Users creating dashboards',[0,0,0,0,0,0,0,47,44,56,30,16],C.purple,false),
+      backgroundColor:g, fill:true }]},
+      options:{...opts(),plugins:{legend:{display:false}}} });
   })();
 
-  // 10. Custom dashboard widgets — multi-line
-  (function () {
-    new Chart(document.getElementById('customWidgets'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Chart',          [88, 102, 120, 142, 168, 196, 226, 258, 292, 328, 368, 412], C.blue),
-          lineDataset('Single value',   [62, 74, 88, 106, 128, 152, 178, 204, 232, 262, 296, 332], C.purple),
-          lineDataset('Table',          [34, 42, 52, 64, 78, 94, 112, 130, 150, 172, 196, 222], C.green),
-          lineDataset('Monitor status', [18, 24, 32, 42, 54, 68, 84, 100, 118, 138, 160, 184], C.orange),
-          lineDataset('Text',           [12, 16, 22, 30, 40, 52, 66, 82, 100, 120, 142, 166], C.teal),
-        ],
-      },
-      options: trendOpts(),
-    });
+  // ── Custom widgets total (real — source: self_service_mixpanel) ───────────
+  (function(){
+    const ctx=document.getElementById('customWidgets');
+    const g=ctx.getContext('2d').createLinearGradient(0,0,0,280);
+    g.addColorStop(0,alpha(C.green,0.25)); g.addColorStop(1,alpha(C.green,0));
+    new Chart(ctx,{ type:'line', data:{ labels:MONTHS, datasets:[{
+      ...line('Widgets added',[0,0,0,0,0,0,0,97,100,131,140,114],C.green,false),
+      backgroundColor:g, fill:true }]},
+      options:{...opts(),plugins:{legend:{display:false}}} });
   })();
 
-  // ============ PERFORMANCE ============
-
-  // 11. Performance adoption — read queries, write queries, job performance
-  (function () {
-    new Chart(document.getElementById('perfAdoption'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Read queries',    [180, 210, 250, 300, 340, 380, 420, 470, 530, 600, 690, 790], C.blue),
-          lineDataset('Write queries',   [120, 140, 168, 200, 230, 258, 290, 325, 365, 410, 470, 540], C.purple),
-          lineDataset('Job performance', [60, 75, 95, 120, 145, 172, 200, 230, 265, 300, 350, 410], C.green),
-        ],
-      },
-      options: trendOpts(),
-    });
+  // ── Performance monitors (real — source: gut_monitor_creation) ────────────
+  (function(){
+    new Chart(document.getElementById('perfAdoption'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Stats',            [2106,3316,1873,2231,2397,3792,13879,2060,4865,5968,53467,19957],C.blue),
+      line('Query performance',[13,10,6,13,9,10,8,4,6,8,5,1],C.purple),
+    ]}, options:opts() });
   })();
 
-  // ============ INTEGRATIONS ============
-
-  // 12. Most popular integrations over time — multi-line, 9 series
-  (function () {
-    new Chart(document.getElementById('integrationsChart'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Snowflake',      [1200, 1268, 1342, 1430, 1518, 1610, 1712, 1820, 1922, 2010, 2090, 2150], C.blue),
-          lineDataset('Databricks',     [480, 548, 622, 712, 808, 902, 998, 1098, 1190, 1268, 1334, 1380], C.red),
-          lineDataset('BigQuery',       [850, 890, 932, 968, 1002, 1042, 1082, 1118, 1158, 1192, 1220, 1240], C.green),
-          lineDataset('dbt',            [180, 240, 312, 388, 470, 552, 632, 712, 790, 850, 898, 920], C.orange),
-          lineDataset('Redshift',       [620, 648, 678, 704, 732, 758, 782, 802, 822, 838, 846, 850], C.purple),
-          lineDataset('PostgreSQL',     [380, 412, 446, 482, 520, 556, 590, 622, 656, 686, 708, 720], C.teal),
-          lineDataset('Airflow',        [220, 248, 282, 318, 354, 388, 420, 452, 482, 508, 528, 540], C.pink),
-          lineDataset('SQL Server',     [280, 296, 312, 332, 352, 370, 388, 408, 424, 438, 446, 450], C.gray),
-          lineDataset('Salesforce CRM', [140, 155, 172, 192, 212, 232, 252, 272, 290, 304, 314, 320], C.amber),
-        ],
-      },
-      options: trendOpts(),
-    });
+  // ── Integrations (real — source: self_service_mixpanel) ───────────────────
+  (function(){
+    new Chart(document.getElementById('integrationsChart'),{ type:'line', data:{ labels:MONTHS, datasets:[
+      line('Data Connection',[38,30,33,50,55,32,21,25,28,25,10,3],C.blue),
+      line('Databricks',     [7,8,9,8,11,3,8,7,12,10,8,8],C.red),
+      line('PagerDuty',      [6,6,3,10,8,3,4,7,9,9,3,1],C.orange),
+      line('Tableau',        [5,5,2,3,6,3,5,5,3,6,7,5],C.green),
+      line('Jira',           [3,7,2,8,3,3,2,2,2,3,1,4],C.purple),
+      line('Opsgenie',       [5,4,2,2,4,4,3,2,1,2,1,0],C.teal),
+    ]}, options:opts() });
   })();
 </script>
 
