@@ -7,7 +7,57 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #FAFAFA; color: #21242C; font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 56px 40px; max-width: 1000px; margin: 0 auto; }
+  html, body { height: 100%; }
+  body {
+    background: #FAFAFA; color: #21242C;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 14px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    margin: 0; padding: 0;
+    display: flex; min-height: 100vh;
+  }
+
+  .sidebar {
+    position: fixed; top: 0; left: 0;
+    width: 200px; height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+    border-right: 1px solid #E2E2E2;
+    padding: 28px 16px 40px;
+    display: flex; flex-direction: column; gap: 24px;
+    z-index: 100;
+  }
+  .sidebar-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.8px;
+    text-transform: uppercase; color: #9AA0AB; margin-bottom: 8px;
+  }
+  .date-picker {
+    display: flex; flex-direction: column; gap: 1px;
+  }
+  .date-picker-btn {
+    display: block; width: 100%; text-align: left;
+    padding: 7px 10px; font-size: 13px; font-weight: 500;
+    color: #676F7E; background: transparent; border: none;
+    border-radius: 6px; cursor: pointer;
+    transition: background 0.1s ease, color 0.1s ease;
+    font-family: inherit;
+  }
+  .date-picker-btn:hover { background: #F4F4F5; color: #21242C; }
+  .date-picker-btn.is-active { background: #F4F4F5; color: #21242C; font-weight: 600; }
+  .nav-links { display: flex; flex-direction: column; gap: 1px; }
+  .nav-link {
+    display: block; padding: 7px 10px; border-radius: 6px;
+    font-size: 13px; color: #676F7E; text-decoration: none; font-weight: 500;
+    transition: background 0.1s, color 0.1s;
+  }
+  .nav-link:hover { background: #F4F4F5; color: #21242C; }
+
+  .main-content {
+    margin-left: 200px;
+    padding: 48px 48px 80px;
+    flex: 1;
+    max-width: 980px;
+  }
 
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
   .back-link:visited { color: #676F7E; }
@@ -15,11 +65,6 @@
 
   .report-header { margin-bottom: 8px; }
   .report-header h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.4px; color: #21242C; margin-bottom: 14px; }
-
-  .date-picker { display: inline-flex; background: #F4F4F5; border-radius: 8px; padding: 2px; }
-  .date-picker-btn { padding: 5px 10px; font-size: 12px; font-weight: 500; color: #676F7E; background: transparent; border: none; border-radius: 6px; cursor: pointer; transition: background 0.1s ease, color 0.1s ease; font-family: inherit; }
-  .date-picker-btn:hover { color: #21242C; }
-  .date-picker-btn.is-active { background: #fff; color: #21242C; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06); }
 
   .section-heading { font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; color: #676F7E; margin: 36px 0 12px; }
   .section-heading:first-of-type { margin-top: 32px; }
@@ -49,25 +94,44 @@
   @media (max-width: 880px) {
     .chart-grid.cols-2 { grid-template-columns: 1fr; }
   }
+
 </style>
 </head>
 <body>
 
+<aside class="sidebar">
+  <div>
+    <div class="sidebar-label">Time window</div>
+    <div class="date-picker" id="datePicker">
+      <button class="date-picker-btn" type="button">2 weeks</button>
+      <button class="date-picker-btn" type="button">1 month</button>
+      <button class="date-picker-btn is-active" type="button">3 months</button>
+      <button class="date-picker-btn" type="button">12 months</button>
+    </div>
+  </div>
+  <nav>
+    <div class="sidebar-label">Jump to</div>
+    <div class="nav-links">
+      <a class="nav-link" href="#sec-overview">Overview</a>
+      <a class="nav-link" href="#sec-agent">Agent adoption</a>
+      <a class="nav-link" href="#sec-monitors">Monitors</a>
+      <a class="nav-link" href="#sec-alerts">Alerts</a>
+      <a class="nav-link" href="#sec-dashboards">Dashboards</a>
+      <a class="nav-link" href="#sec-performance">Performance</a>
+      <a class="nav-link" href="#sec-revenue">Revenue</a>
+    </div>
+  </nav>
+</aside>
+
+<div class="main-content">
 <a class="back-link" href="index.html">← Back</a>
 
 <div class="report-header">
   <h1>Product analytics</h1>
-  <div class="date-picker" id="datePicker">
-    <button class="date-picker-btn" type="button">1 week</button>
-    <button class="date-picker-btn" type="button">2 weeks</button>
-    <button class="date-picker-btn" type="button">1 month</button>
-    <button class="date-picker-btn is-active" type="button">3 months</button>
-    <button class="date-picker-btn" type="button">12 months</button>
-  </div>
 </div>
 
 <!-- =================================================================== HERO: WAU -->
-<div class="hero-card">
+<div class="hero-card" id="sec-overview">
   <div class="hero-label">Weekly active users</div>
   <div class="hero-value-row">
     <div class="hero-value" id="wauValue">2,895</div>
@@ -77,7 +141,7 @@
 </div>
 
 <!-- =================================================================== AGENT ADOPTION -->
-<h2 class="section-heading">Agent adoption</h2>
+<h2 class="section-heading" id="sec-agent">Agent adoption</h2>
 
 <div class="chart-grid cols-2">
   <div class="chart-card">
@@ -101,7 +165,7 @@
 </div>
 
 <!-- =================================================================== MONITORS -->
-<h2 class="section-heading">Monitors</h2>
+<h2 class="section-heading" id="sec-monitors">Monitors</h2>
 
 <div class="chart-grid cols-2">
   <div class="chart-card">
@@ -145,54 +209,8 @@
   </div>
 </div>
 
-<div class="chart-grid cols-2">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Time to complete</div>
-        <div class="chart-sub">Median minutes by type, monthly</div>
-      </div>
-      <span class="data-badge unavailable">Fake · no data</span>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="monTtc"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Time to complete — agent</div>
-        <div class="chart-sub">Median seconds by type, monthly</div>
-      </div>
-      <span class="data-badge unavailable">Fake · no data</span>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentTtc"></canvas></div>
-  </div>
-</div>
-
-<div class="chart-grid cols-2">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Completion rate</div>
-        <div class="chart-sub">% of monitor creations completed, by type, monthly</div>
-      </div>
-      <span class="data-badge unavailable">Fake · no data</span>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="monCompletion"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Completion rate — agent</div>
-        <div class="chart-sub">% of agent monitor creations completed, by type, monthly</div>
-      </div>
-      <span class="data-badge unavailable">Fake · no data</span>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentCompletion"></canvas></div>
-  </div>
-</div>
-
 <!-- =================================================================== ALERTS -->
-<h2 class="section-heading">Alerts</h2>
+<h2 class="section-heading" id="sec-alerts">Alerts</h2>
 
 <div class="chart-grid">
   <div class="chart-card">
@@ -207,7 +225,7 @@
 </div>
 
 <!-- =================================================================== DASHBOARDS -->
-<h2 class="section-heading">Dashboards</h2>
+<h2 class="section-heading" id="sec-dashboards">Dashboards</h2>
 
 <div class="chart-grid">
   <div class="chart-card">
@@ -243,9 +261,9 @@
 </div>
 
 <!-- =================================================================== PERFORMANCE & INTEGRATIONS -->
-<h2 class="section-heading">Performance & integrations</h2>
+<h2 class="section-heading" id="sec-performance">Performance</h2>
 
-<div class="chart-grid cols-2">
+<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -255,18 +273,9 @@
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="perfAdoption"></canvas></div>
   </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Most popular data sources</div>
-        <div class="chart-sub">Accounts by connection type (current)</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="integrationsChart"></canvas></div>
-  </div>
 </div>
 
-<h2 class="section-heading">Revenue</h2>
+<h2 class="section-heading" id="sec-revenue">Revenue</h2>
 
 <div class="chart-grid cols-1">
   <div class="chart-card">
@@ -371,32 +380,6 @@
     intOpsgenie: [6,8,4,3,8,6,5,2,1,3,3],
   };
 
-  // Pre-compute wobbled fake data so slicing gives consistent shapes
-  let _s = 0;
-  function wobble(arr) {
-    const s = _s++, sea = [1,.98,.94,1.04,1,1,.92,1.05,1,1.02,1.03,1.01];
-    return arr.map((v,i) => { const k=(i*37+s*53+i*s*7)%13, n=1+(k-6)/100, r=v*sea[i]*n;
-      return Number.isInteger(v)?Math.max(0,Math.round(r)):Math.max(0,Math.round(r*10)/10); });
-  }
-  const FK = {
-    monTtcSql:    wobble([28.5,27.8,26.9,26,25.3,24.7,24.1,23.7,23.3,23,22.8,22.7]),
-    monTtcValid:  wobble([8.2,8,7.7,7.5,7.3,7.1,6.9,6.8,6.7,6.7,6.6,6.5]),
-    monTtcMet:    wobble([6.5,6.4,6.2,6.1,6,5.9,5.8,5.7,5.6,5.5,5.5,5.4]),
-    monTtcTable:  wobble([3.5,3.5,3.4,3.4,3.3,3.3,3.3,3.2,3.2,3.2,3.2,3.2]),
-    agTtcEval:    wobble([22,20,18,17,16,15,14,14,13,13,12,12]),
-    agTtcTraj:    wobble([30,28,26,24,23,22,21,20,19,19,18,18]),
-    agTtcMet:     wobble([42,38,35,33,31,29,28,27,26,25,24,24]),
-    agTtcValid:   wobble([48,45,42,40,38,36,35,34,33,32,31,31]),
-    monCompTable: wobble([85,86,87,88,89,89,90,90,91,91,91,92]),
-    monCompSql:   wobble([52,54,56,58,59,60,61,62,63,64,64,65]),
-    monCompMet:   wobble([78,79,80,81,82,83,84,85,86,86,87,88]),
-    monCompValid: wobble([80,81,82,84,85,86,87,88,88,89,89,90]),
-    agCompEval:   wobble([89,90,91,91,92,92,93,93,94,94,95,96]),
-    agCompTraj:   wobble([86,87,88,88,89,89,90,91,91,92,93,94]),
-    agCompMet:    wobble([83,84,85,85,86,87,87,88,89,90,91,92]),
-    agCompValid:  wobble([80,81,82,83,84,85,86,86,87,88,89,90]),
-  };
-
   function line(label, data, color, fill) {
     return { label, data, borderColor: color, backgroundColor: fill ? alpha(color, 0.18) : color,
       fill: !!fill, tension: 0.32, borderWidth: 2, pointRadius: 0, pointHoverRadius: 5,
@@ -479,34 +462,6 @@
       scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
       plugins:{legend:{display:true}} } });
 
-  CHARTS.monTtc = new Chart(document.getElementById('monTtc'), { type:'line',
-    data:{ labels:[], datasets:[
-      line('Custom SQL',[],C.purple), line('Validation',[],C.teal),
-      line('Metric',[],C.green), line('Table',[],C.blue),
-    ]}, options:{...opts({ticks:{callback:(v)=>v+' min'}}),
-      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y} min`}}}} });
-
-  CHARTS.agentTtc = new Chart(document.getElementById('agentTtc'), { type:'line',
-    data:{ labels:[], datasets:[
-      line('Agent evaluation',[],C.blue), line('Agent trajectory',[],C.purple),
-      line('Agent metric',[],C.green), line('Agent validation',[],C.orange),
-    ]}, options:{...opts({ticks:{callback:(v)=>v+'s'}}),
-      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}s`}}}} });
-
-  CHARTS.monCompletion = new Chart(document.getElementById('monCompletion'), { type:'line',
-    data:{ labels:[], datasets:[
-      line('Table',[],C.blue), line('Custom SQL',[],C.purple),
-      line('Metric',[],C.green), line('Validation',[],C.teal),
-    ]}, options:{...opts({ticks:{callback:(v)=>v+'%'},max:100}),
-      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}%`}}}} });
-
-  CHARTS.agentCompletion = new Chart(document.getElementById('agentCompletion'), { type:'line',
-    data:{ labels:[], datasets:[
-      line('Agent evaluation',[],C.blue), line('Agent trajectory',[],C.purple),
-      line('Agent metric',[],C.green), line('Agent validation',[],C.orange),
-    ]}, options:{...opts({ticks:{callback:(v)=>v+'%'},max:100}),
-      plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}%`}}}} });
-
   CHARTS.alertsAdoption = new Chart(document.getElementById('alertsAdoption'), { type:'line',
     data:{ labels:[], datasets:[
       line('Status update',[],C.blue), line('Comment',[],C.purple),
@@ -544,32 +499,6 @@
     data:{ labels:[], datasets:[
       line('Query performance',[],C.purple),
     ]}, options:{...opts(), plugins:{legend:{display:false}}} });
-
-  // Integrations: static snapshot from self_service_tables (accounts by connection type)
-  new Chart(document.getElementById('integrationsChart'), {
-    type: 'bar',
-    data: {
-      labels: ['Snowflake','BigQuery','Databricks','Data lake','Redshift','Transactional DB'],
-      datasets: [{
-        data: [2973, 1230, 705, 179, 177, 74],
-        backgroundColor: [
-          alpha(C.blue,0.8), alpha(C.purple,0.8), alpha(C.orange,0.8),
-          alpha(C.teal,0.8),  alpha(C.green,0.8),  alpha(C.pink,0.8),
-        ],
-        borderRadius: 3,
-        borderSkipped: false,
-      }],
-    },
-    options: {
-      indexAxis: 'y',
-      plugins: { legend: { display: false } },
-      scales: {
-        x: { beginAtZero: true, grid: { display: false },
-             ticks: { callback: (v) => v.toLocaleString() } },
-        y: { grid: { display: false } },
-      },
-    },
-  });
 
   // ── Update all charts ────────────────────────────────────────────────────
   function avg(arr) { return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
@@ -623,20 +552,14 @@
     // Trend charts: always show full history so bars never collapse to 1
     upd(CHARTS.agentByCustomer, ALL_MONTHS, [D.agCustXom,D.agCustAxios,D.agCustMorn,D.agCustEnt,D.agCustVel]);
     upd(CHARTS.agentByType,     ALL_MONTHS, [D.agEval,D.agMetric,D.agTraj,D.agValidat]);
-    upd(CHARTS.monTtc,          mLabels, [ms(FK.monTtcSql),ms(FK.monTtcValid),ms(FK.monTtcMet),ms(FK.monTtcTable)]);
-    upd(CHARTS.agentTtc,        mLabels, [ms(FK.agTtcEval),ms(FK.agTtcTraj),ms(FK.agTtcMet),ms(FK.agTtcValid)]);
-    upd(CHARTS.monCompletion,   mLabels, [ms(FK.monCompTable),ms(FK.monCompSql),ms(FK.monCompMet),ms(FK.monCompValid)]);
-    upd(CHARTS.agentCompletion, mLabels, [ms(FK.agCompEval),ms(FK.agCompTraj),ms(FK.agCompMet),ms(FK.agCompValid)]);
     upd(CHARTS.alertsAdoption,  mLabels, [ms(D.alertStatus),ms(D.alertComment),ms(D.alertOwner),ms(D.alertSev),ms(D.alertFb),ms(D.alertJira)]);
     upd(CHARTS.customDash,      mLabels, [ms(D.customDash)]);
     upd(CHARTS.customWidgets,   mLabels, [ms(D.customWdg)]);
     upd(CHARTS.perfAdoption,    mLabels, [ms(D.perfQuery)]);
-    // integrationsChart is a static snapshot — no upd needed
   }
 
   // ── Wire picker ──────────────────────────────────────────────────────────
   const WINDOWS = {
-    '1 week':   { n: 2,  src: 'weekly' },
     '2 weeks':  { n: 2,  src: 'weekly' },
     '1 month':  { n: 4,  src: 'weekly' },
     '3 months': { n: 13, src: 'weekly' },
@@ -698,5 +621,6 @@
 })();
 </script>
 
+</div><!-- /.main-content -->
 </body>
 </html>
