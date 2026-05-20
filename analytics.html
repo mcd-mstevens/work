@@ -359,10 +359,10 @@
       data: {
         labels: MONTHS,
         datasets: [
-          { label: 'Revenue', data: REVENUE, backgroundColor: GREEN, stack: 's', borderRadius: 0, borderWidth: 0 },
-          { label: 'Expected Revenue', data: EXPECTED, backgroundColor: EXPECTED_GREEN, stack: 's', borderRadius: 0, borderWidth: 0 },
-          { label: 'Breakage (actual)', data: BREAKAGE_ACTUAL, backgroundColor: ORANGE_DARK, stack: 's', borderRadius: 0, borderWidth: 0 },
-          { label: 'Breakage (forecast)', data: BREAKAGE_FORECAST, backgroundColor: ORANGE_LIGHT, stack: 's', borderRadius: { topLeft: 4, topRight: 4 }, borderSkipped: false, borderWidth: 0 },
+          { label: 'Revenue', data: REVENUE, backgroundColor: GREEN, borderColor: GREEN, stack: 'bars', borderWidth: 0 },
+          { label: 'Expected Revenue', data: EXPECTED, backgroundColor: EXPECTED_GREEN, borderColor: EXPECTED_GREEN, stack: 'bars', borderWidth: 0 },
+          { label: 'Breakage (actual)', data: BREAKAGE_ACTUAL, backgroundColor: ORANGE_DARK, borderColor: ORANGE_DARK, stack: 'bars', borderWidth: 0 },
+          { label: 'Breakage (forecast)', data: BREAKAGE_FORECAST, backgroundColor: ORANGE_LIGHT, borderColor: ORANGE_LIGHT, stack: 'bars', borderWidth: 0 },
           {
             type: 'line',
             label: 'Target',
@@ -371,6 +371,7 @@
             backgroundColor: BLUE,
             borderDash: [6, 5],
             borderWidth: 2,
+            stack: 'target',
             pointRadius: 0,
             pointHoverRadius: 5,
             pointHoverBackgroundColor: '#fff',
@@ -388,11 +389,9 @@
         plugins: {
           legend: { display: false },
           tooltip: {
+            filter: (i) => i.parsed.y != null && i.parsed.y !== 0,
             callbacks: {
-              label: (i) => {
-                if (i.parsed.y == null || i.parsed.y === 0) return null;
-                return `${i.dataset.label}: $${(i.parsed.y / 1_000_000).toFixed(2)}M`;
-              },
+              label: (i) => `${i.dataset.label}: $${(i.parsed.y / 1_000_000).toFixed(2)}M`,
             },
           },
         },
