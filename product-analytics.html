@@ -455,11 +455,15 @@
       stacked('Metric comparison',[],C.pink),
     ]}, options:stackedOpts });
 
-  CHARTS.agentByType = new Chart(document.getElementById('agentByType'), { type:'line',
+  CHARTS.agentByType = new Chart(document.getElementById('agentByType'), { type:'bar',
     data:{ labels:[], datasets:[
-      stacked('Agent evaluation',[],C.blue), stacked('Agent metric',[],C.purple),
-      stacked('Agent trajectory',[],C.green), stacked('Agent validation',[],C.orange),
-    ]}, options:stackedOpts });
+      { label:'Agent evaluation',  data:[], backgroundColor:alpha(C.blue,0.85) },
+      { label:'Agent metric',      data:[], backgroundColor:alpha(C.purple,0.85) },
+      { label:'Agent trajectory',  data:[], backgroundColor:alpha(C.green,0.85) },
+      { label:'Agent validation',  data:[], backgroundColor:alpha(C.orange,0.85) },
+    ]}, options:{ interaction:{mode:'index',intersect:false},
+      scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
+      plugins:{legend:{display:true}} } });
 
   CHARTS.monTtc = new Chart(document.getElementById('monTtc'), { type:'line',
     data:{ labels:[], datasets:[
