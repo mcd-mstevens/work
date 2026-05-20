@@ -582,8 +582,9 @@
     upd(CHARTS.dashByDashboard,labels, [s(src.dashDataOps),s(src.dashDQ),s(src.dashDaily),s(src.dashCoverage),s(src.dashActivity),s(src.dashCustom)]);
 
     // Monthly-only charts (always use mLabels / ms)
-    upd(CHARTS.agentByCustomer, mLabels, [ms(D.agCustXom),ms(D.agCustAxios),ms(D.agCustMorn),ms(D.agCustEnt),ms(D.agCustVel)]);
-    upd(CHARTS.agentByType,     mLabels, [ms(D.agEval),ms(D.agMetric),ms(D.agTraj),ms(D.agValidat)]);
+    // Trend charts: always show full history so bars never collapse to 1
+    upd(CHARTS.agentByCustomer, ALL_MONTHS, [D.agCustXom,D.agCustAxios,D.agCustMorn,D.agCustEnt,D.agCustVel]);
+    upd(CHARTS.agentByType,     ALL_MONTHS, [D.agEval,D.agMetric,D.agTraj,D.agValidat]);
     upd(CHARTS.monTtc,          mLabels, [ms(FK.monTtcSql),ms(FK.monTtcValid),ms(FK.monTtcMet),ms(FK.monTtcTable)]);
     upd(CHARTS.agentTtc,        mLabels, [ms(FK.agTtcEval),ms(FK.agTtcTraj),ms(FK.agTtcMet),ms(FK.agTtcValid)]);
     upd(CHARTS.monCompletion,   mLabels, [ms(FK.monCompTable),ms(FK.monCompSql),ms(FK.monCompMet),ms(FK.monCompValid)]);
