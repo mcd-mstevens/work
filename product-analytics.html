@@ -191,15 +191,6 @@
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Monitors by type</div>
-        <div class="chart-sub">Monthly, excluding agent</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="monByType"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
         <div class="chart-title">Agent monitors by type</div>
         <div class="chart-sub">Monthly</div>
       </div>
@@ -429,13 +420,6 @@
       scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
       plugins:{legend:{display:true}} } });
 
-  CHARTS.monByType = new Chart(document.getElementById('monByType'), { type:'line',
-    data:{ labels:[], datasets:[
-      stacked('Stats',[],C.blue), stacked('Custom SQL',[],C.purple),
-      stacked('Table',[],C.green), stacked('Validation',[],C.orange),
-      stacked('Volume',[],C.teal), stacked('Freshness',[],C.red),
-      stacked('Metric comparison',[],C.pink),
-    ]}, options:stackedOpts });
 
   CHARTS.agentByType = new Chart(document.getElementById('agentByType'), { type:'bar',
     data:{ labels:[], datasets:[
@@ -530,7 +514,6 @@
     upd(CHARTS.agentAdoption,  labels, [s(src.tsaAgent),s(src.oaAlert),s(src.oaSidebar),s(src.oaFullPage),s(src.oaMonitor)]);
     upd(CHARTS.mcpAdoption,    labels, [s(src.mcpOther),s(src.mcpClaude),s(src.mcpNode),s(src.mcpCursor),s(src.mcpVscode),s(src.mcpPython)]);
     upd(CHARTS.monTotal,       labels, [s(src.monStats),s(src.monSql),s(src.monTable),s(src.monValid),s(src.monVol),s(src.monFresh),s(src.monMetric)]);
-    upd(CHARTS.monByType,      labels, [s(src.monStats),s(src.monSql),s(src.monTable),s(src.monValid),s(src.monVol),s(src.monFresh),s(src.monMetric)]);
     upd(CHARTS.dashByDashboard,labels, [s(src.dashDataOps),s(src.dashDQ),s(src.dashDaily),s(src.dashCoverage),s(src.dashActivity),s(src.dashCustom)]);
 
     // Monthly-only charts (always use mLabels / ms)
