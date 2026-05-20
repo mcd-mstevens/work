@@ -250,7 +250,7 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Performance adoption over time</div>
-        <div class="chart-sub">Performance monitors created, by metric type, monthly</div>
+        <div class="chart-sub">Query performance monitors created, per month</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="perfAdoption"></canvas></div>
@@ -350,14 +350,11 @@
     dashCustom:  [0,0,0,0,0,0,0,168,484,495,359],
     customDash:  [0,0,0,0,0,0,0,47,44,56,30],
     customWdg:   [0,0,0,0,0,0,0,97,100,131,140],
-    perfStats:   [2106,3316,1873,2231,2397,3792,13879,2060,4865,5968,53467],
     perfQuery:   [13,10,6,13,9,10,8,4,6,8,5],
-    intDataConn: [38,30,33,50,55,32,21,25,28,25,10],
-    intDatabricks:[7,8,9,8,11,3,8,7,12,10,8],
-    intPager:    [6,6,3,10,8,3,4,7,9,9,3],
-    intTableau:  [5,5,2,3,6,3,5,5,3,6,7],
-    intJira:     [3,7,2,8,3,3,2,2,2,3,1],
-    intOpsgenie: [5,4,2,2,4,4,3,2,1,2,1],
+    intDatabricks:[12,9,11,9,11,4,10,7,17,11,9],
+    intPager:    [9,8,3,12,8,4,8,7,12,14,3],
+    intJira:     [5,16,4,12,6,5,3,5,4,10,8],
+    intOpsgenie: [6,8,4,3,8,6,5,2,1,3,3],
   };
 
   // Pre-compute wobbled fake data so slicing gives consistent shapes
@@ -439,12 +436,16 @@
       stacked('Metric comparison',[],C.pink),
     ]}, options:stackedOpts });
 
-  CHARTS.agentByCustomer = new Chart(document.getElementById('agentByCustomer'), { type:'line',
+  CHARTS.agentByCustomer = new Chart(document.getElementById('agentByCustomer'), { type:'bar',
     data:{ labels:[], datasets:[
-      line('Xometry',[],C.blue), line('Axios2',[],C.purple),
-      line('Morningstar',[],C.green), line('entain',[],C.orange),
-      line('Velocity Global',[],C.teal),
-    ]}, options:opts() });
+      { label:'Xometry',         data:[], backgroundColor:alpha(C.blue,0.85) },
+      { label:'Axios2',          data:[], backgroundColor:alpha(C.purple,0.85) },
+      { label:'Morningstar',     data:[], backgroundColor:alpha(C.green,0.85) },
+      { label:'entain',          data:[], backgroundColor:alpha(C.orange,0.85) },
+      { label:'Velocity Global', data:[], backgroundColor:alpha(C.teal,0.85) },
+    ]}, options:{ interaction:{mode:'index',intersect:false},
+      scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
+      plugins:{legend:{display:true}} } });
 
   CHARTS.monByType = new Chart(document.getElementById('monByType'), { type:'line',
     data:{ labels:[], datasets:[
@@ -523,13 +524,12 @@
 
   CHARTS.perfAdoption = new Chart(document.getElementById('perfAdoption'), { type:'line',
     data:{ labels:[], datasets:[
-      line('Stats',[],C.blue), line('Query performance',[],C.purple),
-    ]}, options:opts() });
+      line('Query performance',[],C.purple),
+    ]}, options:{...opts(), plugins:{legend:{display:false}}} });
 
   CHARTS.integrationsChart = new Chart(document.getElementById('integrationsChart'), { type:'line',
     data:{ labels:[], datasets:[
-      line('Data Connection',[],C.blue), line('Databricks',[],C.red),
-      line('PagerDuty',[],C.orange), line('Tableau',[],C.green),
+      line('Databricks',[],C.blue), line('PagerDuty',[],C.orange),
       line('Jira',[],C.purple), line('Opsgenie',[],C.teal),
     ]}, options:opts() });
 
@@ -591,13 +591,13 @@
     upd(CHARTS.alertsAdoption,  mLabels, [ms(D.alertStatus),ms(D.alertComment),ms(D.alertOwner),ms(D.alertSev),ms(D.alertFb),ms(D.alertJira)]);
     upd(CHARTS.customDash,      mLabels, [ms(D.customDash)]);
     upd(CHARTS.customWidgets,   mLabels, [ms(D.customWdg)]);
-    upd(CHARTS.perfAdoption,    mLabels, [ms(D.perfStats),ms(D.perfQuery)]);
-    upd(CHARTS.integrationsChart,mLabels,[ms(D.intDataConn),ms(D.intDatabricks),ms(D.intPager),ms(D.intTableau),ms(D.intJira),ms(D.intOpsgenie)]);
+    upd(CHARTS.perfAdoption,    mLabels, [ms(D.perfQuery)]);
+    upd(CHARTS.integrationsChart,mLabels,[ms(D.intDatabricks),ms(D.intPager),ms(D.intJira),ms(D.intOpsgenie)]);
   }
 
   // ── Wire picker ──────────────────────────────────────────────────────────
   const WINDOWS = {
-    '1 week':   { n: 1,  src: 'weekly' },
+    '1 week':   { n: 2,  src: 'weekly' },
     '2 weeks':  { n: 2,  src: 'weekly' },
     '1 month':  { n: 4,  src: 'weekly' },
     '3 months': { n: 13, src: 'weekly' },
