@@ -538,7 +538,11 @@
 
   function upd(chart, labels, datasets) {
     chart.data.labels = labels;
-    datasets.forEach((d, i) => { chart.data.datasets[i].data = d; });
+    const pointR = labels.length <= 4 ? 4 : 0;
+    datasets.forEach((d, i) => {
+      chart.data.datasets[i].data = d;
+      chart.data.datasets[i].pointRadius = pointR;
+    });
     chart.update('none');
   }
 
@@ -550,8 +554,8 @@
     const labels  = allLbls.slice(-w.n);
     const s       = (arr) => arr.slice(-w.n);
 
-    // Charts without weekly data fall back to 3 months of monthly data
-    const mn      = weekly ? 3 : w.n;
+    // Charts without weekly data fall back to proportional monthly data
+    const mn      = weekly ? Math.max(1, Math.round(w.n / 4.3)) : w.n;
     const mLabels = ALL_MONTHS.slice(-mn);
     const ms      = (arr) => arr.slice(-mn);
 
@@ -593,9 +597,9 @@
 
   // ── Wire picker ──────────────────────────────────────────────────────────
   const WINDOWS = {
-    '1 week':   { n: 2,  src: 'weekly' },
-    '2 weeks':  { n: 4,  src: 'weekly' },
-    '1 month':  { n: 5,  src: 'weekly' },
+    '1 week':   { n: 1,  src: 'weekly' },
+    '2 weeks':  { n: 2,  src: 'weekly' },
+    '1 month':  { n: 4,  src: 'weekly' },
     '3 months': { n: 13, src: 'weekly' },
     '12 months':{ n: 11, src: 'monthly' },
   };
