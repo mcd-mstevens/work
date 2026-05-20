@@ -7,57 +7,45 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; }
   body {
     background: #FAFAFA; color: #21242C;
     font-family: 'Inter', -apple-system, sans-serif;
     font-size: 14px; line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    margin: 0; padding: 0;
-    display: flex; min-height: 100vh;
+    padding: 56px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .sidebar {
-    position: fixed; top: 0; left: 0;
-    width: 200px; height: 100vh;
-    overflow-y: auto;
-    background: #fff;
-    border-right: 1px solid #E2E2E2;
-    padding: 28px 16px 40px;
-    display: flex; flex-direction: column; gap: 24px;
+    position: fixed; top: 48px; left: 24px;
+    width: 148px;
+    display: flex; flex-direction: column; gap: 28px;
     z-index: 100;
   }
   .sidebar-label {
     font-size: 11px; font-weight: 600; letter-spacing: 0.8px;
-    text-transform: uppercase; color: #9AA0AB; margin-bottom: 8px;
+    text-transform: uppercase; color: #C0C5CE; margin-bottom: 6px;
   }
-  .date-picker {
-    display: flex; flex-direction: column; gap: 1px;
-  }
+  .date-picker { display: flex; flex-direction: column; gap: 0; }
   .date-picker-btn {
     display: block; width: 100%; text-align: left;
-    padding: 7px 10px; font-size: 13px; font-weight: 500;
-    color: #676F7E; background: transparent; border: none;
-    border-radius: 6px; cursor: pointer;
-    transition: background 0.1s ease, color 0.1s ease;
-    font-family: inherit;
+    padding: 5px 0; font-size: 12px; font-weight: 500;
+    color: #9AA0AB; background: transparent; border: none;
+    cursor: pointer; font-family: inherit;
+    transition: color 0.1s ease;
   }
-  .date-picker-btn:hover { background: #F4F4F5; color: #21242C; }
-  .date-picker-btn.is-active { background: #F4F4F5; color: #21242C; font-weight: 600; }
-  .nav-links { display: flex; flex-direction: column; gap: 1px; }
+  .date-picker-btn:hover { color: #21242C; }
+  .date-picker-btn.is-active { color: #21242C; font-weight: 600; }
+  .nav-links { display: flex; flex-direction: column; gap: 0; }
   .nav-link {
-    display: block; padding: 7px 10px; border-radius: 6px;
-    font-size: 13px; color: #676F7E; text-decoration: none; font-weight: 500;
-    transition: background 0.1s, color 0.1s;
+    display: block; padding: 5px 0;
+    font-size: 12px; color: #9AA0AB; text-decoration: none; font-weight: 500;
+    transition: color 0.1s;
   }
-  .nav-link:hover { background: #F4F4F5; color: #21242C; }
+  .nav-link:hover { color: #21242C; }
 
-  .main-content {
-    margin-left: 200px;
-    padding: 48px 48px 80px;
-    flex: 1;
-    max-width: 980px;
-  }
+  .main-content { /* no-op — content sits directly in centered body */ }
 
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
   .back-link:visited { color: #676F7E; }
@@ -143,7 +131,7 @@
 <!-- =================================================================== AGENT ADOPTION -->
 <h2 class="section-heading" id="sec-agent">Agent adoption</h2>
 
-<div class="chart-grid cols-2">
+<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -167,7 +155,7 @@
 <!-- =================================================================== MONITORS -->
 <h2 class="section-heading" id="sec-monitors">Monitors</h2>
 
-<div class="chart-grid cols-2">
+<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -188,7 +176,7 @@
   </div>
 </div>
 
-<div class="chart-grid cols-2">
+<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -239,7 +227,7 @@
   </div>
 </div>
 
-<div class="chart-grid cols-2">
+<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
@@ -277,7 +265,7 @@
 
 <h2 class="section-heading" id="sec-revenue">Revenue</h2>
 
-<div class="chart-grid cols-1">
+<div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header">
       <div>
