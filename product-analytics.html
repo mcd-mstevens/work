@@ -235,7 +235,7 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Custom dashboard widgets</div>
-        <div class="chart-sub">Total widgets added per month</div>
+        <div class="chart-sub">Total widgets added per month · type breakdown not tracked</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="customWidgets"></canvas></div>
@@ -258,8 +258,8 @@
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Most popular integrations over time</div>
-        <div class="chart-sub">Active setups per month, by integration</div>
+        <div class="chart-title">Most popular data sources</div>
+        <div class="chart-sub">Accounts by connection type (current)</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="integrationsChart"></canvas></div>
@@ -452,11 +452,11 @@
 
   CHARTS.agentByCustomer = new Chart(document.getElementById('agentByCustomer'), { type:'bar',
     data:{ labels:[], datasets:[
-      { label:'Xometry',         data:[], backgroundColor:alpha(C.blue,0.85) },
-      { label:'Axios2',          data:[], backgroundColor:alpha(C.purple,0.85) },
-      { label:'Morningstar',     data:[], backgroundColor:alpha(C.green,0.85) },
-      { label:'entain',          data:[], backgroundColor:alpha(C.orange,0.85) },
-      { label:'Velocity Global', data:[], backgroundColor:alpha(C.teal,0.85) },
+      { label:'Xometry',         data:[], backgroundColor:alpha(C.blue,0.85),   borderRadius:0 },
+      { label:'Axios2',          data:[], backgroundColor:alpha(C.purple,0.85), borderRadius:0 },
+      { label:'Morningstar',     data:[], backgroundColor:alpha(C.green,0.85),  borderRadius:0 },
+      { label:'entain',          data:[], backgroundColor:alpha(C.orange,0.85), borderRadius:0 },
+      { label:'Velocity Global', data:[], backgroundColor:alpha(C.teal,0.85),   borderRadius:0 },
     ]}, options:{ interaction:{mode:'index',intersect:false},
       scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
       plugins:{legend:{display:true}} } });
@@ -471,10 +471,10 @@
 
   CHARTS.agentByType = new Chart(document.getElementById('agentByType'), { type:'bar',
     data:{ labels:[], datasets:[
-      { label:'Agent evaluation',  data:[], backgroundColor:alpha(C.blue,0.85) },
-      { label:'Agent metric',      data:[], backgroundColor:alpha(C.purple,0.85) },
-      { label:'Agent trajectory',  data:[], backgroundColor:alpha(C.green,0.85) },
-      { label:'Agent validation',  data:[], backgroundColor:alpha(C.orange,0.85) },
+      { label:'Agent evaluation',  data:[], backgroundColor:alpha(C.blue,0.85),   borderRadius:0 },
+      { label:'Agent metric',      data:[], backgroundColor:alpha(C.purple,0.85), borderRadius:0 },
+      { label:'Agent trajectory',  data:[], backgroundColor:alpha(C.green,0.85),  borderRadius:0 },
+      { label:'Agent validation',  data:[], backgroundColor:alpha(C.orange,0.85), borderRadius:0 },
     ]}, options:{ interaction:{mode:'index',intersect:false},
       scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
       plugins:{legend:{display:true}} } });
@@ -545,11 +545,31 @@
       line('Query performance',[],C.purple),
     ]}, options:{...opts(), plugins:{legend:{display:false}}} });
 
-  CHARTS.integrationsChart = new Chart(document.getElementById('integrationsChart'), { type:'line',
-    data:{ labels:[], datasets:[
-      line('Databricks',[],C.blue), line('PagerDuty',[],C.orange),
-      line('Jira',[],C.purple), line('Opsgenie',[],C.teal),
-    ]}, options:opts() });
+  // Integrations: static snapshot from self_service_tables (accounts by connection type)
+  new Chart(document.getElementById('integrationsChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Snowflake','BigQuery','Databricks','Data lake','Redshift','Transactional DB'],
+      datasets: [{
+        data: [2973, 1230, 705, 179, 177, 74],
+        backgroundColor: [
+          alpha(C.blue,0.8), alpha(C.purple,0.8), alpha(C.orange,0.8),
+          alpha(C.teal,0.8),  alpha(C.green,0.8),  alpha(C.pink,0.8),
+        ],
+        borderRadius: 3,
+        borderSkipped: false,
+      }],
+    },
+    options: {
+      indexAxis: 'y',
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { beginAtZero: true, grid: { display: false },
+             ticks: { callback: (v) => v.toLocaleString() } },
+        y: { grid: { display: false } },
+      },
+    },
+  });
 
   // ── Update all charts ────────────────────────────────────────────────────
   function avg(arr) { return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
@@ -611,7 +631,7 @@
     upd(CHARTS.customDash,      mLabels, [ms(D.customDash)]);
     upd(CHARTS.customWidgets,   mLabels, [ms(D.customWdg)]);
     upd(CHARTS.perfAdoption,    mLabels, [ms(D.perfQuery)]);
-    upd(CHARTS.integrationsChart,mLabels,[ms(D.intDatabricks),ms(D.intPager),ms(D.intJira),ms(D.intOpsgenie)]);
+    // integrationsChart is a static snapshot — no upd needed
   }
 
   // ── Wire picker ──────────────────────────────────────────────────────────
