@@ -239,15 +239,6 @@
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="customDash"></canvas></div>
   </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Custom dashboard widgets</div>
-        <div class="chart-sub">Total widgets added per month · type breakdown not tracked</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="customWidgets"></canvas></div>
-  </div>
 </div>
 
 <!-- =================================================================== PERFORMANCE & INTEGRATIONS -->
@@ -455,14 +446,6 @@
       options:{...opts(),plugins:{legend:{display:false}}} });
   })();
 
-  (function(){
-    const ctx = document.getElementById('customWidgets');
-    const g = ctx.getContext('2d').createLinearGradient(0,0,0,280);
-    g.addColorStop(0,alpha(C.green,0.25)); g.addColorStop(1,alpha(C.green,0));
-    CHARTS.customWidgets = new Chart(ctx, { type:'line', data:{ labels:[], datasets:[{
-      ...line('Widgets added',[],C.green,false), backgroundColor:g, fill:true }]},
-      options:{...opts(),plugins:{legend:{display:false}}} });
-  })();
 
   CHARTS.perfAdoption = new Chart(document.getElementById('perfAdoption'), { type:'line',
     data:{ labels:[], datasets:[
@@ -522,7 +505,6 @@
     upd(CHARTS.agentByType,     ALL_MONTHS, [D.agEval,D.agMetric,D.agTraj,D.agValidat]);
     upd(CHARTS.alertsAdoption,  mLabels, [ms(D.alertStatus),ms(D.alertComment),ms(D.alertOwner),ms(D.alertSev),ms(D.alertFb),ms(D.alertJira)]);
     upd(CHARTS.customDash,      mLabels, [ms(D.customDash)]);
-    upd(CHARTS.customWidgets,   mLabels, [ms(D.customWdg)]);
     upd(CHARTS.perfAdoption,    mLabels, [ms(D.perfQuery)]);
   }
 
