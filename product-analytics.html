@@ -12,40 +12,39 @@
     font-family: 'Inter', -apple-system, sans-serif;
     font-size: 14px; line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    padding: 56px 40px;
+    padding: 0 40px 56px;
     max-width: 1000px;
     margin: 0 auto;
   }
 
-  .sidebar {
-    position: fixed; top: 48px; left: 24px;
-    width: 148px;
-    display: flex; flex-direction: column; gap: 28px;
-    z-index: 100;
+  .top-bar {
+    position: sticky; top: 0; z-index: 100;
+    background: #FAFAFA;
+    border-bottom: 1px solid #E2E2E2;
+    margin: 0 -40px;
+    padding: 0 40px;
   }
-  .sidebar-label {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.8px;
-    text-transform: uppercase; color: #C0C5CE; margin-bottom: 6px;
+  .top-bar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 52px;
   }
-  .date-picker { display: flex; flex-direction: column; gap: 0; }
-  .date-picker-btn {
-    display: block; width: 100%; text-align: left;
-    padding: 5px 0; font-size: 12px; font-weight: 500;
-    color: #9AA0AB; background: transparent; border: none;
-    cursor: pointer; font-family: inherit;
-    transition: color 0.1s ease;
-  }
-  .date-picker-btn:hover { color: #21242C; }
-  .date-picker-btn.is-active { color: #21242C; font-weight: 600; }
-  .nav-links { display: flex; flex-direction: column; gap: 0; }
-  .nav-link {
-    display: block; padding: 5px 0;
-    font-size: 12px; color: #9AA0AB; text-decoration: none; font-weight: 500;
-    transition: color 0.1s;
-  }
-  .nav-link:hover { color: #21242C; }
+  .page-title { font-size: 15px; font-weight: 600; color: #21242C; }
 
-  .main-content { /* no-op — content sits directly in centered body */ }
+  .seg-control {
+    display: inline-flex; background: #EAECEF; border-radius: 7px; padding: 3px; gap: 2px;
+  }
+  .seg-btn {
+    padding: 5px 13px; border-radius: 5px;
+    font-size: 13px; font-weight: 500; font-family: inherit;
+    border: none; cursor: pointer;
+    background: transparent; color: #676F7E;
+    transition: background 0.1s, color 0.1s;
+  }
+  .seg-btn:hover { color: #21242C; }
+  .seg-btn.is-active {
+    background: #fff; color: #21242C;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+  }
 
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
   .back-link:visited { color: #676F7E; }
@@ -87,34 +86,19 @@
 </head>
 <body>
 
-<aside class="sidebar">
-  <div>
-    <div class="sidebar-label">Time window</div>
-    <div class="date-picker" id="datePicker">
-      <button class="date-picker-btn" type="button">2 weeks</button>
-      <button class="date-picker-btn" type="button">1 month</button>
-      <button class="date-picker-btn is-active" type="button">3 months</button>
-      <button class="date-picker-btn" type="button">12 months</button>
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span class="page-title">Product analytics</span>
+    <div class="seg-control" id="datePicker">
+      <button class="seg-btn" type="button">2 weeks</button>
+      <button class="seg-btn" type="button">1 month</button>
+      <button class="seg-btn is-active" type="button">3 months</button>
+      <button class="seg-btn" type="button">12 months</button>
     </div>
   </div>
-  <nav>
-    <div class="sidebar-label">Jump to</div>
-    <div class="nav-links">
-      <a class="nav-link" href="#sec-overview">Overview</a>
-      <a class="nav-link" href="#sec-agent">Agent adoption</a>
-      <a class="nav-link" href="#sec-monitors">Monitors</a>
-      <a class="nav-link" href="#sec-alerts">Alerts</a>
-      <a class="nav-link" href="#sec-dashboards">Dashboards</a>
-    </div>
-  </nav>
-</aside>
-
-<div class="main-content">
-<a class="back-link" href="index.html">← Back</a>
-
-<div class="report-header">
-  <h1>Product analytics</h1>
 </div>
+
+<a class="back-link" href="index.html" style="margin-top:24px;display:inline-flex">← Back</a>
 
 <!-- =================================================================== HERO: WAU -->
 <div class="hero-card" id="sec-overview">
@@ -334,9 +318,8 @@
       pointHoverBackgroundColor: '#fff', pointHoverBorderColor: color, pointHoverBorderWidth: 2 };
   }
   function stacked(label, data, color) {
-    return { label, data, borderColor: '#fff', backgroundColor: alpha(color, 0.92),
-      fill: true, tension: 0.32, borderWidth: 1.5, pointRadius: 0, pointHoverRadius: 4,
-      pointHoverBackgroundColor: '#fff', pointHoverBorderColor: color, pointHoverBorderWidth: 2 };
+    return { label, data, backgroundColor: alpha(color, 0.88), borderColor: '#fff',
+      borderWidth: 1, borderRadius: 0 };
   }
 
   const opts = (yOpts={}) => ({ interaction:{mode:'index',intersect:false},
@@ -373,7 +356,7 @@
   const stackedOpts = { interaction:{mode:'index',intersect:false},
     scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}} };
 
-  CHARTS.monTotal = new Chart(document.getElementById('monTotal'), { type:'line',
+  CHARTS.monTotal = new Chart(document.getElementById('monTotal'), { type:'bar',
     data:{ labels:[], datasets:[
       stacked('Metric',[],C.blue), stacked('Custom SQL',[],C.purple),
       stacked('Table',[],C.green), stacked('Validation',[],C.orange),
@@ -407,9 +390,8 @@
 
   CHARTS.alertsAdoption = new Chart(document.getElementById('alertsAdoption'), { type:'line',
     data:{ labels:[], datasets:[
-      line('Status update',[],C.blue), line('Owner update',[],C.green),
-      line('Comment',[],C.purple), line('Feedback',[],C.teal),
-      line('Jira ticket',[],C.pink),
+      line('Owner update',[],C.green), line('Comment',[],C.purple),
+      line('Feedback',[],C.teal), line('Jira ticket',[],C.pink),
     ]}, options:opts() });
 
   CHARTS.dashByDashboard = new Chart(document.getElementById('dashByDashboard'), { type:'line',
@@ -470,9 +452,9 @@
 
     // Monthly-only charts (always use mLabels / ms)
     // Trend charts: always show full history so bars never collapse to 1
-    upd(CHARTS.agentByCustomer, ALL_MONTHS, [D.agCustOther,D.agCustXom,D.agCustAxios,D.agCustMorn,D.agCustEnt,D.agCustVel]);
-    upd(CHARTS.agentByType,     ALL_MONTHS, [D.agEval,D.agMetric,D.agTraj,D.agValidat]);
-    upd(CHARTS.alertsAdoption,  labels,  [s(src.alertStatus),s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
+    upd(CHARTS.agentByCustomer, mLabels, [ms(D.agCustOther),ms(D.agCustXom),ms(D.agCustAxios),ms(D.agCustMorn),ms(D.agCustEnt),ms(D.agCustVel)]);
+    upd(CHARTS.agentByType,     mLabels, [ms(D.agEval),ms(D.agMetric),ms(D.agTraj),ms(D.agValidat)]);
+    upd(CHARTS.alertsAdoption,  labels,  [s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
   }
 
   // ── Wire picker ──────────────────────────────────────────────────────────
@@ -483,9 +465,9 @@
     '12 months':{ n: 11, src: 'monthly' },
   };
   document.getElementById('datePicker').addEventListener('click', (e) => {
-    const btn = e.target.closest('.date-picker-btn');
+    const btn = e.target.closest('.seg-btn');
     if (!btn) return;
-    document.querySelectorAll('.date-picker-btn').forEach((b) => b.classList.remove('is-active'));
+    document.querySelectorAll('.seg-btn').forEach((b) => b.classList.remove('is-active'));
     btn.classList.add('is-active');
     updateCharts(WINDOWS[btn.textContent.trim()]);
   });
@@ -538,6 +520,5 @@
 })();
 </script>
 
-</div><!-- /.main-content -->
 </body>
 </html>
