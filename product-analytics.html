@@ -58,10 +58,10 @@
 <div class="report-header">
   <h1>Product analytics</h1>
   <div class="date-picker" id="datePicker">
-    <button class="date-picker-btn" type="button">1 week</button>
-    <button class="date-picker-btn" type="button">2 weeks</button>
     <button class="date-picker-btn" type="button">1 month</button>
     <button class="date-picker-btn is-active" type="button">3 months</button>
+    <button class="date-picker-btn" type="button">6 months</button>
+    <button class="date-picker-btn" type="button">12 months</button>
   </div>
 </div>
 
@@ -268,22 +268,91 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="charts.js"></script>
 <script>
-  (function () {
-    const picker = document.getElementById('datePicker');
-    if (!picker) return;
-    picker.addEventListener('click', (e) => {
-      const btn = e.target.closest('.date-picker-btn');
-      if (!btn) return;
-      picker.querySelectorAll('.date-picker-btn').forEach((b) => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-    });
-  })();
-
+(function () {
   const C = window.MC_CHART_COLORS;
   const alpha = window.mcAlpha;
 
-  // Jun 2025 – May 2026
-  const MONTHS = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
+  // All data: Jun 2025 – May 2026 (12 months)
+  const ALL_MONTHS = ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'];
+
+  const D = {
+    wau:         [2803,2917,2955,3045,2997,2939,2474,2838,2947,2872,2825,2922],
+    tsaAgent:    [0,0,0,0,680,755,696,699,705,778,655,440],
+    oaAlert:     [0,0,0,0,0,0,0,0,718,1163,1067,530],
+    oaSidebar:   [0,0,0,0,0,0,0,0,130,267,314,310],
+    oaFullPage:  [0,0,0,0,0,0,0,0,229,404,371,192],
+    oaMonitor:   [0,0,0,0,0,0,0,0,181,273,215,133],
+    mcpOther:    [0,0,0,0,0,0,0,0,0,0,1019,1079],
+    mcpClaude:   [0,0,0,0,0,0,0,0,0,0,8,140],
+    mcpNode:     [0,0,0,0,0,0,0,0,0,0,3,49],
+    mcpCursor:   [0,0,0,0,0,0,0,0,0,0,2,37],
+    mcpVscode:   [0,0,0,0,0,0,0,0,0,0,0,17],
+    mcpPython:   [0,0,0,0,0,0,0,0,0,0,0,5],
+    monStats:    [2106,3316,1873,2231,2397,3792,13879,2060,4865,5968,53467,19957],
+    monSql:      [9381,11857,13760,17029,9564,14625,9355,9692,10120,15730,12765,6531],
+    monTable:    [53,87,1870,810,3373,2383,886,1223,5240,4589,4771,1851],
+    monValid:    [810,2405,1274,855,1005,915,2950,702,670,1146,1647,814],
+    monVol:      [815,1158,763,468,826,711,2623,3010,806,693,565,1213],
+    monFresh:    [757,1175,1103,1280,1606,1801,1627,1688,649,1044,805,449],
+    monMetric:   [239,178,207,246,389,284,212,140,1955,961,234,322],
+    agCustXom:   [0,0,0,0,0,0,0,0,0,4,25,10],
+    agCustAxios: [0,0,0,9,0,1,0,2,0,15,0,0],
+    agCustMorn:  [0,0,0,0,0,0,0,0,3,16,4,0],
+    agCustEnt:   [0,0,0,0,0,0,0,0,0,0,13,0],
+    agCustVel:   [0,0,0,0,0,0,0,0,0,0,0,16],
+    agEval:      [0,0,0,56,29,7,19,31,36,53,61,37],
+    agMetric:    [0,0,0,7,4,6,16,10,24,17,46,49],
+    agTraj:      [0,0,0,0,0,0,0,0,10,4,9,4],
+    agValidat:   [0,0,0,0,0,0,0,0,0,20,7,8],
+    alertStatus: [57.4,55.8,55.6,54.1,52.2,53,54.6,53.1,51.5,52.3,53.6,53.9],
+    alertComment:[11.3,11.5,9.3,9,9.5,9.5,9.2,9.9,10.3,9.8,10.5,10.3],
+    alertOwner:  [10.2,9.4,9.1,8.7,8.2,8.6,8.1,8.2,8.4,8.1,8.4,8.1],
+    alertSev:    [7.4,7,7.2,7.2,6.3,5.7,4.9,5.2,4.9,4.9,5.1,4.7],
+    alertFb:     [4.8,5.8,6.3,6.2,5.9,6.1,6.3,5.8,5.7,5.8,5.7,5.6],
+    alertJira:   [1.5,1.8,1.5,1.6,1.4,1.5,1.5,1.4,1.3,1.2,1.2,1.2],
+    dashDataOps: [2121,2161,2042,1980,1586,1209,928,998,1073,1024,787,559],
+    dashDQ:      [736,760,698,838,1255,1099,881,937,987,954,747,522],
+    dashDaily:   [565,568,532,645,995,830,664,720,721,691,500,354],
+    dashCoverage:[0,0,0,34,48,494,449,651,905,694,568,377],
+    dashActivity:[521,511,501,548,843,745,525,590,638,632,417,306],
+    dashCustom:  [0,0,0,0,0,0,0,168,484,495,359,251],
+    customDash:  [0,0,0,0,0,0,0,47,44,56,30,16],
+    customWdg:   [0,0,0,0,0,0,0,97,100,131,140,114],
+    perfStats:   [2106,3316,1873,2231,2397,3792,13879,2060,4865,5968,53467,19957],
+    perfQuery:   [13,10,6,13,9,10,8,4,6,8,5,1],
+    intDataConn: [38,30,33,50,55,32,21,25,28,25,10,3],
+    intDatabricks:[7,8,9,8,11,3,8,7,12,10,8,8],
+    intPager:    [6,6,3,10,8,3,4,7,9,9,3,1],
+    intTableau:  [5,5,2,3,6,3,5,5,3,6,7,5],
+    intJira:     [3,7,2,8,3,3,2,2,2,3,1,4],
+    intOpsgenie: [5,4,2,2,4,4,3,2,1,2,1,0],
+  };
+
+  // Pre-compute wobbled fake data so slicing gives consistent shapes
+  let _s = 0;
+  function wobble(arr) {
+    const s = _s++, sea = [1,.98,.94,1.04,1,1,.92,1.05,1,1.02,1.03,1.01];
+    return arr.map((v,i) => { const k=(i*37+s*53+i*s*7)%13, n=1+(k-6)/100, r=v*sea[i]*n;
+      return Number.isInteger(v)?Math.max(0,Math.round(r)):Math.max(0,Math.round(r*10)/10); });
+  }
+  const FK = {
+    monTtcSql:    wobble([28.5,27.8,26.9,26,25.3,24.7,24.1,23.7,23.3,23,22.8,22.7]),
+    monTtcValid:  wobble([8.2,8,7.7,7.5,7.3,7.1,6.9,6.8,6.7,6.7,6.6,6.5]),
+    monTtcMet:    wobble([6.5,6.4,6.2,6.1,6,5.9,5.8,5.7,5.6,5.5,5.5,5.4]),
+    monTtcTable:  wobble([3.5,3.5,3.4,3.4,3.3,3.3,3.3,3.2,3.2,3.2,3.2,3.2]),
+    agTtcEval:    wobble([22,20,18,17,16,15,14,14,13,13,12,12]),
+    agTtcTraj:    wobble([30,28,26,24,23,22,21,20,19,19,18,18]),
+    agTtcMet:     wobble([42,38,35,33,31,29,28,27,26,25,24,24]),
+    agTtcValid:   wobble([48,45,42,40,38,36,35,34,33,32,31,31]),
+    monCompTable: wobble([85,86,87,88,89,89,90,90,91,91,91,92]),
+    monCompSql:   wobble([52,54,56,58,59,60,61,62,63,64,64,65]),
+    monCompMet:   wobble([78,79,80,81,82,83,84,85,86,86,87,88]),
+    monCompValid: wobble([80,81,82,84,85,86,87,88,88,89,89,90]),
+    agCompEval:   wobble([89,90,91,91,92,92,93,93,94,94,95,96]),
+    agCompTraj:   wobble([86,87,88,88,89,89,90,91,91,92,93,94]),
+    agCompMet:    wobble([83,84,85,85,86,87,87,88,89,90,91,92]),
+    agCompValid:  wobble([80,81,82,83,84,85,86,86,87,88,89,90]),
+  };
 
   function line(label, data, color, fill) {
     return { label, data, borderColor: color, backgroundColor: fill ? alpha(color, 0.18) : color,
@@ -296,213 +365,203 @@
       pointHoverBackgroundColor: '#fff', pointHoverBorderColor: color, pointHoverBorderWidth: 2 };
   }
 
-  // wobble only used by the 4 remaining fake charts
-  let _s = 0;
-  function wobble(arr) {
-    const s = _s++, sea = [1,.98,.94,1.04,1,1,.92,1.05,1,1.02,1.03,1.01];
-    return arr.map((v,i) => { const k=(i*37+s*53+i*s*7)%13, n=1+(k-6)/100, r=v*sea[i]*n;
-      return Number.isInteger(v)?Math.max(0,Math.round(r)):Math.max(0,Math.round(r*10)/10); });
-  }
-
   const opts = (yOpts={}) => ({ interaction:{mode:'index',intersect:false},
     plugins:{legend:{display:true}}, scales:{x:{grid:{display:false}},y:{beginAtZero:true,...yOpts}} });
 
-  // ── WAU (real — monthly avg, source: gut_summary) ──────────────────────────
+  // ── Create all charts (empty data — filled by first updateCharts call) ────
+  const CHARTS = {};
+
   (function(){
-    const ctx=document.getElementById('wauChart');
-    const g=ctx.getContext('2d').createLinearGradient(0,0,0,200);
+    const ctx = document.getElementById('wauChart');
+    const g = ctx.getContext('2d').createLinearGradient(0,0,0,200);
     g.addColorStop(0,alpha(C.blue,0.32)); g.addColorStop(1,alpha(C.blue,0));
-    new Chart(ctx,{ type:'line', data:{ labels:MONTHS, datasets:[{
-      ...line('WAU',[2803,2917,2955,3045,2997,2939,2474,2838,2947,2872,2825,2922],C.blue,false),
-      backgroundColor:g, fill:true }]},
+    CHARTS.wau = new Chart(ctx, { type:'line', data:{ labels:[], datasets:[{
+      ...line('WAU',[],C.blue,false), backgroundColor:g, fill:true }]},
       options:{ plugins:{legend:{display:false}}, interaction:{mode:'index',intersect:false},
         scales:{ x:{grid:{display:false},ticks:{maxRotation:0}},
                  y:{beginAtZero:false,ticks:{callback:(v)=>(v/1000).toFixed(1)+'k'}} } } });
   })();
 
-  // ── Agent adoption (real — source: gut_agent_sessions) ────────────────────
-  (function(){
-    new Chart(document.getElementById('agentAdoption'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('TSA',                 [0,0,0,0,680,755,696,699,705,778,655,440],C.blue),
-      line('OA: Alert explain',   [0,0,0,0,0,0,0,0,718,1163,1067,530],C.purple),
-      line('OA: Sidebar',         [0,0,0,0,0,0,0,0,130,267,314,310],C.teal),
-      line('OA: Full page',       [0,0,0,0,0,0,0,0,229,404,371,192],C.green),
-      line('OA: Monitor explain', [0,0,0,0,0,0,0,0,181,273,215,133],C.orange),
+  CHARTS.agentAdoption = new Chart(document.getElementById('agentAdoption'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('TSA',[],C.blue), line('OA: Alert explain',[],C.purple),
+      line('OA: Sidebar',[],C.teal), line('OA: Full page',[],C.green),
+      line('OA: Monitor explain',[],C.orange),
     ]}, options:opts() });
-  })();
 
-  // ── MCP adoption (real — source: gut_mcp_tool_calls) ──────────────────────
-  (function(){
-    new Chart(document.getElementById('mcpAdoption'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Other / Unknown',[0,0,0,0,0,0,0,0,0,0,1019,1079],C.gray),
-      line('claude_code',    [0,0,0,0,0,0,0,0,0,0,8,140],C.blue),
-      line('node',           [0,0,0,0,0,0,0,0,0,0,3,49],C.orange),
-      line('cursor',         [0,0,0,0,0,0,0,0,0,0,2,37],C.purple),
-      line('vscode',         [0,0,0,0,0,0,0,0,0,0,0,17],C.green),
-      line('python',         [0,0,0,0,0,0,0,0,0,0,0,5],C.teal),
+  CHARTS.mcpAdoption = new Chart(document.getElementById('mcpAdoption'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Other / Unknown',[],C.gray), line('claude_code',[],C.blue),
+      line('node',[],C.orange), line('cursor',[],C.purple),
+      line('vscode',[],C.green), line('python',[],C.teal),
     ]}, options:opts() });
-  })();
 
-  // ── Monitors created over time (real — source: gut_monitor_creation) ──────
-  (function(){
-    new Chart(document.getElementById('monTotal'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      stacked('Stats',            [2106,3316,1873,2231,2397,3792,13879,2060,4865,5968,53467,19957],C.blue),
-      stacked('Custom SQL',       [9381,11857,13760,17029,9564,14625,9355,9692,10120,15730,12765,6531],C.purple),
-      stacked('Table',            [53,87,1870,810,3373,2383,886,1223,5240,4589,4771,1851],C.green),
-      stacked('Validation',       [810,2405,1274,855,1005,915,2950,702,670,1146,1647,814],C.orange),
-      stacked('Volume',           [815,1158,763,468,826,711,2623,3010,806,693,565,1213],C.teal),
-      stacked('Freshness',        [757,1175,1103,1280,1606,1801,1627,1688,649,1044,805,449],C.red),
-      stacked('Metric comparison',[239,178,207,246,389,284,212,140,1955,961,234,322],C.pink),
-    ]}, options:{ interaction:{mode:'index',intersect:false},
-      scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}} } });
-  })();
+  const stackedOpts = { interaction:{mode:'index',intersect:false},
+    scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}} };
 
-  // ── Agent monitors by customer (real — source: gut_monitor_creation + client_hub_master) ──
-  (function(){
-    new Chart(document.getElementById('agentByCustomer'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Xometry',        [0,0,0,0,0,0,0,0,0,4,25,10],C.blue),
-      line('Axios2',         [0,0,0,9,0,1,0,2,0,15,0,0],C.purple),
-      line('Morningstar',    [0,0,0,0,0,0,0,0,3,16,4,0],C.green),
-      line('entain',         [0,0,0,0,0,0,0,0,0,0,13,0],C.orange),
-      line('Velocity Global',[0,0,0,0,0,0,0,0,0,0,0,16],C.teal),
+  CHARTS.monTotal = new Chart(document.getElementById('monTotal'), { type:'line',
+    data:{ labels:[], datasets:[
+      stacked('Stats',[],C.blue), stacked('Custom SQL',[],C.purple),
+      stacked('Table',[],C.green), stacked('Validation',[],C.orange),
+      stacked('Volume',[],C.teal), stacked('Freshness',[],C.red),
+      stacked('Metric comparison',[],C.pink),
+    ]}, options:stackedOpts });
+
+  CHARTS.agentByCustomer = new Chart(document.getElementById('agentByCustomer'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Xometry',[],C.blue), line('Axios2',[],C.purple),
+      line('Morningstar',[],C.green), line('entain',[],C.orange),
+      line('Velocity Global',[],C.teal),
     ]}, options:opts() });
-  })();
 
-  // ── Monitor type breakdown (real — same source) ────────────────────────────
-  (function(){
-    new Chart(document.getElementById('monByType'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      stacked('Stats',            [2106,3316,1873,2231,2397,3792,13879,2060,4865,5968,53467,19957],C.blue),
-      stacked('Custom SQL',       [9381,11857,13760,17029,9564,14625,9355,9692,10120,15730,12765,6531],C.purple),
-      stacked('Table',            [53,87,1870,810,3373,2383,886,1223,5240,4589,4771,1851],C.green),
-      stacked('Validation',       [810,2405,1274,855,1005,915,2950,702,670,1146,1647,814],C.orange),
-      stacked('Volume',           [815,1158,763,468,826,711,2623,3010,806,693,565,1213],C.teal),
-      stacked('Freshness',        [757,1175,1103,1280,1606,1801,1627,1688,649,1044,805,449],C.red),
-      stacked('Metric comparison',[239,178,207,246,389,284,212,140,1955,961,234,322],C.pink),
-    ]}, options:{ interaction:{mode:'index',intersect:false},
-      scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}} } });
-  })();
+  CHARTS.monByType = new Chart(document.getElementById('monByType'), { type:'line',
+    data:{ labels:[], datasets:[
+      stacked('Stats',[],C.blue), stacked('Custom SQL',[],C.purple),
+      stacked('Table',[],C.green), stacked('Validation',[],C.orange),
+      stacked('Volume',[],C.teal), stacked('Freshness',[],C.red),
+      stacked('Metric comparison',[],C.pink),
+    ]}, options:stackedOpts });
 
-  // ── Agent monitor types (real — same source) ───────────────────────────────
-  (function(){
-    new Chart(document.getElementById('agentByType'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      stacked('Agent evaluation',[0,0,0,56,29,7,19,31,36,53,61,37],C.blue),
-      stacked('Agent metric',    [0,0,0,7,4,6,16,10,24,17,46,49],C.purple),
-      stacked('Agent trajectory',[0,0,0,0,0,0,0,0,10,4,9,4],C.green),
-      stacked('Agent validation',[0,0,0,0,0,0,0,0,0,20,7,8],C.orange),
-    ]}, options:{ interaction:{mode:'index',intersect:false},
-      scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}} } });
-  })();
+  CHARTS.agentByType = new Chart(document.getElementById('agentByType'), { type:'line',
+    data:{ labels:[], datasets:[
+      stacked('Agent evaluation',[],C.blue), stacked('Agent metric',[],C.purple),
+      stacked('Agent trajectory',[],C.green), stacked('Agent validation',[],C.orange),
+    ]}, options:stackedOpts });
 
-  // ── Time to complete — FAKE (draft→create is instant in real data) ─────────
-  (function(){
-    new Chart(document.getElementById('monTtc'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Custom SQL', wobble([28.5,27.8,26.9,26,25.3,24.7,24.1,23.7,23.3,23,22.8,22.7]),C.purple),
-      line('Validation', wobble([8.2,8,7.7,7.5,7.3,7.1,6.9,6.8,6.7,6.7,6.6,6.5]),C.teal),
-      line('Metric',     wobble([6.5,6.4,6.2,6.1,6,5.9,5.8,5.7,5.6,5.5,5.5,5.4]),C.green),
-      line('Table',      wobble([3.5,3.5,3.4,3.4,3.3,3.3,3.3,3.2,3.2,3.2,3.2,3.2]),C.blue),
+  CHARTS.monTtc = new Chart(document.getElementById('monTtc'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Custom SQL',[],C.purple), line('Validation',[],C.teal),
+      line('Metric',[],C.green), line('Table',[],C.blue),
     ]}, options:{...opts({ticks:{callback:(v)=>v+' min'}}),
       plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y} min`}}}} });
-  })();
 
-  // ── Agent time to complete — FAKE ─────────────────────────────────────────
-  (function(){
-    new Chart(document.getElementById('agentTtc'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Agent evaluation',wobble([22,20,18,17,16,15,14,14,13,13,12,12]),C.blue),
-      line('Agent trajectory',wobble([30,28,26,24,23,22,21,20,19,19,18,18]),C.purple),
-      line('Agent metric',    wobble([42,38,35,33,31,29,28,27,26,25,24,24]),C.green),
-      line('Agent validation',wobble([48,45,42,40,38,36,35,34,33,32,31,31]),C.orange),
+  CHARTS.agentTtc = new Chart(document.getElementById('agentTtc'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Agent evaluation',[],C.blue), line('Agent trajectory',[],C.purple),
+      line('Agent metric',[],C.green), line('Agent validation',[],C.orange),
     ]}, options:{...opts({ticks:{callback:(v)=>v+'s'}}),
       plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}s`}}}} });
-  })();
 
-  // ── Completion rate — FAKE ────────────────────────────────────────────────
-  (function(){
-    new Chart(document.getElementById('monCompletion'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Table',      wobble([85,86,87,88,89,89,90,90,91,91,91,92]),C.blue),
-      line('Custom SQL', wobble([52,54,56,58,59,60,61,62,63,64,64,65]),C.purple),
-      line('Metric',     wobble([78,79,80,81,82,83,84,85,86,86,87,88]),C.green),
-      line('Validation', wobble([80,81,82,84,85,86,87,88,88,89,89,90]),C.teal),
+  CHARTS.monCompletion = new Chart(document.getElementById('monCompletion'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Table',[],C.blue), line('Custom SQL',[],C.purple),
+      line('Metric',[],C.green), line('Validation',[],C.teal),
     ]}, options:{...opts({ticks:{callback:(v)=>v+'%'},max:100}),
       plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}%`}}}} });
-  })();
 
-  // ── Agent completion rate — FAKE ──────────────────────────────────────────
-  (function(){
-    new Chart(document.getElementById('agentCompletion'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Agent evaluation',wobble([89,90,91,91,92,92,93,93,94,94,95,96]),C.blue),
-      line('Agent trajectory',wobble([86,87,88,88,89,89,90,91,91,92,93,94]),C.purple),
-      line('Agent metric',    wobble([83,84,85,85,86,87,87,88,89,90,91,92]),C.green),
-      line('Agent validation',wobble([80,81,82,83,84,85,86,86,87,88,89,90]),C.orange),
+  CHARTS.agentCompletion = new Chart(document.getElementById('agentCompletion'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Agent evaluation',[],C.blue), line('Agent trajectory',[],C.purple),
+      line('Agent metric',[],C.green), line('Agent validation',[],C.orange),
     ]}, options:{...opts({ticks:{callback:(v)=>v+'%'},max:100}),
       plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}%`}}}} });
-  })();
 
-  // ── Alert action adoption (real — source: gut_incidents_engagement + clickthrough) ──
-  (function(){
-    new Chart(document.getElementById('alertsAdoption'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Status update',   [57.4,55.8,55.6,54.1,52.2,53,54.6,53.1,51.5,52.3,53.6,53.9],C.blue),
-      line('Comment',         [11.3,11.5,9.3,9,9.5,9.5,9.2,9.9,10.3,9.8,10.5,10.3],C.purple),
-      line('Owner update',    [10.2,9.4,9.1,8.7,8.2,8.6,8.1,8.2,8.4,8.1,8.4,8.1],C.green),
-      line('Severity update', [7.4,7,7.2,7.2,6.3,5.7,4.9,5.2,4.9,4.9,5.1,4.7],C.orange),
-      line('Feedback',        [4.8,5.8,6.3,6.2,5.9,6.1,6.3,5.8,5.7,5.8,5.7,5.6],C.teal),
-      line('Jira ticket',     [1.5,1.8,1.5,1.6,1.4,1.5,1.5,1.4,1.3,1.2,1.2,1.2],C.pink),
+  CHARTS.alertsAdoption = new Chart(document.getElementById('alertsAdoption'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Status update',[],C.blue), line('Comment',[],C.purple),
+      line('Owner update',[],C.green), line('Severity update',[],C.orange),
+      line('Feedback',[],C.teal), line('Jira ticket',[],C.pink),
     ]}, options:{...opts({ticks:{callback:(v)=>v+'%'}}),
       plugins:{tooltip:{callbacks:{label:(i)=>`${i.dataset.label}: ${i.parsed.y}%`}}}} });
-  })();
 
-  // ── Dashboard adoption (real — source: gut_dashboards_sessions_fs) ────────
-  (function(){
-    new Chart(document.getElementById('dashByDashboard'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Data operations',   [2121,2161,2042,1980,1586,1209,928,998,1073,1024,787,559],C.blue),
-      line('Data quality',      [736,760,698,838,1255,1099,881,937,987,954,747,522],C.purple),
-      line('Daily table health',[565,568,532,645,995,830,664,720,721,691,500,354],C.green),
-      line('Coverage',          [0,0,0,34,48,494,449,651,905,694,568,377],C.orange),
-      line('Activity',          [521,511,501,548,843,745,525,590,638,632,417,306],C.teal),
-      line('Custom',            [0,0,0,0,0,0,0,168,484,495,359,251],C.pink),
+  CHARTS.dashByDashboard = new Chart(document.getElementById('dashByDashboard'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Data operations',[],C.blue), line('Data quality',[],C.purple),
+      line('Daily table health',[],C.green), line('Coverage',[],C.orange),
+      line('Activity',[],C.teal), line('Custom',[],C.pink),
     ]}, options:opts() });
-  })();
 
-  // ── Custom dashboards (real — source: self_service_mixpanel) ──────────────
   (function(){
-    const ctx=document.getElementById('customDash');
-    const g=ctx.getContext('2d').createLinearGradient(0,0,0,280);
+    const ctx = document.getElementById('customDash');
+    const g = ctx.getContext('2d').createLinearGradient(0,0,0,280);
     g.addColorStop(0,alpha(C.purple,0.25)); g.addColorStop(1,alpha(C.purple,0));
-    new Chart(ctx,{ type:'line', data:{ labels:MONTHS, datasets:[{
-      ...line('Users creating dashboards',[0,0,0,0,0,0,0,47,44,56,30,16],C.purple,false),
-      backgroundColor:g, fill:true }]},
+    CHARTS.customDash = new Chart(ctx, { type:'line', data:{ labels:[], datasets:[{
+      ...line('Users creating dashboards',[],C.purple,false), backgroundColor:g, fill:true }]},
       options:{...opts(),plugins:{legend:{display:false}}} });
   })();
 
-  // ── Custom widgets total (real — source: self_service_mixpanel) ───────────
   (function(){
-    const ctx=document.getElementById('customWidgets');
-    const g=ctx.getContext('2d').createLinearGradient(0,0,0,280);
+    const ctx = document.getElementById('customWidgets');
+    const g = ctx.getContext('2d').createLinearGradient(0,0,0,280);
     g.addColorStop(0,alpha(C.green,0.25)); g.addColorStop(1,alpha(C.green,0));
-    new Chart(ctx,{ type:'line', data:{ labels:MONTHS, datasets:[{
-      ...line('Widgets added',[0,0,0,0,0,0,0,97,100,131,140,114],C.green,false),
-      backgroundColor:g, fill:true }]},
+    CHARTS.customWidgets = new Chart(ctx, { type:'line', data:{ labels:[], datasets:[{
+      ...line('Widgets added',[],C.green,false), backgroundColor:g, fill:true }]},
       options:{...opts(),plugins:{legend:{display:false}}} });
   })();
 
-  // ── Performance monitors (real — source: gut_monitor_creation) ────────────
-  (function(){
-    new Chart(document.getElementById('perfAdoption'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Stats',            [2106,3316,1873,2231,2397,3792,13879,2060,4865,5968,53467,19957],C.blue),
-      line('Query performance',[13,10,6,13,9,10,8,4,6,8,5,1],C.purple),
+  CHARTS.perfAdoption = new Chart(document.getElementById('perfAdoption'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Stats',[],C.blue), line('Query performance',[],C.purple),
     ]}, options:opts() });
-  })();
 
-  // ── Integrations (real — source: self_service_mixpanel) ───────────────────
-  (function(){
-    new Chart(document.getElementById('integrationsChart'),{ type:'line', data:{ labels:MONTHS, datasets:[
-      line('Data Connection',[38,30,33,50,55,32,21,25,28,25,10,3],C.blue),
-      line('Databricks',     [7,8,9,8,11,3,8,7,12,10,8,8],C.red),
-      line('PagerDuty',      [6,6,3,10,8,3,4,7,9,9,3,1],C.orange),
-      line('Tableau',        [5,5,2,3,6,3,5,5,3,6,7,5],C.green),
-      line('Jira',           [3,7,2,8,3,3,2,2,2,3,1,4],C.purple),
-      line('Opsgenie',       [5,4,2,2,4,4,3,2,1,2,1,0],C.teal),
+  CHARTS.integrationsChart = new Chart(document.getElementById('integrationsChart'), { type:'line',
+    data:{ labels:[], datasets:[
+      line('Data Connection',[],C.blue), line('Databricks',[],C.red),
+      line('PagerDuty',[],C.orange), line('Tableau',[],C.green),
+      line('Jira',[],C.purple), line('Opsgenie',[],C.teal),
     ]}, options:opts() });
-  })();
+
+  // ── Update all charts to a given month window ────────────────────────────
+  function avg(arr) { return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
+
+  function upd(chart, datasets) {
+    datasets.forEach((d, i) => { chart.data.datasets[i].data = d; });
+    chart.update('none');
+  }
+
+  function updateCharts(n) {
+    const s = (arr) => arr.slice(-n);
+    const labels = ALL_MONTHS.slice(-n);
+
+    // Update hero
+    const wauWindow = D.wau.slice(-n);
+    const wauPrior  = D.wau.slice(-2*n, -n);
+    const wauAvg    = Math.round(avg(wauWindow));
+    document.getElementById('wauValue').textContent = wauAvg.toLocaleString();
+    const deltaEl = document.getElementById('wauDelta');
+    if (wauPrior.length === n) {
+      const pct = (wauAvg - avg(wauPrior)) / avg(wauPrior) * 100;
+      deltaEl.textContent = `${pct >= 0 ? '+' : ''}${pct.toFixed(1)}% vs prior period`;
+      deltaEl.style.color = pct >= 0 ? '#276334' : '#B71C1C';
+    } else {
+      deltaEl.textContent = '';
+    }
+
+    // Update all chart labels then data
+    Object.values(CHARTS).forEach((c) => { c.data.labels = labels; });
+
+    upd(CHARTS.wau,             [s(D.wau)]);
+    upd(CHARTS.agentAdoption,   [s(D.tsaAgent),s(D.oaAlert),s(D.oaSidebar),s(D.oaFullPage),s(D.oaMonitor)]);
+    upd(CHARTS.mcpAdoption,     [s(D.mcpOther),s(D.mcpClaude),s(D.mcpNode),s(D.mcpCursor),s(D.mcpVscode),s(D.mcpPython)]);
+    upd(CHARTS.monTotal,        [s(D.monStats),s(D.monSql),s(D.monTable),s(D.monValid),s(D.monVol),s(D.monFresh),s(D.monMetric)]);
+    upd(CHARTS.agentByCustomer, [s(D.agCustXom),s(D.agCustAxios),s(D.agCustMorn),s(D.agCustEnt),s(D.agCustVel)]);
+    upd(CHARTS.monByType,       [s(D.monStats),s(D.monSql),s(D.monTable),s(D.monValid),s(D.monVol),s(D.monFresh),s(D.monMetric)]);
+    upd(CHARTS.agentByType,     [s(D.agEval),s(D.agMetric),s(D.agTraj),s(D.agValidat)]);
+    upd(CHARTS.monTtc,          [s(FK.monTtcSql),s(FK.monTtcValid),s(FK.monTtcMet),s(FK.monTtcTable)]);
+    upd(CHARTS.agentTtc,        [s(FK.agTtcEval),s(FK.agTtcTraj),s(FK.agTtcMet),s(FK.agTtcValid)]);
+    upd(CHARTS.monCompletion,   [s(FK.monCompTable),s(FK.monCompSql),s(FK.monCompMet),s(FK.monCompValid)]);
+    upd(CHARTS.agentCompletion, [s(FK.agCompEval),s(FK.agCompTraj),s(FK.agCompMet),s(FK.agCompValid)]);
+    upd(CHARTS.alertsAdoption,  [s(D.alertStatus),s(D.alertComment),s(D.alertOwner),s(D.alertSev),s(D.alertFb),s(D.alertJira)]);
+    upd(CHARTS.dashByDashboard, [s(D.dashDataOps),s(D.dashDQ),s(D.dashDaily),s(D.dashCoverage),s(D.dashActivity),s(D.dashCustom)]);
+    upd(CHARTS.customDash,      [s(D.customDash)]);
+    upd(CHARTS.customWidgets,   [s(D.customWdg)]);
+    upd(CHARTS.perfAdoption,    [s(D.perfStats),s(D.perfQuery)]);
+    upd(CHARTS.integrationsChart,[s(D.intDataConn),s(D.intDatabricks),s(D.intPager),s(D.intTableau),s(D.intJira),s(D.intOpsgenie)]);
+  }
+
+  // ── Wire picker ──────────────────────────────────────────────────────────
+  const WINDOWS = { '1 month':1, '3 months':3, '6 months':6, '12 months':12 };
+  document.getElementById('datePicker').addEventListener('click', (e) => {
+    const btn = e.target.closest('.date-picker-btn');
+    if (!btn) return;
+    document.querySelectorAll('.date-picker-btn').forEach((b) => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    updateCharts(WINDOWS[btn.textContent.trim()]);
+  });
+
+  // Initial render
+  updateCharts(3);
+})();
 </script>
 
 </body>
