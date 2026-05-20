@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics — Monte Carlo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #FAFAFA; color: #21242C; font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 56px 40px; max-width: 720px; margin: 0 auto; }
+
+  .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
+  .back-link:visited { color: #676F7E; }
+  .back-link:hover { color: #21242C; }
+
+  .page-title { font-size: 28px; font-weight: 600; letter-spacing: -0.4px; margin-bottom: 24px; }
+
+  .card { background: #fff; border: 1px solid #E2E2E2; border-radius: 14px; padding: 24px 28px 28px; }
+  .card-title { font-size: 14px; font-weight: 700; letter-spacing: 0.4px; color: #21242C; margin-bottom: 16px; }
+  .chart-wrap { position: relative; height: 260px; margin-bottom: 4px; }
+  .chart-legend { display: flex; justify-content: center; gap: 28px; margin-top: 10px; margin-bottom: 20px; font-size: 12px; color: #676F7E; font-weight: 500; }
+  .chart-legend-item { display: inline-flex; align-items: center; gap: 8px; }
+  .chart-legend-marker { width: 28px; height: 0; border-top: 2px solid; position: relative; }
+  .chart-legend-marker::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .chart-legend-marker.dashed { border-top-style: dashed; }
+
+  .delta-row { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 0 14px; border-bottom: 1px solid #E8E8E8; margin-bottom: 4px; }
+  .delta-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #676F7E; }
+  .delta-value { font-size: 26px; font-weight: 600; letter-spacing: -0.3px; }
+  .up { color: #1DAF6E; }
+  .down { color: #DC4E45; }
+
+  table.accounts { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.accounts th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #676F7E; padding: 14px 0 10px; text-align: right; font-weight: 600; }
+  table.accounts th:first-child { text-align: left; }
+  table.accounts td { padding: 11px 0; border-top: 1px solid #EFEFEF; text-align: right; color: #21242C; font-weight: 500; }
+  table.accounts td:first-child { text-align: left; }
+  table.accounts tbody tr:first-child td { border-top: none; }
+  table.accounts td.num-up { color: #1DAF6E; }
+  table.accounts td.num-down { color: #DC4E45; }
+  tr.divider td { padding: 14px 0 6px; border-top: 0; font-size: 12px; color: #676F7E; font-style: italic; }
+  tr.long-tail td { padding-top: 14px; border-top: 1px dashed #CFCFCF; color: #676F7E; font-style: italic; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="index.html">← Back</a>
+<h1 class="page-title">Analytics</h1>
+
+<div class="card">
+  <div class="card-title">WAU</div>
+  <div class="chart-wrap"><canvas id="wauChart"></canvas></div>
+  <div class="chart-legend">
+    <span class="chart-legend-item" style="color:#6E5BC9"><span class="chart-legend-marker dashed"></span>4-Week Avg</span>
+    <span class="chart-legend-item" style="color:#B5A4F0"><span class="chart-legend-marker"></span>Weekly</span>
+  </div>
+
+  <div class="delta-row">
+    <span class="delta-label">Net 4W avg Δ change</span>
+    <span class="delta-value up">+16.3</span>
+  </div>
+
+  <table class="accounts">
+    <thead>
+      <tr>
+        <th>Account</th>
+        <th>4W avg</th>
+        <th>4W avg Δ</th>
+        <th>%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>General Mills</td><td>42</td><td class="num-up">+13.3</td><td class="num-up">46.1%</td></tr>
+      <tr><td>wbd</td><td>19.5</td><td class="num-up">+7.3</td><td class="num-up">59.2%</td></tr>
+      <tr><td>Morningstar</td><td>25.3</td><td class="num-up">+5.8</td><td class="num-up">29.5%</td></tr>
+      <tr><td>Shipt</td><td>36.3</td><td class="num-up">+5.8</td><td class="num-up">18.9%</td></tr>
+      <tr><td>Richemont Production</td><td>28.8</td><td class="num-up">+5.5</td><td class="num-up">23.7%</td></tr>
+      <tr class="divider"><td colspan="4">Biggest declines</td></tr>
+      <tr><td>Checkout</td><td>18.8</td><td class="num-down">−10.3</td><td class="num-down">−35.3%</td></tr>
+      <tr><td>One Finance Co</td><td>21.5</td><td class="num-down">−9.8</td><td class="num-down">−31.2%</td></tr>
+      <tr><td>americanairlines</td><td>30.3</td><td class="num-down">−7.3</td><td class="num-down">−19.3%</td></tr>
+      <tr><td>roche_dia</td><td>25.5</td><td class="num-down">−6.8</td><td class="num-down">−20.9%</td></tr>
+      <tr><td>Sofi</td><td>23.8</td><td class="num-down">−6</td><td class="num-down">−20.2%</td></tr>
+      <tr class="long-tail"><td>Long Tail (357 accounts)</td><td>2,023.5</td><td class="num-up">+18.8</td><td class="num-up">0.9%</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="charts.js"></script>
+<script>
+  const C = window.MC_CHART_COLORS;
+  const alpha = window.mcAlpha;
+
+  const DARK = '#6E5BC9';
+  const LIGHT = '#B5A4F0';
+
+  // Weekly labels, 4-week spacing for visible ticks.
+  const WEEKS = [
+    'Oct 20','Oct 27','Nov 3','Nov 10','Nov 17','Nov 24','Dec 1','Dec 8','Dec 15','Dec 22','Dec 29',
+    'Jan 5','Jan 12','Jan 19','Jan 26','Feb 2','Feb 9','Feb 16','Feb 23','Mar 2','Mar 9','Mar 16',
+    'Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4','May 11',
+  ];
+
+  // Weekly = volatile, big dip mid-Dec; matches the screenshot's drop to ~1.3K.
+  const WEEKLY = [
+    2300, 2250, 2180, 2350, 2280, 2400, 2150, 2000, 1320, 1450, 1500,
+    2100, 2280, 2300, 2350, 2280, 2320, 2350, 2280, 2250, 2310, 2194,
+    2240, 2200, 2280, 2320, 2250, 2300, 2270, 2290,
+  ];
+
+  // 4-week average — smoother, gentler dip from Dec absorbing into the window.
+  const FOUR_WK = [
+    2280, 2275, 2270, 2265, 2280, 2295, 2280, 2210, 2050, 2050, 1900,
+    1880, 2050, 2180, 2260, 2280, 2275, 2290, 2310, 2305, 2290, 2278,
+    2270, 2265, 2275, 2280, 2282, 2285, 2280, 2278,
+  ];
+
+  new Chart(document.getElementById('wauChart'), {
+    type: 'line',
+    data: {
+      labels: WEEKS,
+      datasets: [
+        {
+          label: '4-Week Avg',
+          data: FOUR_WK,
+          borderColor: DARK,
+          backgroundColor: DARK,
+          borderDash: [6, 5],
+          borderWidth: 2,
+          tension: 0.32,
+          pointRadius: 0,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: DARK,
+          pointHoverBorderWidth: 2,
+        },
+        {
+          label: 'Weekly',
+          data: WEEKLY,
+          borderColor: LIGHT,
+          backgroundColor: LIGHT,
+          borderWidth: 2,
+          tension: 0.32,
+          pointRadius: 0,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: LIGHT,
+          pointHoverBorderWidth: 2,
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (i) => `${i.dataset.label} : ${i.parsed.y.toLocaleString()}`,
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: {
+            maxRotation: 0,
+            autoSkip: false,
+            callback(value, index) {
+              // Show every 4th label (matches screenshot's tick density).
+              return index % 4 === 0 ? this.getLabelForValue(value) : '';
+            },
+          },
+        },
+        y: {
+          beginAtZero: false,
+          suggestedMin: 1300,
+          suggestedMax: 2500,
+          ticks: {
+            stepSize: 300,
+            callback: (v) => (v / 1000).toFixed(1) + 'K',
+          },
+        },
+      },
+    },
+  });
+</script>
+
+</body>
+</html>
