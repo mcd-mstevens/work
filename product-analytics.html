@@ -77,6 +77,8 @@
   .chart-canvas-wrap { position: relative; height: 280px; }
   .chart-canvas-wrap.tall { height: 340px; }
 
+  .no-data-card { display: flex; align-items: center; justify-content: center; height: 200px; color: #9AA0AB; font-size: 13px; }
+
   .data-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; flex-shrink: 0; line-height: 1.6; }
   .data-badge.ready { background: #FFF3E0; color: #BF5000; border: 1px solid #FFCC80; }
   .data-badge.unavailable { background: #FDE8E8; color: #B71C1C; border: 1px solid #EF9A9A; }
@@ -221,11 +223,32 @@
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Read queries — filter usage</div>
-        <div class="chart-sub">Times each filter appeared in URLs, last 90 days. Write and job performance had no tracked filter interactions.</div>
+        <div class="chart-title">Write queries — filter usage</div>
+        <div class="chart-sub">Filter params in URLs, last 90 days</div>
       </div>
     </div>
-    <div class="chart-canvas-wrap tall"><canvas id="perfFiltersBar"></canvas></div>
+    <div class="chart-canvas-wrap tall"><canvas id="writeFiltersBar"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Read queries — filter usage</div>
+        <div class="chart-sub">Filter params in URLs, last 90 days</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="readFiltersBar"></canvas></div>
+  </div>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Job performance — filter usage</div>
+        <div class="chart-sub">Filter params in URLs, last 90 days</div>
+      </div>
+    </div>
+    <div class="no-data-card">No filter params found in URLs — users navigate to this tab without setting filters</div>
   </div>
 </div>
 
@@ -585,10 +608,18 @@
       C.orange
     );
 
-    hbar('perfFiltersBar',
-      ['Start date','End date','Overlays','Usernames','Categories','Resource type','Search'],
-      [757,579,245,78,6,14,3],
+    // Write queries — filters from searchCriteria + searchTerms JSON params in URLs
+    hbar('writeFiltersBar',
+      ['searchTerms (user)','searchTerms (dbt_node_name)','Cost/bytes aggregation','searchCriteria (warehouse)','Selected metric','searchCriteria (time range)','searchCriteria (user)','searchTerms (destination_database)','searchCriteria (destination)','searchTerms (destination)','Time bucket aggregation'],
+      [24,22,22,16,16,14,13,12,12,10,10],
       C.green
+    );
+
+    // Read queries — date/time range filters only (from queries_tab_filters_change on /queries?query-type=read)
+    hbar('readFiltersBar',
+      ['Start date','End date','Overlays','Usernames','Resource type','Categories','Search'],
+      [757,579,245,78,14,6,3],
+      C.teal
     );
   })();
 
