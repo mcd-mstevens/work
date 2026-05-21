@@ -12,23 +12,12 @@
     font-family: 'Inter', -apple-system, sans-serif;
     font-size: 14px; line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    padding: 0 40px 56px;
+    padding: 40px 40px 56px;
     max-width: 1000px;
     margin: 0 auto;
   }
 
-  .top-bar {
-    position: sticky; top: 0; z-index: 100;
-    background: #FAFAFA;
-    border-bottom: 1px solid #E2E2E2;
-    margin: 0 -40px;
-    padding: 0 40px;
-  }
-  .top-bar-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 52px;
-  }
-  .page-title { font-size: 15px; font-weight: 600; color: #21242C; }
+  .picker-row { margin: 0 0 32px; }
 
   .seg-control {
     display: inline-flex; background: #EAECEF; border-radius: 7px; padding: 3px; gap: 2px;
@@ -45,6 +34,21 @@
     background: #fff; color: #21242C;
     box-shadow: 0 1px 2px rgba(0,0,0,0.10);
   }
+
+  .chart-toggle {
+    display: inline-flex; background: #F0F1F3; border-radius: 6px; padding: 2px; gap: 1px;
+    flex-shrink: 0;
+  }
+  .toggle-btn {
+    padding: 3px 10px; border-radius: 4px;
+    font-size: 12px; font-weight: 500; font-family: inherit;
+    border: none; cursor: pointer;
+    background: transparent; color: #9AA0AB;
+    transition: background 0.1s, color 0.1s;
+    white-space: nowrap;
+  }
+  .toggle-btn:hover { color: #21242C; }
+  .toggle-btn.is-active { background: #fff; color: #21242C; box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
 
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
   .back-link:visited { color: #676F7E; }
@@ -86,19 +90,19 @@
 </head>
 <body>
 
-<div class="top-bar">
-  <div class="top-bar-inner">
-    <span class="page-title">Product analytics</span>
-    <div class="seg-control" id="datePicker">
-      <button class="seg-btn" type="button">2 weeks</button>
-      <button class="seg-btn" type="button">1 month</button>
-      <button class="seg-btn is-active" type="button">3 months</button>
-      <button class="seg-btn" type="button">12 months</button>
-    </div>
+<a class="back-link" href="index.html">← Back</a>
+
+<div class="report-header">
+  <h1>Product analytics</h1>
+</div>
+<div class="picker-row">
+  <div class="seg-control" id="datePicker">
+    <button class="seg-btn" type="button">2 weeks</button>
+    <button class="seg-btn" type="button">1 month</button>
+    <button class="seg-btn is-active" type="button">3 months</button>
+    <button class="seg-btn" type="button">12 months</button>
   </div>
 </div>
-
-<a class="back-link" href="index.html" style="margin-top:24px;display:inline-flex">← Back</a>
 
 <!-- =================================================================== HERO: WAU -->
 <div class="hero-card" id="sec-overview">
@@ -118,7 +122,7 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Agent adoption over time</div>
-        <div class="chart-sub">Monthly active users, by agent</div>
+        <div class="chart-sub">Active users, by agent</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentAdoption"></canvas></div>
@@ -163,22 +167,15 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Agent monitors created over time</div>
-        <div class="chart-sub">By customer</div>
+        <div class="chart-sub" id="agMonSub">By customer</div>
+      </div>
+      <div class="chart-toggle" id="agMonToggle">
+        <button class="toggle-btn is-active" data-mode="customer">Customer</button>
+        <button class="toggle-btn" data-mode="type">Type</button>
       </div>
     </div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
-  </div>
-</div>
-
-<div class="chart-grid">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Agent monitors by type</div>
-        <div class="chart-sub">By type</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentByType"></canvas></div>
+    <div id="agMonCustWrap" class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
+    <div id="agMonTypeWrap" class="chart-canvas-wrap tall" style="display:none"><canvas id="agentByType"></canvas></div>
   </div>
 </div>
 
@@ -351,7 +348,7 @@
 
   CHARTS.agentAdoption = new Chart(document.getElementById('agentAdoption'), { type:'line',
     data:{ labels:[], datasets:[
-      line('TSA',[],C.blue), line('OA: Alert explain',[],C.purple),
+      line('Troubleshooting agent',[],C.blue), line('OA: Alert explain',[],C.purple),
       line('OA: Sidebar',[],C.teal), line('OA: Full page',[],C.green),
       line('OA: Monitor explain',[],C.orange),
     ]}, options:opts() });
@@ -400,9 +397,11 @@
 
   CHARTS.alertsAdoption = new Chart(document.getElementById('alertsAdoption'), { type:'line',
     data:{ labels:[], datasets:[
-      line('Owner update',[],C.green), line('Comment',[],C.purple),
-      line('Feedback',[],C.teal), line('Jira ticket',[],C.pink),
-    ]}, options:opts() });
+      line('Status update',[],C.blue), line('Owner update',[],C.green),
+      line('Comment',[],C.purple), line('Root cause rating',[],C.teal),
+      line('Jira ticket',[],C.pink),
+    ]}, options:opts({ type:'logarithmic', beginAtZero:false,
+      ticks:{ callback:(v)=>v>=1000?(v/1000).toFixed(0)+'k':v } }) });
 
   CHARTS.dashByDashboard = new Chart(document.getElementById('dashByDashboard'), { type:'line',
     data:{ labels:[], datasets:[
@@ -464,8 +463,22 @@
     // Trend charts: always show full history so bars never collapse to 1
     upd(CHARTS.agentByCustomer, labels, [s(src.agCustOther),s(src.agCustXom),s(src.agCustAxios),s(src.agCustMorn),s(src.agCustEnt),s(src.agCustVel)]);
     upd(CHARTS.agentByType,     labels, [s(src.agEval),s(src.agMetric),s(src.agTraj),s(src.agValidat)]);
-    upd(CHARTS.alertsAdoption,  labels,  [s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
+    upd(CHARTS.alertsAdoption,  labels,  [s(src.alertStatus),s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
   }
+
+  // ── Agent monitor customer/type toggle ───────────────────────────────────
+  document.getElementById('agMonToggle').addEventListener('click', (e) => {
+    const btn = e.target.closest('.toggle-btn');
+    if (!btn) return;
+    document.querySelectorAll('#agMonToggle .toggle-btn').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    const isCust = btn.dataset.mode === 'customer';
+    document.getElementById('agMonCustWrap').style.display = isCust ? '' : 'none';
+    document.getElementById('agMonTypeWrap').style.display = isCust ? 'none' : '';
+    document.getElementById('agMonSub').textContent = isCust ? 'By customer' : 'By type';
+    const c = isCust ? CHARTS.agentByCustomer : CHARTS.agentByType;
+    c.resize(); c.update('none');
+  });
 
   // ── Wire picker ──────────────────────────────────────────────────────────
   const WINDOWS = {
