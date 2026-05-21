@@ -32,7 +32,7 @@
   .hero-chart { height: 180px; position: relative; }
 
   .chart-grid { display: grid; gap: 12px; margin-bottom: 12px; }
-  .chart-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .chart-grid.cols-2 { grid-template-columns: 1fr; }
 
   .chart-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 20px 22px; }
   .chart-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 6px; gap: 16px; }
@@ -49,7 +49,7 @@
     padding: 8px 12px; margin-bottom: 14px;
     white-space: pre; overflow-x: auto; scrollbar-width: thin;
   }
-  .kw { color: #7C3AED; font-weight: 600; }
+  .kw { color: #7C3AED; }
   .fn { color: #0E7490; }
   .tb { color: #B45309; }
   .st { color: #166534; }
@@ -81,7 +81,6 @@
     <div class="hero-value" id="wauValue">12,847</div>
     <div class="hero-delta" id="wauDelta">+18% vs last year</div>
   </div>
-  <div class="hero-chart"><canvas id="wauChart"></canvas></div>
   <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
        <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> DISTINCT_ID) <span class="kw">AS</span> wau
@@ -89,6 +88,7 @@
 <span class="kw">WHERE</span>  TIME &gt;= <span class="fn">DATEADD</span>(<span class="st">'week'</span>, -<span class="st">12</span>, <span class="fn">CURRENT_DATE</span>())
 <span class="kw">GROUP BY</span> week
 <span class="kw">ORDER BY</span> week;</div>
+  <div class="hero-chart"><canvas id="wauChart"></canvas></div>
 </div>
 
 <!-- =================================================================== AGENT ADOPTION -->
