@@ -218,6 +218,7 @@
   const C = window.MC_CHART_COLORS;
   const alpha = window.mcAlpha;
 
+<!-- DATA-START -->
   // Weekly data: Jan 19 – May 4 2026 (16 complete weeks; May 11+ excluded — month in progress)
   const ALL_WEEKS = ['Jan 19','Jan 26','Feb 2','Feb 9','Feb 16','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4'];
   const WD = {
@@ -385,7 +386,7 @@
       { label:'Velocity Global', data:[], backgroundColor:alpha(C.teal,0.85),   borderColor:C.teal,   borderRadius:0 },
     ]}, options:{ interaction:{mode:'index',intersect:false},
       scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
-      plugins:{legend:{display:true}} } });
+      plugins:{legend:{display:true},tooltip:{callbacks:{labelColor:(ctx)=>{const c=ctx.chart.data.datasets[ctx.datasetIndex].borderColor;return{borderColor:c,backgroundColor:c};}}}} } });
 
 
   CHARTS.agentByType = new Chart(document.getElementById('agentByType'), { type:'bar',
@@ -396,7 +397,7 @@
       { label:'Agent validation',  data:[], backgroundColor:alpha(C.orange,0.85), borderColor:C.orange, borderRadius:0 },
     ]}, options:{ interaction:{mode:'index',intersect:false},
       scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
-      plugins:{legend:{display:true}} } });
+      plugins:{legend:{display:true},tooltip:{callbacks:{labelColor:(ctx)=>{const c=ctx.chart.data.datasets[ctx.datasetIndex].borderColor;return{borderColor:c,backgroundColor:c};}}}} } });
 
   CHARTS.alertsAdoption = new Chart(document.getElementById('alertsAdoption'), { type:'line',
     data:{ labels:[], datasets:[
@@ -518,6 +519,7 @@
     500,0,0,2100,2500,1000,0,500,0,1250,
     3870,3960,2000,1500,494,500,1000,780,1500,
   ];
+<!-- DATA-END -->
   CHARTS.agentRevenue = new Chart(document.getElementById('agentRevenue'), {
     type: 'bar',
     data: { labels: [], datasets: [{
@@ -526,7 +528,7 @@
     }]},
     options: {
       interaction: { mode: 'index', intersect: false },
-      plugins: { legend: { display: false } },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { labelColor: () => ({ borderColor: C.blue, backgroundColor: C.blue }) } } },
       scales: {
         x: { grid: { display: false }, ticks: { maxTicksLimit: 10, maxRotation: 0 } },
         y: { beginAtZero: true, ticks: { callback: (v) => '$' + v.toLocaleString() } },
