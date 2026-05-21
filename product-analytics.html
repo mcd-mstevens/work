@@ -224,6 +224,7 @@
     wau:         [2787,2915,3124,3042,2814,2809,2992,2977,2769,2887,2735,2730,2898,2896,2776,2948],
     // OA type breakdown available from Feb 9; zeros before that
     tsaAgent:    [221,245,239,244,245,215,259,275,226,213,202,212,212,202,213,201],
+    triageAgent: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3],
     oaAlert:     [0,0,0,151,314,330,353,360,325,290,262,291,309,297,285,300],
     oaSidebar:   [0,0,0,26,55,66,69,67,70,88,75,84,86,82,92,108],
     oaFullPage:  [0,0,0,64,111,100,119,147,114,141,108,126,120,146,101,90],
@@ -271,6 +272,7 @@
   const D = {
     wau:         [2803,2917,2955,3045,2997,2939,2474,2838,2947,2872,2825],
     tsaAgent:    [0,0,0,0,680,755,696,699,705,778,655],
+    triageAgent: [0,0,0,0,0,0,0,0,0,0,0],
     oaAlert:     [0,0,0,0,0,0,0,0,718,1163,1067],
     oaSidebar:   [0,0,0,0,0,0,0,0,130,267,314],
     oaFullPage:  [0,0,0,0,0,0,0,0,229,404,371],
@@ -348,7 +350,8 @@
 
   CHARTS.agentAdoption = new Chart(document.getElementById('agentAdoption'), { type:'line',
     data:{ labels:[], datasets:[
-      line('Troubleshooting agent',[],C.blue), line('Triage agent',[],C.purple),
+      line('Troubleshooting agent',[],C.blue), line('Triage agent',[],C.pink),
+      line('OA: Alert explain',[],C.purple),
       line('OA: Sidebar',[],C.teal), line('OA: Full page',[],C.green),
       line('OA: Monitor explain',[],C.orange),
     ]}, options:opts() });
@@ -374,12 +377,12 @@
 
   CHARTS.agentByCustomer = new Chart(document.getElementById('agentByCustomer'), { type:'bar',
     data:{ labels:[], datasets:[
-      { label:'Other',           data:[], backgroundColor:alpha(C.gray,0.55),   borderRadius:0 },
-      { label:'Xometry',         data:[], backgroundColor:alpha(C.blue,0.85),   borderRadius:0 },
-      { label:'Axios2',          data:[], backgroundColor:alpha(C.purple,0.85), borderRadius:0 },
-      { label:'Morningstar',     data:[], backgroundColor:alpha(C.green,0.85),  borderRadius:0 },
-      { label:'entain',          data:[], backgroundColor:alpha(C.orange,0.85), borderRadius:0 },
-      { label:'Velocity Global', data:[], backgroundColor:alpha(C.teal,0.85),   borderRadius:0 },
+      { label:'Other',           data:[], backgroundColor:alpha(C.gray,0.55),   borderColor:C.gray,   borderRadius:0 },
+      { label:'Xometry',         data:[], backgroundColor:alpha(C.blue,0.85),   borderColor:C.blue,   borderRadius:0 },
+      { label:'Axios2',          data:[], backgroundColor:alpha(C.purple,0.85), borderColor:C.purple, borderRadius:0 },
+      { label:'Morningstar',     data:[], backgroundColor:alpha(C.green,0.85),  borderColor:C.green,  borderRadius:0 },
+      { label:'entain',          data:[], backgroundColor:alpha(C.orange,0.85), borderColor:C.orange, borderRadius:0 },
+      { label:'Velocity Global', data:[], backgroundColor:alpha(C.teal,0.85),   borderColor:C.teal,   borderRadius:0 },
     ]}, options:{ interaction:{mode:'index',intersect:false},
       scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
       plugins:{legend:{display:true}} } });
@@ -387,10 +390,10 @@
 
   CHARTS.agentByType = new Chart(document.getElementById('agentByType'), { type:'bar',
     data:{ labels:[], datasets:[
-      { label:'Agent evaluation',  data:[], backgroundColor:alpha(C.blue,0.85),   borderRadius:0 },
-      { label:'Agent metric',      data:[], backgroundColor:alpha(C.purple,0.85), borderRadius:0 },
-      { label:'Agent trajectory',  data:[], backgroundColor:alpha(C.green,0.85),  borderRadius:0 },
-      { label:'Agent validation',  data:[], backgroundColor:alpha(C.orange,0.85), borderRadius:0 },
+      { label:'Agent evaluation',  data:[], backgroundColor:alpha(C.blue,0.85),   borderColor:C.blue,   borderRadius:0 },
+      { label:'Agent metric',      data:[], backgroundColor:alpha(C.purple,0.85), borderColor:C.purple, borderRadius:0 },
+      { label:'Agent trajectory',  data:[], backgroundColor:alpha(C.green,0.85),  borderColor:C.green,  borderRadius:0 },
+      { label:'Agent validation',  data:[], backgroundColor:alpha(C.orange,0.85), borderColor:C.orange, borderRadius:0 },
     ]}, options:{ interaction:{mode:'index',intersect:false},
       scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
       plugins:{legend:{display:true}} } });
@@ -454,7 +457,7 @@
 
     // Charts that have both weekly and monthly data
     upd(CHARTS.wau,            labels, [s(src.wau)]);
-    upd(CHARTS.agentAdoption,  labels, [s(src.tsaAgent),s(src.oaAlert),s(src.oaSidebar),s(src.oaFullPage),s(src.oaMonitor)]);
+    upd(CHARTS.agentAdoption,  labels, [s(src.tsaAgent),s(src.triageAgent),s(src.oaAlert),s(src.oaSidebar),s(src.oaFullPage),s(src.oaMonitor)]);
     upd(CHARTS.mcpAdoption,    labels, [s(src.mcpOther),s(src.mcpClaude),s(src.mcpNode),s(src.mcpCursor),s(src.mcpVscode),s(src.mcpPython)]);
     upd(CHARTS.monTotal,       labels, [s(src.monStats),s(src.monSql),s(src.monTable),s(src.monValid),s(src.monVol),s(src.monFresh),s(src.monMetric),s(src.monPerf)]);
     upd(CHARTS.dashByDashboard,labels, [s(src.dashDataOps),s(src.dashDQ),s(src.dashDaily),s(src.dashCoverage),s(src.dashActivity),s(src.dashCustom)]);
@@ -519,7 +522,7 @@
     type: 'bar',
     data: { labels: [], datasets: [{
       label: 'Daily revenue', data: [],
-      backgroundColor: alpha(C.blue, 0.75), borderRadius: 2,
+      backgroundColor: alpha(C.blue, 0.75), borderColor: C.blue, borderRadius: 2,
     }]},
     options: {
       interaction: { mode: 'index', intersect: false },
