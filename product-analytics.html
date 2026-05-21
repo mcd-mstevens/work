@@ -210,27 +210,6 @@
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Alerts — status filter values</div>
-        <div class="chart-sub">Most-used status values, last 90 days</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="alertStatusBar"></canvas></div>
-  </div>
-</div>
-
-<div class="chart-grid">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Alerts — sub-type filter values</div>
-        <div class="chart-sub">Alert sub-types selected in filter, last 90 days</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="alertSubtypeBar"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
         <div class="chart-title">Monitors list — filter usage</div>
         <div class="chart-sub">Times each filter appeared in URLs, last 90 days</div>
       </div>
@@ -289,7 +268,6 @@
   const ALL_WEEKS = ['Jan 19','Jan 26','Feb 2','Feb 9','Feb 16','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4'];
   const WD = {
     wau:         [2787,2915,3124,3042,2814,2809,2992,2977,2769,2887,2735,2730,2898,2896,2776,2948],
-    // OA type breakdown available from Feb 9; zeros before that
     tsaAgent:    [221,245,239,244,245,215,259,275,226,213,202,212,212,202,213,201],
     triageAgent: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3],
     oaAlert:     [0,0,0,151,314,330,353,360,325,290,262,291,309,297,285,300],
@@ -401,7 +379,6 @@
   const opts = (yOpts={}) => ({ interaction:{mode:'index',intersect:false},
     plugins:{legend:{display:true}}, scales:{x:{grid:{display:false}},y:{beginAtZero:true,...yOpts}} });
 
-  // ── Create all charts (empty data — filled by first updateCharts call) ────
   const CHARTS = {};
 
   (function(){
@@ -454,7 +431,6 @@
       scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},
       plugins:{legend:{display:true},tooltip:{callbacks:{labelColor:(ctx)=>{const c=ctx.chart.data.datasets[ctx.datasetIndex].borderColor;return{borderColor:c,backgroundColor:c};}}}} } });
 
-
   CHARTS.agentByType = new Chart(document.getElementById('agentByType'), { type:'bar',
     data:{ labels:[], datasets:[
       { label:'Agent evaluation',  data:[], backgroundColor:alpha(C.blue,0.85),   borderColor:C.blue,   borderRadius:0 },
@@ -480,9 +456,6 @@
       line('Activity',[],C.teal), line('Custom',[],C.pink),
     ]}, options:opts() });
 
-
-
-  // ── Update all charts ────────────────────────────────────────────────────
   function avg(arr) { return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
 
   function upd(chart, labels, datasets) {
@@ -496,19 +469,13 @@
   }
 
   function updateCharts(w) {
-    // w = { n, src: 'weekly' | 'monthly' }
     const weekly  = w.src === 'weekly';
     const src     = weekly ? WD : D;
     const allLbls = weekly ? ALL_WEEKS : ALL_MONTHS;
     const labels  = allLbls.slice(-w.n);
     const s       = (arr) => arr.slice(-w.n);
-
-    // Charts without weekly data fall back to proportional monthly data
     const mn      = weekly ? Math.max(1, Math.round(w.n / 4.3)) : w.n;
-    const mLabels = ALL_MONTHS.slice(-mn);
-    const ms      = (arr) => arr.slice(-mn);
 
-    // Hero: last value in window + delta vs prior same-length window
     const wauArr    = src.wau;
     const wauWindow = wauArr.slice(-w.n);
     const wauPrior  = wauArr.slice(-2 * w.n, -w.n);
@@ -522,14 +489,12 @@
       deltaEl.textContent = '';
     }
 
-    // Charts that have both weekly and monthly data
     upd(CHARTS.wau,            labels, [s(src.wau)]);
     upd(CHARTS.agentAdoption,  labels, [s(src.tsaAgent),s(src.triageAgent),s(src.oaAlert),s(src.oaSidebar),s(src.oaFullPage),s(src.oaMonitor)]);
     upd(CHARTS.mcpAdoption,    labels, [s(src.mcpOther),s(src.mcpClaude),s(src.mcpNode),s(src.mcpCursor),s(src.mcpVscode),s(src.mcpPython)]);
     upd(CHARTS.monTotal,       labels, [s(src.monStats),s(src.monSql),s(src.monTable),s(src.monValid),s(src.monVol),s(src.monFresh),s(src.monMetric),s(src.monPerf)]);
     upd(CHARTS.dashByDashboard,labels, [s(src.dashDataOps),s(src.dashDQ),s(src.dashDaily),s(src.dashCoverage),s(src.dashActivity),s(src.dashCustom)]);
 
-    // Daily revenue — slice by approximate day count for the selected window
     const revN = Math.min(weekly ? w.n * 7 : REV_LABELS.length, REV_LABELS.length);
     const revSlice = REV_LABELS.slice(-revN);
     upd(CHARTS.agentRevenue, revSlice, [REV_DATA.slice(-revN)]);
@@ -538,14 +503,11 @@
       agRevSub.textContent = `Total across all customers · ${revSlice[0]} – ${revSlice[revSlice.length - 1]}`;
     }
 
-    // Monthly-only charts (always use mLabels / ms)
-    // Trend charts: always show full history so bars never collapse to 1
     upd(CHARTS.agentByCustomer, labels, [s(src.agCustOther),s(src.agCustXom),s(src.agCustAxios),s(src.agCustMorn),s(src.agCustEnt),s(src.agCustVel)]);
     upd(CHARTS.agentByType,     labels, [s(src.agEval),s(src.agMetric),s(src.agTraj),s(src.agValidat)]);
-    upd(CHARTS.alertsAdoption,  labels,  [s(src.alertStatus),s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
+    upd(CHARTS.alertsAdoption,  labels, [s(src.alertStatus),s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
   }
 
-  // ── Agent monitor customer/type toggle ───────────────────────────────────
   document.getElementById('agMonToggle').addEventListener('click', (e) => {
     const btn = e.target.closest('.toggle-btn');
     if (!btn) return;
@@ -559,7 +521,6 @@
     c.resize(); c.update('none');
   });
 
-  // ── Wire picker ──────────────────────────────────────────────────────────
   const WINDOWS = {
     '2 weeks':  { n: 2,  src: 'weekly' },
     '1 month':  { n: 4,  src: 'weekly' },
@@ -574,7 +535,6 @@
     updateCharts(WINDOWS[btn.textContent.trim()]);
   });
 
-  // ── Troubleshooting Agent daily revenue ─────────────────────────────────
   const REV_LABELS = [
     'Apr 1','Apr 2','Apr 3','Apr 4','Apr 5','Apr 6','Apr 7','Apr 8','Apr 9','Apr 10',
     'Apr 11','Apr 12','Apr 13','Apr 14','Apr 15','Apr 16','Apr 17','Apr 18','Apr 19','Apr 20',
@@ -582,7 +542,6 @@
     'May 1','May 2','May 3','May 4','May 5','May 6','May 7','May 8','May 9','May 10',
     'May 11','May 12','May 13','May 14','May 15','May 16','May 17','May 18','May 19',
   ];
-  // null = no data reported that day; 0 = reported as $0
   const REV_DATA = [
     500,500,1000,0,null,1500,1500,3630,1740,1600,
     500,0,2000,1000,1000,440,1000,0,500,3740,
@@ -627,39 +586,27 @@
       }
     });
 
-    // Alerts filters
     hbar('alertFiltersBar',
       ['Date range','Status','Audience','Table','Severity/SLO','Sub-type','Start/end time','Owner','Monitor','Incl. normalized','Reload'],
       [8770,7212,1931,1198,902,613,546,505,463,424,228],
       C.blue
     );
-    hbar('alertStatusBar',
-      ['no_status','investigating','no_action_needed','expected','fixed','work_in_progress','false_positive'],
-      [7794,4213,3447,2533,2434,1690,640],
-      C.purple
-    );
-    hbar('alertSubtypeBar',
-      ['SQL rule breach','Schema anomaly','Freshness','Fields changed','Volume/data','DBT model error','ADF job failure','Validation breach','Agent evaluation','DBT test failure'],
-      [622,447,432,338,331,282,166,160,127,65],
-      C.teal
-    );
 
-    // Monitors list filters
     hbar('monFiltersBar',
       ['Tags','Search','Statuses','Audiences','Types','Created by','Namespaces'],
       [183,52,28,22,8,5,1],
       C.orange
     );
 
-    // Performance (queries tab) filters
     hbar('perfFiltersBar',
       ['Query type','Start date','End date','Overlays','Usernames','Categories','Resource type','Search'],
       [2400,1617,1343,245,88,31,23,9],
       C.green
     );
+
     hbar('perfQueryTypeBar',
       ['Read','Write','Jobs','(not set)'],
-      [2396,4,0,4208-2400],
+      [2396,4,0,1808],
       C.pink
     );
   })();
