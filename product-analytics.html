@@ -41,9 +41,21 @@
   .chart-grid { display: grid; gap: 12px; margin-bottom: 12px; }
   .chart-grid.cols-2 { grid-template-columns: 1fr 1fr; }
   .chart-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 20px 22px; }
-  .chart-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 6px; gap: 16px; }
+  .chart-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; gap: 16px; }
   .chart-title { font-size: 14px; font-weight: 600; color: #21242C; }
-  .chart-sub { font-size: 12px; color: #676F7E; margin-bottom: 14px; }
+  .chart-sub { font-size: 12px; color: #676F7E; margin-bottom: 8px; }
+  .query-pill {
+    font-family: 'JetBrains Mono','Fira Code','Cascadia Code','Menlo','Consolas',monospace;
+    font-size: 10.5px; line-height: 1.6; color: #4A5568;
+    background: #F7F8FA; border: 1px solid #E2E8F0; border-radius: 6px;
+    padding: 8px 12px; margin-bottom: 14px;
+    white-space: pre; overflow-x: auto; scrollbar-width: thin;
+  }
+  .kw  { color: #7C3AED; font-weight: 600; }
+  .ev  { color: #0E7490; }
+  .pr  { color: #B45309; }
+  .val { color: #166534; }
+  .cm  { color: #9CA3AF; font-style: italic; }
   .chart-canvas-wrap { position: relative; height: 280px; }
   .chart-canvas-wrap.tall { height: 340px; }
   @media (max-width: 880px) { .chart-grid.cols-2 { grid-template-columns: 1fr; } }
@@ -75,16 +87,23 @@
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Agent adoption over time</div><div class="chart-sub">Active users, by agent</div></div></div>
+    <div class="query-pill"><span class="kw">event</span>  <span class="ev">Troubleshooting Agent Session Started</span>  <span class="ev">Triage Agent Session Started</span>
+       <span class="ev">OA Alert Explain Opened</span>  <span class="ev">OA Sidebar Opened</span>  <span class="ev">OA Full Page Opened</span>  <span class="cm">+ 1 more</span>
+<span class="kw">metric</span> unique users  <span class="kw">by</span> week  <span class="kw">·</span> project <span class="val">2351916</span></div>
     <div class="chart-canvas-wrap tall"><canvas id="agentAdoption"></canvas></div>
   </div>
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Troubleshooting Agent daily revenue</div><div class="chart-sub" id="agRevSub">Total across all customers</div></div></div>
+    <div class="query-pill"><span class="cm">// Manual — sourced from Salesforce opportunity line items</span>
+<span class="kw">grain</span>  daily  <span class="kw">·</span> <span class="kw">metric</span> recognized revenue  <span class="kw">·</span> product <span class="val">"Troubleshooting Agent"</span></div>
     <div class="chart-canvas-wrap tall"><canvas id="agentRevenue"></canvas></div>
   </div>
 </div>
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">MCP adoption over time</div><div class="chart-sub">Monthly active MCP connections, by client</div></div></div>
+    <div class="query-pill"><span class="kw">event</span>  <span class="ev">MCP Connection Established</span>
+<span class="kw">metric</span> unique users  <span class="kw">breakdown</span> <span class="pr">mcp_client_name</span>  <span class="kw">by</span> week  <span class="kw">·</span> project <span class="val">2351916</span></div>
     <div class="chart-canvas-wrap tall"><canvas id="mcpAdoption"></canvas></div>
   </div>
 </div>
@@ -93,6 +112,9 @@
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Monitors created over time</div><div class="chart-sub">By type, excludes agent monitors</div></div></div>
+    <div class="query-pill"><span class="kw">event</span>  <span class="ev">Monitor Created</span>
+<span class="kw">metric</span> total  <span class="kw">breakdown</span> <span class="pr">monitor_type</span>  <span class="kw">by</span> week
+<span class="kw">filter</span> <span class="pr">monitor_type</span> <span class="kw">!=</span> <span class="val">"agent"</span>  <span class="kw">·</span> project <span class="val">2351916</span></div>
     <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
   </div>
   <div class="chart-card">
@@ -103,6 +125,9 @@
         <button class="toggle-btn" data-mode="type">Type</button>
       </div>
     </div>
+    <div class="query-pill"><span class="kw">event</span>  <span class="ev">Monitor Created</span>
+<span class="kw">metric</span> total  <span class="kw">breakdown</span> <span class="pr">account_name</span> <span class="cm">/ monitor_type</span>  <span class="kw">by</span> week
+<span class="kw">filter</span> <span class="pr">monitor_type</span> <span class="kw">=</span> <span class="val">"agent"</span>  <span class="kw">·</span> project <span class="val">2351916</span></div>
     <div id="agMonCustWrap" class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
     <div id="agMonTypeWrap" class="chart-canvas-wrap tall" style="display:none"><canvas id="agentByType"></canvas></div>
   </div>
@@ -112,19 +137,10 @@
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Action adoption</div><div class="chart-sub">Alerts with each action taken</div></div></div>
+    <div class="query-pill"><span class="kw">events</span> <span class="ev">Alert Status Updated</span>  <span class="ev">Alert Owner Updated</span>  <span class="ev">Alert Comment Created</span>
+        <span class="ev">AI Feedback Submitted</span>  <span class="ev">Jira Ticket Created</span>
+<span class="kw">metric</span> total  <span class="kw">by</span> week  <span class="kw">·</span> project <span class="val">2351916</span></div>
     <div class="chart-canvas-wrap tall"><canvas id="alertsAdoption"></canvas></div>
-  </div>
-</div>
-
-<h2 class="section-heading" id="sec-filters">Filters</h2>
-<div class="chart-grid">
-  <div class="chart-card">
-    <div class="chart-header"><div><div class="chart-title">Alerts — filter usage</div><div class="chart-sub">Times each filter appeared in URLs, last 90 days</div></div></div>
-    <div class="chart-canvas-wrap tall"><canvas id="alertFiltersBar"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header"><div><div class="chart-title">Monitors list — filter usage</div><div class="chart-sub">Times each filter appeared in URLs, last 90 days</div></div></div>
-    <div class="chart-canvas-wrap tall"><canvas id="monFiltersBar"></canvas></div>
   </div>
 </div>
 
@@ -132,6 +148,8 @@
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Dashboard adoption</div><div class="chart-sub">Monthly active viewers, by dashboard</div></div></div>
+    <div class="query-pill"><span class="kw">event</span>  <span class="ev">Dashboard Viewed</span>
+<span class="kw">metric</span> unique users  <span class="kw">breakdown</span> <span class="pr">dashboard_name</span>  <span class="kw">by</span> week  <span class="kw">·</span> project <span class="val">2351916</span></div>
     <div class="chart-canvas-wrap tall"><canvas id="dashByDashboard"></canvas></div>
   </div>
 </div>
@@ -235,20 +253,16 @@
     monPerf:     [13,10,6,13,9,10,8,4,6,8,5],
   };
 
-  // Daily revenue: one entry per day Jan 19 – May 19 (121 days).
-  // null = no data; revenue only starts Apr 1 (day 73 from Jan 19).
-  // Jan 19 = index 0. Feb = 13 days later. Mar = 13+28=41. Apr 1 = 72.
   const REV_ALL_LABELS = (function() {
     const out = [];
-    const start = new Date(2026, 0, 19); // Jan 19
-    const end   = new Date(2026, 4, 19); // May 19
+    const start = new Date(2026, 0, 19);
+    const end   = new Date(2026, 4, 19);
     for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
       out.push(d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
     }
     return out;
   })();
 
-  // Revenue data starts Apr 1 (index 72 in REV_ALL_LABELS). Pad with null before.
   const REV_RAW = [
     500,500,1000,0,null,1500,1500,3630,1740,1600,
     500,0,2000,1000,1000,440,1000,0,500,3740,
@@ -396,7 +410,6 @@
     upd(CHARTS.agentByType,    labels, [s(src.agEval),s(src.agMetric),s(src.agTraj),s(src.agValidat)]);
     upd(CHARTS.alertsAdoption, labels, [s(src.alertStatus),s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
 
-    // Revenue: slice the full daily array by approximate day count
     const revN = Math.min(weekly ? w.n * 7 : REV_ALL_LABELS.length, REV_ALL_LABELS.length);
     const revLabels = REV_ALL_LABELS.slice(-revN);
     const revData   = REV_ALL_DATA.slice(-revN);
@@ -431,27 +444,6 @@
     btn.classList.add('is-active');
     updateCharts(WINDOWS[btn.textContent.trim()]);
   });
-
-  (function() {
-    const hbar = (id, labels, data, color) => new Chart(document.getElementById(id), {
-      type: 'bar',
-      data: { labels, datasets: [{ data, backgroundColor: alpha(color, 0.82), borderColor: color, borderRadius: 3 }] },
-      options: {
-        indexAxis: 'y',
-        plugins: { legend: { display: false } },
-        scales: { x: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' },
-                       ticks: { callback: v => v >= 1000 ? (v/1000).toFixed(1)+'k' : v } },
-                  y: { grid: { display: false }, ticks: { font: { size: 12 } } } },
-        interaction: { mode: 'nearest', intersect: true },
-      }
-    });
-    hbar('alertFiltersBar',
-      ['Date range','Status','Audience','Table','Severity/SLO','Sub-type','Start/end time','Owner','Monitor','Incl. normalized','Reload'],
-      [8770,7212,1931,1198,902,613,546,505,463,424,228], C.blue);
-    hbar('monFiltersBar',
-      ['Tags','Search','Statuses','Audiences','Types','Created by','Namespaces'],
-      [183,52,28,22,8,5,1], C.orange);
-  })();
 
   updateCharts(WINDOWS['3 months']);
 })();
