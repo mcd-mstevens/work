@@ -16,86 +16,43 @@
     max-width: 1000px;
     margin: 0 auto;
   }
-
   .picker-row { margin: 0 0 32px; }
-
-  .seg-control {
-    display: inline-flex; background: #EAECEF; border-radius: 7px; padding: 3px; gap: 2px;
-  }
-  .seg-btn {
-    padding: 5px 13px; border-radius: 5px;
-    font-size: 13px; font-weight: 500; font-family: inherit;
-    border: none; cursor: pointer;
-    background: transparent; color: #676F7E;
-    transition: background 0.1s, color 0.1s;
-  }
+  .seg-control { display: inline-flex; background: #EAECEF; border-radius: 7px; padding: 3px; gap: 2px; }
+  .seg-btn { padding: 5px 13px; border-radius: 5px; font-size: 13px; font-weight: 500; font-family: inherit; border: none; cursor: pointer; background: transparent; color: #676F7E; transition: background 0.1s, color 0.1s; }
   .seg-btn:hover { color: #21242C; }
-  .seg-btn.is-active {
-    background: #fff; color: #21242C;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
-  }
-
-  .chart-toggle {
-    display: inline-flex; background: #F0F1F3; border-radius: 6px; padding: 2px; gap: 1px;
-    flex-shrink: 0;
-  }
-  .toggle-btn {
-    padding: 3px 10px; border-radius: 4px;
-    font-size: 12px; font-weight: 500; font-family: inherit;
-    border: none; cursor: pointer;
-    background: transparent; color: #9AA0AB;
-    white-space: nowrap;
-  }
+  .seg-btn.is-active { background: #fff; color: #21242C; box-shadow: 0 1px 2px rgba(0,0,0,0.10); }
+  .chart-toggle { display: inline-flex; background: #F0F1F3; border-radius: 6px; padding: 2px; gap: 1px; flex-shrink: 0; }
+  .toggle-btn { padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 500; font-family: inherit; border: none; cursor: pointer; background: transparent; color: #9AA0AB; white-space: nowrap; }
   .toggle-btn:hover { color: #21242C; }
   .toggle-btn.is-active { background: #fff; color: #21242C; box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
-
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
   .back-link:visited { color: #676F7E; }
   .back-link:hover { color: #21242C; }
-
   .report-header { margin-bottom: 8px; }
   .report-header h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.4px; color: #21242C; margin-bottom: 14px; }
-
   .section-heading { font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; color: #676F7E; margin: 36px 0 12px; }
   .section-heading:first-of-type { margin-top: 32px; }
-
   .hero-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 22px 26px; margin-top: 24px; }
   .hero-label { font-size: 12px; color: #676F7E; font-weight: 500; margin-bottom: 6px; }
   .hero-value-row { display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px; }
   .hero-value { font-size: 38px; font-weight: 600; letter-spacing: -0.6px; color: #21242C; line-height: 1.05; }
   .hero-delta { font-size: 13px; font-weight: 600; color: #276334; }
   .hero-chart { height: 180px; position: relative; }
-
   .chart-grid { display: grid; gap: 12px; margin-bottom: 12px; }
   .chart-grid.cols-2 { grid-template-columns: 1fr 1fr; }
-
   .chart-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 20px 22px; }
   .chart-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 6px; gap: 16px; }
   .chart-title { font-size: 14px; font-weight: 600; color: #21242C; }
   .chart-sub { font-size: 12px; color: #676F7E; margin-bottom: 14px; }
-
   .chart-canvas-wrap { position: relative; height: 280px; }
   .chart-canvas-wrap.tall { height: 340px; }
-
-  .no-data-card { display: flex; align-items: center; justify-content: center; height: 200px; color: #9AA0AB; font-size: 13px; }
-
-  .data-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; flex-shrink: 0; line-height: 1.6; }
-  .data-badge.ready { background: #FFF3E0; color: #BF5000; border: 1px solid #FFCC80; }
-  .data-badge.unavailable { background: #FDE8E8; color: #B71C1C; border: 1px solid #EF9A9A; }
-
-  @media (max-width: 880px) {
-    .chart-grid.cols-2 { grid-template-columns: 1fr; }
-  }
-
+  @media (max-width: 880px) { .chart-grid.cols-2 { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <a class="back-link" href="index.html">← Back</a>
-
-<div class="report-header">
-  <h1>Product analytics</h1>
-</div>
+<div class="report-header"><h1>Product analytics</h1></div>
 <div class="picker-row">
   <div class="seg-control" id="datePicker">
     <button class="seg-btn" type="button">2 weeks</button>
@@ -105,7 +62,6 @@
   </div>
 </div>
 
-<!-- =================================================================== HERO: WAU -->
 <div class="hero-card" id="sec-overview">
   <div class="hero-label">Weekly active users</div>
   <div class="hero-value-row">
@@ -115,61 +71,33 @@
   <div class="hero-chart"><canvas id="wauChart"></canvas></div>
 </div>
 
-<!-- =================================================================== AGENT ADOPTION -->
 <h2 class="section-heading" id="sec-agent">Agent adoption</h2>
-
 <div class="chart-grid">
   <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Agent adoption over time</div>
-        <div class="chart-sub">Active users, by agent</div>
-      </div>
-    </div>
+    <div class="chart-header"><div><div class="chart-title">Agent adoption over time</div><div class="chart-sub">Active users, by agent</div></div></div>
     <div class="chart-canvas-wrap tall"><canvas id="agentAdoption"></canvas></div>
   </div>
   <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Troubleshooting Agent daily revenue</div>
-        <div class="chart-sub" id="agRevSub">Total across all customers</div>
-      </div>
-    </div>
+    <div class="chart-header"><div><div class="chart-title">Troubleshooting Agent daily revenue</div><div class="chart-sub" id="agRevSub">Total across all customers</div></div></div>
     <div class="chart-canvas-wrap tall"><canvas id="agentRevenue"></canvas></div>
   </div>
 </div>
-
 <div class="chart-grid">
   <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">MCP adoption over time</div>
-        <div class="chart-sub">Monthly active MCP connections, by client</div>
-      </div>
-    </div>
+    <div class="chart-header"><div><div class="chart-title">MCP adoption over time</div><div class="chart-sub">Monthly active MCP connections, by client</div></div></div>
     <div class="chart-canvas-wrap tall"><canvas id="mcpAdoption"></canvas></div>
   </div>
 </div>
 
-<!-- =================================================================== MONITORS -->
 <h2 class="section-heading" id="sec-monitors">Monitors</h2>
-
 <div class="chart-grid">
   <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Monitors created over time</div>
-        <div class="chart-sub">By type, excludes agent monitors</div>
-      </div>
-    </div>
+    <div class="chart-header"><div><div class="chart-title">Monitors created over time</div><div class="chart-sub">By type, excludes agent monitors</div></div></div>
     <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
   </div>
   <div class="chart-card">
     <div class="chart-header">
-      <div>
-        <div class="chart-title">Agent monitors created over time</div>
-        <div class="chart-sub" id="agMonSub">By customer</div>
-      </div>
+      <div><div class="chart-title">Agent monitors created over time</div><div class="chart-sub" id="agMonSub">By customer</div></div>
       <div class="chart-toggle" id="agMonToggle">
         <button class="toggle-btn is-active" data-mode="customer">Customer</button>
         <button class="toggle-btn" data-mode="type">Type</button>
@@ -180,94 +108,33 @@
   </div>
 </div>
 
-<!-- =================================================================== ALERTS -->
 <h2 class="section-heading" id="sec-alerts">Alerts</h2>
-
 <div class="chart-grid">
   <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Action adoption</div>
-        <div class="chart-sub">Alerts with each action taken</div>
-      </div>
-    </div>
+    <div class="chart-header"><div><div class="chart-title">Action adoption</div><div class="chart-sub">Alerts with each action taken</div></div></div>
     <div class="chart-canvas-wrap tall"><canvas id="alertsAdoption"></canvas></div>
   </div>
 </div>
 
-<!-- =================================================================== FILTERS -->
 <h2 class="section-heading" id="sec-filters">Filters</h2>
-
 <div class="chart-grid">
   <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Alerts — filter usage</div>
-        <div class="chart-sub">Times each filter appeared in URLs, last 90 days</div>
-      </div>
-    </div>
+    <div class="chart-header"><div><div class="chart-title">Alerts — filter usage</div><div class="chart-sub">Times each filter appeared in URLs, last 90 days</div></div></div>
     <div class="chart-canvas-wrap tall"><canvas id="alertFiltersBar"></canvas></div>
   </div>
   <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Monitors list — filter usage</div>
-        <div class="chart-sub">Times each filter appeared in URLs, last 90 days</div>
-      </div>
-    </div>
+    <div class="chart-header"><div><div class="chart-title">Monitors list — filter usage</div><div class="chart-sub">Times each filter appeared in URLs, last 90 days</div></div></div>
     <div class="chart-canvas-wrap tall"><canvas id="monFiltersBar"></canvas></div>
   </div>
 </div>
 
-<div class="chart-grid">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Write queries — filter usage</div>
-        <div class="chart-sub">Filter params in URLs, last 90 days</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="writeFiltersBar"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Read queries — filter usage</div>
-        <div class="chart-sub">Filter params in URLs, last 90 days</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="readFiltersBar"></canvas></div>
-  </div>
-</div>
-
-<div class="chart-grid">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Job performance — filter usage</div>
-        <div class="chart-sub">Filter params in URLs, last 90 days</div>
-      </div>
-    </div>
-    <div class="no-data-card">No filter params found in URLs — users navigate to this tab without setting filters</div>
-  </div>
-</div>
-
-<!-- =================================================================== DASHBOARDS -->
 <h2 class="section-heading" id="sec-dashboards">Dashboards</h2>
-
 <div class="chart-grid">
   <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Dashboard adoption</div>
-        <div class="chart-sub">Monthly active viewers, by dashboard</div>
-      </div>
-    </div>
+    <div class="chart-header"><div><div class="chart-title">Dashboard adoption</div><div class="chart-sub">Monthly active viewers, by dashboard</div></div></div>
     <div class="chart-canvas-wrap tall"><canvas id="dashByDashboard"></canvas></div>
   </div>
 </div>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="charts.js"></script>
@@ -276,7 +143,6 @@
   const C = window.MC_CHART_COLORS;
   const alpha = window.mcAlpha;
 
-<!-- DATA-START -->
   const ALL_WEEKS = ['Jan 19','Jan 26','Feb 2','Feb 9','Feb 16','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4'];
   const WD = {
     wau:         [2787,2915,3124,3042,2814,2809,2992,2977,2769,2887,2735,2730,2898,2896,2776,2948],
@@ -324,7 +190,6 @@
   };
 
   const ALL_MONTHS = ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr'];
-
   const D = {
     wau:         [2803,2917,2955,3045,2997,2939,2474,2838,2947,2872,2825],
     tsaAgent:    [0,0,0,0,680,755,696,699,705,778,655],
@@ -367,15 +232,23 @@
     dashCoverage:[0,0,0,34,48,494,449,651,905,694,568],
     dashActivity:[521,511,501,548,843,745,525,590,638,632,417],
     dashCustom:  [0,0,0,0,0,0,0,168,484,495,359],
-    customDash:  [0,0,0,0,0,0,0,47,44,56,30],
-    customWdg:   [0,0,0,0,0,0,0,97,100,131,140],
-    perfQuery:   [13,10,6,13,9,10,8,4,6,8,5],
     monPerf:     [13,10,6,13,9,10,8,4,6,8,5],
-    intDatabricks:[12,9,11,9,11,4,10,7,17,11,9],
-    intPager:    [9,8,3,12,8,4,8,7,12,14,3],
-    intJira:     [5,16,4,12,6,5,3,5,4,10,8],
-    intOpsgenie: [6,8,4,3,8,6,5,2,1,3,3],
   };
+
+  const REV_LABELS = [
+    'Apr 1','Apr 2','Apr 3','Apr 4','Apr 5','Apr 6','Apr 7','Apr 8','Apr 9','Apr 10',
+    'Apr 11','Apr 12','Apr 13','Apr 14','Apr 15','Apr 16','Apr 17','Apr 18','Apr 19','Apr 20',
+    'Apr 21','Apr 22','Apr 23','Apr 24','Apr 25','Apr 26','Apr 27','Apr 28','Apr 29','Apr 30',
+    'May 1','May 2','May 3','May 4','May 5','May 6','May 7','May 8','May 9','May 10',
+    'May 11','May 12','May 13','May 14','May 15','May 16','May 17','May 18','May 19',
+  ];
+  const REV_DATA = [
+    500,500,1000,0,null,1500,1500,3630,1740,1600,
+    500,0,2000,1000,1000,440,1000,0,500,3740,
+    500,1646,500,2000,0,0,1000,500,820,2340,
+    500,0,0,2100,2500,1000,0,500,0,1250,
+    3870,3960,2000,1500,494,500,1000,780,1500,
+  ];
 
   function line(label, data, color, fill) {
     return { label, data, borderColor: color, backgroundColor: fill ? alpha(color, 0.18) : color,
@@ -383,10 +256,8 @@
       pointHoverBackgroundColor: '#fff', pointHoverBorderColor: color, pointHoverBorderWidth: 2 };
   }
   function stacked(label, data, color) {
-    return { label, data, backgroundColor: alpha(color, 0.88), borderColor: '#fff',
-      borderWidth: 1, borderRadius: 0 };
+    return { label, data, backgroundColor: alpha(color, 0.88), borderColor: '#fff', borderWidth: 1, borderRadius: 0 };
   }
-
   const opts = (yOpts={}) => ({ interaction:{mode:'index',intersect:false},
     plugins:{legend:{display:true}}, scales:{x:{grid:{display:false}},y:{beginAtZero:true,...yOpts}} });
 
@@ -406,10 +277,19 @@
   CHARTS.agentAdoption = new Chart(document.getElementById('agentAdoption'), { type:'line',
     data:{ labels:[], datasets:[
       line('Troubleshooting agent',[],C.blue), line('Triage agent',[],C.pink),
-      line('OA: Alert explain',[],C.purple),
-      line('OA: Sidebar',[],C.teal), line('OA: Full page',[],C.green),
-      line('OA: Monitor explain',[],C.orange),
+      line('OA: Alert explain',[],C.purple), line('OA: Sidebar',[],C.teal),
+      line('OA: Full page',[],C.green), line('OA: Monitor explain',[],C.orange),
     ]}, options:opts() });
+
+  CHARTS.agentRevenue = new Chart(document.getElementById('agentRevenue'), {
+    type: 'bar',
+    data: { labels: [], datasets: [{ label: 'Daily revenue', data: [],
+      backgroundColor: alpha(C.blue, 0.75), borderColor: C.blue, borderRadius: 2 }]},
+    options: { interaction: { mode: 'index', intersect: false },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { labelColor: () => ({ borderColor: C.blue, backgroundColor: C.blue }) } } },
+      scales: { x: { grid: { display: false }, ticks: { maxTicksLimit: 10, maxRotation: 0 } },
+                y: { beginAtZero: true, ticks: { callback: (v) => '$' + v.toLocaleString() } } } },
+  });
 
   CHARTS.mcpAdoption = new Chart(document.getElementById('mcpAdoption'), { type:'line',
     data:{ labels:[], datasets:[
@@ -426,8 +306,7 @@
       stacked('Metric',[],C.blue), stacked('Custom SQL',[],C.purple),
       stacked('Table',[],C.green), stacked('Validation',[],C.orange),
       stacked('Volume',[],C.teal), stacked('Freshness',[],C.red),
-      stacked('Metric comparison',[],C.pink),
-      stacked('Query performance',[],C.gray),
+      stacked('Metric comparison',[],C.pink), stacked('Query performance',[],C.gray),
     ]}, options:stackedOpts });
 
   CHARTS.agentByCustomer = new Chart(document.getElementById('agentByCustomer'), { type:'bar',
@@ -484,26 +363,25 @@
     const allLbls = weekly ? ALL_WEEKS : ALL_MONTHS;
     const labels  = allLbls.slice(-w.n);
     const s       = (arr) => arr.slice(-w.n);
-    const mn      = weekly ? Math.max(1, Math.round(w.n / 4.3)) : w.n;
 
-    const wauArr    = src.wau;
-    const wauWindow = wauArr.slice(-w.n);
-    const wauPrior  = wauArr.slice(-2 * w.n, -w.n);
+    const wauWindow = src.wau.slice(-w.n);
+    const wauPrior  = src.wau.slice(-2 * w.n, -w.n);
     document.getElementById('wauValue').textContent = wauWindow[wauWindow.length - 1].toLocaleString();
     const deltaEl = document.getElementById('wauDelta');
     if (wauPrior.length === w.n) {
       const pct = (avg(wauWindow) - avg(wauPrior)) / avg(wauPrior) * 100;
       deltaEl.textContent = `${pct >= 0 ? '+' : ''}${pct.toFixed(1)}% vs prior period`;
       deltaEl.style.color = pct >= 0 ? '#276334' : '#B71C1C';
-    } else {
-      deltaEl.textContent = '';
-    }
+    } else { deltaEl.textContent = ''; }
 
     upd(CHARTS.wau,            labels, [s(src.wau)]);
     upd(CHARTS.agentAdoption,  labels, [s(src.tsaAgent),s(src.triageAgent),s(src.oaAlert),s(src.oaSidebar),s(src.oaFullPage),s(src.oaMonitor)]);
     upd(CHARTS.mcpAdoption,    labels, [s(src.mcpOther),s(src.mcpClaude),s(src.mcpNode),s(src.mcpCursor),s(src.mcpVscode),s(src.mcpPython)]);
     upd(CHARTS.monTotal,       labels, [s(src.monStats),s(src.monSql),s(src.monTable),s(src.monValid),s(src.monVol),s(src.monFresh),s(src.monMetric),s(src.monPerf)]);
     upd(CHARTS.dashByDashboard,labels, [s(src.dashDataOps),s(src.dashDQ),s(src.dashDaily),s(src.dashCoverage),s(src.dashActivity),s(src.dashCustom)]);
+    upd(CHARTS.agentByCustomer,labels, [s(src.agCustOther),s(src.agCustXom),s(src.agCustAxios),s(src.agCustMorn),s(src.agCustEnt),s(src.agCustVel)]);
+    upd(CHARTS.agentByType,    labels, [s(src.agEval),s(src.agMetric),s(src.agTraj),s(src.agValidat)]);
+    upd(CHARTS.alertsAdoption, labels, [s(src.alertStatus),s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
 
     const revN = Math.min(weekly ? w.n * 7 : REV_LABELS.length, REV_LABELS.length);
     const revSlice = REV_LABELS.slice(-revN);
@@ -512,10 +390,6 @@
     if (agRevSub && revSlice.length > 0) {
       agRevSub.textContent = `Total across all customers · ${revSlice[0]} – ${revSlice[revSlice.length - 1]}`;
     }
-
-    upd(CHARTS.agentByCustomer, labels, [s(src.agCustOther),s(src.agCustXom),s(src.agCustAxios),s(src.agCustMorn),s(src.agCustEnt),s(src.agCustVel)]);
-    upd(CHARTS.agentByType,     labels, [s(src.agEval),s(src.agMetric),s(src.agTraj),s(src.agValidat)]);
-    upd(CHARTS.alertsAdoption,  labels, [s(src.alertStatus),s(src.alertOwner),s(src.alertComment),s(src.alertFb),s(src.alertJira)]);
   }
 
   document.getElementById('agMonToggle').addEventListener('click', (e) => {
@@ -545,87 +419,25 @@
     updateCharts(WINDOWS[btn.textContent.trim()]);
   });
 
-  const REV_LABELS = [
-    'Apr 1','Apr 2','Apr 3','Apr 4','Apr 5','Apr 6','Apr 7','Apr 8','Apr 9','Apr 10',
-    'Apr 11','Apr 12','Apr 13','Apr 14','Apr 15','Apr 16','Apr 17','Apr 18','Apr 19','Apr 20',
-    'Apr 21','Apr 22','Apr 23','Apr 24','Apr 25','Apr 26','Apr 27','Apr 28','Apr 29','Apr 30',
-    'May 1','May 2','May 3','May 4','May 5','May 6','May 7','May 8','May 9','May 10',
-    'May 11','May 12','May 13','May 14','May 15','May 16','May 17','May 18','May 19',
-  ];
-  const REV_DATA = [
-    500,500,1000,0,null,1500,1500,3630,1740,1600,
-    500,0,2000,1000,1000,440,1000,0,500,3740,
-    500,1646,500,2000,0,0,1000,500,820,2340,
-    500,0,0,2100,2500,1000,0,500,0,1250,
-    3870,3960,2000,1500,494,500,1000,780,1500,
-  ];
-  <!-- DATA-END -->
-  CHARTS.agentRevenue = new Chart(document.getElementById('agentRevenue'), {
-    type: 'bar',
-    data: { labels: [], datasets: [{
-      label: 'Daily revenue', data: [],
-      backgroundColor: alpha(C.blue, 0.75), borderColor: C.blue, borderRadius: 2,
-    }]},
-    options: {
-      interaction: { mode: 'index', intersect: false },
-      plugins: { legend: { display: false }, tooltip: { callbacks: { labelColor: () => ({ borderColor: C.blue, backgroundColor: C.blue }) } } },
-      scales: {
-        x: { grid: { display: false }, ticks: { maxTicksLimit: 10, maxRotation: 0 } },
-        y: { beginAtZero: true, ticks: { callback: (v) => '$' + v.toLocaleString() } },
-      },
-    },
-  });
-
-  // ── Filters: horizontal bar charts ──────────────────────────────────────
   (function() {
     const hbar = (id, labels, data, color) => new Chart(document.getElementById(id), {
       type: 'bar',
-      data: {
-        labels,
-        datasets: [{ data, backgroundColor: alpha(color, 0.82), borderColor: color, borderRadius: 3 }]
-      },
-      options: {
-        indexAxis: 'y',
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' },
-               ticks: { callback: v => v >= 1000 ? (v/1000).toFixed(1)+'k' : v } },
-          y: { grid: { display: false }, ticks: { font: { size: 12 } } }
-        },
-        interaction: { mode: 'index', intersect: false },
-      }
+      data: { labels, datasets: [{ data, backgroundColor: alpha(color, 0.82), borderColor: color, borderRadius: 3 }] },
+      options: { indexAxis: 'y', plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' },
+                       ticks: { callback: v => v >= 1000 ? (v/1000).toFixed(1)+'k' : v } },
+                  y: { grid: { display: false }, ticks: { font: { size: 12 } } } },
+        interaction: { mode: 'index', intersect: false } }
     });
-
     hbar('alertFiltersBar',
       ['Date range','Status','Audience','Table','Severity/SLO','Sub-type','Start/end time','Owner','Monitor','Incl. normalized','Reload'],
-      [8770,7212,1931,1198,902,613,546,505,463,424,228],
-      C.blue
-    );
-
+      [8770,7212,1931,1198,902,613,546,505,463,424,228], C.blue);
     hbar('monFiltersBar',
       ['Tags','Search','Statuses','Audiences','Types','Created by','Namespaces'],
-      [183,52,28,22,8,5,1],
-      C.orange
-    );
-
-    // Write queries — filters from searchCriteria + searchTerms JSON params in URLs
-    hbar('writeFiltersBar',
-      ['searchTerms (user)','searchTerms (dbt_node_name)','Cost/bytes aggregation','searchCriteria (warehouse)','Selected metric','searchCriteria (time range)','searchCriteria (user)','searchTerms (destination_database)','searchCriteria (destination)','searchTerms (destination)','Time bucket aggregation'],
-      [24,22,22,16,16,14,13,12,12,10,10],
-      C.green
-    );
-
-    // Read queries — date/time range filters only (from queries_tab_filters_change on /queries?query-type=read)
-    hbar('readFiltersBar',
-      ['Start date','End date','Overlays','Usernames','Resource type','Categories','Search'],
-      [757,579,245,78,14,6,3],
-      C.teal
-    );
+      [183,52,28,22,8,5,1], C.orange);
   })();
 
-  // Initial render — 3 months
   updateCharts(WINDOWS['3 months']);
-
 })();
 </script>
 
