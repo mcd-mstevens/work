@@ -228,6 +228,36 @@
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="alertSubtypeBar"></canvas></div>
   </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Monitors list — filter usage</div>
+        <div class="chart-sub">Times each filter appeared in URLs, last 90 days</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="monFiltersBar"></canvas></div>
+  </div>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Performance (queries tab) — filter usage</div>
+        <div class="chart-sub">Times each filter appeared in URLs, last 90 days</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="perfFiltersBar"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Performance — query type filter values</div>
+        <div class="chart-sub">Read vs write vs jobs, last 90 days</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="perfQueryTypeBar"></canvas></div>
+  </div>
 </div>
 
 <!-- =================================================================== DASHBOARDS -->
@@ -597,22 +627,40 @@
       }
     });
 
+    // Alerts filters
     hbar('alertFiltersBar',
       ['Date range','Status','Audience','Table','Severity/SLO','Sub-type','Start/end time','Owner','Monitor','Incl. normalized','Reload'],
       [8770,7212,1931,1198,902,613,546,505,463,424,228],
       C.blue
     );
-
     hbar('alertStatusBar',
       ['no_status','investigating','no_action_needed','expected','fixed','work_in_progress','false_positive'],
       [7794,4213,3447,2533,2434,1690,640],
       C.purple
     );
-
     hbar('alertSubtypeBar',
       ['SQL rule breach','Schema anomaly','Freshness','Fields changed','Volume/data','DBT model error','ADF job failure','Validation breach','Agent evaluation','DBT test failure'],
       [622,447,432,338,331,282,166,160,127,65],
       C.teal
+    );
+
+    // Monitors list filters
+    hbar('monFiltersBar',
+      ['Tags','Search','Statuses','Audiences','Types','Created by','Namespaces'],
+      [183,52,28,22,8,5,1],
+      C.orange
+    );
+
+    // Performance (queries tab) filters
+    hbar('perfFiltersBar',
+      ['Query type','Start date','End date','Overlays','Usernames','Categories','Resource type','Search'],
+      [2400,1617,1343,245,88,31,23,9],
+      C.green
+    );
+    hbar('perfQueryTypeBar',
+      ['Read','Write','Jobs','(not set)'],
+      [2396,4,0,4208-2400],
+      C.pink
     );
   })();
 
