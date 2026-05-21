@@ -194,6 +194,42 @@
   </div>
 </div>
 
+<!-- =================================================================== FILTERS -->
+<h2 class="section-heading" id="sec-filters">Filters</h2>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Alerts — filter usage</div>
+        <div class="chart-sub">Times each filter appeared in URLs, last 90 days</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="alertFiltersBar"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Alerts — status filter values</div>
+        <div class="chart-sub">Most-used status values, last 90 days</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="alertStatusBar"></canvas></div>
+  </div>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Alerts — sub-type filter values</div>
+        <div class="chart-sub">Alert sub-types selected in filter, last 90 days</div>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall"><canvas id="alertSubtypeBar"></canvas></div>
+  </div>
+</div>
+
 <!-- =================================================================== DASHBOARDS -->
 <h2 class="section-heading" id="sec-dashboards">Dashboards</h2>
 
@@ -540,6 +576,45 @@
       },
     },
   });
+
+  // ── Filters: horizontal bar charts ──────────────────────────────────────
+  (function() {
+    const hbar = (id, labels, data, color) => new Chart(document.getElementById(id), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{ data, backgroundColor: alpha(color, 0.82), borderColor: color, borderRadius: 3 }]
+      },
+      options: {
+        indexAxis: 'y',
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' },
+               ticks: { callback: v => v >= 1000 ? (v/1000).toFixed(1)+'k' : v } },
+          y: { grid: { display: false }, ticks: { font: { size: 12 } } }
+        },
+        interaction: { mode: 'index', intersect: false },
+      }
+    });
+
+    hbar('alertFiltersBar',
+      ['Date range','Status','Audience','Table','Severity/SLO','Sub-type','Start/end time','Owner','Monitor','Incl. normalized','Reload'],
+      [8770,7212,1931,1198,902,613,546,505,463,424,228],
+      C.blue
+    );
+
+    hbar('alertStatusBar',
+      ['no_status','investigating','no_action_needed','expected','fixed','work_in_progress','false_positive'],
+      [7794,4213,3447,2533,2434,1690,640],
+      C.purple
+    );
+
+    hbar('alertSubtypeBar',
+      ['SQL rule breach','Schema anomaly','Freshness','Fields changed','Volume/data','DBT model error','ADF job failure','Validation breach','Agent evaluation','DBT test failure'],
+      [622,447,432,338,331,282,166,160,127,65],
+      C.teal
+    );
+  })();
 
   // Initial render — 3 months
   updateCharts(WINDOWS['3 months']);
