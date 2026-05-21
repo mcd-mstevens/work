@@ -52,9 +52,9 @@
     white-space: pre; overflow-x: auto; scrollbar-width: thin;
   }
   .kw  { color: #7C3AED; font-weight: 600; }
-  .ev  { color: #0E7490; }
-  .pr  { color: #B45309; }
-  .val { color: #166534; }
+  .fn  { color: #0E7490; }
+  .tb  { color: #B45309; }
+  .st  { color: #166534; }
   .cm  { color: #9CA3AF; font-style: italic; }
   .chart-canvas-wrap { position: relative; height: 280px; }
   .chart-canvas-wrap.tall { height: 340px; }
@@ -87,23 +87,42 @@
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Agent adoption over time</div><div class="chart-sub">Active users, by agent</div></div></div>
-    <div class="query-pill"><span class="kw">event</span>  <span class="ev">Troubleshooting Agent Session Started</span>  <span class="ev">Triage Agent Session Started</span>
-       <span class="ev">OA Alert Explain Opened</span>  <span class="ev">OA Sidebar Opened</span>  <span class="ev">OA Full Page Opened</span>  <span class="cm">+ 1 more</span>
-<span class="kw">metric</span> unique users  <span class="kw">by</span> week  <span class="kw">·</span> project <span class="val">2351916</span></div>
+    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
+       MP_EVENT_NAME,
+       <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> DISTINCT_ID) <span class="kw">AS</span> users
+<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">IN</span> (
+         <span class="st">'Troubleshooting Agent Session Started'</span>,
+         <span class="st">'Triage Agent Session Started'</span>,
+         <span class="st">'OA Alert Explain Opened'</span>,
+         <span class="st">'OA Sidebar Opened'</span>,
+         <span class="st">'OA Full Page Opened'</span>,
+         <span class="st">'OA Monitor Explain Opened'</span>)
+<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
     <div class="chart-canvas-wrap tall"><canvas id="agentAdoption"></canvas></div>
   </div>
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Troubleshooting Agent daily revenue</div><div class="chart-sub" id="agRevSub">Total across all customers</div></div></div>
-    <div class="query-pill"><span class="cm">// Manual — sourced from Salesforce opportunity line items</span>
-<span class="kw">grain</span>  daily  <span class="kw">·</span> <span class="kw">metric</span> recognized revenue  <span class="kw">·</span> product <span class="val">"Troubleshooting Agent"</span></div>
+    <div class="query-pill"><span class="cm">-- Manual — sourced from Salesforce opportunity line items</span>
+<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'day'</span>, close_date) <span class="kw">AS</span> day,
+       <span class="fn">SUM</span>(amount) <span class="kw">AS</span> revenue
+<span class="kw">FROM</span>   <span class="tb">SALESFORCE.OPPORTUNITY_LINE_ITEM</span>
+<span class="kw">WHERE</span>  product_name <span class="kw">ILIKE</span> <span class="st">'%Troubleshooting Agent%'</span>
+<span class="kw">GROUP BY</span> 1  <span class="kw">ORDER BY</span> 1</div>
     <div class="chart-canvas-wrap tall"><canvas id="agentRevenue"></canvas></div>
   </div>
 </div>
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">MCP adoption over time</div><div class="chart-sub">Monthly active MCP connections, by client</div></div></div>
-    <div class="query-pill"><span class="kw">event</span>  <span class="ev">MCP Connection Established</span>
-<span class="kw">metric</span> unique users  <span class="kw">breakdown</span> <span class="pr">mcp_client_name</span>  <span class="kw">by</span> week  <span class="kw">·</span> project <span class="val">2351916</span></div>
+    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
+       MP_LIB <span class="kw">AS</span> client,
+       <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> DISTINCT_ID) <span class="kw">AS</span> users
+<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'MCP Connection Established'</span>
+<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
     <div class="chart-canvas-wrap tall"><canvas id="mcpAdoption"></canvas></div>
   </div>
 </div>
@@ -112,9 +131,14 @@
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Monitors created over time</div><div class="chart-sub">By type, excludes agent monitors</div></div></div>
-    <div class="query-pill"><span class="kw">event</span>  <span class="ev">Monitor Created</span>
-<span class="kw">metric</span> total  <span class="kw">breakdown</span> <span class="pr">monitor_type</span>  <span class="kw">by</span> week
-<span class="kw">filter</span> <span class="pr">monitor_type</span> <span class="kw">!=</span> <span class="val">"agent"</span>  <span class="kw">·</span> project <span class="val">2351916</span></div>
+    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
+       MONITOR_TYPE,
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> monitors_created
+<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Monitor Created'</span>
+  <span class="kw">AND</span>  MONITOR_TYPE <span class="kw">!=</span> <span class="st">'agent'</span>
+<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
     <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
   </div>
   <div class="chart-card">
@@ -125,9 +149,14 @@
         <button class="toggle-btn" data-mode="type">Type</button>
       </div>
     </div>
-    <div class="query-pill"><span class="kw">event</span>  <span class="ev">Monitor Created</span>
-<span class="kw">metric</span> total  <span class="kw">breakdown</span> <span class="pr">account_name</span> <span class="cm">/ monitor_type</span>  <span class="kw">by</span> week
-<span class="kw">filter</span> <span class="pr">monitor_type</span> <span class="kw">=</span> <span class="val">"agent"</span>  <span class="kw">·</span> project <span class="val">2351916</span></div>
+    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
+       ACCOUNT_NAME,   <span class="cm">-- swap for MONITOR_TYPE for "by type" view</span>
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> monitors_created
+<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Monitor Created'</span>
+  <span class="kw">AND</span>  MONITOR_TYPE <span class="kw">=</span> <span class="st">'agent'</span>
+<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
     <div id="agMonCustWrap" class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
     <div id="agMonTypeWrap" class="chart-canvas-wrap tall" style="display:none"><canvas id="agentByType"></canvas></div>
   </div>
@@ -137,9 +166,16 @@
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Action adoption</div><div class="chart-sub">Alerts with each action taken</div></div></div>
-    <div class="query-pill"><span class="kw">events</span> <span class="ev">Alert Status Updated</span>  <span class="ev">Alert Owner Updated</span>  <span class="ev">Alert Comment Created</span>
-        <span class="ev">AI Feedback Submitted</span>  <span class="ev">Jira Ticket Created</span>
-<span class="kw">metric</span> total  <span class="kw">by</span> week  <span class="kw">·</span> project <span class="val">2351916</span></div>
+    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
+       MP_EVENT_NAME,
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> actions
+<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">IN</span> (
+         <span class="st">'Alert Status Updated'</span>, <span class="st">'Alert Owner Updated'</span>,
+         <span class="st">'Alert Comment Created'</span>, <span class="st">'AI Feedback Submitted'</span>,
+         <span class="st">'Jira Ticket Created'</span>)
+<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
     <div class="chart-canvas-wrap tall"><canvas id="alertsAdoption"></canvas></div>
   </div>
 </div>
@@ -148,8 +184,13 @@
 <div class="chart-grid">
   <div class="chart-card">
     <div class="chart-header"><div><div class="chart-title">Dashboard adoption</div><div class="chart-sub">Monthly active viewers, by dashboard</div></div></div>
-    <div class="query-pill"><span class="kw">event</span>  <span class="ev">Dashboard Viewed</span>
-<span class="kw">metric</span> unique users  <span class="kw">breakdown</span> <span class="pr">dashboard_name</span>  <span class="kw">by</span> week  <span class="kw">·</span> project <span class="val">2351916</span></div>
+    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
+       DASHBOARDID <span class="kw">AS</span> dashboard,
+       <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> DISTINCT_ID) <span class="kw">AS</span> users
+<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Dashboard Viewed'</span>
+<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
     <div class="chart-canvas-wrap tall"><canvas id="dashByDashboard"></canvas></div>
   </div>
 </div>
