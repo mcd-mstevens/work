@@ -28,10 +28,8 @@
 
   const c = window.MC_CHART_COLORS;
 
-  // Series palette for multi-series charts — pick from these in order.
   window.MC_SERIES_PALETTE = [c.blue, c.purple, c.green, c.orange, c.teal, c.pink];
 
-  // Convert a hex color to rgba for fills.
   window.mcAlpha = function (hex, alpha) {
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);
@@ -62,7 +60,7 @@
   Chart.defaults.plugins.legend.labels.usePointStyle = true;
   Chart.defaults.plugins.legend.labels.padding = 16;
 
-  // Tooltip
+  // Tooltip — nearest+intersect:false means it follows your cursor
   Chart.defaults.plugins.tooltip.backgroundColor = c.text;
   Chart.defaults.plugins.tooltip.titleFont = { weight: "600", size: 12 };
   Chart.defaults.plugins.tooltip.bodyFont = { size: 12 };
@@ -73,10 +71,9 @@
   Chart.defaults.plugins.tooltip.boxWidth = 8;
   Chart.defaults.plugins.tooltip.boxHeight = 8;
   Chart.defaults.plugins.tooltip.usePointStyle = true;
+  Chart.defaults.plugins.tooltip.mode = "nearest";
+  Chart.defaults.plugins.tooltip.intersect = false;
 
-  // Tooltip swatch: solid filled dot, no stroke, matching the legend.
-  // Stacked-area datasets use white borderColor for layer separators, so fall back
-  // to backgroundColor in that case to get the actual series color.
   Chart.defaults.plugins.tooltip.callbacks.labelColor = function (context) {
     const ds = context.dataset;
     let color = ds.borderColor;
