@@ -131,7 +131,7 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Troubleshooting Agent daily revenue</div>
-        <div class="chart-sub">Total across all customers · Apr 1 – May 19, 2026</div>
+        <div class="chart-sub" id="agRevSub">Total across all customers</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="agentRevenue"></canvas></div>
@@ -465,7 +465,12 @@
 
     // Daily revenue — slice by approximate day count for the selected window
     const revN = Math.min(weekly ? w.n * 7 : REV_LABELS.length, REV_LABELS.length);
-    upd(CHARTS.agentRevenue, REV_LABELS.slice(-revN), [REV_DATA.slice(-revN)]);
+    const revSlice = REV_LABELS.slice(-revN);
+    upd(CHARTS.agentRevenue, revSlice, [REV_DATA.slice(-revN)]);
+    const agRevSub = document.getElementById('agRevSub');
+    if (agRevSub && revSlice.length > 0) {
+      agRevSub.textContent = `Total across all customers · ${revSlice[0]} – ${revSlice[revSlice.length - 1]}`;
+    }
 
     // Monthly-only charts (always use mLabels / ms)
     // Trend charts: always show full history so bars never collapse to 1
@@ -519,7 +524,7 @@
     500,0,0,2100,2500,1000,0,500,0,1250,
     3870,3960,2000,1500,494,500,1000,780,1500,
   ];
-<!-- DATA-END -->
+  <!-- DATA-END -->
   CHARTS.agentRevenue = new Chart(document.getElementById('agentRevenue'), {
     type: 'bar',
     data: { labels: [], datasets: [{
