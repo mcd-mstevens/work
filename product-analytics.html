@@ -44,7 +44,6 @@
     font-size: 12px; font-weight: 500; font-family: inherit;
     border: none; cursor: pointer;
     background: transparent; color: #9AA0AB;
-    transition: background 0.1s, color 0.1s;
     white-space: nowrap;
   }
   .toggle-btn:hover { color: #21242C; }
@@ -222,20 +221,11 @@
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Performance (queries tab) — filter usage</div>
-        <div class="chart-sub">Times each filter appeared in URLs, last 90 days</div>
+        <div class="chart-title">Read queries — filter usage</div>
+        <div class="chart-sub">Times each filter appeared in URLs, last 90 days. Write and job performance had no tracked filter interactions.</div>
       </div>
     </div>
     <div class="chart-canvas-wrap tall"><canvas id="perfFiltersBar"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Performance — query type filter values</div>
-        <div class="chart-sub">Read vs write vs jobs, last 90 days</div>
-      </div>
-    </div>
-    <div class="chart-canvas-wrap tall"><canvas id="perfQueryTypeBar"></canvas></div>
   </div>
 </div>
 
@@ -264,7 +254,6 @@
   const alpha = window.mcAlpha;
 
 <!-- DATA-START -->
-  // Weekly data: Jan 19 – May 4 2026 (16 complete weeks; May 11+ excluded — month in progress)
   const ALL_WEEKS = ['Jan 19','Jan 26','Feb 2','Feb 9','Feb 16','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4'];
   const WD = {
     wau:         [2787,2915,3124,3042,2814,2809,2992,2977,2769,2887,2735,2730,2898,2896,2776,2948],
@@ -311,7 +300,6 @@
     alertJira:   [161,132,181,215,279,184,194,169,242,181,137,167,159,189,168,214],
   };
 
-  // Monthly data: Jun 2025 – Apr 2026 (11 complete months; May excluded — month in progress)
   const ALL_MONTHS = ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr'];
 
   const D = {
@@ -446,8 +434,7 @@
       line('Status update',[],C.blue), line('Owner update',[],C.green),
       line('Comment',[],C.purple), line('AI feedback',[],C.teal),
       line('Jira ticket',[],C.pink),
-    ]}, options:opts({ type:'logarithmic', beginAtZero:false,
-      ticks:{ callback:(v)=>v>=1000?(v/1000).toFixed(0)+'k':v } }) });
+    ]}, options:opts() });
 
   CHARTS.dashByDashboard = new Chart(document.getElementById('dashByDashboard'), { type:'line',
     data:{ labels:[], datasets:[
@@ -599,15 +586,9 @@
     );
 
     hbar('perfFiltersBar',
-      ['Query type','Start date','End date','Overlays','Usernames','Categories','Resource type','Search'],
-      [2400,1617,1343,245,88,31,23,9],
+      ['Start date','End date','Overlays','Usernames','Categories','Resource type','Search'],
+      [757,579,245,78,6,14,3],
       C.green
-    );
-
-    hbar('perfQueryTypeBar',
-      ['Read','Write','Jobs','(not set)'],
-      [2396,4,0,1808],
-      C.pink
     );
   })();
 
