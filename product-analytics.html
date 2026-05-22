@@ -138,15 +138,15 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Monitors created over time</div>
-        <div class="chart-sub" data-view-group="monCombined" data-view="status">Per month, by status (excludes agent)</div>
-        <div class="chart-sub" data-view-group="monCombined" data-view="type" data-view-hidden>Per month, by type (excludes agent)</div>
+        <div class="chart-sub" data-view-group="monCombined" data-view="status" data-view-hidden>Per month, by status (excludes agent)</div>
+        <div class="chart-sub" data-view-group="monCombined" data-view="type">Per month, by type (excludes agent)</div>
       </div>
       <div class="chart-toggle" data-toggle="monCombined">
-        <button class="toggle-btn is-active" type="button" data-view="status">Status</button>
-        <button class="toggle-btn" type="button" data-view="type">Type</button>
+        <button class="toggle-btn" type="button" data-view="status">Status</button>
+        <button class="toggle-btn is-active" type="button" data-view="type">Type</button>
       </div>
     </div>
-    <div data-view-group="monCombined" data-view="status">
+    <div data-view-group="monCombined" data-view="status" data-view-hidden>
       <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
        MONITOR_STATUS,
@@ -157,7 +157,7 @@
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
       <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
     </div>
-    <div data-view-group="monCombined" data-view="type" data-view-hidden>
+    <div data-view-group="monCombined" data-view="type">
       <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, TIME) <span class="kw">AS</span> month,
        MONITOR_TYPE,
@@ -173,15 +173,15 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Agent monitors created over time</div>
-        <div class="chart-sub" data-view-group="agMonCombined" data-view="customer">Per month, by customer (top 5)</div>
-        <div class="chart-sub" data-view-group="agMonCombined" data-view="type" data-view-hidden>Per month, by agent monitor type</div>
+        <div class="chart-sub" data-view-group="agMonCombined" data-view="customer" data-view-hidden>Per month, by customer (top 5)</div>
+        <div class="chart-sub" data-view-group="agMonCombined" data-view="type">Per month, by agent monitor type</div>
       </div>
       <div class="chart-toggle" data-toggle="agMonCombined">
-        <button class="toggle-btn is-active" type="button" data-view="customer">Customer</button>
-        <button class="toggle-btn" type="button" data-view="type">Type</button>
+        <button class="toggle-btn" type="button" data-view="customer">Customer</button>
+        <button class="toggle-btn is-active" type="button" data-view="type">Type</button>
       </div>
     </div>
-    <div data-view-group="agMonCombined" data-view="customer">
+    <div data-view-group="agMonCombined" data-view="customer" data-view-hidden>
       <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
        ACCOUNT_NAME,
@@ -192,7 +192,7 @@
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
       <div class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
     </div>
-    <div data-view-group="agMonCombined" data-view="type" data-view-hidden>
+    <div data-view-group="agMonCombined" data-view="type">
       <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, TIME) <span class="kw">AS</span> month,
        AGENT_MONITOR_TYPE,
@@ -515,36 +515,43 @@ saves <span class="kw">AS</span> (
 
   // ============ MONITORS ============
 
-  // 1. Monitors created per month — Draft vs Enabled (excluding agent)
+  // 1. Monitors created per month — stacked bar: Enabled + Draft (excluding agent)
   (function () {
     new Chart(document.getElementById('monTotal'), {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: MONTHS,
         datasets: [
-          lineDataset('Enabled', [680, 730, 800, 920, 1010, 1060, 1130, 1260, 1420, 1580, 1860, 2070], C.blue),
-          lineDataset('Draft',   [140, 140, 140, 160, 170, 180, 180, 190, 220, 250, 290, 320], C.purple),
+          { label: 'Enabled', data: wobble([680, 730, 800, 920, 1010, 1060, 1130, 1260, 1420, 1580, 1860, 2070]), backgroundColor: C.blue, borderColor: C.blue, stack: 's', borderWidth: 0 },
+          { label: 'Draft',   data: wobble([140, 140, 140, 160, 170, 180, 180, 190, 220, 250, 290, 320]),       backgroundColor: C.purple, borderColor: C.purple, stack: 's', borderWidth: 0 },
         ],
       },
-      options: trendOpts(),
+      options: {
+        animation: false,
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: { stacked: true, grid: { display: false } },
+          y: { stacked: true, beginAtZero: true },
+        },
+      },
     });
   })();
 
-  // 2. Monitors by type — stacked area
+  // 2. Monitors by type — stacked bar
   (function () {
+    const bars = (label, data, color) => ({ label, data: wobble(data), backgroundColor: color, borderColor: color, stack: 's', borderWidth: 0 });
     new Chart(document.getElementById('monByType'), {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: MONTHS,
         datasets: [
-          stackedDataset('Table',        [310, 335, 365, 425, 470, 498, 530, 590, 670, 760, 890, 960], C.blue),
-          stackedDataset('Custom SQL',   [200, 215, 235, 265, 290, 308, 326, 360, 410, 460, 530, 580], C.purple),
-          stackedDataset('Metric',       [110, 118, 128, 150, 165, 175, 185, 208, 235, 260, 290, 320], C.green),
-          stackedDataset('Performance',  [70, 75, 85, 105, 120, 130, 140, 160, 185, 210, 245, 275], C.red),
-          stackedDataset('SQL template', [80, 86, 92, 110, 121, 128, 138, 154, 175, 195, 220, 240], C.orange),
-          stackedDataset('Validation',   [50, 60, 75, 95, 115, 135, 158, 185, 215, 250, 280, 310], C.teal),
-          stackedDataset('JSON schema',  [45, 48, 52, 58, 63, 67, 72, 80, 90, 100, 115, 125], C.pink),
-          stackedDataset('Comparison',   [25, 27, 30, 35, 40, 43, 47, 52, 60, 65, 75, 85], C.gray),
+          bars('Table',       [310, 335, 365, 425, 470, 498, 530, 590, 670, 760, 890, 960], C.blue),
+          bars('Custom SQL',  [200, 215, 235, 265, 290, 308, 326, 360, 410, 460, 530, 580], C.purple),
+          bars('Metric',      [110, 118, 128, 150, 165, 175, 185, 208, 235, 260, 290, 320], C.green),
+          bars('Performance', [70, 75, 85, 105, 120, 130, 140, 160, 185, 210, 245, 275], C.red),
+          bars('Validation',  [50, 60, 75, 95, 115, 135, 158, 185, 215, 250, 280, 310], C.teal),
+          bars('JSON schema', [45, 48, 52, 58, 63, 67, 72, 80, 90, 100, 115, 125], C.pink),
+          bars('Comparison',  [25, 27, 30, 35, 40, 43, 47, 52, 60, 65, 75, 85], C.gray),
         ],
       },
       options: {
@@ -569,7 +576,6 @@ saves <span class="kw">AS</span> (
           lineDataset('Custom SQL',   [28.5, 27.8, 26.9, 26.0, 25.3, 24.7, 24.1, 23.7, 23.3, 23.0, 22.8, 22.7], C.purple),
           lineDataset('Metric',       [6.5, 6.4, 6.2, 6.1, 6.0, 5.9, 5.8, 5.7, 5.6, 5.5, 5.5, 5.4], C.green),
           lineDataset('Performance',  [8.0, 7.8, 7.6, 7.4, 7.2, 7.1, 7.0, 6.9, 6.8, 6.7, 6.6, 6.5], C.red),
-          lineDataset('SQL template', [5.5, 5.4, 5.3, 5.2, 5.1, 5.0, 5.0, 4.9, 4.9, 4.8, 4.8, 4.8], C.orange),
           lineDataset('Validation',   [8.2, 8.0, 7.7, 7.5, 7.3, 7.1, 6.9, 6.8, 6.7, 6.7, 6.6, 6.5], C.teal),
           lineDataset('JSON schema',  [9.5, 9.3, 9.1, 8.9, 8.8, 8.7, 8.6, 8.5, 8.5, 8.4, 8.4, 8.4], C.pink),
           lineDataset('Comparison',   [12.5, 12.2, 11.9, 11.6, 11.4, 11.1, 10.9, 10.7, 10.5, 10.4, 10.3, 10.2], C.gray),
@@ -602,17 +608,18 @@ saves <span class="kw">AS</span> (
     });
   })();
 
-  // 5. Agent monitors by type — stacked area
+  // 5. Agent monitors by type — stacked bar
   (function () {
+    const bars = (label, data, color) => ({ label, data: wobble(data), backgroundColor: color, borderColor: color, stack: 's', borderWidth: 0 });
     new Chart(document.getElementById('agentByType'), {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: MONTHS,
         datasets: [
-          stackedDataset('Agent evaluation', [18, 38, 88, 162, 248, 348, 482, 624, 802, 1010, 1268, 1564], C.blue),
-          stackedDataset('Agent trajectory', [10, 22, 56, 108, 178, 256, 358, 466, 596, 748, 932, 1146], C.purple),
-          stackedDataset('Agent metric',     [0, 6, 18, 38, 70, 112, 168, 232, 308, 396, 502, 624], C.green),
-          stackedDataset('Agent validation', [0, 3, 16, 38, 76, 128, 196, 278, 374, 486, 614, 760], C.orange),
+          bars('Agent evaluation', [18, 38, 88, 162, 248, 348, 482, 624, 802, 1010, 1268, 1564], C.blue),
+          bars('Agent trajectory', [10, 22, 56, 108, 178, 256, 358, 466, 596, 748, 932, 1146], C.purple),
+          bars('Agent metric',     [0, 6, 18, 38, 70, 112, 168, 232, 308, 396, 502, 624], C.green),
+          bars('Agent validation', [0, 3, 16, 38, 76, 128, 196, 278, 374, 486, 614, 760], C.orange),
         ],
       },
       options: {
@@ -637,7 +644,6 @@ saves <span class="kw">AS</span> (
           lineDataset('Custom SQL',   [52, 54, 56, 58, 59, 60, 61, 62, 63, 64, 64, 65], C.purple),
           lineDataset('Metric',       [78, 79, 80, 81, 82, 83, 84, 85, 86, 86, 87, 88], C.green),
           lineDataset('Performance',  [66, 68, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79], C.red),
-          lineDataset('SQL template', [82, 83, 84, 85, 86, 87, 87, 88, 88, 89, 89, 90], C.orange),
           lineDataset('Validation',   [80, 81, 82, 84, 85, 86, 87, 88, 88, 89, 89, 90], C.teal),
           lineDataset('JSON schema',  [65, 66, 67, 69, 70, 71, 72, 73, 74, 75, 76, 77], C.pink),
           lineDataset('Comparison',   [56, 57, 59, 60, 62, 63, 64, 65, 67, 68, 69, 70], C.gray),
