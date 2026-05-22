@@ -37,6 +37,12 @@
   .chart-canvas-wrap { position: relative; height: 280px; }
   .chart-canvas-wrap.tall { height: 340px; }
 
+  .chart-toggle { display: inline-flex; background: #F4F4F5; border-radius: 6px; padding: 2px; gap: 1px; flex-shrink: 0; }
+  .toggle-btn { padding: 4px 10px; font-size: 12px; font-weight: 500; color: #676F7E; background: transparent; border: none; border-radius: 4px; cursor: pointer; font-family: inherit; }
+  .toggle-btn:hover { color: #21242C; }
+  .toggle-btn.is-active { background: #fff; color: #21242C; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); }
+  [data-view-hidden] { display: none; }
+
   .query-pill {
     font-family: 'JetBrains Mono','Fira Code','Cascadia Code','Menlo','Consolas',monospace;
     font-size: 14px; line-height: 1.6; color: #4A5568;
@@ -92,17 +98,17 @@
       </div>
     </div>
     <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
-       MP_EVENT_NAME,
+<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, TIME) <span class="kw">AS</span> month,
+       AGENT_NAME,
        <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> DISTINCT_ID) <span class="kw">AS</span> users
 <span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">IN</span> (
-         <span class="st">'Troubleshooting Agent Session Started'</span>,
-         <span class="st">'Triage Agent Session Started'</span>,
-         <span class="st">'OA Alert Explain Opened'</span>,
-         <span class="st">'OA Sidebar Opened'</span>,
-         <span class="st">'OA Full Page Opened'</span>,
-         <span class="st">'OA Monitor Explain Opened'</span>)
+<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Agent Opened'</span>
+  <span class="kw">AND</span>  AGENT_NAME <span class="kw">IN</span> (
+         <span class="st">'Operations agent'</span>,
+         <span class="st">'Troubleshooting agent'</span>,
+         <span class="st">'Cost agent'</span>,
+         <span class="st">'Monitoring agent'</span>,
+         <span class="st">'PII'</span>)
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
     <div class="chart-canvas-wrap tall"><canvas id="agentAdoption"></canvas></div>
   </div>
@@ -132,10 +138,16 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Monitors created over time</div>
-        <div class="chart-sub">Per month, by status (excludes agent)</div>
+        <div class="chart-sub" data-view-group="monCombined" data-view="status">Per month, by status (excludes agent)</div>
+        <div class="chart-sub" data-view-group="monCombined" data-view="type" data-view-hidden>Per month, by type (excludes agent)</div>
+      </div>
+      <div class="chart-toggle" data-toggle="monCombined">
+        <button class="toggle-btn is-active" type="button" data-view="status">Status</button>
+        <button class="toggle-btn" type="button" data-view="type">Type</button>
       </div>
     </div>
-    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+    <div data-view-group="monCombined" data-view="status">
+      <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
        MONITOR_STATUS,
        <span class="fn">COUNT</span>(*) <span class="kw">AS</span> monitors_created
@@ -143,36 +155,10 @@
 <span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Monitor Created'</span>
   <span class="kw">AND</span>  MONITOR_TYPE <span class="kw">!=</span> <span class="st">'agent'</span>
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Agent monitors created over time</div>
-        <div class="chart-sub">Per month, by customer (top 5)</div>
-      </div>
+      <div class="chart-canvas-wrap tall"><canvas id="monTotal"></canvas></div>
     </div>
-    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
-       ACCOUNT_NAME,
-       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> monitors_created
-<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Monitor Created'</span>
-  <span class="kw">AND</span>  MONITOR_TYPE <span class="kw">=</span> <span class="st">'agent'</span>
-<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
-  </div>
-</div>
-
-<div class="chart-grid cols-2">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Monitors by type</div>
-        <div class="chart-sub">Monthly, excluding agent</div>
-      </div>
-    </div>
-    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+    <div data-view-group="monCombined" data-view="type" data-view-hidden>
+      <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, TIME) <span class="kw">AS</span> month,
        MONITOR_TYPE,
        <span class="fn">COUNT</span>(*) <span class="kw">AS</span> monitors
@@ -180,16 +166,34 @@
 <span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Monitor Created'</span>
   <span class="kw">AND</span>  MONITOR_TYPE <span class="kw">!=</span> <span class="st">'agent'</span>
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="monByType"></canvas></div>
+      <div class="chart-canvas-wrap tall"><canvas id="monByType"></canvas></div>
+    </div>
   </div>
   <div class="chart-card">
     <div class="chart-header">
       <div>
-        <div class="chart-title">Agent monitors by type</div>
-        <div class="chart-sub">Monthly</div>
+        <div class="chart-title">Agent monitors created over time</div>
+        <div class="chart-sub" data-view-group="agMonCombined" data-view="customer">Per month, by customer (top 5)</div>
+        <div class="chart-sub" data-view-group="agMonCombined" data-view="type" data-view-hidden>Per month, by agent monitor type</div>
+      </div>
+      <div class="chart-toggle" data-toggle="agMonCombined">
+        <button class="toggle-btn is-active" type="button" data-view="customer">Customer</button>
+        <button class="toggle-btn" type="button" data-view="type">Type</button>
       </div>
     </div>
-    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+    <div data-view-group="agMonCombined" data-view="customer">
+      <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'week'</span>, TIME) <span class="kw">AS</span> week,
+       ACCOUNT_NAME,
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> monitors_created
+<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
+<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Monitor Created'</span>
+  <span class="kw">AND</span>  MONITOR_TYPE <span class="kw">=</span> <span class="st">'agent'</span>
+<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
+      <div class="chart-canvas-wrap tall"><canvas id="agentByCustomer"></canvas></div>
+    </div>
+    <div data-view-group="agMonCombined" data-view="type" data-view-hidden>
+      <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, TIME) <span class="kw">AS</span> month,
        AGENT_MONITOR_TYPE,
        <span class="fn">COUNT</span>(*) <span class="kw">AS</span> monitors
@@ -197,7 +201,8 @@
 <span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Monitor Created'</span>
   <span class="kw">AND</span>  MONITOR_TYPE <span class="kw">=</span> <span class="st">'agent'</span>
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentByType"></canvas></div>
+      <div class="chart-canvas-wrap tall"><canvas id="agentByType"></canvas></div>
+    </div>
   </div>
 </div>
 
@@ -206,10 +211,16 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Time to complete</div>
-        <div class="chart-sub">Median minutes by type, monthly</div>
+        <div class="chart-sub" data-view-group="ttcCombined" data-view="data">Median minutes by monitor type, monthly</div>
+        <div class="chart-sub" data-view-group="ttcCombined" data-view="agent" data-view-hidden>Median seconds by agent monitor type, monthly</div>
+      </div>
+      <div class="chart-toggle" data-toggle="ttcCombined">
+        <button class="toggle-btn is-active" type="button" data-view="data">Data</button>
+        <button class="toggle-btn" type="button" data-view="agent">Agent</button>
       </div>
     </div>
-    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT — funnel: start → save</span>
+    <div data-view-group="ttcCombined" data-view="data">
+      <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT — funnel: start → save</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, c.TIME) <span class="kw">AS</span> month,
        c.MONITOR_TYPE,
        <span class="fn">MEDIAN</span>(<span class="fn">DATEDIFF</span>(<span class="st">'second'</span>, s.TIME, c.TIME)/60.0) <span class="kw">AS</span> median_minutes
@@ -221,23 +232,18 @@
   <span class="kw">AND</span>  c.MP_EVENT_NAME = <span class="st">'Monitor Created'</span>
   <span class="kw">AND</span>  c.MONITOR_TYPE != <span class="st">'agent'</span>
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="monTtc"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Time to complete — agent</div>
-        <div class="chart-sub">Median seconds by type, monthly</div>
-      </div>
+      <div class="chart-canvas-wrap tall"><canvas id="monTtc"></canvas></div>
     </div>
-    <div class="query-pill"><span class="cm">-- AI_AGENT.PUBLIC.AGENT_RUNS</span>
+    <div data-view-group="ttcCombined" data-view="agent" data-view-hidden>
+      <div class="query-pill"><span class="cm">-- AI_AGENT.PUBLIC.AGENT_RUNS</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, completed_at) <span class="kw">AS</span> month,
        AGENT_TYPE,
        <span class="fn">MEDIAN</span>(<span class="fn">DATEDIFF</span>(<span class="st">'second'</span>, started_at, completed_at)) <span class="kw">AS</span> median_seconds
 <span class="kw">FROM</span>   <span class="tb">AI_AGENT.PUBLIC.AGENT_RUNS</span>
 <span class="kw">WHERE</span>  status = <span class="st">'completed'</span>
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentTtc"></canvas></div>
+      <div class="chart-canvas-wrap tall"><canvas id="agentTtc"></canvas></div>
+    </div>
   </div>
 </div>
 
@@ -246,10 +252,16 @@
     <div class="chart-header">
       <div>
         <div class="chart-title">Completion rate</div>
-        <div class="chart-sub">% of monitor creations completed, by type, monthly</div>
+        <div class="chart-sub" data-view-group="complCombined" data-view="data">% of monitor creations completed, by type, monthly</div>
+        <div class="chart-sub" data-view-group="complCombined" data-view="agent" data-view-hidden>% of agent monitor creations completed, by type, monthly</div>
+      </div>
+      <div class="chart-toggle" data-toggle="complCombined">
+        <button class="toggle-btn is-active" type="button" data-view="data">Data</button>
+        <button class="toggle-btn" type="button" data-view="agent">Agent</button>
       </div>
     </div>
-    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT — start → save funnel</span>
+    <div data-view-group="complCombined" data-view="data">
+      <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT — start → save funnel</span>
 <span class="kw">WITH</span> starts <span class="kw">AS</span> (
   <span class="kw">SELECT</span> DISTINCT_ID, SESSION_ID, MONITOR_TYPE, TIME
   <span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
@@ -264,22 +276,17 @@ saves <span class="kw">AS</span> (
 <span class="kw">FROM</span>   starts s
 <span class="kw">LEFT JOIN</span> saves c <span class="kw">USING</span> (DISTINCT_ID, SESSION_ID)
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="monCompletion"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Completion rate — agent</div>
-        <div class="chart-sub">% of agent monitor creations completed, by type, monthly</div>
-      </div>
+      <div class="chart-canvas-wrap tall"><canvas id="monCompletion"></canvas></div>
     </div>
-    <div class="query-pill"><span class="cm">-- AI_AGENT.PUBLIC.AGENT_RUNS</span>
+    <div data-view-group="complCombined" data-view="agent" data-view-hidden>
+      <div class="query-pill"><span class="cm">-- AI_AGENT.PUBLIC.AGENT_RUNS</span>
 <span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, started_at) <span class="kw">AS</span> month,
        AGENT_TYPE,
        100.0 * <span class="fn">SUM</span>(<span class="kw">CASE WHEN</span> status = <span class="st">'completed'</span> <span class="kw">THEN</span> 1 <span class="kw">END</span>) / <span class="fn">COUNT</span>(*) <span class="kw">AS</span> pct
 <span class="kw">FROM</span>   <span class="tb">AI_AGENT.PUBLIC.AGENT_RUNS</span>
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="agentCompletion"></canvas></div>
+      <div class="chart-canvas-wrap tall"><canvas id="agentCompletion"></canvas></div>
+    </div>
   </div>
 </div>
 
@@ -330,42 +337,8 @@ saves <span class="kw">AS</span> (
   </div>
 </div>
 
-<div class="chart-grid cols-2">
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Custom dashboards</div>
-        <div class="chart-sub">Users with at least one custom dashboard</div>
-      </div>
-    </div>
-    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, TIME) <span class="kw">AS</span> month,
-       <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> DISTINCT_ID) <span class="kw">AS</span> users
-<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Custom Dashboard Viewed'</span>
-<span class="kw">GROUP BY</span> 1  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="customDash"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Custom dashboard widgets</div>
-        <div class="chart-sub">Instances created per month, by widget</div>
-      </div>
-    </div>
-    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, TIME) <span class="kw">AS</span> month,
-       WIDGET_TYPE,
-       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> instances
-<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Widget Added'</span>
-<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="customWidgets"></canvas></div>
-  </div>
-</div>
-
-<!-- =================================================================== PERFORMANCE & INTEGRATIONS -->
-<h2 class="section-heading">Performance & integrations</h2>
+<!-- =================================================================== PERFORMANCE -->
+<h2 class="section-heading">Performance</h2>
 
 <div class="chart-grid cols-2">
   <div class="chart-card">
@@ -384,22 +357,6 @@ saves <span class="kw">AS</span> (
   <span class="kw">AND</span>  MONITOR_TYPE <span class="kw">=</span> <span class="st">'performance'</span>
 <span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
     <div class="chart-canvas-wrap tall"><canvas id="perfAdoption"></canvas></div>
-  </div>
-  <div class="chart-card">
-    <div class="chart-header">
-      <div>
-        <div class="chart-title">Most popular integrations over time</div>
-        <div class="chart-sub">Active setups per month, by integration</div>
-      </div>
-    </div>
-    <div class="query-pill"><span class="cm">-- MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">SELECT</span> <span class="fn">DATE_TRUNC</span>(<span class="st">'month'</span>, TIME) <span class="kw">AS</span> month,
-       INTEGRATION_TYPE,
-       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> new_setups
-<span class="kw">FROM</span>   <span class="tb">MIXPANEL.PUBLIC.MP_MASTER_EVENT</span>
-<span class="kw">WHERE</span>  MP_EVENT_NAME <span class="kw">=</span> <span class="st">'Integration Added'</span>
-<span class="kw">GROUP BY</span> 1, 2  <span class="kw">ORDER BY</span> 1</div>
-    <div class="chart-canvas-wrap tall"><canvas id="integrationsChart"></canvas></div>
   </div>
 </div>
 
@@ -466,11 +423,32 @@ saves <span class="kw">AS</span> (
 
   const trendOpts = (yOpts = {}) => ({
     interaction: { mode: 'index', intersect: false },
+    animation: false,
     plugins: { legend: { display: true } },
     scales: {
       x: { grid: { display: false } },
       y: { beginAtZero: true, ...yOpts },
     },
+  });
+
+  // Chart-card toggles (Type/Status, Customer/Type, Data/Agent) — instant swap
+  // by show/hide; charts are already mounted so no re-render needed.
+  document.querySelectorAll('.chart-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', (e) => {
+      const btn = e.target.closest('.toggle-btn');
+      if (!btn) return;
+      const group = toggle.dataset.toggle;
+      const view = btn.dataset.view;
+      toggle.querySelectorAll('.toggle-btn').forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      document.querySelectorAll(`[data-view-group="${group}"]`).forEach((el) => {
+        if (el.dataset.view === view) {
+          el.removeAttribute('data-view-hidden');
+        } else {
+          el.setAttribute('data-view-hidden', '');
+        }
+      });
+    });
   });
 
   // ============ HERO: WAU ============
@@ -490,6 +468,7 @@ saves <span class="kw">AS</span> (
         }],
       },
       options: {
+        animation: false,
         plugins: { legend: { display: false } },
         interaction: { mode: 'index', intersect: false },
         scales: {
@@ -569,6 +548,7 @@ saves <span class="kw">AS</span> (
         ],
       },
       options: {
+        animation: false,
         interaction: { mode: 'index', intersect: false },
         scales: {
           x: { stacked: true, grid: { display: false } },
@@ -636,6 +616,7 @@ saves <span class="kw">AS</span> (
         ],
       },
       options: {
+        animation: false,
         interaction: { mode: 'index', intersect: false },
         scales: {
           x: { stacked: true, grid: { display: false } },
@@ -755,47 +736,7 @@ saves <span class="kw">AS</span> (
           lineDataset('Coverage',        [428, 482, 552, 624, 692, 754, 822, 884, 952, 1018, 1098, 1184], C.green),
           lineDataset('Table health',    [218, 246, 282, 320, 358, 396, 432, 468, 510, 552, 598, 648], C.orange),
           lineDataset('Activity',        [88, 102, 122, 142, 168, 196, 224, 252, 282, 318, 358, 402], C.teal),
-        ],
-      },
-      options: trendOpts(),
-    });
-  })();
-
-  // 9. Custom dashboards — single line
-  (function () {
-    const ctx = document.getElementById('customDash');
-    const g = ctx.getContext('2d').createLinearGradient(0, 0, 0, 280);
-    g.addColorStop(0, alpha(C.purple, 0.25));
-    g.addColorStop(1, alpha(C.purple, 0));
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [{
-          ...lineDataset('Users with custom dashboards', [142, 168, 198, 232, 268, 308, 352, 398, 448, 502, 562, 628], C.purple, false),
-          backgroundColor: g,
-          fill: true,
-        }],
-      },
-      options: {
-        ...trendOpts(),
-        plugins: { legend: { display: false } },
-      },
-    });
-  })();
-
-  // 10. Custom dashboard widgets — multi-line
-  (function () {
-    new Chart(document.getElementById('customWidgets'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Chart',          [88, 102, 120, 142, 168, 196, 226, 258, 292, 328, 368, 412], C.blue),
-          lineDataset('Single value',   [62, 74, 88, 106, 128, 152, 178, 204, 232, 262, 296, 332], C.purple),
-          lineDataset('Table',          [34, 42, 52, 64, 78, 94, 112, 130, 150, 172, 196, 222], C.green),
-          lineDataset('Monitor status', [18, 24, 32, 42, 54, 68, 84, 100, 118, 138, 160, 184], C.orange),
-          lineDataset('Text',           [12, 16, 22, 30, 40, 52, 66, 82, 100, 120, 142, 166], C.teal),
+          lineDataset('Custom',          [142, 168, 198, 232, 268, 308, 352, 398, 448, 502, 562, 628], C.pink),
         ],
       },
       options: trendOpts(),
@@ -820,29 +761,6 @@ saves <span class="kw">AS</span> (
     });
   })();
 
-  // ============ INTEGRATIONS ============
-
-  // 12. Most popular integrations over time — multi-line, 9 series
-  (function () {
-    new Chart(document.getElementById('integrationsChart'), {
-      type: 'line',
-      data: {
-        labels: MONTHS,
-        datasets: [
-          lineDataset('Snowflake',      [1200, 1268, 1342, 1430, 1518, 1610, 1712, 1820, 1922, 2010, 2090, 2150], C.blue),
-          lineDataset('Databricks',     [480, 548, 622, 712, 808, 902, 998, 1098, 1190, 1268, 1334, 1380], C.red),
-          lineDataset('BigQuery',       [850, 890, 932, 968, 1002, 1042, 1082, 1118, 1158, 1192, 1220, 1240], C.green),
-          lineDataset('dbt',            [180, 240, 312, 388, 470, 552, 632, 712, 790, 850, 898, 920], C.orange),
-          lineDataset('Redshift',       [620, 648, 678, 704, 732, 758, 782, 802, 822, 838, 846, 850], C.purple),
-          lineDataset('PostgreSQL',     [380, 412, 446, 482, 520, 556, 590, 622, 656, 686, 708, 720], C.teal),
-          lineDataset('Airflow',        [220, 248, 282, 318, 354, 388, 420, 452, 482, 508, 528, 540], C.pink),
-          lineDataset('SQL Server',     [280, 296, 312, 332, 352, 370, 388, 408, 424, 438, 446, 450], C.gray),
-          lineDataset('Salesforce CRM', [140, 155, 172, 192, 212, 232, 252, 272, 290, 304, 314, 320], C.amber),
-        ],
-      },
-      options: trendOpts(),
-    });
-  })();
 </script>
 
 </body>
