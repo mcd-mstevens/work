@@ -142,8 +142,8 @@
         <div class="chart-sub" data-view-group="monCombined" data-view="type">Per month, by type (excludes agent)</div>
       </div>
       <div class="chart-toggle" data-toggle="monCombined">
-        <button class="toggle-btn" type="button" data-view="status">Status</button>
         <button class="toggle-btn is-active" type="button" data-view="type">Type</button>
+        <button class="toggle-btn" type="button" data-view="status">Status</button>
       </div>
     </div>
     <div data-view-group="monCombined" data-view="status" data-view-hidden>
@@ -177,8 +177,8 @@
         <div class="chart-sub" data-view-group="agMonCombined" data-view="type">Per month, by agent monitor type</div>
       </div>
       <div class="chart-toggle" data-toggle="agMonCombined">
-        <button class="toggle-btn" type="button" data-view="customer">Customer</button>
         <button class="toggle-btn is-active" type="button" data-view="type">Type</button>
+        <button class="toggle-btn" type="button" data-view="customer">Customer</button>
       </div>
     </div>
     <div data-view-group="agMonCombined" data-view="customer" data-view-hidden>
@@ -366,6 +366,9 @@ saves <span class="kw">AS</span> (
   const C = window.MC_CHART_COLORS;
   const SERIES = window.MC_SERIES_PALETTE;
   const alpha = window.mcAlpha;
+
+  // Stacked bars: no rounded corners on segments — looks weird on internal segments.
+  Chart.defaults.elements.bar.borderRadius = 0;
 
   // Shared monthly labels — trailing 12 months ending May 2026
   const MONTHS = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
@@ -590,21 +593,29 @@ saves <span class="kw">AS</span> (
     });
   })();
 
-  // 4. Agent monitors created by customer — multi-line
+  // 4. Agent monitors created by customer — stacked bar
   (function () {
+    const bars = (label, data, color) => ({ label, data: wobble(data), backgroundColor: color, borderColor: color, stack: 's', borderWidth: 0 });
     new Chart(document.getElementById('agentByCustomer'), {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: MONTHS,
         datasets: [
-          lineDataset('Acme',    [12, 28, 64, 112, 168, 226, 318, 410, 524, 658, 824, 1010], C.blue),
-          lineDataset('Globex',  [8, 18, 42, 78, 132, 188, 258, 332, 410, 502, 612, 738], C.purple),
-          lineDataset('Wayne',   [5, 14, 32, 58, 96, 142, 198, 264, 332, 412, 496, 588], C.green),
-          lineDataset('Initech', [2, 8, 22, 44, 78, 118, 168, 220, 278, 342, 408, 478], C.orange),
-          lineDataset('Stark',   [0, 4, 14, 30, 56, 88, 130, 178, 228, 282, 338, 396], C.teal),
+          bars('Acme',    [12, 28, 64, 112, 168, 226, 318, 410, 524, 658, 824, 1010], C.blue),
+          bars('Globex',  [8, 18, 42, 78, 132, 188, 258, 332, 410, 502, 612, 738], C.purple),
+          bars('Wayne',   [5, 14, 32, 58, 96, 142, 198, 264, 332, 412, 496, 588], C.green),
+          bars('Initech', [2, 8, 22, 44, 78, 118, 168, 220, 278, 342, 408, 478], C.orange),
+          bars('Stark',   [0, 4, 14, 30, 56, 88, 130, 178, 228, 282, 338, 396], C.teal),
         ],
       },
-      options: trendOpts(),
+      options: {
+        animation: false,
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: { stacked: true, grid: { display: false } },
+          y: { stacked: true, beginAtZero: true },
+        },
+      },
     });
   })();
 
