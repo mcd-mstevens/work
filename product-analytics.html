@@ -16,11 +16,6 @@
   .report-header { margin-bottom: 8px; }
   .report-header h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.4px; color: #21242C; margin-bottom: 14px; }
 
-  .date-picker { display: inline-flex; background: #F4F4F5; border-radius: 8px; padding: 2px; }
-  .date-picker-btn { padding: 5px 10px; font-size: 12px; font-weight: 500; color: #676F7E; background: transparent; border: none; border-radius: 6px; cursor: pointer; transition: background 0.1s ease, color 0.1s ease; font-family: inherit; }
-  .date-picker-btn:hover { color: #21242C; }
-  .date-picker-btn.is-active { background: #fff; color: #21242C; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06); }
-
   .section-heading { font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 600; color: #676F7E; margin: 36px 0 12px; }
   .section-heading:first-of-type { margin-top: 32px; }
 
@@ -53,7 +48,7 @@
   .fn { color: #0E7490; }
   .tb { color: #B45309; }
   .st { color: #166534; }
-  .cm { color: #9CA3AF; font-style: italic; }
+  .cm { color: #9CA3AF; }
 
   @media (max-width: 880px) {
     .chart-grid.cols-2 { grid-template-columns: 1fr; }
@@ -66,12 +61,6 @@
 
 <div class="report-header">
   <h1>Product analytics</h1>
-  <div class="date-picker" id="datePicker">
-    <button class="date-picker-btn" type="button">1 week</button>
-    <button class="date-picker-btn" type="button">2 weeks</button>
-    <button class="date-picker-btn" type="button">1 month</button>
-    <button class="date-picker-btn is-active" type="button">3 months</button>
-  </div>
 </div>
 
 <!-- =================================================================== HERO: WAU -->
@@ -417,18 +406,6 @@ saves <span class="kw">AS</span> (
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="charts.js"></script>
 <script>
-  // Date picker — visual toggle only (no data refetch in this prototype)
-  (function () {
-    const picker = document.getElementById('datePicker');
-    if (!picker) return;
-    picker.addEventListener('click', (e) => {
-      const btn = e.target.closest('.date-picker-btn');
-      if (!btn) return;
-      picker.querySelectorAll('.date-picker-btn').forEach((b) => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-    });
-  })();
-
   const C = window.MC_CHART_COLORS;
   const SERIES = window.MC_SERIES_PALETTE;
   const alpha = window.mcAlpha;
