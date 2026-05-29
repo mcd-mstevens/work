@@ -4,7 +4,15 @@
     "title": "Lists / table cleanup",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13740",
     "state": "open",
-    "updated_at": "2026-05-29T20:58:42Z",
+    "updated_at": "2026-05-29T21:49:29Z",
+    "merged_at": null
+  },
+  {
+    "number": 13747,
+    "title": "Alert detail: drop Git nudge, move SLO status to bottom",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13747",
+    "state": "open",
+    "updated_at": "2026-05-29T21:40:58Z",
     "merged_at": null
   },
   {
@@ -150,13 +158,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T19:54:39Z",
     "merged_at": "2026-04-22T19:54:37Z"
-  },
-  {
-    "number": 12998,
-    "title": "Bob triage agent: indent expanded content, rename Rationale, remove Batch Triage",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12998",
-    "state": "closed",
-    "updated_at": "2026-04-22T19:47:44Z",
-    "merged_at": "2026-04-22T19:47:43Z"
   }
 ]
