@@ -1,18 +1,18 @@
 [
   {
+    "number": 13747,
+    "title": "Alert detail: drop Git nudge, move SLO status to bottom",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13747",
+    "state": "closed",
+    "updated_at": "2026-05-31T12:00:41Z",
+    "merged_at": "2026-05-31T12:00:39Z"
+  },
+  {
     "number": 13740,
     "title": "Lists / table cleanup",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13740",
     "state": "open",
     "updated_at": "2026-05-30T18:41:18Z",
-    "merged_at": null
-  },
-  {
-    "number": 13747,
-    "title": "Alert detail: drop Git nudge, move SLO status to bottom",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13747",
-    "state": "open",
-    "updated_at": "2026-05-30T15:54:25Z",
     "merged_at": null
   },
   {
