@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Notification Inbox Usage — Monte Carlo</title>
 <link rel="stylesheet" href="style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   .stat-grid {
     display: grid;
@@ -18,72 +17,39 @@
   .stat-cell {
     padding: 20px 22px;
     border-right: 1px solid #E2E2E2;
+    background: #fff;
   }
   .stat-cell:last-child { border-right: none; }
   .stat-val { font-size: 26px; font-weight: 600; color: #21242C; line-height: 1.2; }
   .stat-label { font-size: 12px; color: #676F7E; margin-top: 4px; }
 
   .chart-card {
+    background: #fff;
     border: 1px solid #E2E2E2;
     border-radius: 12px;
-    overflow: hidden;
     padding: 20px 22px;
   }
-  .chart-card-title {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #676F7E;
-    margin-bottom: 16px;
-  }
-  .chart-note {
-    font-size: 12px;
-    color: #676F7E;
-    margin-top: 10px;
-  }
+  .chart-title { font-size: 14px; font-weight: 600; color: #21242C; margin-bottom: 4px; }
+  .chart-sub { font-size: 12px; color: #676F7E; margin-bottom: 16px; }
+  .chart-note { font-size: 12px; color: #676F7E; margin-top: 10px; }
 
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-  /* horizontal bar list */
   .hbar-list { display: flex; flex-direction: column; gap: 8px; }
   .hbar-row { display: flex; align-items: center; gap: 10px; }
   .hbar-label {
-    font-size: 12px;
-    color: #21242C;
-    width: 140px;
-    flex-shrink: 0;
+    font-size: 12px; color: #21242C;
+    width: 140px; flex-shrink: 0;
     text-align: right;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
-  .hbar-track {
-    flex: 1;
-    height: 18px;
-    background: #F4F4F4;
-    border-radius: 4px;
-    overflow: hidden;
-  }
+  .hbar-track { flex: 1; height: 18px; background: #F4F4F4; border-radius: 4px; overflow: hidden; }
   .hbar-fill {
-    height: 100%;
-    border-radius: 4px;
-    background: #21242C;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 7px;
-    font-size: 10px;
-    font-weight: 600;
-    color: #fff;
-    min-width: 24px;
+    height: 100%; border-radius: 4px;
+    display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 7px; font-size: 10px; font-weight: 600; color: #fff; min-width: 24px;
   }
 
-  /* donut */
   .donut-wrap { display: flex; align-items: center; gap: 20px; }
   .depth-legend { display: flex; flex-direction: column; gap: 9px; flex: 1; }
   .depth-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #676F7E; }
@@ -103,7 +69,6 @@
   <h1 class="cover-title">Notification Inbox Usage</h1>
   <p class="subtitle">Last 90 days &middot; analytics.prod.mixpanel_master_event</p>
 
-  <!-- Stats -->
   <div class="section">
     <div class="stat-grid">
       <div class="stat-cell"><div class="stat-val">1,918</div><div class="stat-label">Total opens</div></div>
@@ -113,41 +78,37 @@
     </div>
   </div>
 
-  <!-- Weekly trend -->
   <div class="section">
     <div class="chart-card">
-      <div class="chart-card-title">Weekly Opens &amp; Unique Users</div>
-      <div style="position:relative;height:200px">
-        <canvas id="weeklyChart"></canvas>
-      </div>
+      <div class="chart-title">Weekly opens &amp; unique users</div>
+      <div class="chart-sub">Week-over-week since launch</div>
+      <div style="position:relative;height:220px"><canvas id="weeklyChart"></canvas></div>
     </div>
   </div>
 
-  <!-- Two col: top accounts + hour of day -->
   <div class="section">
     <div class="two-col">
 
       <div class="chart-card">
-        <div class="chart-card-title">Top 10 Accounts &mdash; 90d Opens</div>
+        <div class="chart-title">Top 10 accounts</div>
+        <div class="chart-sub">Opens over the last 90 days</div>
         <div class="hbar-list" id="hbarList"></div>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:16px">
 
         <div class="chart-card">
-          <div class="chart-card-title">Opens by Hour of Day (UTC)</div>
-          <div style="position:relative;height:120px">
-            <canvas id="hourChart"></canvas>
-          </div>
+          <div class="chart-title">Opens by hour of day</div>
+          <div class="chart-sub">UTC, last 90 days</div>
+          <div style="position:relative;height:120px"><canvas id="hourChart"></canvas></div>
           <p class="chart-note">Peaks 1&ndash;4 pm UTC (US East morning)</p>
         </div>
 
         <div class="chart-card">
-          <div class="chart-card-title">Accounts by User Depth</div>
+          <div class="chart-title">Accounts by user depth</div>
+          <div class="chart-sub">How many users per account opened inbox</div>
           <div class="donut-wrap">
-            <div style="width:120px;height:120px;flex-shrink:0">
-              <canvas id="donutChart"></canvas>
-            </div>
+            <div style="width:120px;height:120px;flex-shrink:0"><canvas id="donutChart"></canvas></div>
             <div class="depth-legend" id="depthLegend"></div>
           </div>
         </div>
@@ -158,12 +119,11 @@
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="charts.js"></script>
 <script>
-Chart.defaults.color = '#9AA0AA';
-Chart.defaults.font.family = "'Inter', -apple-system, sans-serif";
-Chart.defaults.font.size = 11;
-
-const GRID = '#EBEBEB';
+const C = window.MC_CHART_COLORS;
+const alpha = window.mcAlpha;
 
 const weekly = [
   { w:'Feb 23', opens:8,   users:7   },
@@ -190,50 +150,45 @@ new Chart(document.getElementById('weeklyChart'), {
         type: 'bar',
         label: 'Opens',
         data: weekly.map(d => d.opens),
-        backgroundColor: 'rgba(33,36,44,0.12)',
-        borderColor: '#21242C',
+        backgroundColor: alpha(C.blue, 0.18),
+        borderColor: C.blue,
         borderWidth: 1,
-        borderRadius: 3,
         order: 2,
       },
       {
         type: 'line',
         label: 'Unique Users',
         data: weekly.map(d => d.users),
-        borderColor: '#676F7E',
+        borderColor: C.purple,
         backgroundColor: 'transparent',
-        borderWidth: 1.5,
         pointRadius: 3,
-        pointBackgroundColor: '#676F7E',
+        pointBackgroundColor: C.purple,
         tension: 0.3,
         order: 1,
       }
     ]
   },
   options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: { position:'top', align:'end', labels:{ boxWidth:10, padding:14, color:'#676F7E' } },
-      tooltip: { mode:'index', intersect:false }
-    },
+    animation: false,
+    interaction: { mode: 'index', intersect: false },
     scales: {
-      x: { grid:{ color:GRID }, ticks:{ maxRotation:40, color:'#9AA0AA' } },
-      y: { grid:{ color:GRID }, beginAtZero:true, ticks:{ color:'#9AA0AA' } }
-    }
+      x: { grid: { display: false }, ticks: { maxRotation: 40 } },
+      y: { beginAtZero: true },
+    },
   }
 });
 
 const topAccounts = [
-  { name:'Mercado Libre',    opens:145 },
-  { name:'Voya Prod',        opens:48  },
-  { name:'General Mills',    opens:41  },
-  { name:'Richemont Prod',   opens:41  },
-  { name:'American Airlines',opens:39  },
-  { name:'Target',           opens:38  },
-  { name:'roche_dia',        opens:32  },
-  { name:'NFL2',             opens:32  },
-  { name:'easyJet',          opens:28  },
-  { name:'Morningstar',      opens:27  },
+  { name:'Mercado Libre',     opens:145 },
+  { name:'Voya Prod',         opens:48  },
+  { name:'General Mills',     opens:41  },
+  { name:'Richemont Prod',    opens:41  },
+  { name:'American Airlines', opens:39  },
+  { name:'Target',            opens:38  },
+  { name:'roche_dia',         opens:32  },
+  { name:'NFL2',              opens:32  },
+  { name:'easyJet',           opens:28  },
+  { name:'Morningstar',       opens:27  },
 ];
 
 const maxO = topAccounts[0].opens;
@@ -244,7 +199,7 @@ topAccounts.forEach(a => {
     <div class="hbar-row">
       <span class="hbar-label" title="${a.name}">${a.name}</span>
       <div class="hbar-track">
-        <div class="hbar-fill" style="width:${pct}%">${a.opens}</div>
+        <div class="hbar-fill" style="width:${pct}%;background:${C.blue}">${a.opens}</div>
       </div>
     </div>`;
 });
@@ -259,29 +214,29 @@ new Chart(document.getElementById('hourChart'), {
     datasets: [{
       label: 'Opens',
       data: hours,
-      backgroundColor: hours.map(v => v >= 130 ? '#21242C' : 'rgba(33,36,44,0.18)'),
-      borderRadius: 2,
+      backgroundColor: hours.map(v => v >= 130 ? C.blue : alpha(C.blue, 0.25)),
     }]
   },
   options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend:{ display:false }, tooltip:{ callbacks:{
+    animation: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: {
       title: items => `${items[0].label} UTC`,
-      label: item => ` ${item.raw} opens`
+      label: item => ` ${item.raw} opens`,
     }}},
     scales: {
-      x: { grid:{ display:false }, ticks:{ font:{ size:9 }, maxRotation:0, color:'#9AA0AA' } },
-      y: { grid:{ color:GRID }, beginAtZero:true, ticks:{ color:'#9AA0AA' } }
-    }
+      x: { grid: { display: false }, ticks: { font: { size: 9 }, maxRotation: 0 } },
+      y: { beginAtZero: true },
+    },
   }
 });
 
+const PALETTE = [C.blue, C.purple, C.green, C.orange, C.teal];
 const depth = [
-  { label:'1 user',     count:94,  color:'#21242C' },
-  { label:'2–5 users',  count:134, color:'#4A4E5A' },
-  { label:'6–10 users', count:35,  color:'#7A7F8E' },
-  { label:'11–20 users',count:11,  color:'#A8ACBA' },
-  { label:'20+ users',  count:3,   color:'#D5D7DE' },
+  { label:'1 user',      count: 94  },
+  { label:'2–5 users',   count: 134 },
+  { label:'6–10 users',  count: 35  },
+  { label:'11–20 users', count: 11  },
+  { label:'20+ users',   count: 3   },
 ];
 
 new Chart(document.getElementById('donutChart'), {
@@ -290,30 +245,30 @@ new Chart(document.getElementById('donutChart'), {
     labels: depth.map(d => d.label),
     datasets: [{
       data: depth.map(d => d.count),
-      backgroundColor: depth.map(d => d.color),
+      backgroundColor: PALETTE,
       borderWidth: 0,
-      hoverOffset: 4
+      hoverOffset: 4,
     }]
   },
   options: {
-    responsive: true, maintainAspectRatio: false,
+    animation: false,
     cutout: '60%',
     plugins: {
-      legend: { display:false },
-      tooltip: { callbacks:{ label: item => ` ${item.raw} accounts` } }
-    }
+      legend: { display: false },
+      tooltip: { callbacks: { label: item => ` ${item.raw} accounts` } },
+    },
   }
 });
 
 const total = depth.reduce((s, d) => s + d.count, 0);
 const legendEl = document.getElementById('depthLegend');
-depth.forEach(d => {
+depth.forEach((d, i) => {
   legendEl.innerHTML += `
     <div class="depth-item">
-      <div class="depth-dot" style="background:${d.color}"></div>
+      <div class="depth-dot" style="background:${PALETTE[i]}"></div>
       <span>${d.label}</span>
       <span class="depth-count">${d.count}</span>
-      <span class="depth-pct">${Math.round(d.count/total*100)}%</span>
+      <span class="depth-pct">${Math.round(d.count / total * 100)}%</span>
     </div>`;
 });
 </script>
