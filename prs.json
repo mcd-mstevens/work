@@ -1,27 +1,27 @@
 [
   {
+    "number": 13751,
+    "title": "Smooth row-hover transition on tableWrapper tables",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13751",
+    "state": "closed",
+    "updated_at": "2026-06-02T09:31:39Z",
+    "merged_at": null
+  },
+  {
+    "number": 13740,
+    "title": "Lists / table cleanup",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13740",
+    "state": "closed",
+    "updated_at": "2026-06-02T09:31:37Z",
+    "merged_at": null
+  },
+  {
     "number": 13747,
     "title": "Alert detail: drop Git nudge, move SLO status to bottom",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13747",
     "state": "closed",
     "updated_at": "2026-05-31T12:00:41Z",
     "merged_at": "2026-05-31T12:00:39Z"
-  },
-  {
-    "number": 13740,
-    "title": "Lists / table cleanup",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13740",
-    "state": "open",
-    "updated_at": "2026-05-30T18:41:18Z",
-    "merged_at": null
-  },
-  {
-    "number": 13751,
-    "title": "Smooth row-hover transition on tableWrapper tables",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13751",
-    "state": "open",
-    "updated_at": "2026-05-30T13:41:58Z",
-    "merged_at": null
   },
   {
     "number": 13521,
