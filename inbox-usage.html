@@ -31,7 +31,6 @@
   }
   .chart-title { font-size: 14px; font-weight: 600; color: #21242C; margin-bottom: 4px; }
   .chart-sub { font-size: 12px; color: #676F7E; margin-bottom: 16px; }
-  .chart-note { font-size: 12px; color: #676F7E; margin-top: 10px; }
 
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
@@ -95,25 +94,15 @@
         <div class="hbar-list" id="hbarList"></div>
       </div>
 
-      <div style="display:flex;flex-direction:column;gap:16px">
-
-        <div class="chart-card">
-          <div class="chart-title">Opens by hour of day</div>
-          <div class="chart-sub">UTC, last 90 days</div>
-          <div style="position:relative;height:120px"><canvas id="hourChart"></canvas></div>
-          <p class="chart-note">Peaks 1&ndash;4 pm UTC (US East morning)</p>
+      <div class="chart-card">
+        <div class="chart-title">Accounts by user depth</div>
+        <div class="chart-sub">How many users per account opened inbox</div>
+        <div class="donut-wrap">
+          <div style="width:120px;height:120px;flex-shrink:0"><canvas id="donutChart"></canvas></div>
+          <div class="depth-legend" id="depthLegend"></div>
         </div>
-
-        <div class="chart-card">
-          <div class="chart-title">Accounts by user depth</div>
-          <div class="chart-sub">How many users per account opened inbox</div>
-          <div class="donut-wrap">
-            <div style="width:120px;height:120px;flex-shrink:0"><canvas id="donutChart"></canvas></div>
-            <div class="depth-legend" id="depthLegend"></div>
-          </div>
-        </div>
-
       </div>
+
     </div>
   </div>
 
@@ -202,32 +191,6 @@ topAccounts.forEach(a => {
         <div class="hbar-fill" style="width:${pct}%;background:${C.blue}">${a.opens}</div>
       </div>
     </div>`;
-});
-
-const hours = [20,20,18,15,21,41,55,56,97,97,75,68,110,165,149,161,141,127,140,123,95,71,36,27];
-const hourLabels = ['12a','1a','2a','3a','4a','5a','6a','7a','8a','9a','10a','11a','12p','1p','2p','3p','4p','5p','6p','7p','8p','9p','10p','11p'];
-
-new Chart(document.getElementById('hourChart'), {
-  type: 'bar',
-  data: {
-    labels: hourLabels,
-    datasets: [{
-      label: 'Opens',
-      data: hours,
-      backgroundColor: hours.map(v => v >= 130 ? C.blue : alpha(C.blue, 0.25)),
-    }]
-  },
-  options: {
-    animation: false,
-    plugins: { legend: { display: false }, tooltip: { callbacks: {
-      title: items => `${items[0].label} UTC`,
-      label: item => ` ${item.raw} opens`,
-    }}},
-    scales: {
-      x: { grid: { display: false }, ticks: { font: { size: 9 }, maxRotation: 0 } },
-      y: { beginAtZero: true },
-    },
-  }
 });
 
 const PALETTE = [C.blue, C.purple, C.green, C.orange, C.teal];
