@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alert detail</title>
+<title>Alerts & Incidents</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,14 +39,22 @@
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
   .back-link:visited { color: #676F7E; }
   .back-link:hover { color: #21242C; }
+  .h2 { font-size: 16px; font-weight: 600; color: #21242C; margin-bottom: 14px; margin-top: 8px; }
+  .sev-bar-wrap { flex: 1; height: 8px; background: #F0F0F0; border-radius: 4px; overflow: hidden; }
+  .sev-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+  .sev-label { width: 48px; color: #676F7E; font-size: 12px; font-weight: 500; }
+  .sev-count { width: 48px; text-align: right; color: #21242C; font-size: 12px; }
+  .sev-pct { width: 36px; text-align: right; color: #676F7E; font-size: 12px; }
+  .insight { background: #F5F7FF; border-left: 3px solid #1576d8; border-radius: 0 8px 8px 0; padding: 10px 14px; font-size: 13px; color: #21242C; margin-bottom: 12px; line-height: 1.6; }
+  .insight span { color: #676F7E; }
 </style>
 </head>
 <body>
 
 <a class="back-link" href="index.html">← Back</a>
 <div class="report-header">
-  <h1>Alert detail</h1>
-  <p>Feature adoption and engagement across the alert detail page</p>
+  <h1>Alerts &amp; Incidents</h1>
+  <p>Feature adoption and engagement across the alert detail page and incident workflows</p>
   <div class="meta-pills">
     <span class="meta-pill">Last <strong>90 days</strong></span>
     <span class="meta-pill"><strong>8,433</strong> users visited the page</span>
@@ -55,7 +63,8 @@
   </div>
 </div>
 
-<!-- Summary stats -->
+<!-- Alert detail summary stats -->
+<div class="section-title">Alert detail page</div>
 <div class="stat-grid">
   <div class="stat-card">
     <div class="stat-label">Page visitors</div>
@@ -72,13 +81,11 @@
     <div class="stat-value">Status</div>
     <div class="stat-sub">27.9% of users · 161K events</div>
   </div>
-
 </div>
 
 <!-- Feature adoption table -->
 <div class="section">
   <div class="card">
-
     <table>
       <thead>
         <tr>
@@ -126,7 +133,6 @@
           <td class="num">401</td>
           <td><span class="badge badge-ok">Yes</span></td>
         </tr>
-
         <tr>
           <td>Merge alert</td>
           <td><div class="bar-wrap"><div class="bar" style="width:1.6%;background:#1576d8;"></div></div></td>
@@ -134,9 +140,7 @@
           <td class="num">~135</td>
           <td><span class="badge badge-ok">Yes</span></td>
         </tr>
-
-        <tr class="group-hdr"><td colspan="5">Investigation & AI</td></tr>
-
+        <tr class="group-hdr"><td colspan="5">Investigation &amp; AI</td></tr>
         <tr>
           <td>Investigate button</td>
           <td><div class="bar-wrap"><div class="bar" style="width:27.2%;background:#7F77DD;"></div></div></td>
@@ -151,7 +155,6 @@
           <td class="num">1,220</td>
           <td><span class="badge badge-ok">Yes</span></td>
         </tr>
-
         <tr class="group-hdr"><td colspan="5">Ticketing integrations</td></tr>
         <tr>
           <td>Jira</td>
@@ -167,16 +170,145 @@
           <td class="num">14</td>
           <td><span class="badge badge-ok">Yes</span></td>
         </tr>
-
-
       </tbody>
     </table>
+  </div>
+</div>
+
+<!-- Incidents section -->
+<div class="section-title">Declared incidents</div>
+<div class="stat-grid">
+  <div class="stat-card">
+    <div class="stat-label">Accounts using declared incidents</div>
+    <div class="stat-value">349</div>
+    <div class="stat-sub">of 571 active accounts · 61%</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Declared incidents</div>
+    <div class="stat-value">17,936</div>
+    <div class="stat-sub">last 12 months</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">% of alerts declared</div>
+    <div class="stat-value">0.14%</div>
+    <div class="stat-sub">of 13.2M total incidents</div>
+  </div>
+</div>
+
+<div class="insight">
+  61% of accounts have used declared incidents at least once, but the feature is used selectively — only 0.14% of all alerts get marked as incidents. The feature is more about <em>workflow integration</em> than bulk triage.
+</div>
+
+<!-- Severity section -->
+<div class="section">
+  <div class="h2">Severity usage on declared incidents</div>
+
+  <div class="insight">
+    Severity is defaulted on creation (SEV-4 is the default). The distribution below reflects both default-assigned and user-changed values. <span>~27% of accounts that use declared incidents have only ever had one severity value — most of them SEV-4, suggesting they never touch it.</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+    <!-- Overall severity distribution -->
+    <div class="card" style="padding:20px;">
+      <div class="section-title" style="margin-bottom:14px;">Severity distribution · all accounts</div>
+      <div class="sev-row">
+        <div class="sev-label">SEV-4</div>
+        <div class="sev-bar-wrap"><div class="bar" style="width:35.8%;background:#E2E2E2;height:8px;border-radius:4px;"></div></div>
+        <div class="sev-count">6,376</div>
+        <div class="sev-pct">35.8%</div>
+      </div>
+      <div class="sev-row">
+        <div class="sev-label">SEV-3</div>
+        <div class="sev-bar-wrap"><div class="bar" style="width:22.6%;background:#FBB040;height:8px;border-radius:4px;"></div></div>
+        <div class="sev-count">4,018</div>
+        <div class="sev-pct">22.6%</div>
+      </div>
+      <div class="sev-row">
+        <div class="sev-label">SEV-2</div>
+        <div class="sev-bar-wrap"><div class="bar" style="width:21.4%;background:#F06A27;height:8px;border-radius:4px;"></div></div>
+        <div class="sev-count">3,803</div>
+        <div class="sev-pct">21.4%</div>
+      </div>
+      <div class="sev-row">
+        <div class="sev-label">SEV-1</div>
+        <div class="sev-bar-wrap"><div class="bar" style="width:20.2%;background:#E03131;height:8px;border-radius:4px;"></div></div>
+        <div class="sev-count">3,603</div>
+        <div class="sev-pct">20.2%</div>
+      </div>
+      <div style="margin-top:14px;font-size:12px;color:#676F7E;">SEV-4 plurality consistent with it being the default</div>
+    </div>
+
+    <!-- Severity engagement by account -->
+    <div class="card" style="padding:20px;">
+      <div class="section-title" style="margin-bottom:14px;">Distinct severities used per account</div>
+      <div class="sev-row">
+        <div class="sev-label" style="width:80px;">All 4</div>
+        <div class="sev-bar-wrap"><div class="bar" style="width:31.4%;background:#1576d8;height:8px;border-radius:4px;"></div></div>
+        <div class="sev-count">109</div>
+        <div class="sev-pct">31%</div>
+      </div>
+      <div class="sev-row">
+        <div class="sev-label" style="width:80px;">3 levels</div>
+        <div class="sev-bar-wrap"><div class="bar" style="width:19%;background:#1576d8;height:8px;border-radius:4px;opacity:0.65;"></div></div>
+        <div class="sev-count">66</div>
+        <div class="sev-pct">19%</div>
+      </div>
+      <div class="sev-row">
+        <div class="sev-label" style="width:80px;">2 levels</div>
+        <div class="sev-bar-wrap"><div class="bar" style="width:22.2%;background:#1576d8;height:8px;border-radius:4px;opacity:0.45;"></div></div>
+        <div class="sev-count">77</div>
+        <div class="sev-pct">22%</div>
+      </div>
+      <div class="sev-row">
+        <div class="sev-label" style="width:80px;">1 level</div>
+        <div class="sev-bar-wrap"><div class="bar" style="width:27.4%;background:#E2E2E2;height:8px;border-radius:4px;"></div></div>
+        <div class="sev-count">95</div>
+        <div class="sev-pct">27%</div>
+      </div>
+      <div style="margin-top:14px;font-size:12px;color:#676F7E;">47 of the 95 single-severity accounts are stuck on SEV-4 only</div>
+    </div>
 
   </div>
 </div>
 
-
-
+<!-- Top accounts table -->
+<div class="section">
+  <div class="h2">Top accounts by declared incident volume</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Account</th>
+          <th class="num">Declared</th>
+          <th class="num">SEV-1</th>
+          <th class="num">SEV-2</th>
+          <th class="num">SEV-3</th>
+          <th class="num">SEV-4</th>
+          <th class="num">% SEV-4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>JetBlue Airways</td><td class="num">1,438</td><td class="num">781</td><td class="num">941</td><td class="num">1,644</td><td class="num">40</td><td class="num">1%</td></tr>
+        <tr><td>Aer Lingus</td><td class="num">1,065</td><td class="num">538</td><td class="num">824</td><td class="num">739</td><td class="num">587</td><td class="num">22%</td></tr>
+        <tr><td>Coast</td><td class="num">905</td><td class="num">0</td><td class="num">18</td><td class="num">29</td><td class="num">858</td><td class="num" style="color:#CC6000;font-weight:600;">95%</td></tr>
+        <tr><td>Rexel</td><td class="num">782</td><td class="num">211</td><td class="num">106</td><td class="num">35</td><td class="num">543</td><td class="num" style="color:#CC6000;font-weight:600;">61%</td></tr>
+        <tr><td>PepsiCo</td><td class="num">691</td><td class="num">391</td><td class="num">237</td><td class="num">46</td><td class="num">20</td><td class="num">3%</td></tr>
+        <tr><td>Mission Lane</td><td class="num">633</td><td class="num">386</td><td class="num">18</td><td class="num">24</td><td class="num">568</td><td class="num" style="color:#CC6000;font-weight:600;">57%</td></tr>
+        <tr><td>General Mills</td><td class="num">542</td><td class="num">407</td><td class="num">1,617</td><td class="num">461</td><td class="num">25</td><td class="num">1%</td></tr>
+        <tr><td>Mercado Livre</td><td class="num">450</td><td class="num">120</td><td class="num">44</td><td class="num">55</td><td class="num">324</td><td class="num" style="color:#CC6000;font-weight:600;">60%</td></tr>
+        <tr><td>OLX Group</td><td class="num">334</td><td class="num">123</td><td class="num">96</td><td class="num">54</td><td class="num">178</td><td class="num">40%</td></tr>
+        <tr><td>Docusign</td><td class="num">273</td><td class="num">864</td><td class="num">6</td><td class="num">4</td><td class="num">9</td><td class="num">1%</td></tr>
+        <tr><td>Shipt</td><td class="num">248</td><td class="num">139</td><td class="num">92</td><td class="num">16</td><td class="num">2</td><td class="num">1%</td></tr>
+        <tr><td>Kalibri Labs</td><td class="num">245</td><td class="num">8</td><td class="num">118</td><td class="num">76</td><td class="num">53</td><td class="num">22%</td></tr>
+        <tr><td>entain</td><td class="num">242</td><td class="num">1,157</td><td class="num">166</td><td class="num">1</td><td class="num">67</td><td class="num">5%</td></tr>
+        <tr><td>Stride</td><td class="num">211</td><td class="num">111</td><td class="num">0</td><td class="num">0</td><td class="num">100</td><td class="num">47%</td></tr>
+        <tr><td>monday.com</td><td class="num">206</td><td class="num">132</td><td class="num">0</td><td class="num">0</td><td class="num">74</td><td class="num">36%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="font-size:12px;color:#676F7E;margin-top:8px;">Source: analytics.prod.incident_flow · Last 12 months</div>
+</div>
 
 </body>
 </html>
