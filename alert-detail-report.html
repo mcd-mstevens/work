@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alerts & Incidents</title>
+<title>Alerts and incidents</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,7 +34,6 @@
   .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
   .badge-ok { background: #E8F4EC; color: #276334; }
   .badge-warn { background: #FFF0E0; color: #CC6000; }
-  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
   footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #E2E2E2; font-size: 12px; color: #676F7E; }
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
   .back-link:visited { color: #676F7E; }
@@ -45,15 +44,13 @@
   .sev-label { width: 48px; color: #676F7E; font-size: 12px; font-weight: 500; }
   .sev-count { width: 48px; text-align: right; color: #21242C; font-size: 12px; }
   .sev-pct { width: 36px; text-align: right; color: #676F7E; font-size: 12px; }
-  .insight { background: #F5F7FF; border-left: 3px solid #1576d8; border-radius: 0 8px 8px 0; padding: 10px 14px; font-size: 13px; color: #21242C; margin-bottom: 12px; line-height: 1.6; }
-  .insight span { color: #676F7E; }
 </style>
 </head>
 <body>
 
 <a class="back-link" href="index.html">← Back</a>
 <div class="report-header">
-  <h1>Alerts &amp; Incidents</h1>
+  <h1>Alerts and incidents</h1>
   <p>Feature adoption and engagement across the alert detail page and incident workflows</p>
   <div class="meta-pills">
     <span class="meta-pill">Last <strong>90 days</strong></span>
@@ -195,21 +192,13 @@
   </div>
 </div>
 
-<div class="insight">
-  61% of accounts have used declared incidents at least once, but the feature is used selectively — only 0.14% of all alerts get marked as incidents. The feature is more about <em>workflow integration</em> than bulk triage.
-</div>
-
 <!-- Severity section -->
 <div class="section">
   <div class="h2">Severity usage on declared incidents</div>
-
-  <div class="insight">
-    Severity is defaulted on creation (SEV-4 is the default). The distribution below reflects both default-assigned and user-changed values. <span>~27% of accounts that use declared incidents have only ever had one severity value — most of them SEV-4, suggesting they never touch it.</span>
-  </div>
+  <p style="font-size:13px;color:#676F7E;margin-bottom:16px;">Severity defaults on creation to SEV-4.</p>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
 
-    <!-- Overall severity distribution -->
     <div class="card" style="padding:20px;">
       <div class="section-title" style="margin-bottom:14px;">Severity distribution · all accounts</div>
       <div class="sev-row">
@@ -239,7 +228,6 @@
       <div style="margin-top:14px;font-size:12px;color:#676F7E;">SEV-4 plurality consistent with it being the default</div>
     </div>
 
-    <!-- Severity engagement by account -->
     <div class="card" style="padding:20px;">
       <div class="section-title" style="margin-bottom:14px;">Distinct severities used per account</div>
       <div class="sev-row">
