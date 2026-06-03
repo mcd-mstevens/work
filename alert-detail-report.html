@@ -43,6 +43,7 @@
   .sev-label { width: 48px; color: #676F7E; font-size: 12px; font-weight: 500; }
   .sev-count { width: 48px; text-align: right; color: #21242C; font-size: 12px; }
   .sev-pct { width: 36px; text-align: right; color: #676F7E; font-size: 12px; }
+  .rule-line { display: block; color: #676F7E; font-size: 12px; line-height: 1.8; }
 </style>
 </head>
 <body>
@@ -94,13 +95,6 @@
       </thead>
       <tbody>
         <tr class="group-hdr"><td colspan="5">Triage actions</td></tr>
-        <tr>
-          <td>Alert SLO rules</td>
-          <td><div class="bar-wrap"><div class="bar" style="width:0%;background:#1576d8;"></div></div></td>
-          <td class="num">&mdash;</td>
-          <td class="num">6 accounts</td>
-          <td><span class="badge badge-warn">Audit log only</span></td>
-        </tr>
         <tr>
           <td>Status update / resolve</td>
           <td><div class="bar-wrap"><div class="bar" style="width:27.9%;background:#1576d8;"></div></div></td>
@@ -190,7 +184,7 @@
           <th class="num">Active rules</th>
           <th>Types</th>
           <th>First created</th>
-          <th>Notes</th>
+          <th>Rules</th>
         </tr>
       </thead>
       <tbody>
@@ -200,7 +194,11 @@
           <td class="num">3</td>
           <td>TTA</td>
           <td>Mar 25</td>
-          <td style="color:#676F7E;">P1: 24h, P2: 48h, P3-5: 72h</td>
+          <td>
+            <span class="rule-line">P1: 24h</span>
+            <span class="rule-line">P2: 48h</span>
+            <span class="rule-line">P3-5: 72h</span>
+          </td>
         </tr>
         <tr>
           <td>Target</td>
@@ -208,7 +206,10 @@
           <td class="num">2</td>
           <td>TTA + TTR</td>
           <td>Apr 16</td>
-          <td style="color:#676F7E;">TTA 1h, TTR 3h &mdash; no domain/priority filter</td>
+          <td>
+            <span class="rule-line">TTA: 1h (all priorities)</span>
+            <span class="rule-line">TTR: 3h (all priorities)</span>
+          </td>
         </tr>
         <tr>
           <td>Lululemon</td>
@@ -216,7 +217,9 @@
           <td class="num">1</td>
           <td>TTA</td>
           <td>Apr 21</td>
-          <td style="color:#676F7E;">P2, 11h threshold</td>
+          <td>
+            <span class="rule-line">P2: 11h</span>
+          </td>
         </tr>
         <tr>
           <td>Virgin</td>
@@ -224,7 +227,9 @@
           <td class="num">1</td>
           <td>TTA</td>
           <td>May 6</td>
-          <td style="color:#676F7E;">P1+P2, 1h</td>
+          <td>
+            <span class="rule-line">P1+P2: 1h</span>
+          </td>
         </tr>
         <tr>
           <td>Sunny Data</td>
@@ -232,7 +237,9 @@
           <td class="num">1</td>
           <td>TTA</td>
           <td>May 13</td>
-          <td style="color:#676F7E;">All priorities, 1h</td>
+          <td>
+            <span class="rule-line">All priorities: 1h</span>
+          </td>
         </tr>
         <tr>
           <td>Advisor360</td>
@@ -240,7 +247,10 @@
           <td class="num">2</td>
           <td>TTA</td>
           <td>May 14</td>
-          <td style="color:#676F7E;">P1-3: 1h, P4-5: 4h</td>
+          <td>
+            <span class="rule-line">P1-3: 1h</span>
+            <span class="rule-line">P4-5: 4h</span>
+          </td>
         </tr>
       </tbody>
     </table>
