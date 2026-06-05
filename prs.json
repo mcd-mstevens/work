@@ -1,5 +1,13 @@
 [
   {
+    "number": 13835,
+    "title": "Alerts page: Alerts/Incidents segment + table & toolbar cleanup",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13835",
+    "state": "open",
+    "updated_at": "2026-06-04T23:21:49Z",
+    "merged_at": null
+  },
+  {
     "number": 13751,
     "title": "Smooth row-hover transition on tableWrapper tables",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13751",
@@ -150,13 +158,5 @@
     "state": "closed",
     "updated_at": "2026-04-23T15:43:50Z",
     "merged_at": "2026-04-23T15:43:48Z"
-  },
-  {
-    "number": 13003,
-    "title": "Bob findings: remove noisy metadata from finding detail",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13003",
-    "state": "closed",
-    "updated_at": "2026-04-22T21:41:51Z",
-    "merged_at": "2026-04-22T21:41:50Z"
   }
 ]
