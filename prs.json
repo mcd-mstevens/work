@@ -1,11 +1,19 @@
 [
   {
+    "number": 13850,
+    "title": "Fix Severity chip: stop flipping view to Alerts and stop showing \"None selected\" with everything checked",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13850",
+    "state": "open",
+    "updated_at": "2026-06-05T22:59:39Z",
+    "merged_at": null
+  },
+  {
     "number": 13835,
     "title": "Alerts page: Alerts/Incidents segment + table & toolbar cleanup",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13835",
-    "state": "open",
-    "updated_at": "2026-06-05T21:32:13Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-05T22:14:20Z",
+    "merged_at": "2026-06-05T22:14:19Z"
   },
   {
     "number": 13751,
@@ -150,13 +158,5 @@
     "state": "closed",
     "updated_at": "2026-04-24T20:34:44Z",
     "merged_at": "2026-04-24T20:34:43Z"
-  },
-  {
-    "number": 13027,
-    "title": "Fix duplicate toast when copying API key or secret",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13027",
-    "state": "closed",
-    "updated_at": "2026-04-23T15:43:50Z",
-    "merged_at": "2026-04-23T15:43:48Z"
   }
 ]
