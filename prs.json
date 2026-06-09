@@ -1,5 +1,13 @@
 [
   {
+    "number": 13895,
+    "title": "Table Health: port filters to AgentFilterBar",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13895",
+    "state": "open",
+    "updated_at": "2026-06-09T22:39:20Z",
+    "merged_at": null
+  },
+  {
     "number": 13876,
     "title": "Alerts toolbar: stop date picker wrapping to two lines",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13876",
@@ -142,14 +150,6 @@
     "state": "closed",
     "updated_at": "2026-04-27T17:29:41Z",
     "merged_at": "2026-04-27T17:29:39Z"
-  },
-  {
-    "number": 13047,
-    "title": "Bob job pages UI polish",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13047",
-    "state": "closed",
-    "updated_at": "2026-04-24T20:59:45Z",
-    "merged_at": "2026-04-24T20:59:44Z"
   },
   {
     "number": 13045,
