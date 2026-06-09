@@ -1,5 +1,13 @@
 [
   {
+    "number": 13876,
+    "title": "Alerts toolbar: stop date picker wrapping to two lines",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13876",
+    "state": "closed",
+    "updated_at": "2026-06-09T14:48:19Z",
+    "merged_at": "2026-06-09T14:48:17Z"
+  },
+  {
     "number": 13851,
     "title": "Performance/Jobs: chip-bar filter toolbar + Domains-style table",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13851",
@@ -150,13 +158,5 @@
     "state": "closed",
     "updated_at": "2026-04-24T20:59:45Z",
     "merged_at": "2026-04-24T20:59:44Z"
-  },
-  {
-    "number": 13063,
-    "title": "Agentic-platform agent pages UI polish",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13063",
-    "state": "closed",
-    "updated_at": "2026-04-24T20:34:44Z",
-    "merged_at": "2026-04-24T20:34:43Z"
   }
 ]
