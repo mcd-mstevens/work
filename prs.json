@@ -1,5 +1,13 @@
 [
   {
+    "number": 13941,
+    "title": "Remove Explain alert button from alert detail page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13941",
+    "state": "open",
+    "updated_at": "2026-06-11T21:42:38Z",
+    "merged_at": null
+  },
+  {
     "number": 13895,
     "title": "Table Health: port filters to AgentFilterBar",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13895",
@@ -150,13 +158,5 @@
     "state": "closed",
     "updated_at": "2026-04-27T17:29:41Z",
     "merged_at": "2026-04-27T17:29:39Z"
-  },
-  {
-    "number": 13045,
-    "title": "Bob table detail page UI improvements",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13045",
-    "state": "closed",
-    "updated_at": "2026-04-24T20:59:45Z",
-    "merged_at": "2026-04-24T20:59:44Z"
   }
 ]
