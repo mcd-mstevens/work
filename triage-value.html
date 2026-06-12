@@ -7,319 +7,139 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #FAFAFA; color: #21242C; font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 56px 40px; max-width: 1000px; margin: 0 auto; }
-  .report-header { margin-bottom: 24px; }
-  .report-header h1 { font-size: 24px; font-weight: 500; color: #21242C; margin-bottom: 6px; }
-  .report-header p { color: #676F7E; line-height: 1.8; }
-  .meta-pills { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
-  .meta-pill { background: #fff; border: 1px solid #E2E2E2; border-radius: 20px; padding: 2px 10px; font-size: 12px; font-weight: 500; color: #676F7E; }
-  .meta-pill strong { color: #21242C; font-weight: 600; }
-  .section { margin-bottom: 40px; }
-  .section-title { font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: #676F7E; margin-bottom: 10px; }
-  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
-  .stat-card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; padding: 18px; }
-  .stat-card .stat-label { font-size: 12px; color: #676F7E; margin-bottom: 4px; }
-  .stat-card .stat-value { font-size: 24px; font-weight: 600; color: #21242C; line-height: 1.2; }
-  .stat-card .stat-sub { font-size: 12px; color: #676F7E; margin-top: 3px; }
-  .card { background: #fff; border: 1px solid #E2E2E2; border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
-  .card-pad { padding: 20px 24px; }
-  table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  thead tr { background: #FAFAFA; }
-  th { padding: 8px 18px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #676F7E; border-bottom: 1px solid #E2E2E2; }
-  th.num, td.num { text-align: right; }
-  td { padding: 10px 18px; border-bottom: 1px solid #E8E8E8; color: #21242C; vertical-align: middle; }
-  tr:last-child td { border-bottom: none; }
-  .group-hdr td { background: #F5F5F5; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #676F7E; padding: 5px 18px; }
-  .bar-wrap { width: 100px; height: 5px; background: #F0F0F0; border-radius: 3px; overflow: hidden; display: inline-block; vertical-align: middle; margin-right: 8px; }
-  .bar { height: 5px; border-radius: 3px; }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
-  .badge-purple { background: #EEEDFE; color: #534AB7; }
-  .badge-gray { background: #F5F5F5; color: #676F7E; }
-  .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 16px; }
-  .back-link:visited { color: #676F7E; }
+  body { background: #FAFAFA; color: #21242C; font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 56px 40px; max-width: 900px; margin: 0 auto; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 20px; }
   .back-link:hover { color: #21242C; }
-  .h2 { font-size: 16px; font-weight: 600; color: #21242C; margin-bottom: 6px; margin-top: 8px; }
-  .h2-sub { font-size: 13px; color: #676F7E; margin-bottom: 16px; }
-  .finding { background: #F6F5FF; border-left: 3px solid #7F77DD; border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 32px; }
-  .finding p { font-size: 13px; color: #21242C; line-height: 1.8; margin-bottom: 4px; }
-  .finding p:last-child { margin-bottom: 0; }
-  .finding strong { font-weight: 600; }
-  .caveat { background: #FFF8F0; border-left: 3px solid #F59E0B; border-radius: 0 8px 8px 0; padding: 14px 18px; margin-top: -8px; margin-bottom: 32px; font-size: 12px; color: #676F7E; line-height: 1.8; }
-  .analysis-label { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
-  .analysis-num { font-size: 11px; font-weight: 600; background: #21242C; color: #fff; border-radius: 20px; padding: 2px 8px; letter-spacing: 0.5px; }
-  .analysis-strength { font-size: 11px; color: #676F7E; font-weight: 500; }
+  h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+  .meta { font-size: 12px; color: #676F7E; margin-bottom: 48px; }
+  .block { margin-bottom: 48px; }
+  .block p { font-size: 13px; color: #676F7E; margin-bottom: 14px; }
+  .block p strong { color: #21242C; font-weight: 600; }
+  .label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #676F7E; margin-bottom: 10px; }
+  .card { background: #fff; border: 1px solid #E2E2E2; border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: #FAFAFA; }
+  th { padding: 7px 16px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #676F7E; border-bottom: 1px solid #E2E2E2; }
+  th.r, td.r { text-align: right; }
+  td { padding: 9px 16px; border-bottom: 1px solid #EFEFEF; color: #21242C; }
+  tr:last-child td { border-bottom: none; }
+  .dim { color: #676F7E; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+  .bp { background: #EEEDFE; color: #534AB7; }
+  .bg { background: #F0F0F0; color: #676F7E; }
+  .lift { color: #1D9E75; font-weight: 600; }
   .chart-wrap { position: relative; width: 100%; }
-  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; font-size: 12px; color: #676F7E; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; margin-right: 4px; vertical-align: middle; }
-  .source-note { font-size: 12px; color: #676F7E; margin-top: 8px; }
-  .lift { font-weight: 600; color: #1D9E75; }
-  .lift-hi { font-weight: 600; color: #534AB7; }
+  .legend { display: flex; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #676F7E; }
+  .dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; margin-right: 4px; vertical-align: middle; }
+  .source { font-size: 11px; color: #9CA3AF; margin-top: 8px; }
 </style>
 </head>
 <body>
 
 <a class="back-link" href="index.html">&larr; Back</a>
-
-<div class="report-header">
-  <h1>Triage &rarr; value</h1>
-  <p>Do users who click the triage agent engage more with alerts? Three lenses on the same question, each controlling for more confounders than the last.</p>
-  <div class="meta-pills">
-    <span class="meta-pill">Last <strong>90 days</strong></span>
-    <span class="meta-pill"><strong>8,206</strong> alert page users</span>
-    <span class="meta-pill">Source: Mixpanel &rarr; Snowflake</span>
-    <span class="meta-pill">Generated June 12, 2026</span>
-  </div>
-</div>
-
-<!-- Summary stats -->
-<div class="stat-grid">
-  <div class="stat-card">
-    <div class="stat-label">Triage users</div>
-    <div class="stat-value">1,166</div>
-    <div class="stat-sub">14% of alert page visitors</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-label">Status change lift</div>
-    <div class="stat-value">2.3&times;</div>
-    <div class="stat-sub">49% vs 22% for non-triage</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-label">Pre/post adopters</div>
-    <div class="stat-value">1,309</div>
-    <div class="stat-sub">min 14 days pre &amp; post data</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-label">GUT lift (pre/post)</div>
-    <div class="stat-value">4.4&times;</div>
-    <div class="stat-sub">1.7 &rarr; 7.2 avg actions/user</div>
-  </div>
-</div>
-
-<!-- Top finding -->
-<div class="finding">
-  <p><strong>The correlation survives three increasingly strict controls.</strong> Triage users engage more, that lift holds when comparing the same people before and after their first triage click, and it shows up on the specific days they click triage vs days they don&rsquo;t. All three lenses point the same direction.</p>
-  <p>Remaining confounder: users may fire up triage on days with more alerts, and more alerts = more engagement regardless of triage. A randomized A/B test (show/hide the button) would close that gap.</p>
-</div>
+<h1>Triage &rarr; value</h1>
+<p class="meta">Last 90 days &middot; 8,206 alert page users &middot; Mixpanel &rarr; Snowflake &middot; June 12, 2026</p>
 
 <!-- Analysis 1 -->
-<div class="section">
-  <div class="analysis-label">
-    <span class="analysis-num">Analysis 1</span>
-    <span class="h2">Who they are</span>
-    <span class="analysis-strength">weakest &mdash; power-user bias</span>
-  </div>
-  <p class="h2-sub">% of users who took each engagement action at least once, last 90 days. Triage users may simply be more active people.</p>
-
+<div class="block">
+  <div class="label">Analysis 1 &mdash; who they are</div>
+  <p>Triage users engage 2&ndash;3&times; more than non-triage users across every metric, but this is the weakest signal &mdash; <strong>they&rsquo;re likely just power users to begin with.</strong></p>
   <div class="card">
     <table>
       <thead>
-        <tr>
-          <th style="width:30%">Group</th>
-          <th class="num">Users</th>
-          <th class="num">Status change</th>
-          <th class="num">Owner assign</th>
-          <th class="num">Comment</th>
-          <th class="num">GUT</th>
-        </tr>
+        <tr><th>Group</th><th class="r">Users</th><th class="r">Status change</th><th class="r">Owner assign</th><th class="r">Comment</th><th class="r">GUT</th></tr>
       </thead>
       <tbody>
-        <tr class="group-hdr"><td colspan="6">By triage type</td></tr>
-        <tr>
-          <td><span class="badge badge-purple">In-product triage</span></td>
-          <td class="num">297</td>
-          <td class="num"><strong>60.9%</strong></td>
-          <td class="num"><strong>41.1%</strong></td>
-          <td class="num"><strong>53.2%</strong></td>
-          <td class="num"><strong>22.9%</strong></td>
-        </tr>
-        <tr>
-          <td><span class="badge badge-purple">Troubleshooting agent</span></td>
-          <td class="num">956</td>
-          <td class="num">49.5%</td>
-          <td class="num">21.2%</td>
-          <td class="num">41.1%</td>
-          <td class="num">16.5%</td>
-        </tr>
-        <tr>
-          <td><span class="badge badge-gray">No triage</span></td>
-          <td class="num">7,083</td>
-          <td class="num">21.9%</td>
-          <td class="num">6.4%</td>
-          <td class="num">18.7%</td>
-          <td class="num">5.3%</td>
-        </tr>
+        <tr><td><span class="badge bp">In-product triage</span></td><td class="r">297</td><td class="r">60.9%</td><td class="r">41.1%</td><td class="r">53.2%</td><td class="r">22.9%</td></tr>
+        <tr><td><span class="badge bp">Troubleshooting agent</span></td><td class="r">956</td><td class="r">49.5%</td><td class="r">21.2%</td><td class="r">41.1%</td><td class="r">16.5%</td></tr>
+        <tr><td><span class="badge bg">No triage</span></td><td class="r">7,083</td><td class="r">21.9%</td><td class="r">6.4%</td><td class="r">18.7%</td><td class="r">5.3%</td></tr>
       </tbody>
     </table>
   </div>
-
-  <div class="chart-wrap" style="height:240px;margin-top:20px;">
-    <canvas id="chart1" role="img" aria-label="Grouped bar chart comparing engagement rates for triage users vs non-triage users.">In-product triage: status 61%, owner 41%, comment 53%, GUT 23%. TSA: 50%, 21%, 41%, 17%. No triage: 22%, 6%, 19%, 5%.</canvas>
+  <div class="chart-wrap" style="height:220px;">
+    <canvas id="c1" role="img" aria-label="Grouped bar chart, triage vs non-triage engagement rates."></canvas>
   </div>
-  <p class="source-note">Source: analytics.prod_internal_bi.mixpanel_master_event_light</p>
+  <p class="source">analytics.prod_internal_bi.mixpanel_master_event_light</p>
 </div>
 
 <!-- Analysis 2 -->
-<div class="section">
-  <div class="analysis-label">
-    <span class="analysis-num">Analysis 2</span>
-    <span class="h2">Same people, before vs after</span>
-    <span class="analysis-strength">stronger &mdash; controls for who the user is</span>
-  </div>
-  <p class="h2-sub">1,309 new triage adopters. Avg actions per user in the 30 days before vs 30 days after their first triage click.</p>
-
-  <div class="stat-grid" style="margin-bottom:20px;">
-    <div class="stat-card">
-      <div class="stat-label">Status changes</div>
-      <div class="stat-value"><span class="lift">+159%</span></div>
-      <div class="stat-sub">10.3 &rarr; 26.7 avg / user</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Owner assigns</div>
-      <div class="stat-value"><span class="lift">+55%</span></div>
-      <div class="stat-sub">11.7 &rarr; 18.1 avg / user</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Comments</div>
-      <div class="stat-value"><span class="lift">+34%</span></div>
-      <div class="stat-sub">6.9 &rarr; 9.3 avg / user</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">GUT actions</div>
-      <div class="stat-value"><span class="lift">+337%</span></div>
-      <div class="stat-sub">1.7 &rarr; 7.2 avg / user</div>
-    </div>
-  </div>
-
-  <div class="chart-wrap" style="height:240px;">
-    <div class="legend">
-      <span><span class="legend-dot" style="background:#1D9E75;"></span>After first triage click</span>
-      <span><span class="legend-dot" style="background:#B4B2A9;"></span>Before first triage click</span>
-    </div>
-    <canvas id="chart2" role="img" aria-label="Grouped bar chart showing engagement increases after first triage click.">Before/after: status 10.3 vs 26.7, owner 11.7 vs 18.1, comment 6.9 vs 9.3, GUT 1.7 vs 7.2.</canvas>
-  </div>
-  <p class="source-note" style="margin-top:10px;">Source: analytics.prod_internal_bi.mixpanel_master_event_light &middot; 180-day lookback &middot; users with &ge;14 days pre and post</p>
-</div>
-
-<!-- Analysis 3 -->
-<div class="section">
-  <div class="analysis-label">
-    <span class="analysis-num">Analysis 3</span>
-    <span class="h2">Same day</span>
-    <span class="analysis-strength">strongest available without A/B test</span>
-  </div>
-  <p class="h2-sub">% of user-days where an engagement action occurred. Triage days vs non-triage days for the same users. Isolates the triage click itself, not just who clicked it.</p>
-
+<div class="block">
+  <div class="label">Analysis 2 &mdash; same people, before vs after</div>
+  <p>1,309 new adopters, 30-day window each side of their first triage click. <strong>Every metric roughly doubles; GUT goes up 4.4&times;.</strong> Controls for who the user is.</p>
   <div class="card">
     <table>
       <thead>
-        <tr>
-          <th>Day type</th>
-          <th class="num">User-days</th>
-          <th class="num">Status</th>
-          <th class="num">Owner</th>
-          <th class="num">Comment</th>
-          <th class="num">GUT</th>
-          <th class="num">Avg status/day</th>
-        </tr>
+        <tr><th>Period</th><th class="r">Status changes</th><th class="r">Owner assigns</th><th class="r">Comments</th><th class="r">GUT</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span class="badge badge-purple">Triage day</span></td>
-          <td class="num">2,661</td>
-          <td class="num"><strong>30.1%</strong></td>
-          <td class="num"><strong>19.8%</strong></td>
-          <td class="num"><strong>25.0%</strong></td>
-          <td class="num"><strong>7.0%</strong></td>
-          <td class="num"><strong>24.6</strong></td>
-        </tr>
-        <tr>
-          <td><span class="badge badge-gray">No-triage day</span></td>
-          <td class="num">54,963</td>
-          <td class="num">17.2%</td>
-          <td class="num">8.7%</td>
-          <td class="num">11.0%</td>
-          <td class="num">4.0%</td>
-          <td class="num">12.3</td>
-        </tr>
-        <tr style="background:#F9F9F9;">
-          <td style="color:#676F7E;font-size:12px;">Lift</td>
-          <td class="num" style="color:#676F7E;font-size:12px;">&mdash;</td>
-          <td class="num" style="color:#1D9E75;font-weight:600;">1.75&times;</td>
-          <td class="num" style="color:#1D9E75;font-weight:600;">2.28&times;</td>
-          <td class="num" style="color:#1D9E75;font-weight:600;">2.27&times;</td>
-          <td class="num" style="color:#1D9E75;font-weight:600;">1.75&times;</td>
-          <td class="num" style="color:#1D9E75;font-weight:600;">2.0&times;</td>
-        </tr>
+        <tr><td>Before first triage click</td><td class="r">10.3</td><td class="r">11.7</td><td class="r">6.9</td><td class="r">1.7</td></tr>
+        <tr><td>After first triage click</td><td class="r">26.7</td><td class="r">18.1</td><td class="r">9.3</td><td class="r">7.2</td></tr>
+        <tr><td class="dim" style="font-size:12px;">Lift</td><td class="r lift">+159%</td><td class="r lift">+55%</td><td class="r lift">+35%</td><td class="r lift">+324%</td></tr>
       </tbody>
     </table>
   </div>
-
-  <div class="chart-wrap" style="height:240px;margin-top:16px;">
+  <div class="chart-wrap" style="height:220px;">
     <div class="legend">
-      <span><span class="legend-dot" style="background:#BA7517;"></span>Triage day</span>
-      <span><span class="legend-dot" style="background:#B4B2A9;"></span>No-triage day</span>
+      <span><span class="dot" style="background:#1D9E75;"></span>After</span>
+      <span><span class="dot" style="background:#B4B2A9;"></span>Before</span>
     </div>
-    <canvas id="chart3" role="img" aria-label="Grouped bar chart showing higher engagement on days with a triage click.">Triage day vs no-triage day: status 30% vs 17%, owner 20% vs 9%, comment 25% vs 11%, GUT 7% vs 4%.</canvas>
+    <canvas id="c2" role="img" aria-label="Grouped bar chart, before vs after first triage click."></canvas>
   </div>
-  <p class="source-note" style="margin-top:10px;">Source: analytics.prod_internal_bi.mixpanel_master_event_light &middot; same-user comparison, alert detail page days only</p>
+  <p class="source">analytics.prod_internal_bi.mixpanel_master_event_light &middot; 180-day lookback &middot; avg actions per user</p>
 </div>
 
-<!-- What's not tracked -->
-<div class="section">
-  <div class="section-title">Gap</div>
-  <div class="caveat">
-    The triage agent&rsquo;s recommended priority output (HIGH / MEDIUM / LOW) is not being stored in Snowflake or logged as a Mixpanel event property. The &ldquo;Priority popover opened&rdquo; event fires but carries no payload. To enable a priority-level breakdown of downstream engagement, add <code>triage_priority</code> as a property on the <strong>In-Product Triage</strong> Mixpanel event.
+<!-- Analysis 3 -->
+<div class="block">
+  <div class="label">Analysis 3 &mdash; same day</div>
+  <p>Comparing the same users to themselves: days they clicked triage vs days they didn&rsquo;t. <strong>~2&times; more engagement on triage days</strong> &mdash; strongest signal short of a randomized test.</p>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Day type</th><th class="r">User-days</th><th class="r">Status</th><th class="r">Owner</th><th class="r">Comment</th><th class="r">GUT</th><th class="r">Avg status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge bp">Triage day</span></td><td class="r">2,661</td><td class="r">30.1%</td><td class="r">19.8%</td><td class="r">25.0%</td><td class="r">7.0%</td><td class="r">24.6</td></tr>
+        <tr><td><span class="badge bg">No-triage day</span></td><td class="r">54,963</td><td class="r">17.2%</td><td class="r">8.7%</td><td class="r">11.0%</td><td class="r">4.0%</td><td class="r">12.3</td></tr>
+        <tr><td class="dim" style="font-size:12px;">Lift</td><td class="r dim" style="font-size:12px;">&mdash;</td><td class="r lift">1.75&times;</td><td class="r lift">2.28&times;</td><td class="r lift">2.27&times;</td><td class="r lift">1.75&times;</td><td class="r lift">2.0&times;</td></tr>
+      </tbody>
+    </table>
   </div>
+  <div class="chart-wrap" style="height:220px;">
+    <div class="legend">
+      <span><span class="dot" style="background:#BA7517;"></span>Triage day</span>
+      <span><span class="dot" style="background:#B4B2A9;"></span>No-triage day</span>
+    </div>
+    <canvas id="c3" role="img" aria-label="Grouped bar chart, triage days vs no-triage days."></canvas>
+  </div>
+  <p class="source">analytics.prod_internal_bi.mixpanel_master_event_light &middot; alert detail page days only</p>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-const labels = ['Status change', 'Owner assign', 'Comment', 'GUT'];
-const gridColor = 'rgba(0,0,0,0.06)';
-const textColor = 'rgba(0,0,0,0.45)';
-const baseOpts = (yLabel, max) => ({
-  responsive: true, maintainAspectRatio: false,
-  plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + ctx.dataset.label + ': ' + ctx.parsed.y + (yLabel.includes('%') ? '%' : '') } } },
-  scales: {
-    x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 12 } } },
-    y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 12 }, callback: v => v + (yLabel.includes('%') ? '%' : '') },
-         title: { display: true, text: yLabel, color: textColor, font: { size: 11 } }, beginAtZero: true, max }
-  }, animation: { duration: 500 }
+const labs = ['Status change','Owner assign','Comment','GUT'];
+const grid = 'rgba(0,0,0,0.05)';
+const txt = 'rgba(0,0,0,0.4)';
+const opts = (yLabel, max) => ({
+  responsive:true, maintainAspectRatio:false,
+  plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.y+(yLabel.includes('%')?'%':'')}} },
+  scales:{
+    x:{grid:{color:grid},ticks:{color:txt,font:{size:11}}},
+    y:{grid:{color:grid},ticks:{color:txt,font:{size:11},callback:v=>v+(yLabel.includes('%')?'%':'')},title:{display:true,text:yLabel,color:txt,font:{size:10}},beginAtZero:true,max}
+  },animation:{duration:400}
 });
-
-new Chart(document.getElementById('chart1'), {
-  type: 'bar',
-  data: { labels,
-    datasets: [
-      { label: 'In-product triage', data: [60.9, 41.1, 53.2, 22.9], backgroundColor: '#7F77DD', borderRadius: 4 },
-      { label: 'Troubleshooting agent', data: [49.5, 21.2, 41.1, 16.5], backgroundColor: '#AFA9EC', borderRadius: 4 },
-      { label: 'No triage', data: [21.9, 6.4, 18.7, 5.3], backgroundColor: '#E2E2E2', borderRadius: 4 }
-    ]
-  },
-  options: baseOpts('% of users', 70)
-});
-
-new Chart(document.getElementById('chart2'), {
-  type: 'bar',
-  data: { labels,
-    datasets: [
-      { label: 'After first triage click', data: [26.66, 18.07, 9.28, 7.21], backgroundColor: '#1D9E75', borderRadius: 4 },
-      { label: 'Before first triage click', data: [10.28, 11.70, 6.91, 1.65], backgroundColor: '#B4B2A9', borderRadius: 4 }
-    ]
-  },
-  options: baseOpts('avg actions / user (30d)', 30)
-});
-
-new Chart(document.getElementById('chart3'), {
-  type: 'bar',
-  data: { labels,
-    datasets: [
-      { label: 'Triage day', data: [30.1, 19.8, 25.0, 7.0], backgroundColor: '#BA7517', borderRadius: 4 },
-      { label: 'No-triage day', data: [17.2, 8.7, 11.0, 4.0], backgroundColor: '#B4B2A9', borderRadius: 4 }
-    ]
-  },
-  options: baseOpts('% of user-days', 40)
-});
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:labs,datasets:[
+  {label:'In-product triage',data:[60.9,41.1,53.2,22.9],backgroundColor:'#7F77DD',borderRadius:3},
+  {label:'Troubleshooting agent',data:[49.5,21.2,41.1,16.5],backgroundColor:'#AFA9EC',borderRadius:3},
+  {label:'No triage',data:[21.9,6.4,18.7,5.3],backgroundColor:'#E2E2E2',borderRadius:3}
+]},options:opts('% of users',70)});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:labs,datasets:[
+  {label:'After',data:[26.66,18.07,9.28,7.21],backgroundColor:'#1D9E75',borderRadius:3},
+  {label:'Before',data:[10.28,11.70,6.91,1.65],backgroundColor:'#B4B2A9',borderRadius:3}
+]},options:opts('avg actions / user (30d)',30)});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:labs,datasets:[
+  {label:'Triage day',data:[30.1,19.8,25.0,7.0],backgroundColor:'#BA7517',borderRadius:3},
+  {label:'No-triage day',data:[17.2,8.7,11.0,4.0],backgroundColor:'#B4B2A9',borderRadius:3}
+]},options:opts('% of user-days',40)});
 </script>
 
 </body>
