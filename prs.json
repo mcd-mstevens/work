@@ -1,19 +1,27 @@
 [
   {
+    "number": 13967,
+    "title": "Performance/Jobs: port filters to FilterBar",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13967",
+    "state": "open",
+    "updated_at": "2026-06-12T18:52:17Z",
+    "merged_at": null
+  },
+  {
     "number": 13941,
     "title": "Remove Explain alert button from alert detail page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13941",
-    "state": "open",
-    "updated_at": "2026-06-12T16:17:24Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-12T17:41:00Z",
+    "merged_at": "2026-06-12T17:40:58Z"
   },
   {
     "number": 13959,
     "title": "FilterBar: optional server-side search on multi filters",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13959",
-    "state": "open",
-    "updated_at": "2026-06-12T11:53:57Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-12T17:25:04Z",
+    "merged_at": "2026-06-12T17:25:03Z"
   },
   {
     "number": 13895,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-13T15:45:38Z",
     "merged_at": "2026-04-13T15:45:36Z"
-  },
-  {
-    "number": 12803,
-    "title": "Remove card borders from settings add flow pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12803",
-    "state": "closed",
-    "updated_at": "2026-04-13T14:11:39Z",
-    "merged_at": "2026-04-13T14:11:37Z"
   }
 ]
