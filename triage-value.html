@@ -47,7 +47,7 @@
   <div class="card">
     <table>
       <thead>
-        <tr><th>Group</th><th class="r">Users</th><th class="r">Status change</th><th class="r">Owner assign</th><th class="r">Comment</th><th class="r">GUT</th></tr>
+        <tr><th>Group</th><th class="r">Users</th><th class="r">Status change</th><th class="r">Owner assign</th><th class="r">Comment</th><th class="r">Mark as normal</th></tr>
       </thead>
       <tbody>
         <tr><td><span class="badge bp">In-product triage</span></td><td class="r">297</td><td class="r">60.9%</td><td class="r">41.1%</td><td class="r">53.2%</td><td class="r">22.9%</td></tr>
@@ -70,11 +70,11 @@
 <!-- Analysis 2 -->
 <div class="block">
   <div class="label">Analysis 2 &mdash; same people, before vs after</div>
-  <p>1,309 new adopters, 30-day window each side of their first triage click. <strong>Every metric roughly doubles; GUT goes up 4.4&times;.</strong> Controls for who the user is.</p>
+  <p>1,309 new adopters, 30-day window each side of their first triage click. <strong>Every metric roughly doubles; mark as normal goes up 4.4&times;.</strong> Controls for who the user is.</p>
   <div class="card">
     <table>
       <thead>
-        <tr><th>Period</th><th class="r">Status changes</th><th class="r">Owner assigns</th><th class="r">Comments</th><th class="r">GUT</th></tr>
+        <tr><th>Period</th><th class="r">Status changes</th><th class="r">Owner assigns</th><th class="r">Comments</th><th class="r">Mark as normal</th></tr>
       </thead>
       <tbody>
         <tr><td>Before first triage click</td><td class="r">10.3</td><td class="r">11.7</td><td class="r">6.9</td><td class="r">1.7</td></tr>
@@ -100,7 +100,7 @@
   <div class="card">
     <table>
       <thead>
-        <tr><th>Day type</th><th class="r">User-days</th><th class="r">Status</th><th class="r">Owner</th><th class="r">Comment</th><th class="r">GUT</th><th class="r">Avg status</th></tr>
+        <tr><th>Day type</th><th class="r">User-days</th><th class="r">Status</th><th class="r">Owner</th><th class="r">Comment</th><th class="r">Mark as normal</th><th class="r">Avg status</th></tr>
       </thead>
       <tbody>
         <tr><td><span class="badge bp">Triage day</span></td><td class="r">2,661</td><td class="r">30.1%</td><td class="r">19.8%</td><td class="r">25.0%</td><td class="r">7.0%</td><td class="r">24.6</td></tr>
@@ -121,7 +121,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-const labs = ['Status change','Owner assign','Comment','GUT'];
+const labs = ['Status change','Owner assign','Comment','Mark as normal'];
 const grid = 'rgba(0,0,0,0.05)';
 const txt = 'rgba(0,0,0,0.4)';
 const opts = (yLabel, max) => ({
