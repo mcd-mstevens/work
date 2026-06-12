@@ -28,10 +28,10 @@
   .bp { background: #EEEDFE; color: #534AB7; }
   .bg { background: #F0F0F0; color: #676F7E; }
   .lift { color: #1D9E75; font-weight: 600; }
-  .chart-wrap { position: relative; width: 100%; }
   .legend { display: flex; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #676F7E; }
   .dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; margin-right: 4px; vertical-align: middle; }
-  .source { font-size: 11px; color: #9CA3AF; margin-top: 8px; }
+  .chart-wrap { position: relative; width: 100%; height: 260px; }
+  .source { font-size: 11px; color: #9CA3AF; margin-top: 16px; }
 </style>
 </head>
 <body>
@@ -56,7 +56,12 @@
       </tbody>
     </table>
   </div>
-  <div class="chart-wrap" style="height:220px;">
+  <div class="legend">
+    <span><span class="dot" style="background:#7F77DD;"></span>In-product triage</span>
+    <span><span class="dot" style="background:#AFA9EC;"></span>Troubleshooting agent</span>
+    <span><span class="dot" style="background:#E2E2E2;"></span>No triage</span>
+  </div>
+  <div class="chart-wrap">
     <canvas id="c1" role="img" aria-label="Grouped bar chart, triage vs non-triage engagement rates."></canvas>
   </div>
   <p class="source">analytics.prod_internal_bi.mixpanel_master_event_light</p>
@@ -78,11 +83,11 @@
       </tbody>
     </table>
   </div>
-  <div class="chart-wrap" style="height:220px;">
-    <div class="legend">
-      <span><span class="dot" style="background:#1D9E75;"></span>After</span>
-      <span><span class="dot" style="background:#B4B2A9;"></span>Before</span>
-    </div>
+  <div class="legend">
+    <span><span class="dot" style="background:#1D9E75;"></span>After</span>
+    <span><span class="dot" style="background:#B4B2A9;"></span>Before</span>
+  </div>
+  <div class="chart-wrap">
     <canvas id="c2" role="img" aria-label="Grouped bar chart, before vs after first triage click."></canvas>
   </div>
   <p class="source">analytics.prod_internal_bi.mixpanel_master_event_light &middot; 180-day lookback &middot; avg actions per user</p>
@@ -104,11 +109,11 @@
       </tbody>
     </table>
   </div>
-  <div class="chart-wrap" style="height:220px;">
-    <div class="legend">
-      <span><span class="dot" style="background:#BA7517;"></span>Triage day</span>
-      <span><span class="dot" style="background:#B4B2A9;"></span>No-triage day</span>
-    </div>
+  <div class="legend">
+    <span><span class="dot" style="background:#BA7517;"></span>Triage day</span>
+    <span><span class="dot" style="background:#B4B2A9;"></span>No-triage day</span>
+  </div>
+  <div class="chart-wrap">
     <canvas id="c3" role="img" aria-label="Grouped bar chart, triage days vs no-triage days."></canvas>
   </div>
   <p class="source">analytics.prod_internal_bi.mixpanel_master_event_light &middot; alert detail page days only</p>
@@ -120,26 +125,28 @@ const labs = ['Status change','Owner assign','Comment','GUT'];
 const grid = 'rgba(0,0,0,0.05)';
 const txt = 'rgba(0,0,0,0.4)';
 const opts = (yLabel, max) => ({
-  responsive:true, maintainAspectRatio:false,
-  plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.y+(yLabel.includes('%')?'%':'')}} },
-  scales:{
-    x:{grid:{color:grid},ticks:{color:txt,font:{size:11}}},
-    y:{grid:{color:grid},ticks:{color:txt,font:{size:11},callback:v=>v+(yLabel.includes('%')?'%':'')},title:{display:true,text:yLabel,color:txt,font:{size:10}},beginAtZero:true,max}
-  },animation:{duration:400}
+  responsive: true, maintainAspectRatio: false,
+  layout: { padding: { bottom: 8 } },
+  plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.parsed.y + (yLabel.includes('%') ? '%' : '') } } },
+  scales: {
+    x: { grid: { color: grid }, ticks: { color: txt, font: { size: 11 }, maxRotation: 0, autoSkip: false } },
+    y: { grid: { color: grid }, ticks: { color: txt, font: { size: 11 }, callback: v => v + (yLabel.includes('%') ? '%' : '') }, title: { display: true, text: yLabel, color: txt, font: { size: 10 } }, beginAtZero: true, max }
+  },
+  animation: { duration: 400 }
 });
-new Chart(document.getElementById('c1'),{type:'bar',data:{labels:labs,datasets:[
-  {label:'In-product triage',data:[60.9,41.1,53.2,22.9],backgroundColor:'#7F77DD',borderRadius:3},
-  {label:'Troubleshooting agent',data:[49.5,21.2,41.1,16.5],backgroundColor:'#AFA9EC',borderRadius:3},
-  {label:'No triage',data:[21.9,6.4,18.7,5.3],backgroundColor:'#E2E2E2',borderRadius:3}
-]},options:opts('% of users',70)});
-new Chart(document.getElementById('c2'),{type:'bar',data:{labels:labs,datasets:[
-  {label:'After',data:[26.66,18.07,9.28,7.21],backgroundColor:'#1D9E75',borderRadius:3},
-  {label:'Before',data:[10.28,11.70,6.91,1.65],backgroundColor:'#B4B2A9',borderRadius:3}
-]},options:opts('avg actions / user (30d)',30)});
-new Chart(document.getElementById('c3'),{type:'bar',data:{labels:labs,datasets:[
-  {label:'Triage day',data:[30.1,19.8,25.0,7.0],backgroundColor:'#BA7517',borderRadius:3},
-  {label:'No-triage day',data:[17.2,8.7,11.0,4.0],backgroundColor:'#B4B2A9',borderRadius:3}
-]},options:opts('% of user-days',40)});
+new Chart(document.getElementById('c1'), { type: 'bar', data: { labels: labs, datasets: [
+  { label: 'In-product triage', data: [60.9, 41.1, 53.2, 22.9], backgroundColor: '#7F77DD', borderRadius: 3 },
+  { label: 'Troubleshooting agent', data: [49.5, 21.2, 41.1, 16.5], backgroundColor: '#AFA9EC', borderRadius: 3 },
+  { label: 'No triage', data: [21.9, 6.4, 18.7, 5.3], backgroundColor: '#E2E2E2', borderRadius: 3 }
+]}, options: opts('% of users', 70) });
+new Chart(document.getElementById('c2'), { type: 'bar', data: { labels: labs, datasets: [
+  { label: 'After', data: [26.66, 18.07, 9.28, 7.21], backgroundColor: '#1D9E75', borderRadius: 3 },
+  { label: 'Before', data: [10.28, 11.70, 6.91, 1.65], backgroundColor: '#B4B2A9', borderRadius: 3 }
+]}, options: opts('avg actions / user (30d)', 30) });
+new Chart(document.getElementById('c3'), { type: 'bar', data: { labels: labs, datasets: [
+  { label: 'Triage day', data: [30.1, 19.8, 25.0, 7.0], backgroundColor: '#BA7517', borderRadius: 3 },
+  { label: 'No-triage day', data: [17.2, 8.7, 11.0, 4.0], backgroundColor: '#B4B2A9', borderRadius: 3 }
+]}, options: opts('% of user-days', 40) });
 </script>
 
 </body>
