@@ -27,7 +27,7 @@ jobs:
 
           # 1. PRs authored by the user
           curl -sf -H "$AUTH_HEADER" -H "$ACCEPT_HEADER" \
-            "https://api.github.com/search/issues?q=type:pr+author:${USER}+repo:${REPO}&sort=updated&order=desc&per_page=20" \
+            "https://api.github.com/search/issues?q=type:pr+author:${USER}+repo:${REPO}&sort=updated&order=desc&per_page=50" \
             | jq '[.items[] | {number, title, html_url, state, updated_at, merged_at: .pull_request.merged_at}]' \
             > /tmp/authored.json
 
@@ -51,9 +51,9 @@ jobs:
             mv /tmp/committed.tmp.json /tmp/committed.json
           done
 
-          # 4. Merge authored + committed, dedupe by number, sort by updated_at desc, take 20
+          # 4. Merge authored + committed, dedupe by number, sort by updated_at desc, take 50
           jq -s '
-            add | unique_by(.number) | sort_by(.updated_at) | reverse | .[0:20]
+            add | unique_by(.number) | sort_by(.updated_at) | reverse | .[0:50]
           ' /tmp/authored.json /tmp/committed.json > prs.json
 
       - name: Commit if changed
