@@ -1,5 +1,13 @@
 [
   {
+    "number": 13959,
+    "title": "FilterBar: optional server-side search on multi filters",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13959",
+    "state": "open",
+    "updated_at": "2026-06-12T11:53:57Z",
+    "merged_at": null
+  },
+  {
     "number": 13941,
     "title": "Remove Explain alert button from alert detail page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13941",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-13T14:11:39Z",
     "merged_at": "2026-04-13T14:11:37Z"
-  },
-  {
-    "number": 12800,
-    "title": "Remove card borders from exclusion window and lineage filter add pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12800",
-    "state": "closed",
-    "updated_at": "2026-04-13T14:09:35Z",
-    "merged_at": "2026-04-13T14:09:34Z"
   }
 ]
