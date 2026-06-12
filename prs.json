@@ -1,18 +1,18 @@
 [
   {
+    "number": 13941,
+    "title": "Remove Explain alert button from alert detail page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13941",
+    "state": "open",
+    "updated_at": "2026-06-12T16:17:24Z",
+    "merged_at": null
+  },
+  {
     "number": 13959,
     "title": "FilterBar: optional server-side search on multi filters",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13959",
     "state": "open",
     "updated_at": "2026-06-12T11:53:57Z",
-    "merged_at": null
-  },
-  {
-    "number": 13941,
-    "title": "Remove Explain alert button from alert detail page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13941",
-    "state": "open",
-    "updated_at": "2026-06-12T10:00:38Z",
     "merged_at": null
   },
   {
