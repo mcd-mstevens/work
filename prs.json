@@ -4,7 +4,7 @@
     "title": "Remove Explain alert button from alert detail page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13941",
     "state": "open",
-    "updated_at": "2026-06-11T21:42:38Z",
+    "updated_at": "2026-06-12T10:00:38Z",
     "merged_at": null
   },
   {
@@ -158,5 +158,245 @@
     "state": "closed",
     "updated_at": "2026-04-27T17:29:41Z",
     "merged_at": "2026-04-27T17:29:39Z"
+  },
+  {
+    "number": 13047,
+    "title": "Bob job pages UI polish",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13047",
+    "state": "closed",
+    "updated_at": "2026-04-24T20:59:45Z",
+    "merged_at": "2026-04-24T20:59:44Z"
+  },
+  {
+    "number": 13045,
+    "title": "Bob table detail page UI improvements",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13045",
+    "state": "closed",
+    "updated_at": "2026-04-24T20:59:45Z",
+    "merged_at": "2026-04-24T20:59:44Z"
+  },
+  {
+    "number": 13063,
+    "title": "Agentic-platform agent pages UI polish",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13063",
+    "state": "closed",
+    "updated_at": "2026-04-24T20:34:44Z",
+    "merged_at": "2026-04-24T20:34:43Z"
+  },
+  {
+    "number": 13051,
+    "title": "Convert Bob tables tree drawer from fixed overlay to flex panel",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13051",
+    "state": "closed",
+    "updated_at": "2026-04-24T20:34:44Z",
+    "merged_at": "2026-04-24T20:34:43Z"
+  },
+  {
+    "number": 13027,
+    "title": "Fix duplicate toast when copying API key or secret",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13027",
+    "state": "closed",
+    "updated_at": "2026-04-23T15:43:50Z",
+    "merged_at": "2026-04-23T15:43:48Z"
+  },
+  {
+    "number": 13003,
+    "title": "Bob findings: remove noisy metadata from finding detail",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13003",
+    "state": "closed",
+    "updated_at": "2026-04-22T21:41:51Z",
+    "merged_at": "2026-04-22T21:41:50Z"
+  },
+  {
+    "number": 13002,
+    "title": "Bob findings: hide table and paging in initial empty state",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13002",
+    "state": "closed",
+    "updated_at": "2026-04-22T19:54:39Z",
+    "merged_at": "2026-04-22T19:54:37Z"
+  },
+  {
+    "number": 12998,
+    "title": "Bob triage agent: indent expanded content, rename Rationale, remove Batch Triage",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12998",
+    "state": "closed",
+    "updated_at": "2026-04-22T19:47:44Z",
+    "merged_at": "2026-04-22T19:47:43Z"
+  },
+  {
+    "number": 13001,
+    "title": "Bob nav: persist sort + filters when returning to findings list",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13001",
+    "state": "closed",
+    "updated_at": "2026-04-22T19:44:36Z",
+    "merged_at": "2026-04-22T19:44:34Z"
+  },
+  {
+    "number": 12992,
+    "title": "Bob monitors added: clean up created-monitor display names",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12992",
+    "state": "closed",
+    "updated_at": "2026-04-22T19:35:17Z",
+    "merged_at": "2026-04-22T19:35:16Z"
+  },
+  {
+    "number": 12990,
+    "title": "Bob finding detail: rename section titles",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12990",
+    "state": "closed",
+    "updated_at": "2026-04-22T17:03:52Z",
+    "merged_at": "2026-04-22T17:03:50Z"
+  },
+  {
+    "number": 12989,
+    "title": "Bob findings: hide table and pagination when filters return no results",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12989",
+    "state": "closed",
+    "updated_at": "2026-04-22T16:25:13Z",
+    "merged_at": "2026-04-22T16:25:12Z"
+  },
+  {
+    "number": 12991,
+    "title": "Bob recommended monitors: polish priority labels and expand layout",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12991",
+    "state": "closed",
+    "updated_at": "2026-04-22T16:19:35Z",
+    "merged_at": "2026-04-22T16:19:34Z"
+  },
+  {
+    "number": 12975,
+    "title": "Bob finding detail: rename section titles",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12975",
+    "state": "closed",
+    "updated_at": "2026-04-22T15:34:21Z",
+    "merged_at": "2026-04-22T15:34:19Z"
+  },
+  {
+    "number": 12974,
+    "title": "Bob findings: hide table and pagination when filters return no results",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12974",
+    "state": "closed",
+    "updated_at": "2026-04-22T15:34:08Z",
+    "merged_at": "2026-04-22T15:34:06Z"
+  },
+  {
+    "number": 12977,
+    "title": "Bob recommended monitors: polish priority labels and expand layout",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12977",
+    "state": "closed",
+    "updated_at": "2026-04-22T15:34:01Z",
+    "merged_at": "2026-04-22T15:33:58Z"
+  },
+  {
+    "number": 12978,
+    "title": "Bob monitors added: clean up created-monitor display names",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12978",
+    "state": "closed",
+    "updated_at": "2026-04-22T15:33:49Z",
+    "merged_at": "2026-04-22T15:33:46Z"
+  },
+  {
+    "number": 12910,
+    "title": "Agent page tabs: use Title to match app-wide tab style",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12910",
+    "state": "closed",
+    "updated_at": "2026-04-20T13:15:44Z",
+    "merged_at": "2026-04-20T13:15:42Z"
+  },
+  {
+    "number": 12895,
+    "title": "Tighten favicon SVG viewBox to remove excess padding",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12895",
+    "state": "closed",
+    "updated_at": "2026-04-18T10:16:18Z",
+    "merged_at": "2026-04-18T10:16:16Z"
+  },
+  {
+    "number": 12827,
+    "title": "Fix widget heading accessibility follow-ups from DES-467",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12827",
+    "state": "closed",
+    "updated_at": "2026-04-16T14:46:09Z",
+    "merged_at": "2026-04-16T14:46:07Z"
+  },
+  {
+    "number": 12830,
+    "title": "Notebooks list: style name as link to match other lists",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12830",
+    "state": "closed",
+    "updated_at": "2026-04-15T18:57:30Z",
+    "merged_at": "2026-04-15T18:57:28Z"
+  },
+  {
+    "number": 12824,
+    "title": "API explorer: remove stale Settings breadcrumb",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12824",
+    "state": "closed",
+    "updated_at": "2026-04-15T17:32:42Z",
+    "merged_at": "2026-04-15T17:32:41Z"
+  },
+  {
+    "number": 12845,
+    "title": "Monitor authorization: guard proposePolicy null check",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12845",
+    "state": "closed",
+    "updated_at": "2026-04-15T11:11:39Z",
+    "merged_at": "2026-04-15T11:11:38Z"
+  },
+  {
+    "number": 12832,
+    "title": "Skills list: fix table layout, scope styling",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12832",
+    "state": "closed",
+    "updated_at": "2026-04-14T23:11:38Z",
+    "merged_at": "2026-04-14T23:11:37Z"
+  },
+  {
+    "number": 12798,
+    "title": "UI exploration: monitors layout, bulk actions, filter panel",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12798",
+    "state": "closed",
+    "updated_at": "2026-04-14T19:13:23Z",
+    "merged_at": null
+  },
+  {
+    "number": 12823,
+    "title": "API key add form: remove extra padding",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12823",
+    "state": "closed",
+    "updated_at": "2026-04-14T16:25:17Z",
+    "merged_at": "2026-04-14T16:25:15Z"
+  },
+  {
+    "number": 12790,
+    "title": "Normalize card headers to Widget so style changes propagate from one place",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12790",
+    "state": "closed",
+    "updated_at": "2026-04-14T10:13:47Z",
+    "merged_at": "2026-04-14T10:13:46Z"
+  },
+  {
+    "number": 12764,
+    "title": "Standardize add buttons and breadcrumbs to just say \"Add\"",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12764",
+    "state": "closed",
+    "updated_at": "2026-04-13T15:45:38Z",
+    "merged_at": "2026-04-13T15:45:36Z"
+  },
+  {
+    "number": 12803,
+    "title": "Remove card borders from settings add flow pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12803",
+    "state": "closed",
+    "updated_at": "2026-04-13T14:11:39Z",
+    "merged_at": "2026-04-13T14:11:37Z"
+  },
+  {
+    "number": 12800,
+    "title": "Remove card borders from exclusion window and lineage filter add pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12800",
+    "state": "closed",
+    "updated_at": "2026-04-13T14:09:35Z",
+    "merged_at": "2026-04-13T14:09:34Z"
   }
 ]
