@@ -4,7 +4,15 @@
     "title": "Performance/Jobs: apply muted table style",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13978",
     "state": "open",
-    "updated_at": "2026-06-13T10:27:37Z",
+    "updated_at": "2026-06-13T13:36:50Z",
+    "merged_at": null
+  },
+  {
+    "number": 13979,
+    "title": "Read queries: replace sidebar with horizontal FilterBar (DES-547)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13979",
+    "state": "open",
+    "updated_at": "2026-06-13T13:26:03Z",
     "merged_at": null
   },
   {
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-14T16:25:17Z",
     "merged_at": "2026-04-14T16:25:15Z"
-  },
-  {
-    "number": 12790,
-    "title": "Normalize card headers to Widget so style changes propagate from one place",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12790",
-    "state": "closed",
-    "updated_at": "2026-04-14T10:13:47Z",
-    "merged_at": "2026-04-14T10:13:46Z"
   }
 ]
