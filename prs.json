@@ -1,18 +1,18 @@
 [
   {
+    "number": 13978,
+    "title": "Performance/Jobs: apply muted table style",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13978",
+    "state": "closed",
+    "updated_at": "2026-06-13T21:30:58Z",
+    "merged_at": "2026-06-13T21:30:57Z"
+  },
+  {
     "number": 13979,
     "title": "Read queries: replace sidebar with horizontal FilterBar (DES-547)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13979",
     "state": "open",
     "updated_at": "2026-06-13T19:38:15Z",
-    "merged_at": null
-  },
-  {
-    "number": 13978,
-    "title": "Performance/Jobs: apply muted table style",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13978",
-    "state": "open",
-    "updated_at": "2026-06-13T13:36:50Z",
     "merged_at": null
   },
   {
