@@ -1,5 +1,13 @@
 [
   {
+    "number": 13982,
+    "title": "Write queries: replace sidebar filters with FilterBar (DES-552)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13982",
+    "state": "open",
+    "updated_at": "2026-06-14T13:43:50Z",
+    "merged_at": null
+  },
+  {
     "number": 13978,
     "title": "Performance/Jobs: apply muted table style",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13978",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-14T19:13:23Z",
     "merged_at": null
-  },
-  {
-    "number": 12823,
-    "title": "API key add form: remove extra padding",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12823",
-    "state": "closed",
-    "updated_at": "2026-04-14T16:25:17Z",
-    "merged_at": "2026-04-14T16:25:15Z"
   }
 ]
