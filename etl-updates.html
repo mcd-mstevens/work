@@ -12,11 +12,10 @@
   .back-link:hover { color: #21242C; }
   h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
   .meta { font-size: 12px; color: #676F7E; margin-bottom: 48px; }
-  .block { margin-bottom: 48px; }
-  .block p { font-size: 13px; color: #676F7E; margin-bottom: 14px; }
-  .block p strong { color: #21242C; font-weight: 600; }
-  .label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #676F7E; margin-bottom: 10px; }
-  .card { background: #fff; border: 1px solid #E2E2E2; border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
+  .item { border-top: 1px solid #E2E2E2; padding: 24px 0; }
+  .item:last-child { border-bottom: 1px solid #E2E2E2; }
+  .item-title { font-size: 15px; font-weight: 600; color: #21242C; margin-bottom: 6px; }
+  .item-body { font-size: 13px; color: #676F7E; line-height: 1.65; }
 </style>
 </head>
 <body>
@@ -25,8 +24,29 @@
 <h1>ETL updates</h1>
 <p class="meta">June 2026</p>
 
-<div class="block">
-  <p>HELLO WORLD</p>
+<div class="item">
+  <div class="item-title">Performance page as entry point</div>
+  <div class="item-body">New IA. Jobs and tables as top-level tabs. Search across jobs. This is where users land, not the asset page.</div>
+</div>
+
+<div class="item">
+  <div class="item-title">Asset page redesign</div>
+  <div class="item-body">Merge tabs into one page. Add &ldquo;not monitored&rdquo; CTA, &ldquo;no webhook received&rdquo; CTA, schedule info, task metadata.</div>
+</div>
+
+<div class="item">
+  <div class="item-title">Integration setup flow</div>
+  <div class="item-body">Fix DBT (collector ID friction is the worst offender). Custom integration generates key + webhook URL in-flow, not on a separate page.</div>
+</div>
+
+<div class="item">
+  <div class="item-title">Monitor creation</div>
+  <div class="item-body">Pull it out of settings into the standard monitor wizard. Adds two new types: SLA-miss and &ldquo;job never ran.&rdquo;</div>
+</div>
+
+<div class="item">
+  <div class="item-title">Lineage navigation</div>
+  <div class="item-body">Job &rarr; table inverse (the data exists, just missing the UI). Connect all three views &mdash; table lineage, task lineage, job dependencies &mdash; so users can move between granularities.</div>
 </div>
 
 </body>
