@@ -11,9 +11,13 @@
   .back-link { display: inline-flex; align-items: center; gap: 6px; color: #676F7E; text-decoration: none; font-size: 13px; margin-bottom: 20px; }
   .back-link:hover { color: #21242C; }
   h1 { font-size: 22px; font-weight: 500; margin-bottom: 32px; }
-  .item { padding: 0 0 20px; }
+  .item { padding: 0 0 32px; }
   .item-title { font-size: 15px; font-weight: 600; color: #21242C; margin-bottom: 6px; }
   .item-body { font-size: 13px; color: #676F7E; line-height: 1.65; }
+  .item-list { font-size: 13px; color: #676F7E; line-height: 1.65; padding-left: 18px; margin-top: 4px; }
+  .item-list li { margin-bottom: 2px; }
+  .images { display: flex; gap: 16px; margin-top: 16px; }
+  .images img { width: calc(50% - 8px); border-radius: 8px; border: 1px solid #E2E2E2; display: block; }
 </style>
 </head>
 <body>
@@ -22,8 +26,17 @@
 <h1>ETL updates</h1>
 
 <div class="item">
-  <div class="item-title">Performance page as entry point</div>
-  <div class="item-body">New IA. Jobs and tables as top-level tabs. Search across jobs. This is where users land, not the asset page.</div>
+  <div class="item-title">Information architecture changes</div>
+  <ol class="item-list">
+    <li>Remove Jobs tab on &ldquo;Data&rdquo;</li>
+    <li>Update search on &ldquo;Data&rdquo; to not return Jobs</li>
+    <li>Promote Jobs to side navigation (Stee plugging away at this)</li>
+    <li>Remove Jobs link under Performance</li>
+  </ol>
+  <div class="images">
+    <img src="etl-ia-before.png" alt="Before: Data page with Jobs tab">
+    <img src="etl-ia-after.png" alt="After: Jobs in side navigation">
+  </div>
 </div>
 
 <div class="item">
