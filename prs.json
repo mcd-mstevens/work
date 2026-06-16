@@ -3,17 +3,17 @@
     "number": 14013,
     "title": "Migrate Findings filter bar to shared FilterBar component (DES-546)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14013",
-    "state": "open",
-    "updated_at": "2026-06-16T19:01:17Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-16T21:28:05Z",
+    "merged_at": "2026-06-16T21:28:04Z"
   },
   {
     "number": 14029,
     "title": "Read queries: apply muted table style, move table out of card (DES-533)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14029",
-    "state": "open",
-    "updated_at": "2026-06-16T19:01:10Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-16T21:02:12Z",
+    "merged_at": "2026-06-16T21:02:11Z"
   },
   {
     "number": 14027,
