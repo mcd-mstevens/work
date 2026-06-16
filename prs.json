@@ -1,27 +1,43 @@
 [
   {
+    "number": 14013,
+    "title": "Migrate Findings filter bar to shared FilterBar component (DES-546)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14013",
+    "state": "open",
+    "updated_at": "2026-06-16T19:01:17Z",
+    "merged_at": null
+  },
+  {
+    "number": 14029,
+    "title": "Read queries: apply muted table style, move table out of card (DES-533)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14029",
+    "state": "open",
+    "updated_at": "2026-06-16T19:01:10Z",
+    "merged_at": null
+  },
+  {
+    "number": 14027,
+    "title": "Write queries: apply muted table style, move table out of card (DES-534)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14027",
+    "state": "closed",
+    "updated_at": "2026-06-16T18:50:37Z",
+    "merged_at": "2026-06-16T18:50:36Z"
+  },
+  {
     "number": 13979,
     "title": "Read queries: replace sidebar with horizontal FilterBar (DES-547)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13979",
-    "state": "open",
-    "updated_at": "2026-06-16T15:43:30Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-16T17:21:47Z",
+    "merged_at": "2026-06-16T17:21:46Z"
   },
   {
     "number": 13982,
     "title": "Write queries: replace sidebar filters with FilterBar (DES-552)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13982",
-    "state": "open",
-    "updated_at": "2026-06-16T15:43:23Z",
-    "merged_at": null
-  },
-  {
-    "number": 14013,
-    "title": "Migrate Findings filter bar to shared FilterBar component (DES-546)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14013",
-    "state": "open",
-    "updated_at": "2026-06-16T15:16:02Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-16T16:41:34Z",
+    "merged_at": "2026-06-16T16:41:33Z"
   },
   {
     "number": 13978,
@@ -382,21 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-15T17:32:42Z",
     "merged_at": "2026-04-15T17:32:41Z"
-  },
-  {
-    "number": 12845,
-    "title": "Monitor authorization: guard proposePolicy null check",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12845",
-    "state": "closed",
-    "updated_at": "2026-04-15T11:11:39Z",
-    "merged_at": "2026-04-15T11:11:38Z"
-  },
-  {
-    "number": 12832,
-    "title": "Skills list: fix table layout, scope styling",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12832",
-    "state": "closed",
-    "updated_at": "2026-04-14T23:11:38Z",
-    "merged_at": "2026-04-14T23:11:37Z"
   }
 ]
