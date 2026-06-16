@@ -1,10 +1,26 @@
 [
   {
+    "number": 13979,
+    "title": "Read queries: replace sidebar with horizontal FilterBar (DES-547)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13979",
+    "state": "open",
+    "updated_at": "2026-06-16T15:43:30Z",
+    "merged_at": null
+  },
+  {
     "number": 13982,
     "title": "Write queries: replace sidebar filters with FilterBar (DES-552)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13982",
     "state": "open",
-    "updated_at": "2026-06-14T19:45:02Z",
+    "updated_at": "2026-06-16T15:43:23Z",
+    "merged_at": null
+  },
+  {
+    "number": 14013,
+    "title": "Migrate Findings filter bar to shared FilterBar component (DES-546)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14013",
+    "state": "open",
+    "updated_at": "2026-06-16T15:16:02Z",
     "merged_at": null
   },
   {
@@ -14,14 +30,6 @@
     "state": "closed",
     "updated_at": "2026-06-13T21:30:58Z",
     "merged_at": "2026-06-13T21:30:57Z"
-  },
-  {
-    "number": 13979,
-    "title": "Read queries: replace sidebar with horizontal FilterBar (DES-547)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13979",
-    "state": "open",
-    "updated_at": "2026-06-13T19:38:15Z",
-    "merged_at": null
   },
   {
     "number": 13967,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-14T23:11:38Z",
     "merged_at": "2026-04-14T23:11:37Z"
-  },
-  {
-    "number": 12798,
-    "title": "UI exploration: monitors layout, bulk actions, filter panel",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12798",
-    "state": "closed",
-    "updated_at": "2026-04-14T19:13:23Z",
-    "merged_at": null
   }
 ]
