@@ -12,12 +12,14 @@
   .back-link:hover { color: #21242C; }
   h1 { font-size: 22px; font-weight: 500; margin-bottom: 32px; }
   .item { padding: 0 0 32px; }
-  .item-title { font-size: 15px; font-weight: 600; color: #21242C; margin-bottom: 6px; }
+  .item-title { font-size: 15px; font-weight: 600; color: #21242C; margin-bottom: 6px; display: flex; align-items: baseline; gap: 8px; }
+  .item-title a { font-size: 12px; font-weight: 500; color: #676F7E; text-decoration: none; }
+  .item-title a:hover { color: #21242C; }
   .item-body { font-size: 13px; color: #676F7E; line-height: 1.65; }
   .item-list { font-size: 13px; color: #676F7E; line-height: 1.65; padding-left: 18px; margin-top: 4px; }
   .item-list li { margin-bottom: 2px; }
   .images { display: flex; gap: 16px; margin-top: 16px; }
-  .images img { width: calc(50% - 8px); border-radius: 8px; border: 1px solid #E2E2E2; display: block; }
+  .images img { width: calc(50% - 8px); border-radius: 8px; display: block; }
 </style>
 </head>
 <body>
@@ -26,7 +28,7 @@
 <h1>ETL updates</h1>
 
 <div class="item">
-  <div class="item-title">Information architecture changes</div>
+  <div class="item-title">Information architecture changes <a href="https://mc-ia.lovable.app/jobs" target="_blank" rel="noopener">(prototype)</a></div>
   <ol class="item-list">
     <li>Remove Jobs tab on &ldquo;Data&rdquo;</li>
     <li>Update search on &ldquo;Data&rdquo; to not return Jobs</li>
