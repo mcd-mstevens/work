@@ -1,11 +1,19 @@
 [
   {
+    "number": 14057,
+    "title": "Filter pattern: Data quality dashboard",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14057",
+    "state": "open",
+    "updated_at": "2026-06-17T17:08:17Z",
+    "merged_at": null
+  },
+  {
     "number": 14051,
     "title": "Fix data products table: Name column wrapping and double bottom border",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14051",
-    "state": "open",
-    "updated_at": "2026-06-17T15:30:58Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-17T15:43:23Z",
+    "merged_at": "2026-06-17T15:43:21Z"
   },
   {
     "number": 14013,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-16T14:46:09Z",
     "merged_at": "2026-04-16T14:46:07Z"
-  },
-  {
-    "number": 12830,
-    "title": "Notebooks list: style name as link to match other lists",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12830",
-    "state": "closed",
-    "updated_at": "2026-04-15T18:57:30Z",
-    "merged_at": "2026-04-15T18:57:28Z"
   }
 ]
