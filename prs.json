@@ -1,5 +1,13 @@
 [
   {
+    "number": 14051,
+    "title": "Fix data products table: Name column wrapping and double bottom border",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14051",
+    "state": "open",
+    "updated_at": "2026-06-17T15:30:58Z",
+    "merged_at": null
+  },
+  {
     "number": 14013,
     "title": "Migrate Findings filter bar to shared FilterBar component (DES-546)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14013",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-15T18:57:30Z",
     "merged_at": "2026-04-15T18:57:28Z"
-  },
-  {
-    "number": 12824,
-    "title": "API explorer: remove stale Settings breadcrumb",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12824",
-    "state": "closed",
-    "updated_at": "2026-04-15T17:32:42Z",
-    "merged_at": "2026-04-15T17:32:41Z"
   }
 ]
