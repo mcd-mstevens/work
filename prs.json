@@ -1,5 +1,21 @@
 [
   {
+    "number": 14080,
+    "title": "Monitor detail: surface Tune monitor as a primary button",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14080",
+    "state": "closed",
+    "updated_at": "2026-06-18T18:52:13Z",
+    "merged_at": "2026-06-18T18:52:11Z"
+  },
+  {
+    "number": 14078,
+    "title": "Table Health: apply muted table style and drop the surrounding card",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14078",
+    "state": "closed",
+    "updated_at": "2026-06-18T18:52:12Z",
+    "merged_at": "2026-06-18T18:52:11Z"
+  },
+  {
     "number": 14057,
     "title": "Filter pattern: Data quality dashboard",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14057",
@@ -382,21 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-20T13:15:44Z",
     "merged_at": "2026-04-20T13:15:42Z"
-  },
-  {
-    "number": 12895,
-    "title": "Tighten favicon SVG viewBox to remove excess padding",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12895",
-    "state": "closed",
-    "updated_at": "2026-04-18T10:16:18Z",
-    "merged_at": "2026-04-18T10:16:16Z"
-  },
-  {
-    "number": 12827,
-    "title": "Fix widget heading accessibility follow-ups from DES-467",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12827",
-    "state": "closed",
-    "updated_at": "2026-04-16T14:46:09Z",
-    "merged_at": "2026-04-16T14:46:07Z"
   }
 ]
