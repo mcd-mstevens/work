@@ -1,5 +1,13 @@
 [
   {
+    "number": 14094,
+    "title": "Coverage dashboard: apply FilterBar pattern",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14094",
+    "state": "open",
+    "updated_at": "2026-06-19T13:50:55Z",
+    "merged_at": null
+  },
+  {
     "number": 14080,
     "title": "Monitor detail: surface Tune monitor as a primary button",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14080",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T15:33:49Z",
     "merged_at": "2026-04-22T15:33:46Z"
-  },
-  {
-    "number": 12910,
-    "title": "Agent page tabs: use Title to match app-wide tab style",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12910",
-    "state": "closed",
-    "updated_at": "2026-04-20T13:15:44Z",
-    "merged_at": "2026-04-20T13:15:42Z"
   }
 ]
