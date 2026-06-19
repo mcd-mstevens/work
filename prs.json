@@ -1,5 +1,13 @@
 [
   {
+    "number": 14100,
+    "title": "Job detail: strip the side-nav shell and asset-tree wrapper",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14100",
+    "state": "open",
+    "updated_at": "2026-06-19T21:41:18Z",
+    "merged_at": null
+  },
+  {
     "number": 14094,
     "title": "Coverage dashboard: apply FilterBar pattern",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14094",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T15:34:21Z",
     "merged_at": "2026-04-22T15:34:19Z"
-  },
-  {
-    "number": 12974,
-    "title": "Bob findings: hide table and pagination when filters return no results",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12974",
-    "state": "closed",
-    "updated_at": "2026-04-22T15:34:08Z",
-    "merged_at": "2026-04-22T15:34:06Z"
   }
 ]
