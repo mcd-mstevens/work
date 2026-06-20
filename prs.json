@@ -1,10 +1,34 @@
 [
   {
+    "number": 14103,
+    "title": "Data product detail: muted Monitors table + drop the card",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14103",
+    "state": "open",
+    "updated_at": "2026-06-20T12:20:27Z",
+    "merged_at": null
+  },
+  {
+    "number": 14102,
+    "title": "Data quality dashboard: muted table + drop the Monitors card",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14102",
+    "state": "open",
+    "updated_at": "2026-06-20T12:06:11Z",
+    "merged_at": null
+  },
+  {
+    "number": 14098,
+    "title": "Table styling: monitor detail page run history tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14098",
+    "state": "open",
+    "updated_at": "2026-06-20T11:36:55Z",
+    "merged_at": null
+  },
+  {
     "number": 14100,
     "title": "Job detail: strip the side-nav shell and asset-tree wrapper",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14100",
     "state": "open",
-    "updated_at": "2026-06-19T21:41:18Z",
+    "updated_at": "2026-06-20T11:36:20Z",
     "merged_at": null
   },
   {
@@ -29,14 +53,6 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14099",
     "state": "open",
     "updated_at": "2026-06-19T17:28:43Z",
-    "merged_at": null
-  },
-  {
-    "number": 14098,
-    "title": "Table styling: monitor detail page run history tab",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14098",
-    "state": "open",
-    "updated_at": "2026-06-19T16:27:05Z",
     "merged_at": null
   },
   {
@@ -382,21 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T16:25:13Z",
     "merged_at": "2026-04-22T16:25:12Z"
-  },
-  {
-    "number": 12991,
-    "title": "Bob recommended monitors: polish priority labels and expand layout",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12991",
-    "state": "closed",
-    "updated_at": "2026-04-22T16:19:35Z",
-    "merged_at": "2026-04-22T16:19:34Z"
-  },
-  {
-    "number": 12975,
-    "title": "Bob finding detail: rename section titles",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12975",
-    "state": "closed",
-    "updated_at": "2026-04-22T15:34:21Z",
-    "merged_at": "2026-04-22T15:34:19Z"
   }
 ]
