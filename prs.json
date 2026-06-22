@@ -1,5 +1,21 @@
 [
   {
+    "number": 14094,
+    "title": "Coverage dashboard: apply FilterBar pattern",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14094",
+    "state": "open",
+    "updated_at": "2026-06-22T14:30:30Z",
+    "merged_at": null
+  },
+  {
+    "number": 14099,
+    "title": "Alert detail: switch agentic CTAs to the purple-sparkle pattern",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14099",
+    "state": "open",
+    "updated_at": "2026-06-22T14:30:29Z",
+    "merged_at": null
+  },
+  {
     "number": 14103,
     "title": "Data product detail: muted Monitors table + drop the card",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14103",
@@ -32,28 +48,12 @@
     "merged_at": null
   },
   {
-    "number": 14094,
-    "title": "Coverage dashboard: apply FilterBar pattern",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14094",
-    "state": "open",
-    "updated_at": "2026-06-19T19:02:20Z",
-    "merged_at": null
-  },
-  {
     "number": 14057,
     "title": "Filter pattern: Data quality dashboard",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14057",
     "state": "closed",
     "updated_at": "2026-06-19T17:28:47Z",
     "merged_at": "2026-06-19T17:28:45Z"
-  },
-  {
-    "number": 14099,
-    "title": "Alert detail: switch agentic CTAs to the purple-sparkle pattern",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14099",
-    "state": "open",
-    "updated_at": "2026-06-19T17:28:43Z",
-    "merged_at": null
   },
   {
     "number": 14080,
