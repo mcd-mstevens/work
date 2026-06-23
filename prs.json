@@ -1,11 +1,19 @@
 [
   {
+    "number": 14103,
+    "title": "Data product detail: muted Monitors table + drop the card",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14103",
+    "state": "open",
+    "updated_at": "2026-06-23T17:53:43Z",
+    "merged_at": null
+  },
+  {
     "number": 14102,
     "title": "Data quality dashboard: muted table + drop the Monitors card",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14102",
-    "state": "open",
-    "updated_at": "2026-06-23T14:58:44Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-23T17:19:12Z",
+    "merged_at": "2026-06-23T17:19:10Z"
   },
   {
     "number": 14098,
@@ -22,14 +30,6 @@
     "state": "closed",
     "updated_at": "2026-06-23T13:54:01Z",
     "merged_at": "2026-06-23T13:53:59Z"
-  },
-  {
-    "number": 14103,
-    "title": "Data product detail: muted Monitors table + drop the card",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14103",
-    "state": "open",
-    "updated_at": "2026-06-23T11:50:25Z",
-    "merged_at": null
   },
   {
     "number": 14100,
