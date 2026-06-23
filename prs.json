@@ -1,11 +1,35 @@
 [
   {
+    "number": 14156,
+    "title": "Apply muted table style to data product monitors tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14156",
+    "state": "open",
+    "updated_at": "2026-06-23T20:06:35Z",
+    "merged_at": null
+  },
+  {
+    "number": 14152,
+    "title": "Data product lineage: disable \"Show jobs\" when no eligible edges",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14152",
+    "state": "open",
+    "updated_at": "2026-06-23T19:58:04Z",
+    "merged_at": null
+  },
+  {
+    "number": 14150,
+    "title": "Data product detail: add Data quality tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14150",
+    "state": "open",
+    "updated_at": "2026-06-23T19:38:06Z",
+    "merged_at": null
+  },
+  {
     "number": 14103,
     "title": "Data product detail: muted Monitors table + drop the card",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14103",
-    "state": "open",
-    "updated_at": "2026-06-23T17:53:43Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-23T19:31:50Z",
+    "merged_at": "2026-06-23T19:31:48Z"
   },
   {
     "number": 14102,
@@ -374,29 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T19:47:44Z",
     "merged_at": "2026-04-22T19:47:43Z"
-  },
-  {
-    "number": 13001,
-    "title": "Bob nav: persist sort + filters when returning to findings list",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13001",
-    "state": "closed",
-    "updated_at": "2026-04-22T19:44:36Z",
-    "merged_at": "2026-04-22T19:44:34Z"
-  },
-  {
-    "number": 12992,
-    "title": "Bob monitors added: clean up created-monitor display names",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12992",
-    "state": "closed",
-    "updated_at": "2026-04-22T19:35:17Z",
-    "merged_at": "2026-04-22T19:35:16Z"
-  },
-  {
-    "number": 12990,
-    "title": "Bob finding detail: rename section titles",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12990",
-    "state": "closed",
-    "updated_at": "2026-04-22T17:03:52Z",
-    "merged_at": "2026-04-22T17:03:50Z"
   }
 ]
