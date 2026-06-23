@@ -1,11 +1,27 @@
 [
   {
+    "number": 14102,
+    "title": "Data quality dashboard: muted table + drop the Monitors card",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14102",
+    "state": "open",
+    "updated_at": "2026-06-23T14:58:44Z",
+    "merged_at": null
+  },
+  {
+    "number": 14098,
+    "title": "Table styling: monitor detail page run history tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14098",
+    "state": "closed",
+    "updated_at": "2026-06-23T14:03:57Z",
+    "merged_at": "2026-06-23T14:03:55Z"
+  },
+  {
     "number": 14137,
     "title": "Job detail: hide asset-tree hamburger button for job pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14137",
-    "state": "open",
-    "updated_at": "2026-06-23T12:26:56Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-23T13:54:01Z",
+    "merged_at": "2026-06-23T13:53:59Z"
   },
   {
     "number": 14103,
@@ -38,22 +54,6 @@
     "state": "closed",
     "updated_at": "2026-06-23T10:13:06Z",
     "merged_at": "2026-06-23T10:13:05Z"
-  },
-  {
-    "number": 14102,
-    "title": "Data quality dashboard: muted table + drop the Monitors card",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14102",
-    "state": "open",
-    "updated_at": "2026-06-22T15:58:19Z",
-    "merged_at": null
-  },
-  {
-    "number": 14098,
-    "title": "Table styling: monitor detail page run history tab",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14098",
-    "state": "open",
-    "updated_at": "2026-06-20T11:36:55Z",
-    "merged_at": null
   },
   {
     "number": 14057,
