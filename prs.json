@@ -1,26 +1,26 @@
 [
   {
+    "number": 14150,
+    "title": "Data product detail: add Data quality tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14150",
+    "state": "closed",
+    "updated_at": "2026-06-23T21:27:32Z",
+    "merged_at": "2026-06-23T21:27:30Z"
+  },
+  {
     "number": 14156,
     "title": "Apply muted table style to data product monitors tab",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14156",
-    "state": "open",
-    "updated_at": "2026-06-23T20:06:35Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-23T20:20:18Z",
+    "merged_at": "2026-06-23T20:20:17Z"
   },
   {
     "number": 14152,
     "title": "Data product lineage: disable \"Show jobs\" when no eligible edges",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14152",
     "state": "open",
-    "updated_at": "2026-06-23T19:58:04Z",
-    "merged_at": null
-  },
-  {
-    "number": 14150,
-    "title": "Data product detail: add Data quality tab",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14150",
-    "state": "open",
-    "updated_at": "2026-06-23T19:38:06Z",
+    "updated_at": "2026-06-23T20:12:04Z",
     "merged_at": null
   },
   {
