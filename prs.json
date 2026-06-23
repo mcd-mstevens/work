@@ -1,18 +1,10 @@
 [
   {
-    "number": 14100,
-    "title": "Job detail: strip the side-nav shell and asset-tree wrapper",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14100",
+    "number": 14137,
+    "title": "Job detail: hide asset-tree hamburger button for job pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14137",
     "state": "open",
-    "updated_at": "2026-06-22T16:34:33Z",
-    "merged_at": null
-  },
-  {
-    "number": 14102,
-    "title": "Data quality dashboard: muted table + drop the Monitors card",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14102",
-    "state": "open",
-    "updated_at": "2026-06-22T15:58:19Z",
+    "updated_at": "2026-06-23T12:26:56Z",
     "merged_at": null
   },
   {
@@ -20,23 +12,39 @@
     "title": "Data product detail: muted Monitors table + drop the card",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14103",
     "state": "open",
-    "updated_at": "2026-06-22T15:52:20Z",
+    "updated_at": "2026-06-23T11:50:25Z",
     "merged_at": null
   },
   {
-    "number": 14094,
-    "title": "Coverage dashboard: apply FilterBar pattern",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14094",
-    "state": "open",
-    "updated_at": "2026-06-22T14:30:30Z",
-    "merged_at": null
+    "number": 14100,
+    "title": "Job detail: strip the side-nav shell and asset-tree wrapper",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14100",
+    "state": "closed",
+    "updated_at": "2026-06-23T10:18:13Z",
+    "merged_at": "2026-06-23T10:18:11Z"
   },
   {
     "number": 14099,
     "title": "Alert detail: switch agentic CTAs to the purple-sparkle pattern",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14099",
+    "state": "closed",
+    "updated_at": "2026-06-23T10:13:23Z",
+    "merged_at": "2026-06-23T10:13:22Z"
+  },
+  {
+    "number": 14094,
+    "title": "Coverage dashboard: apply FilterBar pattern",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14094",
+    "state": "closed",
+    "updated_at": "2026-06-23T10:13:06Z",
+    "merged_at": "2026-06-23T10:13:05Z"
+  },
+  {
+    "number": 14102,
+    "title": "Data quality dashboard: muted table + drop the Monitors card",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14102",
     "state": "open",
-    "updated_at": "2026-06-22T14:30:29Z",
+    "updated_at": "2026-06-22T15:58:19Z",
     "merged_at": null
   },
   {
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T17:03:52Z",
     "merged_at": "2026-04-22T17:03:50Z"
-  },
-  {
-    "number": 12989,
-    "title": "Bob findings: hide table and pagination when filters return no results",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12989",
-    "state": "closed",
-    "updated_at": "2026-04-22T16:25:13Z",
-    "merged_at": "2026-04-22T16:25:12Z"
   }
 ]
