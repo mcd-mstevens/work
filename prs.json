@@ -1,5 +1,21 @@
 [
   {
+    "number": 14168,
+    "title": "Table styling: apply muted variant to monitors list",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14168",
+    "state": "open",
+    "updated_at": "2026-06-24T14:31:17Z",
+    "merged_at": null
+  },
+  {
+    "number": 14152,
+    "title": "Data product lineage: disable \"Show jobs\" when no eligible edges",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14152",
+    "state": "open",
+    "updated_at": "2026-06-24T12:43:08Z",
+    "merged_at": null
+  },
+  {
     "number": 14150,
     "title": "Data product detail: add Data quality tab",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14150",
@@ -14,14 +30,6 @@
     "state": "closed",
     "updated_at": "2026-06-23T20:20:18Z",
     "merged_at": "2026-06-23T20:20:17Z"
-  },
-  {
-    "number": 14152,
-    "title": "Data product lineage: disable \"Show jobs\" when no eligible edges",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14152",
-    "state": "open",
-    "updated_at": "2026-06-23T20:12:04Z",
-    "merged_at": null
   },
   {
     "number": 14103,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T19:54:39Z",
     "merged_at": "2026-04-22T19:54:37Z"
-  },
-  {
-    "number": 12998,
-    "title": "Bob triage agent: indent expanded content, rename Rationale, remove Batch Triage",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/12998",
-    "state": "closed",
-    "updated_at": "2026-04-22T19:47:44Z",
-    "merged_at": "2026-04-22T19:47:43Z"
   }
 ]
