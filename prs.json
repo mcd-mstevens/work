@@ -1,19 +1,27 @@
 [
   {
-    "number": 14168,
-    "title": "Table styling: apply muted variant to monitors list",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14168",
-    "state": "open",
-    "updated_at": "2026-06-24T14:31:17Z",
-    "merged_at": null
-  },
-  {
     "number": 14152,
     "title": "Data product lineage: disable \"Show jobs\" when no eligible edges",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14152",
     "state": "open",
-    "updated_at": "2026-06-24T12:43:08Z",
+    "updated_at": "2026-06-24T17:02:48Z",
     "merged_at": null
+  },
+  {
+    "number": 14169,
+    "title": "Add filterable dashboards to domain and data product detail pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14169",
+    "state": "open",
+    "updated_at": "2026-06-24T16:44:42Z",
+    "merged_at": null
+  },
+  {
+    "number": 14168,
+    "title": "Table styling: apply muted variant to monitors list",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14168",
+    "state": "closed",
+    "updated_at": "2026-06-24T14:50:52Z",
+    "merged_at": "2026-06-24T14:50:50Z"
   },
   {
     "number": 14150,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-22T21:41:51Z",
     "merged_at": "2026-04-22T21:41:50Z"
-  },
-  {
-    "number": 13002,
-    "title": "Bob findings: hide table and paging in initial empty state",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13002",
-    "state": "closed",
-    "updated_at": "2026-04-22T19:54:39Z",
-    "merged_at": "2026-04-22T19:54:37Z"
   }
 ]
