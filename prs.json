@@ -1,19 +1,43 @@
 [
   {
+    "number": 14234,
+    "title": "Apply muted table style to Settings/Integrations page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14234",
+    "state": "open",
+    "updated_at": "2026-06-25T21:40:14Z",
+    "merged_at": null
+  },
+  {
+    "number": 14207,
+    "title": "Add MetadataList component and Widget flushContent prop",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14207",
+    "state": "closed",
+    "updated_at": "2026-06-25T21:36:24Z",
+    "merged_at": "2026-06-25T21:36:23Z"
+  },
+  {
+    "number": 14233,
+    "title": "Fix monitor detail Alerts tab layout bugs",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14233",
+    "state": "open",
+    "updated_at": "2026-06-25T21:29:47Z",
+    "merged_at": null
+  },
+  {
+    "number": 14231,
+    "title": "Apply FilterBar pattern to Alerts/Incidents page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14231",
+    "state": "open",
+    "updated_at": "2026-06-25T21:23:50Z",
+    "merged_at": null
+  },
+  {
     "number": 14215,
     "title": "Polish chat input toolbar",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14215",
     "state": "closed",
     "updated_at": "2026-06-25T17:54:59Z",
     "merged_at": "2026-06-25T17:54:58Z"
-  },
-  {
-    "number": 14207,
-    "title": "Add MetadataList component and Widget flushContent prop",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14207",
-    "state": "open",
-    "updated_at": "2026-06-25T17:16:46Z",
-    "merged_at": null
   },
   {
     "number": 14186,
@@ -374,29 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-27T20:39:12Z",
     "merged_at": "2026-04-27T20:39:11Z"
-  },
-  {
-    "number": 13087,
-    "title": "Bob agent detail page polish",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13087",
-    "state": "closed",
-    "updated_at": "2026-04-27T17:29:41Z",
-    "merged_at": "2026-04-27T17:29:39Z"
-  },
-  {
-    "number": 13047,
-    "title": "Bob job pages UI polish",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13047",
-    "state": "closed",
-    "updated_at": "2026-04-24T20:59:45Z",
-    "merged_at": "2026-04-24T20:59:44Z"
-  },
-  {
-    "number": 13045,
-    "title": "Bob table detail page UI improvements",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13045",
-    "state": "closed",
-    "updated_at": "2026-04-24T20:59:45Z",
-    "merged_at": "2026-04-24T20:59:44Z"
   }
 ]
