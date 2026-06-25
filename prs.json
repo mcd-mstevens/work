@@ -1,10 +1,18 @@
 [
   {
+    "number": 14215,
+    "title": "Polish chat input toolbar",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14215",
+    "state": "closed",
+    "updated_at": "2026-06-25T17:54:59Z",
+    "merged_at": "2026-06-25T17:54:58Z"
+  },
+  {
     "number": 14207,
     "title": "Add MetadataList component and Widget flushContent prop",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14207",
     "state": "open",
-    "updated_at": "2026-06-25T15:46:31Z",
+    "updated_at": "2026-06-25T17:16:46Z",
     "merged_at": null
   },
   {
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-04-24T20:59:45Z",
     "merged_at": "2026-04-24T20:59:44Z"
-  },
-  {
-    "number": 13063,
-    "title": "Agentic-platform agent pages UI polish",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13063",
-    "state": "closed",
-    "updated_at": "2026-04-24T20:34:44Z",
-    "merged_at": "2026-04-24T20:34:43Z"
   }
 ]
