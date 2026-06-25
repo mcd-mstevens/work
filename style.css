@@ -107,9 +107,18 @@ body {
 .pr-date { color: #676F7E; flex-shrink: 0; width: 52px; }
 .pr-loading { color: #676F7E; padding: 12px 18px; }
 
-.pr-view-all-row { justify-content: flex-end; }
-.pr-view-all { color: #676F7E; font-size: 13px; text-decoration: none; }
-.pr-view-all:hover { color: #21242C; }
+.pr-view-all-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #21242C;
+  background: #F2F2F2;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.pr-view-all-btn:hover { background: #E8E8E8; }
 
 .pnum { color: #676F7E; margin-bottom: 4px; }
 

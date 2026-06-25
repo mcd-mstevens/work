@@ -64,6 +64,7 @@
     <div class="group">
       <div id="pr-list"><span class="pr-loading">Loading&hellip;</span></div>
     </div>
+    <a id="pr-view-all" href="https://github.com/pulls/authored" class="pr-view-all-btn" target="_blank" rel="noopener" style="display:none">View all</a>
   </div>
 
 </div>
@@ -85,7 +86,8 @@
         <a href="${pr.html_url}" class="pr-title" target="_blank" rel="noopener">${pr.title}</a>
         <span class="pr-state pr-${state}">${label}</span>
       </div>`;
-    }).join('') + `<div class="pr-row pr-view-all-row"><a href="https://github.com/pulls/authored" class="pr-view-all" target="_blank" rel="noopener">View all</a></div>`;
+    }).join('');
+    document.getElementById('pr-view-all').style.display = 'inline-block';
   } catch (e) {
     el.innerHTML = '<span class="pr-loading">Failed to load PRs.</span>';
   }
