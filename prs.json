@@ -1,10 +1,18 @@
 [
   {
+    "number": 14231,
+    "title": "Apply FilterBar pattern to Alerts/Incidents page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14231",
+    "state": "open",
+    "updated_at": "2026-06-25T21:52:17Z",
+    "merged_at": null
+  },
+  {
     "number": 14234,
     "title": "Apply muted table style to Settings/Integrations page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14234",
     "state": "open",
-    "updated_at": "2026-06-25T21:40:14Z",
+    "updated_at": "2026-06-25T21:47:34Z",
     "merged_at": null
   },
   {
@@ -21,14 +29,6 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14233",
     "state": "open",
     "updated_at": "2026-06-25T21:29:47Z",
-    "merged_at": null
-  },
-  {
-    "number": 14231,
-    "title": "Apply FilterBar pattern to Alerts/Incidents page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14231",
-    "state": "open",
-    "updated_at": "2026-06-25T21:23:50Z",
     "merged_at": null
   },
   {
