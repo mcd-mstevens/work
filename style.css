@@ -107,6 +107,10 @@ body {
 .pr-date { color: #676F7E; flex-shrink: 0; width: 52px; }
 .pr-loading { color: #676F7E; padding: 12px 18px; }
 
+.pr-view-all-row { justify-content: flex-end; }
+.pr-view-all { color: #676F7E; font-size: 13px; text-decoration: none; }
+.pr-view-all:hover { color: #21242C; }
+
 .pnum { color: #676F7E; margin-bottom: 4px; }
 
 .title { font-size: 20px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }

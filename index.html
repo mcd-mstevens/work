@@ -73,7 +73,8 @@
   const el = document.getElementById('pr-list');
   try {
     const res = await fetch('prs.json', { cache: 'no-store' });
-    const items = (await res.json()).filter(pr => pr.merged_at || pr.state === 'open');
+    const all = (await res.json()).filter(pr => pr.merged_at || pr.state === 'open');
+    const items = all.slice(0, 20);
     if (!items?.length) { el.innerHTML = '<span class="pr-loading">No PRs yet.</span>'; return; }
     el.innerHTML = items.map(pr => {
       const state = pr.merged_at ? 'merged' : pr.state;
@@ -84,7 +85,7 @@
         <a href="${pr.html_url}" class="pr-title" target="_blank" rel="noopener">${pr.title}</a>
         <span class="pr-state pr-${state}">${label}</span>
       </div>`;
-    }).join('');
+    }).join('') + `<div class="pr-row pr-view-all-row"><a href="https://github.com/pulls/authored" class="pr-view-all" target="_blank" rel="noopener">View all</a></div>`;
   } catch (e) {
     el.innerHTML = '<span class="pr-loading">Failed to load PRs.</span>';
   }
