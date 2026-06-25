@@ -1,11 +1,19 @@
 [
   {
+    "number": 14207,
+    "title": "Add MetadataList component and Widget flushContent prop",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14207",
+    "state": "open",
+    "updated_at": "2026-06-25T15:46:31Z",
+    "merged_at": null
+  },
+  {
     "number": 14186,
     "title": "Add optional count display to FilterBar options",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14186",
-    "state": "open",
-    "updated_at": "2026-06-25T12:44:09Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-25T14:47:21Z",
+    "merged_at": "2026-06-25T14:47:19Z"
   },
   {
     "number": 14182,
@@ -387,14 +395,6 @@
     "number": 13063,
     "title": "Agentic-platform agent pages UI polish",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/13063",
-    "state": "closed",
-    "updated_at": "2026-04-24T20:34:44Z",
-    "merged_at": "2026-04-24T20:34:43Z"
-  },
-  {
-    "number": 13051,
-    "title": "Convert Bob tables tree drawer from fixed overlay to flex panel",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13051",
     "state": "closed",
     "updated_at": "2026-04-24T20:34:44Z",
     "merged_at": "2026-04-24T20:34:43Z"
