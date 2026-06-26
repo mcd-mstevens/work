@@ -1,19 +1,19 @@
 [
   {
-    "number": 14240,
-    "title": "Migrate settings detail views to MetadataList (DES-557 1 of 3)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14240",
-    "state": "open",
-    "updated_at": "2026-06-26T20:35:56Z",
-    "merged_at": null
-  },
-  {
     "number": 14265,
     "title": "Improve context mention dropdown UI",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14265",
-    "state": "open",
-    "updated_at": "2026-06-26T20:31:45Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-06-26T21:43:35Z",
+    "merged_at": "2026-06-26T21:43:33Z"
+  },
+  {
+    "number": 14240,
+    "title": "Migrate settings detail views to MetadataList (DES-557 1 of 3)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14240",
+    "state": "closed",
+    "updated_at": "2026-06-26T21:37:29Z",
+    "merged_at": "2026-06-26T21:37:27Z"
   },
   {
     "number": 14243,
