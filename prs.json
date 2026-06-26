@@ -1,5 +1,21 @@
 [
   {
+    "number": 14240,
+    "title": "Migrate settings detail views to MetadataList (DES-557 1 of 3)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14240",
+    "state": "open",
+    "updated_at": "2026-06-26T20:35:56Z",
+    "merged_at": null
+  },
+  {
+    "number": 14265,
+    "title": "Improve context mention dropdown UI",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14265",
+    "state": "open",
+    "updated_at": "2026-06-26T20:31:45Z",
+    "merged_at": null
+  },
+  {
     "number": 14243,
     "title": "Fix Airflow icon shown for all job types in CMD+K search",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14243",
@@ -37,14 +53,6 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14241",
     "state": "closed",
     "updated_at": "2026-06-26T13:09:13Z",
-    "merged_at": null
-  },
-  {
-    "number": 14240,
-    "title": "Migrate settings detail views to MetadataList (DES-557 1 of 3)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14240",
-    "state": "open",
-    "updated_at": "2026-06-26T12:53:29Z",
     "merged_at": null
   },
   {
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-05-07T10:44:55Z",
     "merged_at": "2026-05-07T10:44:54Z"
-  },
-  {
-    "number": 13222,
-    "title": "Standardize empty states across the app",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13222",
-    "state": "closed",
-    "updated_at": "2026-05-06T10:18:40Z",
-    "merged_at": "2026-05-06T10:18:39Z"
   }
 ]
