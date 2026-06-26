@@ -1,11 +1,35 @@
 [
   {
+    "number": 14243,
+    "title": "Fix Airflow icon shown for all job types in CMD+K search",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14243",
+    "state": "open",
+    "updated_at": "2026-06-26T16:09:05Z",
+    "merged_at": null
+  },
+  {
     "number": 14244,
     "title": "Improve AI chat context dropdown UX",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14244",
+    "state": "closed",
+    "updated_at": "2026-06-26T16:04:03Z",
+    "merged_at": "2026-06-26T16:04:01Z"
+  },
+  {
+    "number": 14170,
+    "title": "Home page (/) entry point — Ask Monte Carlo AI landing",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14170",
     "state": "open",
-    "updated_at": "2026-06-26T13:11:11Z",
+    "updated_at": "2026-06-26T15:42:59Z",
     "merged_at": null
+  },
+  {
+    "number": 14231,
+    "title": "Apply FilterBar pattern to Alerts/Incidents page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14231",
+    "state": "closed",
+    "updated_at": "2026-06-26T15:17:16Z",
+    "merged_at": "2026-06-26T15:17:15Z"
   },
   {
     "number": 14241,
@@ -13,22 +37,6 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14241",
     "state": "closed",
     "updated_at": "2026-06-26T13:09:13Z",
-    "merged_at": null
-  },
-  {
-    "number": 14243,
-    "title": "Fix Airflow icon shown for all job types in CMD+K search",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14243",
-    "state": "open",
-    "updated_at": "2026-06-26T13:02:40Z",
-    "merged_at": null
-  },
-  {
-    "number": 14231,
-    "title": "Apply FilterBar pattern to Alerts/Incidents page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14231",
-    "state": "open",
-    "updated_at": "2026-06-26T12:59:13Z",
     "merged_at": null
   },
   {
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-05-06T10:18:40Z",
     "merged_at": "2026-05-06T10:18:39Z"
-  },
-  {
-    "number": 13258,
-    "title": "Fix copy linter false positives on multi-sentence strings",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13258",
-    "state": "closed",
-    "updated_at": "2026-05-05T16:55:45Z",
-    "merged_at": "2026-05-05T16:55:44Z"
   }
 ]
