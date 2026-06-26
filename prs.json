@@ -1,10 +1,42 @@
 [
   {
+    "number": 14244,
+    "title": "Improve AI chat context dropdown UX",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14244",
+    "state": "open",
+    "updated_at": "2026-06-26T13:11:11Z",
+    "merged_at": null
+  },
+  {
+    "number": 14241,
+    "title": "Improve AI chat context dropdown UX",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14241",
+    "state": "closed",
+    "updated_at": "2026-06-26T13:09:13Z",
+    "merged_at": null
+  },
+  {
+    "number": 14243,
+    "title": "Fix Airflow icon shown for all job types in CMD+K search",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14243",
+    "state": "open",
+    "updated_at": "2026-06-26T13:02:40Z",
+    "merged_at": null
+  },
+  {
+    "number": 14231,
+    "title": "Apply FilterBar pattern to Alerts/Incidents page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14231",
+    "state": "open",
+    "updated_at": "2026-06-26T12:59:13Z",
+    "merged_at": null
+  },
+  {
     "number": 14240,
     "title": "Migrate settings detail views to MetadataList (DES-557 1 of 3)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14240",
     "state": "open",
-    "updated_at": "2026-06-26T10:51:49Z",
+    "updated_at": "2026-06-26T12:53:29Z",
     "merged_at": null
   },
   {
@@ -22,14 +54,6 @@
     "state": "closed",
     "updated_at": "2026-06-26T00:35:30Z",
     "merged_at": "2026-06-26T00:35:29Z"
-  },
-  {
-    "number": 14231,
-    "title": "Apply FilterBar pattern to Alerts/Incidents page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14231",
-    "state": "open",
-    "updated_at": "2026-06-26T00:28:23Z",
-    "merged_at": null
   },
   {
     "number": 14207,
@@ -374,29 +398,5 @@
     "state": "closed",
     "updated_at": "2026-05-05T16:55:45Z",
     "merged_at": "2026-05-05T16:55:44Z"
-  },
-  {
-    "number": 13078,
-    "title": "Add json-schema-to-typescript to apps/observe devDependencies",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13078",
-    "state": "closed",
-    "updated_at": "2026-05-04T20:20:06Z",
-    "merged_at": "2026-05-04T20:20:04Z"
-  },
-  {
-    "number": 13214,
-    "title": "Persistent search results panel in domain add flow",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13214",
-    "state": "closed",
-    "updated_at": "2026-05-01T22:52:47Z",
-    "merged_at": "2026-05-01T22:52:46Z"
-  },
-  {
-    "number": 13070,
-    "title": "Re-enable dashboard filters for Data Quality and Coverage",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13070",
-    "state": "closed",
-    "updated_at": "2026-05-01T16:55:06Z",
-    "merged_at": null
   }
 ]
