@@ -1,5 +1,13 @@
 [
   {
+    "number": 14240,
+    "title": "Migrate settings detail views to MetadataList (DES-557 1 of 3)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14240",
+    "state": "open",
+    "updated_at": "2026-06-26T10:51:49Z",
+    "merged_at": null
+  },
+  {
     "number": 14234,
     "title": "Apply muted table style to Settings/Integrations page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14234",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-05-01T16:55:06Z",
     "merged_at": null
-  },
-  {
-    "number": 13085,
-    "title": "Bob job detail page UI polish",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13085",
-    "state": "closed",
-    "updated_at": "2026-04-27T20:39:12Z",
-    "merged_at": "2026-04-27T20:39:11Z"
   }
 ]
