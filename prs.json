@@ -1,5 +1,13 @@
 [
   {
+    "number": 14276,
+    "title": "Agentic operations cleanup: tabs, landing page noise, About page, copy fixes",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14276",
+    "state": "open",
+    "updated_at": "2026-06-27T12:31:00Z",
+    "merged_at": null
+  },
+  {
     "number": 14265,
     "title": "Improve context mention dropdown UI",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14265",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-05-13T14:10:37Z",
     "merged_at": null
-  },
-  {
-    "number": 13210,
-    "title": "Add data product filter to DQ dashboard and alerts",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13210",
-    "state": "closed",
-    "updated_at": "2026-05-07T10:44:55Z",
-    "merged_at": "2026-05-07T10:44:54Z"
   }
 ]
