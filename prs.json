@@ -1,19 +1,19 @@
 [
   {
-    "number": 14320,
-    "title": "Queries tab UI refresh: FilterBar, muted tables, layout fixes",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14320",
-    "state": "open",
-    "updated_at": "2026-06-30T21:40:58Z",
-    "merged_at": null
-  },
-  {
     "number": 14170,
     "title": "Home page (/) entry point — Ask Monte Carlo AI landing",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14170",
     "state": "open",
-    "updated_at": "2026-06-30T20:35:25Z",
+    "updated_at": "2026-06-30T23:06:42Z",
     "merged_at": null
+  },
+  {
+    "number": 14320,
+    "title": "Queries tab UI refresh: FilterBar, muted tables, layout fixes",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14320",
+    "state": "closed",
+    "updated_at": "2026-06-30T21:50:36Z",
+    "merged_at": "2026-06-30T21:50:34Z"
   },
   {
     "number": 14276,
