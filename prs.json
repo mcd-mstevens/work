@@ -1,11 +1,19 @@
 [
   {
+    "number": 14337,
+    "title": "Queries tab UI polish: hover, column reorder, date picker, status badge",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14337",
+    "state": "open",
+    "updated_at": "2026-07-01T10:59:45Z",
+    "merged_at": null
+  },
+  {
     "number": 14333,
     "title": "Downstream reports tab: FilterBar, muted table, no card, Export CSV button",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14333",
-    "state": "open",
-    "updated_at": "2026-07-01T01:42:45Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-01T10:31:23Z",
+    "merged_at": "2026-07-01T10:31:22Z"
   },
   {
     "number": 14334,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-02T09:31:37Z",
     "merged_at": null
-  },
-  {
-    "number": 13747,
-    "title": "Alert detail: drop Git nudge, move SLO status to bottom",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13747",
-    "state": "closed",
-    "updated_at": "2026-05-31T12:00:41Z",
-    "merged_at": "2026-05-31T12:00:39Z"
   }
 ]
