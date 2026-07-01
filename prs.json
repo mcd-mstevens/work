@@ -1,11 +1,27 @@
 [
   {
+    "number": 14333,
+    "title": "Downstream reports tab: FilterBar, muted table, no card, Export CSV button",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14333",
+    "state": "open",
+    "updated_at": "2026-07-01T01:42:45Z",
+    "merged_at": null
+  },
+  {
+    "number": 14334,
+    "title": "Replace gold with teal for troubleshooting agent in billing chart",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14334",
+    "state": "open",
+    "updated_at": "2026-07-01T01:30:09Z",
+    "merged_at": null
+  },
+  {
     "number": 14170,
     "title": "Home page (/) entry point — Ask Monte Carlo AI landing",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14170",
-    "state": "open",
-    "updated_at": "2026-06-30T23:06:42Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-01T00:39:34Z",
+    "merged_at": "2026-07-01T00:39:32Z"
   },
   {
     "number": 14320,
@@ -382,21 +398,5 @@
     "state": "closed",
     "updated_at": "2026-05-31T12:00:41Z",
     "merged_at": "2026-05-31T12:00:39Z"
-  },
-  {
-    "number": 13521,
-    "title": "fix: restore user menu hover in dark mode",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13521",
-    "state": "closed",
-    "updated_at": "2026-05-15T16:17:44Z",
-    "merged_at": "2026-05-15T16:17:42Z"
-  },
-  {
-    "number": 13442,
-    "title": "Jobs Performance: search input above charts (replaces Job name facet)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13442",
-    "state": "closed",
-    "updated_at": "2026-05-14T18:07:46Z",
-    "merged_at": "2026-05-14T18:07:44Z"
   }
 ]
