@@ -1,5 +1,37 @@
 [
   {
+    "number": 14352,
+    "title": "Home page: quick-access cards and prompt chips",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14352",
+    "state": "open",
+    "updated_at": "2026-07-01T19:59:03Z",
+    "merged_at": null
+  },
+  {
+    "number": 14354,
+    "title": "Home chats: sync active conversation to URL",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14354",
+    "state": "open",
+    "updated_at": "2026-07-01T19:56:46Z",
+    "merged_at": null
+  },
+  {
+    "number": 14334,
+    "title": "Replace gold with teal for troubleshooting agent in billing chart",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14334",
+    "state": "closed",
+    "updated_at": "2026-07-01T19:55:47Z",
+    "merged_at": "2026-07-01T19:55:46Z"
+  },
+  {
+    "number": 14353,
+    "title": "Write Queries table: sparkle agent button for execution history insights",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14353",
+    "state": "open",
+    "updated_at": "2026-07-01T19:52:35Z",
+    "merged_at": null
+  },
+  {
     "number": 14337,
     "title": "Queries tab UI polish: hover, column reorder, date picker, status badge",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14337",
@@ -14,14 +46,6 @@
     "state": "closed",
     "updated_at": "2026-07-01T10:31:23Z",
     "merged_at": "2026-07-01T10:31:22Z"
-  },
-  {
-    "number": 14334,
-    "title": "Replace gold with teal for troubleshooting agent in billing chart",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14334",
-    "state": "open",
-    "updated_at": "2026-07-01T01:30:09Z",
-    "merged_at": null
   },
   {
     "number": 14170,
@@ -374,29 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-05T23:52:56Z",
     "merged_at": "2026-06-05T23:52:55Z"
-  },
-  {
-    "number": 13835,
-    "title": "Alerts page: Alerts/Incidents segment + table & toolbar cleanup",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13835",
-    "state": "closed",
-    "updated_at": "2026-06-05T22:14:20Z",
-    "merged_at": "2026-06-05T22:14:19Z"
-  },
-  {
-    "number": 13751,
-    "title": "Smooth row-hover transition on tableWrapper tables",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13751",
-    "state": "closed",
-    "updated_at": "2026-06-02T09:31:39Z",
-    "merged_at": null
-  },
-  {
-    "number": 13740,
-    "title": "Lists / table cleanup",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13740",
-    "state": "closed",
-    "updated_at": "2026-06-02T09:31:37Z",
-    "merged_at": null
   }
 ]
