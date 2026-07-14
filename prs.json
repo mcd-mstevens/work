@@ -1,5 +1,21 @@
 [
   {
+    "number": 14523,
+    "title": "Add \"Create monitor\" action to agent health report issues",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14523",
+    "state": "open",
+    "updated_at": "2026-07-14T16:50:56Z",
+    "merged_at": null
+  },
+  {
+    "number": 14519,
+    "title": "Remove billing moved hint from settings directory",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14519",
+    "state": "closed",
+    "updated_at": "2026-07-14T15:52:20Z",
+    "merged_at": "2026-07-14T15:52:18Z"
+  },
+  {
     "number": 14354,
     "title": "Home chats: sync active conversation to URL",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14354",
@@ -382,21 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-09T14:48:19Z",
     "merged_at": "2026-06-09T14:48:17Z"
-  },
-  {
-    "number": 13851,
-    "title": "Performance/Jobs: chip-bar filter toolbar + Domains-style table",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13851",
-    "state": "closed",
-    "updated_at": "2026-06-08T19:48:03Z",
-    "merged_at": null
-  },
-  {
-    "number": 13850,
-    "title": "Fix Severity chip: stop flipping view to Alerts and stop showing \"None selected\" with everything checked",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13850",
-    "state": "closed",
-    "updated_at": "2026-06-05T23:52:56Z",
-    "merged_at": "2026-06-05T23:52:55Z"
   }
 ]
