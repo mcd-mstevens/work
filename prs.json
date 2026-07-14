@@ -1,10 +1,18 @@
 [
   {
+    "number": 14540,
+    "title": "Add \"Add monitor\" action to agent health report issues",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14540",
+    "state": "open",
+    "updated_at": "2026-07-14T20:48:06Z",
+    "merged_at": null
+  },
+  {
     "number": 14523,
     "title": "Add \"Create monitor\" action to agent health report issues",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14523",
-    "state": "open",
-    "updated_at": "2026-07-14T16:50:56Z",
+    "state": "closed",
+    "updated_at": "2026-07-14T20:43:38Z",
     "merged_at": null
   },
   {
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-10T11:00:49Z",
     "merged_at": "2026-06-10T11:00:47Z"
-  },
-  {
-    "number": 13876,
-    "title": "Alerts toolbar: stop date picker wrapping to two lines",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13876",
-    "state": "closed",
-    "updated_at": "2026-06-09T14:48:19Z",
-    "merged_at": "2026-06-09T14:48:17Z"
   }
 ]
