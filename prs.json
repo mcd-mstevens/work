@@ -1,5 +1,13 @@
 [
   {
+    "number": 14556,
+    "title": "Rename the agent \"Health\" tab to \"Reinforcement loop\"",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14556",
+    "state": "open",
+    "updated_at": "2026-07-15T16:20:38Z",
+    "merged_at": null
+  },
+  {
     "number": 14540,
     "title": "Add \"Add monitor\" action to agent health report issues",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14540",
@@ -70,14 +78,6 @@
     "state": "closed",
     "updated_at": "2026-07-01T10:31:23Z",
     "merged_at": "2026-07-01T10:31:22Z"
-  },
-  {
-    "number": 14170,
-    "title": "Home page (/) entry point — Ask Monte Carlo AI landing",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14170",
-    "state": "closed",
-    "updated_at": "2026-07-01T00:39:34Z",
-    "merged_at": "2026-07-01T00:39:32Z"
   },
   {
     "number": 14320,
