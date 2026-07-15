@@ -1,5 +1,13 @@
 [
   {
+    "number": 14576,
+    "title": "Fix tags filter resetting on first search",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14576",
+    "state": "open",
+    "updated_at": "2026-07-15T19:52:11Z",
+    "merged_at": null
+  },
+  {
     "number": 14540,
     "title": "Add \"Add monitor\" action to agent health report issues",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14540",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-12T17:25:04Z",
     "merged_at": "2026-06-12T17:25:03Z"
-  },
-  {
-    "number": 13895,
-    "title": "Table Health: port filters to AgentFilterBar",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13895",
-    "state": "closed",
-    "updated_at": "2026-06-10T11:00:49Z",
-    "merged_at": "2026-06-10T11:00:47Z"
   }
 ]
