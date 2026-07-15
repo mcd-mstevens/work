@@ -1,5 +1,13 @@
 [
   {
+    "number": 14586,
+    "title": "ORB-366: Reinforcement loop tab redesign — cross-workflow issues table + issue detail",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14586",
+    "state": "open",
+    "updated_at": "2026-07-15T22:09:48Z",
+    "merged_at": null
+  },
+  {
     "number": 14576,
     "title": "Fix tags filter resetting on first search",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14576",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-12T17:41:00Z",
     "merged_at": "2026-06-12T17:40:58Z"
-  },
-  {
-    "number": 13959,
-    "title": "FilterBar: optional server-side search on multi filters",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13959",
-    "state": "closed",
-    "updated_at": "2026-06-12T17:25:04Z",
-    "merged_at": "2026-06-12T17:25:03Z"
   }
 ]
