@@ -1,19 +1,19 @@
 [
   {
-    "number": 14556,
-    "title": "Rename the agent \"Health\" tab to \"Reinforcement loop\"",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14556",
-    "state": "open",
-    "updated_at": "2026-07-15T16:20:38Z",
-    "merged_at": null
-  },
-  {
     "number": 14540,
     "title": "Add \"Add monitor\" action to agent health report issues",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14540",
-    "state": "open",
-    "updated_at": "2026-07-15T13:45:37Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-15T17:16:58Z",
+    "merged_at": "2026-07-15T17:16:57Z"
+  },
+  {
+    "number": 14556,
+    "title": "Rename the agent \"Health\" tab to \"Reinforcement loop\"",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14556",
+    "state": "closed",
+    "updated_at": "2026-07-15T16:46:54Z",
+    "merged_at": "2026-07-15T16:46:53Z"
   },
   {
     "number": 14523,
