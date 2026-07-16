@@ -1,5 +1,13 @@
 [
   {
+    "number": 14614,
+    "title": "Add Monitors tab to domain detail page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14614",
+    "state": "open",
+    "updated_at": "2026-07-16T20:53:03Z",
+    "merged_at": null
+  },
+  {
     "number": 14586,
     "title": "ORB-366: Reinforcement loop tab redesign — cross-workflow issues table + issue detail",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14586",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-12T23:32:19Z",
     "merged_at": "2026-06-12T23:32:18Z"
-  },
-  {
-    "number": 13941,
-    "title": "Remove Explain alert button from alert detail page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13941",
-    "state": "closed",
-    "updated_at": "2026-06-12T17:41:00Z",
-    "merged_at": "2026-06-12T17:40:58Z"
   }
 ]
