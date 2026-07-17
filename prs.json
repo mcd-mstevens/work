@@ -1,5 +1,13 @@
 [
   {
+    "number": 14672,
+    "title": "Refine reinforcement-loop tab tables, sorting, and filters",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14672",
+    "state": "open",
+    "updated_at": "2026-07-17T19:08:47Z",
+    "merged_at": null
+  },
+  {
     "number": 14614,
     "title": "Add Monitors tab to domain detail page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14614",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-13T21:30:58Z",
     "merged_at": "2026-06-13T21:30:57Z"
-  },
-  {
-    "number": 13967,
-    "title": "Performance/Jobs: port filters to FilterBar",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13967",
-    "state": "closed",
-    "updated_at": "2026-06-12T23:32:19Z",
-    "merged_at": "2026-06-12T23:32:18Z"
   }
 ]
