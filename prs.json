@@ -1,5 +1,13 @@
 [
   {
+    "number": 14682,
+    "title": "Remove confidence column from agent-health issues list",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14682",
+    "state": "open",
+    "updated_at": "2026-07-17T22:09:48Z",
+    "merged_at": null
+  },
+  {
     "number": 14672,
     "title": "Refine reinforcement-loop tab tables, sorting, and filters",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14672",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-16T16:41:34Z",
     "merged_at": "2026-06-16T16:41:33Z"
-  },
-  {
-    "number": 13978,
-    "title": "Performance/Jobs: apply muted table style",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13978",
-    "state": "closed",
-    "updated_at": "2026-06-13T21:30:58Z",
-    "merged_at": "2026-06-13T21:30:57Z"
   }
 ]
