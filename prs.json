@@ -1,5 +1,13 @@
 [
   {
+    "number": 14687,
+    "title": "Reinforcement loop: priority column + filter, table layout, and standalone issue page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14687",
+    "state": "open",
+    "updated_at": "2026-07-19T15:47:38Z",
+    "merged_at": null
+  },
+  {
     "number": 14686,
     "title": "Add data product About tab and move monitoring agent button to header",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14686",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-16T18:50:37Z",
     "merged_at": "2026-06-16T18:50:36Z"
-  },
-  {
-    "number": 13979,
-    "title": "Read queries: replace sidebar with horizontal FilterBar (DES-547)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13979",
-    "state": "closed",
-    "updated_at": "2026-06-16T17:21:47Z",
-    "merged_at": "2026-06-16T17:21:46Z"
   }
 ]
