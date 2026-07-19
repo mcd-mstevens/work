@@ -1,5 +1,13 @@
 [
   {
+    "number": 14686,
+    "title": "Add data product About tab and move monitoring agent button to header",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14686",
+    "state": "open",
+    "updated_at": "2026-07-19T13:38:27Z",
+    "merged_at": null
+  },
+  {
     "number": 14682,
     "title": "Remove confidence column from agent-health issues list",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14682",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-16T17:21:47Z",
     "merged_at": "2026-06-16T17:21:46Z"
-  },
-  {
-    "number": 13982,
-    "title": "Write queries: replace sidebar filters with FilterBar (DES-552)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/13982",
-    "state": "closed",
-    "updated_at": "2026-06-16T16:41:34Z",
-    "merged_at": "2026-06-16T16:41:33Z"
   }
 ]
