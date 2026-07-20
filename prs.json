@@ -1,19 +1,19 @@
 [
   {
+    "number": 14686,
+    "title": "Add data product About tab and move monitoring agent button to header",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14686",
+    "state": "closed",
+    "updated_at": "2026-07-20T17:47:35Z",
+    "merged_at": "2026-07-20T17:47:34Z"
+  },
+  {
     "number": 14687,
     "title": "Reinforcement loop: priority column + filter, table layout, and standalone issue page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14687",
     "state": "closed",
     "updated_at": "2026-07-20T11:10:52Z",
     "merged_at": "2026-07-20T11:10:50Z"
-  },
-  {
-    "number": 14686,
-    "title": "Add data product About tab and move monitoring agent button to header",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14686",
-    "state": "open",
-    "updated_at": "2026-07-19T13:53:56Z",
-    "merged_at": null
   },
   {
     "number": 14682,
