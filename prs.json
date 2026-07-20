@@ -3,9 +3,9 @@
     "number": 14687,
     "title": "Reinforcement loop: priority column + filter, table layout, and standalone issue page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14687",
-    "state": "open",
-    "updated_at": "2026-07-20T01:21:10Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-20T11:10:52Z",
+    "merged_at": "2026-07-20T11:10:50Z"
   },
   {
     "number": 14686,
