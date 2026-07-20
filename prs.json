@@ -1,5 +1,13 @@
 [
   {
+    "number": 14713,
+    "title": "Adopt MetadataList on table About tab, integration details, and deployment details",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14713",
+    "state": "open",
+    "updated_at": "2026-07-20T19:15:58Z",
+    "merged_at": null
+  },
+  {
     "number": 14686,
     "title": "Add data product About tab and move monitoring agent button to header",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14686",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-16T21:02:12Z",
     "merged_at": "2026-06-16T21:02:11Z"
-  },
-  {
-    "number": 14027,
-    "title": "Write queries: apply muted table style, move table out of card (DES-534)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14027",
-    "state": "closed",
-    "updated_at": "2026-06-16T18:50:37Z",
-    "merged_at": "2026-06-16T18:50:36Z"
   }
 ]
