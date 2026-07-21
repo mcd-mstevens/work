@@ -1,5 +1,13 @@
 [
   {
+    "number": 14746,
+    "title": "Surface Add monitor as a proper take-action row on agent health issues",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14746",
+    "state": "open",
+    "updated_at": "2026-07-21T20:46:06Z",
+    "merged_at": null
+  },
+  {
     "number": 14739,
     "title": "Remove the agent-health-create-monitor flag gate",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14739",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-18T18:52:12Z",
     "merged_at": "2026-06-18T18:52:11Z"
-  },
-  {
-    "number": 14051,
-    "title": "Fix data products table: Name column wrapping and double bottom border",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14051",
-    "state": "closed",
-    "updated_at": "2026-06-17T15:43:23Z",
-    "merged_at": "2026-06-17T15:43:21Z"
   }
 ]
