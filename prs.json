@@ -1,5 +1,13 @@
 [
   {
+    "number": 14734,
+    "title": "Adopt MetadataList on monitor detail Details tab and Account information",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14734",
+    "state": "open",
+    "updated_at": "2026-07-21T12:51:20Z",
+    "merged_at": null
+  },
+  {
     "number": 14713,
     "title": "Adopt MetadataList on table About tab, integration details, and deployment details",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14713",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-16T21:28:05Z",
     "merged_at": "2026-06-16T21:28:04Z"
-  },
-  {
-    "number": 14029,
-    "title": "Read queries: apply muted table style, move table out of card (DES-533)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14029",
-    "state": "closed",
-    "updated_at": "2026-06-16T21:02:12Z",
-    "merged_at": "2026-06-16T21:02:11Z"
   }
 ]
