@@ -1,11 +1,19 @@
 [
   {
+    "number": 14739,
+    "title": "Remove the agent-health-create-monitor flag gate",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14739",
+    "state": "closed",
+    "updated_at": "2026-07-21T18:05:38Z",
+    "merged_at": "2026-07-21T18:05:36Z"
+  },
+  {
     "number": 14734,
     "title": "Adopt MetadataList on monitor detail Details tab and Account information",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14734",
-    "state": "open",
-    "updated_at": "2026-07-21T16:22:54Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-21T17:38:43Z",
+    "merged_at": "2026-07-21T17:38:41Z"
   },
   {
     "number": 14713,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-17T15:43:23Z",
     "merged_at": "2026-06-17T15:43:21Z"
-  },
-  {
-    "number": 14013,
-    "title": "Migrate Findings filter bar to shared FilterBar component (DES-546)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14013",
-    "state": "closed",
-    "updated_at": "2026-06-16T21:28:05Z",
-    "merged_at": "2026-06-16T21:28:04Z"
   }
 ]
