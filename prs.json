@@ -1,10 +1,18 @@
 [
   {
     "number": 14746,
-    "title": "Surface Add monitor as a proper take-action row on agent health issues",
+    "title": "Agent health issue detail: Add monitor take-action row + Evidence sample-span column",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14746",
     "state": "open",
-    "updated_at": "2026-07-21T20:46:06Z",
+    "updated_at": "2026-07-21T22:52:55Z",
+    "merged_at": null
+  },
+  {
+    "number": 14748,
+    "title": "Promote sample spans to an Evidence table column",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14748",
+    "state": "closed",
+    "updated_at": "2026-07-21T21:31:09Z",
     "merged_at": null
   },
   {
@@ -389,14 +397,6 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14080",
     "state": "closed",
     "updated_at": "2026-06-18T18:52:13Z",
-    "merged_at": "2026-06-18T18:52:11Z"
-  },
-  {
-    "number": 14078,
-    "title": "Table Health: apply muted table style and drop the surrounding card",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14078",
-    "state": "closed",
-    "updated_at": "2026-06-18T18:52:12Z",
     "merged_at": "2026-06-18T18:52:11Z"
   }
 ]
