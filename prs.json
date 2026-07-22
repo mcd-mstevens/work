@@ -3,9 +3,9 @@
     "number": 14770,
     "title": "Flatten agent-health take-action rows to a uniform footer style",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14770",
-    "state": "open",
-    "updated_at": "2026-07-22T16:59:40Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-22T17:54:49Z",
+    "merged_at": "2026-07-22T17:54:48Z"
   },
   {
     "number": 14756,
