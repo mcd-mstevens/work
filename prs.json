@@ -1,5 +1,13 @@
 [
   {
+    "number": 14770,
+    "title": "Flatten agent-health take-action rows to a uniform footer style",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14770",
+    "state": "open",
+    "updated_at": "2026-07-22T16:59:40Z",
+    "merged_at": null
+  },
+  {
     "number": 14756,
     "title": "Remove noisy promotional banners and shorten Jobs-moved callout run",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14756",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-23T10:13:06Z",
     "merged_at": "2026-06-23T10:13:05Z"
-  },
-  {
-    "number": 14057,
-    "title": "Filter pattern: Data quality dashboard",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14057",
-    "state": "closed",
-    "updated_at": "2026-06-19T17:28:47Z",
-    "merged_at": "2026-06-19T17:28:45Z"
   }
 ]
