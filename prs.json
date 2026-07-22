@@ -3,9 +3,9 @@
     "number": 14746,
     "title": "Agent health issue detail: Add monitor take-action row + Evidence sample-span column",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14746",
-    "state": "open",
-    "updated_at": "2026-07-21T23:37:37Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-22T00:35:09Z",
+    "merged_at": "2026-07-22T00:35:08Z"
   },
   {
     "number": 14748,
