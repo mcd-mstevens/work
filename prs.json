@@ -3,9 +3,9 @@
     "number": 14788,
     "title": "Remove the per-card Fix with AI icon from reinforcement loop issue cards",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14788",
-    "state": "open",
-    "updated_at": "2026-07-22T21:04:57Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-22T21:14:29Z",
+    "merged_at": "2026-07-22T21:14:27Z"
   },
   {
     "number": 14770,
