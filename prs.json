@@ -1,5 +1,13 @@
 [
   {
+    "number": 14756,
+    "title": "Remove noisy promotional banners and shorten Jobs-moved callout run",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14756",
+    "state": "open",
+    "updated_at": "2026-07-22T13:25:20Z",
+    "merged_at": null
+  },
+  {
     "number": 14746,
     "title": "Agent health issue detail: Add monitor take-action row + Evidence sample-span column",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14746",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-19T17:28:47Z",
     "merged_at": "2026-06-19T17:28:45Z"
-  },
-  {
-    "number": 14080,
-    "title": "Monitor detail: surface Tune monitor as a primary button",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14080",
-    "state": "closed",
-    "updated_at": "2026-06-18T18:52:13Z",
-    "merged_at": "2026-06-18T18:52:11Z"
   }
 ]
