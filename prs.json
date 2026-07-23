@@ -1,5 +1,13 @@
 [
   {
+    "number": 14756,
+    "title": "Remove noisy promotional banners and shorten Jobs-moved callout run",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14756",
+    "state": "open",
+    "updated_at": "2026-07-23T16:01:23Z",
+    "merged_at": null
+  },
+  {
     "number": 14788,
     "title": "Remove the per-card Fix with AI icon from reinforcement loop issue cards",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14788",
@@ -14,14 +22,6 @@
     "state": "closed",
     "updated_at": "2026-07-22T17:54:49Z",
     "merged_at": "2026-07-22T17:54:48Z"
-  },
-  {
-    "number": 14756,
-    "title": "Remove noisy promotional banners and shorten Jobs-moved callout run",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14756",
-    "state": "open",
-    "updated_at": "2026-07-22T13:25:20Z",
-    "merged_at": null
   },
   {
     "number": 14746,
