@@ -1,11 +1,19 @@
 [
   {
+    "number": 14856,
+    "title": "Fix alerts Type filter selection corruption and wrong chip counts",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14856",
+    "state": "open",
+    "updated_at": "2026-07-24T18:11:19Z",
+    "merged_at": null
+  },
+  {
     "number": 14848,
     "title": "Use muted table styling for the Delta history tab",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14848",
-    "state": "open",
-    "updated_at": "2026-07-24T16:34:25Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-24T16:45:16Z",
+    "merged_at": "2026-07-24T16:45:13Z"
   },
   {
     "number": 14849,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-23T19:31:50Z",
     "merged_at": "2026-06-23T19:31:48Z"
-  },
-  {
-    "number": 14102,
-    "title": "Data quality dashboard: muted table + drop the Monitors card",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14102",
-    "state": "closed",
-    "updated_at": "2026-06-23T17:19:12Z",
-    "merged_at": "2026-06-23T17:19:10Z"
   }
 ]
