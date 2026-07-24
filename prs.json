@@ -1,11 +1,19 @@
 [
   {
+    "number": 14868,
+    "title": "Add a hover quick-add to the Jobs nav item",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14868",
+    "state": "open",
+    "updated_at": "2026-07-24T20:18:22Z",
+    "merged_at": null
+  },
+  {
     "number": 14856,
     "title": "Fix alerts Type filter selection corruption and wrong chip counts",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14856",
-    "state": "open",
-    "updated_at": "2026-07-24T18:11:19Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-24T19:56:13Z",
+    "merged_at": "2026-07-24T19:56:11Z"
   },
   {
     "number": 14848,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-23T20:20:18Z",
     "merged_at": "2026-06-23T20:20:17Z"
-  },
-  {
-    "number": 14103,
-    "title": "Data product detail: muted Monitors table + drop the card",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14103",
-    "state": "closed",
-    "updated_at": "2026-06-23T19:31:50Z",
-    "merged_at": "2026-06-23T19:31:48Z"
   }
 ]
