@@ -1,26 +1,26 @@
 [
   {
-    "number": 14848,
-    "title": "Use muted table styling for the Delta history tab",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14848",
-    "state": "open",
-    "updated_at": "2026-07-24T11:35:20Z",
-    "merged_at": null
-  },
-  {
     "number": 14849,
     "title": "Inset the Tables/Reports tab strip from the data product card edge",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14849",
-    "state": "open",
-    "updated_at": "2026-07-24T11:35:16Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-24T14:50:43Z",
+    "merged_at": "2026-07-24T14:50:42Z"
   },
   {
     "number": 14847,
     "title": "Keep data products list columns in their lanes",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14847",
+    "state": "closed",
+    "updated_at": "2026-07-24T14:50:43Z",
+    "merged_at": "2026-07-24T14:50:42Z"
+  },
+  {
+    "number": 14848,
+    "title": "Use muted table styling for the Delta history tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14848",
     "state": "open",
-    "updated_at": "2026-07-24T11:33:51Z",
+    "updated_at": "2026-07-24T12:45:03Z",
     "merged_at": null
   },
   {
