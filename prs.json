@@ -3,9 +3,9 @@
     "number": 14833,
     "title": "Consolidate reinforcement loop actions into Add-ticket and Execute combos",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14833",
-    "state": "open",
-    "updated_at": "2026-07-23T21:52:16Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-23T22:42:33Z",
+    "merged_at": "2026-07-23T22:42:32Z"
   },
   {
     "number": 14756,
