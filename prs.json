@@ -1,5 +1,13 @@
 [
   {
+    "number": 14884,
+    "title": "Add a Type column to the alerts table",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14884",
+    "state": "open",
+    "updated_at": "2026-07-25T10:31:25Z",
+    "merged_at": null
+  },
+  {
     "number": 14868,
     "title": "Add a hover quick-add to the Jobs nav item",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14868",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-23T21:27:32Z",
     "merged_at": "2026-06-23T21:27:30Z"
-  },
-  {
-    "number": 14156,
-    "title": "Apply muted table style to data product monitors tab",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14156",
-    "state": "closed",
-    "updated_at": "2026-06-23T20:20:18Z",
-    "merged_at": "2026-06-23T20:20:17Z"
   }
 ]
