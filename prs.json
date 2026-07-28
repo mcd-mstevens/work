@@ -1,5 +1,13 @@
 [
   {
+    "number": 14942,
+    "title": "Let the asset nav tree and Operations agent panel open independently",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14942",
+    "state": "open",
+    "updated_at": "2026-07-28T20:50:23Z",
+    "merged_at": null
+  },
+  {
     "number": 14921,
     "title": "Fix invisible Copy button in the AI tool triage drawer in light mode",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14921",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-24T17:17:15Z",
     "merged_at": "2026-06-24T17:17:13Z"
-  },
-  {
-    "number": 14168,
-    "title": "Table styling: apply muted variant to monitors list",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14168",
-    "state": "closed",
-    "updated_at": "2026-06-24T14:50:52Z",
-    "merged_at": "2026-06-24T14:50:50Z"
   }
 ]
