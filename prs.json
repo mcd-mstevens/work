@@ -1,5 +1,13 @@
 [
   {
+    "number": 14921,
+    "title": "Fix invisible Copy button in the AI tool triage drawer in light mode",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14921",
+    "state": "closed",
+    "updated_at": "2026-07-28T11:43:45Z",
+    "merged_at": "2026-07-28T11:43:44Z"
+  },
+  {
     "number": 14884,
     "title": "Add a Type column to the alerts table",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14884",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-24T14:50:52Z",
     "merged_at": "2026-06-24T14:50:50Z"
-  },
-  {
-    "number": 14150,
-    "title": "Data product detail: add Data quality tab",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14150",
-    "state": "closed",
-    "updated_at": "2026-06-23T21:27:32Z",
-    "merged_at": "2026-06-23T21:27:30Z"
   }
 ]
