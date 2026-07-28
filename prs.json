@@ -1,5 +1,13 @@
 [
   {
+    "number": 14945,
+    "title": "Add ETL & orchestration integrations sidebar callout",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14945",
+    "state": "open",
+    "updated_at": "2026-07-28T22:31:31Z",
+    "merged_at": null
+  },
+  {
     "number": 14942,
     "title": "Let the asset nav tree and Operations agent panel open independently",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14942",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-24T18:11:25Z",
     "merged_at": "2026-06-24T18:11:23Z"
-  },
-  {
-    "number": 14152,
-    "title": "Data product lineage: disable \"Show jobs\" when no eligible edges",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14152",
-    "state": "closed",
-    "updated_at": "2026-06-24T17:17:15Z",
-    "merged_at": "2026-06-24T17:17:13Z"
   }
 ]
