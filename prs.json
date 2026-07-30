@@ -1,5 +1,13 @@
 [
   {
+    "number": 15008,
+    "title": "Add ETL integrations announcement banner to the Jobs page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15008",
+    "state": "open",
+    "updated_at": "2026-07-30T16:25:33Z",
+    "merged_at": null
+  },
+  {
     "number": 14942,
     "title": "Let the asset nav tree and Operations agent panel open independently",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14942",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-24T18:38:01Z",
     "merged_at": "2026-06-24T18:37:59Z"
-  },
-  {
-    "number": 14169,
-    "title": "Add filterable dashboards to domain and data product detail pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14169",
-    "state": "closed",
-    "updated_at": "2026-06-24T18:11:25Z",
-    "merged_at": "2026-06-24T18:11:23Z"
   }
 ]
