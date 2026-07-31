@@ -1,5 +1,21 @@
 [
   {
+    "number": 15038,
+    "title": "Show the ETL integrations announcement banner on the Integrations settings page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15038",
+    "state": "open",
+    "updated_at": "2026-07-31T11:43:44Z",
+    "merged_at": null
+  },
+  {
+    "number": 15037,
+    "title": "Remove Alerts from default Monitors list filters",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15037",
+    "state": "open",
+    "updated_at": "2026-07-31T11:30:13Z",
+    "merged_at": null
+  },
+  {
     "number": 15008,
     "title": "Add ETL integrations announcement banner to the Jobs page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15008",
@@ -382,21 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-25T17:54:59Z",
     "merged_at": "2026-06-25T17:54:58Z"
-  },
-  {
-    "number": 14186,
-    "title": "Add optional count display to FilterBar options",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14186",
-    "state": "closed",
-    "updated_at": "2026-06-25T14:47:21Z",
-    "merged_at": "2026-06-25T14:47:19Z"
-  },
-  {
-    "number": 14182,
-    "title": "Fix data product lineage jobs query: use strict MCON type allowlist",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14182",
-    "state": "closed",
-    "updated_at": "2026-06-24T18:38:01Z",
-    "merged_at": "2026-06-24T18:37:59Z"
   }
 ]
