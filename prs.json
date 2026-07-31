@@ -1,5 +1,21 @@
 [
   {
+    "number": 15038,
+    "title": "Show the ETL integrations announcement banner on the Integrations settings page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15038",
+    "state": "closed",
+    "updated_at": "2026-07-31T17:22:03Z",
+    "merged_at": "2026-07-31T17:22:02Z"
+  },
+  {
+    "number": 15054,
+    "title": "Move the Monitors Apply properties button onto the bulk-actions row",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15054",
+    "state": "open",
+    "updated_at": "2026-07-31T15:56:11Z",
+    "merged_at": null
+  },
+  {
     "number": 15039,
     "title": "Move the Monitors Columns button onto the bulk-actions row",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15039",
@@ -14,14 +30,6 @@
     "state": "closed",
     "updated_at": "2026-07-31T15:07:01Z",
     "merged_at": "2026-07-31T15:06:59Z"
-  },
-  {
-    "number": 15038,
-    "title": "Show the ETL integrations announcement banner on the Integrations settings page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15038",
-    "state": "open",
-    "updated_at": "2026-07-31T11:43:44Z",
-    "merged_at": null
   },
   {
     "number": 15008,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-26T00:35:30Z",
     "merged_at": "2026-06-26T00:35:29Z"
-  },
-  {
-    "number": 14207,
-    "title": "Add MetadataList component and Widget flushContent prop",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14207",
-    "state": "closed",
-    "updated_at": "2026-06-25T21:36:24Z",
-    "merged_at": "2026-06-25T21:36:23Z"
   }
 ]
