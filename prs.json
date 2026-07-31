@@ -4,16 +4,16 @@
     "title": "Agents list: header Add button, search, and persisted view",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15072",
     "state": "open",
-    "updated_at": "2026-07-31T19:06:21Z",
+    "updated_at": "2026-07-31T20:07:51Z",
     "merged_at": null
   },
   {
     "number": 15071,
     "title": "Match the Alerts toolbar to the Monitors tab layout",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15071",
-    "state": "open",
-    "updated_at": "2026-07-31T18:31:42Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-07-31T20:05:28Z",
+    "merged_at": "2026-07-31T20:05:27Z"
   },
   {
     "number": 15038,
