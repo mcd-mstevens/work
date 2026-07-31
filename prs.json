@@ -1,5 +1,13 @@
 [
   {
+    "number": 15090,
+    "title": "Alert page: remove the header chip row, move priority into the Details rail",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15090",
+    "state": "open",
+    "updated_at": "2026-07-31T22:15:38Z",
+    "merged_at": null
+  },
+  {
     "number": 15072,
     "title": "Agents list: header Add button, search, and persisted view",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15072",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-26T15:17:16Z",
     "merged_at": "2026-06-26T15:17:15Z"
-  },
-  {
-    "number": 14241,
-    "title": "Improve AI chat context dropdown UX",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14241",
-    "state": "closed",
-    "updated_at": "2026-06-26T13:09:13Z",
-    "merged_at": null
   }
 ]
