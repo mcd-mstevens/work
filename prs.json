@@ -4,24 +4,24 @@
     "title": "Agents list: header Add button, search, and persisted view",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15072",
     "state": "open",
-    "updated_at": "2026-08-01T02:12:37Z",
-    "merged_at": null
-  },
-  {
-    "number": 15054,
-    "title": "Move the Monitors Apply properties button onto the bulk-actions row",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15054",
-    "state": "open",
-    "updated_at": "2026-08-01T01:23:19Z",
+    "updated_at": "2026-08-01T10:30:44Z",
     "merged_at": null
   },
   {
     "number": 15090,
     "title": "Alert page: remove the header chip row, move priority into the Details rail",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15090",
-    "state": "open",
-    "updated_at": "2026-07-31T22:15:38Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-08-01T10:23:23Z",
+    "merged_at": "2026-08-01T10:23:22Z"
+  },
+  {
+    "number": 15054,
+    "title": "Move the Monitors Apply properties button onto the bulk-actions row",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15054",
+    "state": "closed",
+    "updated_at": "2026-08-01T09:59:26Z",
+    "merged_at": "2026-08-01T09:59:24Z"
   },
   {
     "number": 15071,
