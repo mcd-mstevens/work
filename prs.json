@@ -1,5 +1,21 @@
 [
   {
+    "number": 15196,
+    "title": "Remove noise from the alert page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15196",
+    "state": "open",
+    "updated_at": "2026-08-06T22:42:31Z",
+    "merged_at": null
+  },
+  {
+    "number": 15209,
+    "title": "Rework the SCIM settings page into cards with a modal editor",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15209",
+    "state": "open",
+    "updated_at": "2026-08-06T21:11:49Z",
+    "merged_at": null
+  },
+  {
     "number": 15072,
     "title": "Agents list: header Add button, search, and persisted view",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15072",
@@ -382,21 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-26T16:19:39Z",
     "merged_at": "2026-06-26T16:19:37Z"
-  },
-  {
-    "number": 14244,
-    "title": "Improve AI chat context dropdown UX",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14244",
-    "state": "closed",
-    "updated_at": "2026-06-26T16:04:03Z",
-    "merged_at": "2026-06-26T16:04:01Z"
-  },
-  {
-    "number": 14231,
-    "title": "Apply FilterBar pattern to Alerts/Incidents page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14231",
-    "state": "closed",
-    "updated_at": "2026-06-26T15:17:16Z",
-    "merged_at": "2026-06-26T15:17:15Z"
   }
 ]
