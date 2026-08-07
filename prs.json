@@ -1,5 +1,21 @@
 [
   {
+    "number": 15196,
+    "title": "Remove noise from the alert page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15196",
+    "state": "closed",
+    "updated_at": "2026-08-07T14:11:28Z",
+    "merged_at": "2026-08-07T14:11:26Z"
+  },
+  {
+    "number": 15228,
+    "title": "Remove deleted alert comments from the Apollo cache",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
+    "state": "open",
+    "updated_at": "2026-08-07T14:11:27Z",
+    "merged_at": null
+  },
+  {
     "number": 15209,
     "title": "Rework the SCIM settings page into cards with a modal editor",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15209",
@@ -8,27 +24,11 @@
     "merged_at": null
   },
   {
-    "number": 15228,
-    "title": "Remove deleted alert comments from the Apollo cache",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
-    "state": "open",
-    "updated_at": "2026-08-07T12:27:30Z",
-    "merged_at": null
-  },
-  {
     "number": 15227,
     "title": "Add a Claude Code permission allowlist for the repo's read-only commands",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15227",
     "state": "closed",
     "updated_at": "2026-08-07T11:29:33Z",
-    "merged_at": null
-  },
-  {
-    "number": 15196,
-    "title": "Remove noise from the alert page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15196",
-    "state": "open",
-    "updated_at": "2026-08-07T09:57:40Z",
     "merged_at": null
   },
   {
