@@ -1,5 +1,13 @@
 [
   {
+    "number": 15227,
+    "title": "Add a Claude Code permission allowlist for the repo's read-only commands",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15227",
+    "state": "closed",
+    "updated_at": "2026-08-07T11:29:33Z",
+    "merged_at": null
+  },
+  {
     "number": 15196,
     "title": "Remove noise from the alert page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15196",
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-26T21:37:29Z",
     "merged_at": "2026-06-26T21:37:27Z"
-  },
-  {
-    "number": 14243,
-    "title": "Fix Airflow icon shown for all job types in CMD+K search",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14243",
-    "state": "closed",
-    "updated_at": "2026-06-26T16:19:39Z",
-    "merged_at": "2026-06-26T16:19:37Z"
   }
 ]
