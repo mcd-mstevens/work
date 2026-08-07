@@ -1,5 +1,21 @@
 [
   {
+    "number": 15209,
+    "title": "Rework the SCIM settings page into cards with a modal editor",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15209",
+    "state": "open",
+    "updated_at": "2026-08-07T13:00:30Z",
+    "merged_at": null
+  },
+  {
+    "number": 15228,
+    "title": "Remove deleted alert comments from the Apollo cache",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
+    "state": "open",
+    "updated_at": "2026-08-07T12:27:30Z",
+    "merged_at": null
+  },
+  {
     "number": 15227,
     "title": "Add a Claude Code permission allowlist for the repo's read-only commands",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15227",
@@ -13,14 +29,6 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15196",
     "state": "open",
     "updated_at": "2026-08-07T09:57:40Z",
-    "merged_at": null
-  },
-  {
-    "number": 15209,
-    "title": "Rework the SCIM settings page into cards with a modal editor",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15209",
-    "state": "open",
-    "updated_at": "2026-08-07T01:38:21Z",
     "merged_at": null
   },
   {
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-26T21:43:35Z",
     "merged_at": "2026-06-26T21:43:33Z"
-  },
-  {
-    "number": 14240,
-    "title": "Migrate settings detail views to MetadataList (DES-557 1 of 3)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14240",
-    "state": "closed",
-    "updated_at": "2026-06-26T21:37:29Z",
-    "merged_at": "2026-06-26T21:37:27Z"
   }
 ]
