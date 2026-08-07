@@ -4,7 +4,7 @@
     "title": "Remove noise from the alert page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15196",
     "state": "open",
-    "updated_at": "2026-08-06T22:42:31Z",
+    "updated_at": "2026-08-07T02:01:50Z",
     "merged_at": null
   },
   {
@@ -12,7 +12,7 @@
     "title": "Rework the SCIM settings page into cards with a modal editor",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15209",
     "state": "open",
-    "updated_at": "2026-08-06T21:11:49Z",
+    "updated_at": "2026-08-07T01:38:21Z",
     "merged_at": null
   },
   {
