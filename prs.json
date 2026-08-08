@@ -1,19 +1,19 @@
 [
   {
+    "number": 15228,
+    "title": "Remove deleted alert comments from the Apollo cache",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
+    "state": "open",
+    "updated_at": "2026-08-08T09:56:38Z",
+    "merged_at": null
+  },
+  {
     "number": 15196,
     "title": "Remove noise from the alert page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15196",
     "state": "closed",
     "updated_at": "2026-08-07T14:11:28Z",
     "merged_at": "2026-08-07T14:11:26Z"
-  },
-  {
-    "number": 15228,
-    "title": "Remove deleted alert comments from the Apollo cache",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
-    "state": "open",
-    "updated_at": "2026-08-07T14:11:27Z",
-    "merged_at": null
   },
   {
     "number": 15209,
