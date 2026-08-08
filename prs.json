@@ -1,18 +1,10 @@
 [
   {
-    "number": 15228,
-    "title": "Remove deleted alert comments from the Apollo cache",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
+    "number": 15255,
+    "title": "Keep the asset search tab list outside the scroll container",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15255",
     "state": "open",
-    "updated_at": "2026-08-08T16:27:38Z",
-    "merged_at": null
-  },
-  {
-    "number": 15252,
-    "title": "Render MaC monitor details as a metadata list in a bordered card",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15252",
-    "state": "open",
-    "updated_at": "2026-08-08T16:23:24Z",
+    "updated_at": "2026-08-08T17:27:34Z",
     "merged_at": null
   },
   {
@@ -20,15 +12,7 @@
     "title": "Remove the copy link action from asset detail pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15254",
     "state": "open",
-    "updated_at": "2026-08-08T16:16:46Z",
-    "merged_at": null
-  },
-  {
-    "number": 15255,
-    "title": "Keep the asset search tab list outside the scroll container",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15255",
-    "state": "open",
-    "updated_at": "2026-08-08T16:10:20Z",
+    "updated_at": "2026-08-08T17:27:33Z",
     "merged_at": null
   },
   {
@@ -36,7 +20,23 @@
     "title": "Drop the bespoke styling layer on the Resources menu",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15253",
     "state": "open",
-    "updated_at": "2026-08-08T16:09:25Z",
+    "updated_at": "2026-08-08T17:27:32Z",
+    "merged_at": null
+  },
+  {
+    "number": 15252,
+    "title": "Render legacy monitor details as metadata list section cards",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15252",
+    "state": "open",
+    "updated_at": "2026-08-08T17:27:31Z",
+    "merged_at": null
+  },
+  {
+    "number": 15228,
+    "title": "Remove deleted alert comments from the Apollo cache",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
+    "state": "open",
+    "updated_at": "2026-08-08T17:11:45Z",
     "merged_at": null
   },
   {
