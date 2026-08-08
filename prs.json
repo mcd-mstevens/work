@@ -3,9 +3,9 @@
     "number": 15255,
     "title": "Fix the data product asset selector layout",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15255",
-    "state": "open",
-    "updated_at": "2026-08-08T18:56:26Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-08-08T22:36:02Z",
+    "merged_at": "2026-08-08T22:36:01Z"
   },
   {
     "number": 15252,
