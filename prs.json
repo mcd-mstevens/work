@@ -1,10 +1,10 @@
 [
   {
     "number": 15255,
-    "title": "Keep the asset search tab list outside the scroll container",
+    "title": "Fix the data product asset selector layout",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15255",
     "state": "open",
-    "updated_at": "2026-08-08T17:27:34Z",
+    "updated_at": "2026-08-08T18:05:37Z",
     "merged_at": null
   },
   {
