@@ -1,5 +1,21 @@
 [
   {
+    "number": 15251,
+    "title": "Withhold generated-key dismissal until the list refetch lands",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15251",
+    "state": "open",
+    "updated_at": "2026-08-08T12:11:35Z",
+    "merged_at": null
+  },
+  {
+    "number": 15209,
+    "title": "Rework the SCIM settings page into cards with a modal editor",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15209",
+    "state": "closed",
+    "updated_at": "2026-08-08T11:43:01Z",
+    "merged_at": "2026-08-08T11:43:00Z"
+  },
+  {
     "number": 15228,
     "title": "Remove deleted alert comments from the Apollo cache",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
@@ -14,14 +30,6 @@
     "state": "closed",
     "updated_at": "2026-08-07T14:11:28Z",
     "merged_at": "2026-08-07T14:11:26Z"
-  },
-  {
-    "number": 15209,
-    "title": "Rework the SCIM settings page into cards with a modal editor",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15209",
-    "state": "open",
-    "updated_at": "2026-08-07T13:00:30Z",
-    "merged_at": null
   },
   {
     "number": 15227,
@@ -390,13 +398,5 @@
     "state": "closed",
     "updated_at": "2026-06-29T16:45:04Z",
     "merged_at": "2026-06-29T16:45:03Z"
-  },
-  {
-    "number": 14265,
-    "title": "Improve context mention dropdown UI",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14265",
-    "state": "closed",
-    "updated_at": "2026-06-26T21:43:35Z",
-    "merged_at": "2026-06-26T21:43:33Z"
   }
 ]
