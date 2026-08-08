@@ -1,5 +1,13 @@
 [
   {
+    "number": 15228,
+    "title": "Remove deleted alert comments from the Apollo cache",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
+    "state": "open",
+    "updated_at": "2026-08-08T15:17:25Z",
+    "merged_at": null
+  },
+  {
     "number": 15251,
     "title": "Withhold generated-key dismissal until the list refetch lands",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15251",
@@ -14,14 +22,6 @@
     "state": "closed",
     "updated_at": "2026-08-08T11:43:01Z",
     "merged_at": "2026-08-08T11:43:00Z"
-  },
-  {
-    "number": 15228,
-    "title": "Remove deleted alert comments from the Apollo cache",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
-    "state": "open",
-    "updated_at": "2026-08-08T10:37:25Z",
-    "merged_at": null
   },
   {
     "number": 15196,
