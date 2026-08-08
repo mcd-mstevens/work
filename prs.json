@@ -4,7 +4,15 @@
     "title": "Fix the data product asset selector layout",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15255",
     "state": "open",
-    "updated_at": "2026-08-08T18:05:37Z",
+    "updated_at": "2026-08-08T18:56:26Z",
+    "merged_at": null
+  },
+  {
+    "number": 15252,
+    "title": "Render legacy monitor details as metadata list section cards",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15252",
+    "state": "open",
+    "updated_at": "2026-08-08T18:51:40Z",
     "merged_at": null
   },
   {
@@ -21,14 +29,6 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15253",
     "state": "open",
     "updated_at": "2026-08-08T17:27:32Z",
-    "merged_at": null
-  },
-  {
-    "number": 15252,
-    "title": "Render legacy monitor details as metadata list section cards",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15252",
-    "state": "open",
-    "updated_at": "2026-08-08T17:27:31Z",
     "merged_at": null
   },
   {
