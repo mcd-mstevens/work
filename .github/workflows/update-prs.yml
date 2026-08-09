@@ -54,7 +54,23 @@ jobs:
           # 4. Merge authored + committed, dedupe by number, sort by updated_at desc, take 50
           jq -s '
             add | unique_by(.number) | sort_by(.updated_at) | reverse | .[0:50]
-          ' /tmp/authored.json /tmp/committed.json > prs.json
+          ' /tmp/authored.json /tmp/committed.json > /tmp/merged.json
+
+          # 5. Diff stats are only returned by the single-PR endpoint, not by search or list
+          echo "[]" > /tmp/stats.json
+          for number in $(jq -r '.[].number' /tmp/merged.json); do
+            curl -sf -H "$AUTH_HEADER" -H "$ACCEPT_HEADER" \
+              "https://api.github.com/repos/${REPO}/pulls/${number}" \
+              > /tmp/detail.json || echo '{}' > /tmp/detail.json
+            jq -s '.[0] + [.[1] | {number, additions, deletions, changed_files}]' \
+              /tmp/stats.json /tmp/detail.json > /tmp/stats.tmp.json
+            mv /tmp/stats.tmp.json /tmp/stats.json
+          done
+
+          jq -s '
+            (.[1] | map(select(.number)) | INDEX(.number | tostring)) as $stats
+            | .[0] | map(. + (($stats[.number | tostring] // {}) | del(.number)))
+          ' /tmp/merged.json /tmp/stats.json > prs.json
 
       - name: Commit if changed
         run: |

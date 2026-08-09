@@ -55,9 +55,18 @@
       const state = pr.merged_at ? 'merged' : pr.state;
       const date = new Date(pr.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
       const label = state[0].toUpperCase() + state.slice(1);
+      const files = pr.changed_files == null
+        ? ''
+        : `${pr.changed_files} ${pr.changed_files === 1 ? 'file' : 'files'}`;
+      const diff = pr.additions == null && pr.deletions == null
+        ? ''
+        : `<span class="pr-add">+${pr.additions ?? 0}</span><span class="pr-del">&minus;${pr.deletions ?? 0}</span>`;
       return `<div class="pr-row">
         <span class="pr-date">${date}</span>
+        <span class="pr-num">#${pr.number}</span>
         <a href="${pr.html_url}" class="pr-title" target="_blank" rel="noopener">${pr.title}</a>
+        <span class="pr-files">${files}</span>
+        <span class="pr-diff">${diff}</span>
         <span class="pr-state pr-${state}">${label}</span>
       </div>`;
     }).join('');

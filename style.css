@@ -107,6 +107,32 @@ body {
 .pr-date { color: #676F7E; flex-shrink: 0; width: 52px; }
 .pr-loading { color: #676F7E; padding: 12px 18px; }
 
+.pr-num,
+.pr-files,
+.pr-diff {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.pr-num { color: #676F7E; width: 54px; }
+
+.pr-files,
+.pr-diff { text-align: right; }
+
+.pr-files { color: #676F7E; width: 62px; }
+.pr-diff { width: 100px; }
+
+/* Fixed sub-columns so additions and deletions line up down the list */
+.pr-add,
+.pr-del { display: inline-block; }
+
+.pr-add { color: #276334; width: 48px; text-align: right; }
+.pr-del { color: #B3261E; width: 46px; margin-left: 6px; text-align: left; }
+
+@media (max-width: 640px) {
+  .pr-files, .pr-diff { display: none; }
+}
+
 .pr-view-all-btn {
   display: inline-block;
   margin-top: 12px;
