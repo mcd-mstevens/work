@@ -5,7 +5,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15254",
     "state": "closed",
     "updated_at": "2026-08-09T10:56:46Z",
-    "merged_at": "2026-08-09T10:56:44Z"
+    "merged_at": "2026-08-09T10:56:44Z",
+    "additions": 2,
+    "deletions": 21,
+    "changed_files": 2
   },
   {
     "number": 15255,
@@ -13,7 +16,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15255",
     "state": "closed",
     "updated_at": "2026-08-08T22:36:02Z",
-    "merged_at": "2026-08-08T22:36:01Z"
+    "merged_at": "2026-08-08T22:36:01Z",
+    "additions": 91,
+    "deletions": 62,
+    "changed_files": 4
   },
   {
     "number": 15252,
@@ -21,7 +27,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15252",
     "state": "open",
     "updated_at": "2026-08-08T18:51:40Z",
-    "merged_at": null
+    "merged_at": null,
+    "additions": 281,
+    "deletions": 361,
+    "changed_files": 4
   },
   {
     "number": 15253,
@@ -29,7 +38,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15253",
     "state": "open",
     "updated_at": "2026-08-08T17:27:32Z",
-    "merged_at": null
+    "merged_at": null,
+    "additions": 171,
+    "deletions": 79,
+    "changed_files": 7
   },
   {
     "number": 15228,
@@ -37,7 +49,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
     "state": "open",
     "updated_at": "2026-08-08T17:11:45Z",
-    "merged_at": null
+    "merged_at": null,
+    "additions": 385,
+    "deletions": 137,
+    "changed_files": 11
   },
   {
     "number": 15251,
@@ -45,7 +60,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15251",
     "state": "open",
     "updated_at": "2026-08-08T12:11:35Z",
-    "merged_at": null
+    "merged_at": null,
+    "additions": 74,
+    "deletions": 7,
+    "changed_files": 3
   },
   {
     "number": 15209,
@@ -53,7 +71,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15209",
     "state": "closed",
     "updated_at": "2026-08-08T11:43:01Z",
-    "merged_at": "2026-08-08T11:43:00Z"
+    "merged_at": "2026-08-08T11:43:00Z",
+    "additions": 390,
+    "deletions": 279,
+    "changed_files": 16
   },
   {
     "number": 15196,
@@ -61,7 +82,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15196",
     "state": "closed",
     "updated_at": "2026-08-07T14:11:28Z",
-    "merged_at": "2026-08-07T14:11:26Z"
+    "merged_at": "2026-08-07T14:11:26Z",
+    "additions": 256,
+    "deletions": 379,
+    "changed_files": 25
   },
   {
     "number": 15227,
@@ -69,7 +93,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15227",
     "state": "closed",
     "updated_at": "2026-08-07T11:29:33Z",
-    "merged_at": null
+    "merged_at": null,
+    "additions": 36,
+    "deletions": 0,
+    "changed_files": 1
   },
   {
     "number": 15072,
@@ -77,7 +104,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15072",
     "state": "closed",
     "updated_at": "2026-08-01T11:04:03Z",
-    "merged_at": "2026-08-01T11:04:02Z"
+    "merged_at": "2026-08-01T11:04:02Z",
+    "additions": 214,
+    "deletions": 12,
+    "changed_files": 2
   },
   {
     "number": 15090,
@@ -85,7 +115,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15090",
     "state": "closed",
     "updated_at": "2026-08-01T10:23:23Z",
-    "merged_at": "2026-08-01T10:23:22Z"
+    "merged_at": "2026-08-01T10:23:22Z",
+    "additions": 96,
+    "deletions": 300,
+    "changed_files": 14
   },
   {
     "number": 15054,
@@ -93,7 +126,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15054",
     "state": "closed",
     "updated_at": "2026-08-01T09:59:26Z",
-    "merged_at": "2026-08-01T09:59:24Z"
+    "merged_at": "2026-08-01T09:59:24Z",
+    "additions": 2,
+    "deletions": 2,
+    "changed_files": 2
   },
   {
     "number": 15071,
@@ -101,7 +137,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15071",
     "state": "closed",
     "updated_at": "2026-07-31T20:05:28Z",
-    "merged_at": "2026-07-31T20:05:27Z"
+    "merged_at": "2026-07-31T20:05:27Z",
+    "additions": 131,
+    "deletions": 48,
+    "changed_files": 4
   },
   {
     "number": 15038,
@@ -109,7 +148,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15038",
     "state": "closed",
     "updated_at": "2026-07-31T17:22:03Z",
-    "merged_at": "2026-07-31T17:22:02Z"
+    "merged_at": "2026-07-31T17:22:02Z",
+    "additions": 5,
+    "deletions": 1,
+    "changed_files": 1
   },
   {
     "number": 15039,
@@ -117,7 +159,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15039",
     "state": "closed",
     "updated_at": "2026-07-31T15:08:37Z",
-    "merged_at": "2026-07-31T15:08:35Z"
+    "merged_at": "2026-07-31T15:08:35Z",
+    "additions": 7,
+    "deletions": 6,
+    "changed_files": 2
   },
   {
     "number": 15037,
@@ -125,7 +170,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15037",
     "state": "closed",
     "updated_at": "2026-07-31T15:07:01Z",
-    "merged_at": "2026-07-31T15:06:59Z"
+    "merged_at": "2026-07-31T15:06:59Z",
+    "additions": 14,
+    "deletions": 11,
+    "changed_files": 4
   },
   {
     "number": 15008,
@@ -133,7 +181,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15008",
     "state": "closed",
     "updated_at": "2026-07-30T17:59:51Z",
-    "merged_at": "2026-07-30T17:59:50Z"
+    "merged_at": "2026-07-30T17:59:50Z",
+    "additions": 286,
+    "deletions": 13,
+    "changed_files": 8
   },
   {
     "number": 14942,
@@ -141,7 +192,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14942",
     "state": "closed",
     "updated_at": "2026-07-29T23:45:43Z",
-    "merged_at": "2026-07-29T23:45:42Z"
+    "merged_at": "2026-07-29T23:45:42Z",
+    "additions": 368,
+    "deletions": 178,
+    "changed_files": 21
   },
   {
     "number": 14945,
@@ -149,7 +203,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14945",
     "state": "closed",
     "updated_at": "2026-07-29T18:41:43Z",
-    "merged_at": "2026-07-29T18:41:42Z"
+    "merged_at": "2026-07-29T18:41:42Z",
+    "additions": 203,
+    "deletions": 17,
+    "changed_files": 5
   },
   {
     "number": 14921,
@@ -157,7 +214,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14921",
     "state": "closed",
     "updated_at": "2026-07-28T11:43:45Z",
-    "merged_at": "2026-07-28T11:43:44Z"
+    "merged_at": "2026-07-28T11:43:44Z",
+    "additions": 18,
+    "deletions": 9,
+    "changed_files": 2
   },
   {
     "number": 14884,
@@ -165,7 +225,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14884",
     "state": "closed",
     "updated_at": "2026-07-27T11:46:33Z",
-    "merged_at": "2026-07-27T11:46:32Z"
+    "merged_at": "2026-07-27T11:46:32Z",
+    "additions": 230,
+    "deletions": 33,
+    "changed_files": 10
   },
   {
     "number": 14868,
@@ -173,7 +236,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14868",
     "state": "closed",
     "updated_at": "2026-07-24T21:15:36Z",
-    "merged_at": "2026-07-24T21:15:35Z"
+    "merged_at": "2026-07-24T21:15:35Z",
+    "additions": 96,
+    "deletions": 9,
+    "changed_files": 4
   },
   {
     "number": 14856,
@@ -181,7 +247,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14856",
     "state": "closed",
     "updated_at": "2026-07-24T19:56:13Z",
-    "merged_at": "2026-07-24T19:56:11Z"
+    "merged_at": "2026-07-24T19:56:11Z",
+    "additions": 232,
+    "deletions": 19,
+    "changed_files": 11
   },
   {
     "number": 14848,
@@ -189,7 +258,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14848",
     "state": "closed",
     "updated_at": "2026-07-24T16:45:16Z",
-    "merged_at": "2026-07-24T16:45:13Z"
+    "merged_at": "2026-07-24T16:45:13Z",
+    "additions": 10,
+    "deletions": 34,
+    "changed_files": 4
   },
   {
     "number": 14849,
@@ -197,7 +269,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14849",
     "state": "closed",
     "updated_at": "2026-07-24T14:50:43Z",
-    "merged_at": "2026-07-24T14:50:42Z"
+    "merged_at": "2026-07-24T14:50:42Z",
+    "additions": 1,
+    "deletions": 1,
+    "changed_files": 1
   },
   {
     "number": 14847,
@@ -205,7 +280,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14847",
     "state": "closed",
     "updated_at": "2026-07-24T14:50:43Z",
-    "merged_at": "2026-07-24T14:50:42Z"
+    "merged_at": "2026-07-24T14:50:42Z",
+    "additions": 195,
+    "deletions": 20,
+    "changed_files": 7
   },
   {
     "number": 14833,
@@ -213,7 +291,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14833",
     "state": "closed",
     "updated_at": "2026-07-23T22:42:33Z",
-    "merged_at": "2026-07-23T22:42:32Z"
+    "merged_at": "2026-07-23T22:42:32Z",
+    "additions": 1839,
+    "deletions": 1135,
+    "changed_files": 36
   },
   {
     "number": 14756,
@@ -221,7 +302,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14756",
     "state": "closed",
     "updated_at": "2026-07-23T16:54:27Z",
-    "merged_at": "2026-07-23T16:54:26Z"
+    "merged_at": "2026-07-23T16:54:26Z",
+    "additions": 4,
+    "deletions": 341,
+    "changed_files": 17
   },
   {
     "number": 14788,
@@ -229,7 +313,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14788",
     "state": "closed",
     "updated_at": "2026-07-22T21:14:29Z",
-    "merged_at": "2026-07-22T21:14:27Z"
+    "merged_at": "2026-07-22T21:14:27Z",
+    "additions": 14,
+    "deletions": 72,
+    "changed_files": 6
   },
   {
     "number": 14770,
@@ -237,7 +324,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14770",
     "state": "closed",
     "updated_at": "2026-07-22T17:54:49Z",
-    "merged_at": "2026-07-22T17:54:48Z"
+    "merged_at": "2026-07-22T17:54:48Z",
+    "additions": 261,
+    "deletions": 273,
+    "changed_files": 4
   },
   {
     "number": 14746,
@@ -245,7 +335,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14746",
     "state": "closed",
     "updated_at": "2026-07-22T00:35:09Z",
-    "merged_at": "2026-07-22T00:35:08Z"
+    "merged_at": "2026-07-22T00:35:08Z",
+    "additions": 437,
+    "deletions": 228,
+    "changed_files": 10
   },
   {
     "number": 14748,
@@ -253,7 +346,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14748",
     "state": "closed",
     "updated_at": "2026-07-21T21:31:09Z",
-    "merged_at": null
+    "merged_at": null,
+    "additions": 129,
+    "deletions": 129,
+    "changed_files": 3
   },
   {
     "number": 14739,
@@ -261,7 +357,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14739",
     "state": "closed",
     "updated_at": "2026-07-21T18:05:38Z",
-    "merged_at": "2026-07-21T18:05:36Z"
+    "merged_at": "2026-07-21T18:05:36Z",
+    "additions": 11,
+    "deletions": 20,
+    "changed_files": 6
   },
   {
     "number": 14734,
@@ -269,7 +368,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14734",
     "state": "closed",
     "updated_at": "2026-07-21T17:38:43Z",
-    "merged_at": "2026-07-21T17:38:41Z"
+    "merged_at": "2026-07-21T17:38:41Z",
+    "additions": 203,
+    "deletions": 158,
+    "changed_files": 17
   },
   {
     "number": 14713,
@@ -277,7 +379,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14713",
     "state": "closed",
     "updated_at": "2026-07-21T09:59:16Z",
-    "merged_at": "2026-07-21T09:59:15Z"
+    "merged_at": "2026-07-21T09:59:15Z",
+    "additions": 183,
+    "deletions": 165,
+    "changed_files": 10
   },
   {
     "number": 14686,
@@ -285,7 +390,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14686",
     "state": "closed",
     "updated_at": "2026-07-20T17:47:35Z",
-    "merged_at": "2026-07-20T17:47:34Z"
+    "merged_at": "2026-07-20T17:47:34Z",
+    "additions": 232,
+    "deletions": 181,
+    "changed_files": 11
   },
   {
     "number": 14687,
@@ -293,7 +401,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14687",
     "state": "closed",
     "updated_at": "2026-07-20T11:10:52Z",
-    "merged_at": "2026-07-20T11:10:50Z"
+    "merged_at": "2026-07-20T11:10:50Z",
+    "additions": 579,
+    "deletions": 401,
+    "changed_files": 23
   },
   {
     "number": 14682,
@@ -301,7 +412,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14682",
     "state": "closed",
     "updated_at": "2026-07-19T01:50:41Z",
-    "merged_at": "2026-07-19T01:50:40Z"
+    "merged_at": "2026-07-19T01:50:40Z",
+    "additions": 0,
+    "deletions": 7,
+    "changed_files": 1
   },
   {
     "number": 14672,
@@ -309,7 +423,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14672",
     "state": "closed",
     "updated_at": "2026-07-17T19:25:56Z",
-    "merged_at": "2026-07-17T19:25:55Z"
+    "merged_at": "2026-07-17T19:25:55Z",
+    "additions": 128,
+    "deletions": 191,
+    "changed_files": 5
   },
   {
     "number": 14614,
@@ -317,7 +434,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14614",
     "state": "closed",
     "updated_at": "2026-07-16T21:01:26Z",
-    "merged_at": "2026-07-16T21:01:24Z"
+    "merged_at": "2026-07-16T21:01:24Z",
+    "additions": 316,
+    "deletions": 48,
+    "changed_files": 8
   },
   {
     "number": 14586,
@@ -325,7 +445,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14586",
     "state": "closed",
     "updated_at": "2026-07-16T18:56:18Z",
-    "merged_at": "2026-07-16T18:56:16Z"
+    "merged_at": "2026-07-16T18:56:16Z",
+    "additions": 1686,
+    "deletions": 2558,
+    "changed_files": 37
   },
   {
     "number": 14576,
@@ -333,7 +456,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14576",
     "state": "closed",
     "updated_at": "2026-07-15T21:20:46Z",
-    "merged_at": "2026-07-15T21:20:44Z"
+    "merged_at": "2026-07-15T21:20:44Z",
+    "additions": 109,
+    "deletions": 3,
+    "changed_files": 2
   },
   {
     "number": 14540,
@@ -341,7 +467,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14540",
     "state": "closed",
     "updated_at": "2026-07-15T17:16:58Z",
-    "merged_at": "2026-07-15T17:16:57Z"
+    "merged_at": "2026-07-15T17:16:57Z",
+    "additions": 1085,
+    "deletions": 4,
+    "changed_files": 19
   },
   {
     "number": 14556,
@@ -349,7 +478,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14556",
     "state": "closed",
     "updated_at": "2026-07-15T16:46:54Z",
-    "merged_at": "2026-07-15T16:46:53Z"
+    "merged_at": "2026-07-15T16:46:53Z",
+    "additions": 7,
+    "deletions": 5,
+    "changed_files": 4
   },
   {
     "number": 14523,
@@ -357,7 +489,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14523",
     "state": "closed",
     "updated_at": "2026-07-14T20:43:38Z",
-    "merged_at": null
+    "merged_at": null,
+    "additions": 968,
+    "deletions": 9,
+    "changed_files": 17
   },
   {
     "number": 14519,
@@ -365,7 +500,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14519",
     "state": "closed",
     "updated_at": "2026-07-14T15:52:20Z",
-    "merged_at": "2026-07-14T15:52:18Z"
+    "merged_at": "2026-07-14T15:52:18Z",
+    "additions": 1,
+    "deletions": 17,
+    "changed_files": 1
   },
   {
     "number": 14354,
@@ -373,7 +511,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14354",
     "state": "closed",
     "updated_at": "2026-07-01T21:12:41Z",
-    "merged_at": "2026-07-01T21:12:40Z"
+    "merged_at": "2026-07-01T21:12:40Z",
+    "additions": 132,
+    "deletions": 14,
+    "changed_files": 4
   },
   {
     "number": 14352,
@@ -381,7 +522,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14352",
     "state": "closed",
     "updated_at": "2026-07-01T21:12:41Z",
-    "merged_at": "2026-07-01T21:12:40Z"
+    "merged_at": "2026-07-01T21:12:40Z",
+    "additions": 1008,
+    "deletions": 25,
+    "changed_files": 15
   },
   {
     "number": 14353,
@@ -389,7 +533,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14353",
     "state": "closed",
     "updated_at": "2026-07-01T20:08:59Z",
-    "merged_at": "2026-07-01T20:08:58Z"
+    "merged_at": "2026-07-01T20:08:58Z",
+    "additions": 20,
+    "deletions": 2,
+    "changed_files": 2
   },
   {
     "number": 14334,
@@ -397,6 +544,9 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14334",
     "state": "closed",
     "updated_at": "2026-07-01T19:55:47Z",
-    "merged_at": "2026-07-01T19:55:46Z"
+    "merged_at": "2026-07-01T19:55:46Z",
+    "additions": 1,
+    "deletions": 1,
+    "changed_files": 1
   }
 ]
