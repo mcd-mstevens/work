@@ -61,14 +61,17 @@ body {
 
 .group-name { font-weight: 500; }
 
-.link-badge {
+.link-badge,
+.pr-state {
   font-size: 11px;
   font-weight: 600;
-  padding: 2px 8px;
+  flex-shrink: 0;
+  width: 68px;
+  text-align: center;
+  padding: 2px 7px;
   border-radius: 20px;
   background: #F0F0F0;
-  color: #888;
-  flex-shrink: 0;
+  color: #666;
 }
 
 .link-badge-green { background: #E8F4EC; color: #276334; }
@@ -88,19 +91,8 @@ body {
 .pr-row:hover { background: #fff; }
 .pr-row { transition: background 0.1s; }
 
-.pr-state {
-  font-size: 11px;
-  font-weight: 600;
-  flex-shrink: 0;
-  width: 68px;
-  text-align: center;
-  padding: 2px 7px;
-  border-radius: 20px;
-}
-
 .pr-open   { background: #E8F4EC; color: #276334; }
 .pr-merged { background: #F0EAFF; color: #6E3AB3; }
-.pr-closed { background: #F0F0F0; color: #666; }
 
 .pr-title { flex: 1; color: #21242C; text-decoration: none; line-height: 1.6; }
 
