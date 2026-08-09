@@ -3,9 +3,9 @@
     "number": 15254,
     "title": "Remove the copy link action from asset detail pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15254",
-    "state": "open",
-    "updated_at": "2026-08-09T02:48:47Z",
-    "merged_at": null
+    "state": "closed",
+    "updated_at": "2026-08-09T10:56:46Z",
+    "merged_at": "2026-08-09T10:56:44Z"
   },
   {
     "number": 15255,
