@@ -124,10 +124,10 @@ body {
 
 /* Fixed sub-columns so additions and deletions line up down the list */
 .pr-add,
-.pr-del { display: inline-block; }
+.pr-del { display: inline-block; text-align: right; }
 
-.pr-add { color: #276334; width: 56px; text-align: right; }
-.pr-del { color: #B3261E; width: 54px; margin-left: 6px; text-align: left; }
+.pr-add { color: #276334; width: 56px; }
+.pr-del { color: #B3261E; width: 54px; margin-left: 6px; }
 
 @media (max-width: 640px) {
   .pr-files, .pr-diff { display: none; }
