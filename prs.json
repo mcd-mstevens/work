@@ -1,5 +1,13 @@
 [
   {
+    "number": 15254,
+    "title": "Remove the copy link action from asset detail pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15254",
+    "state": "open",
+    "updated_at": "2026-08-09T02:48:47Z",
+    "merged_at": null
+  },
+  {
     "number": 15255,
     "title": "Fix the data product asset selector layout",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15255",
@@ -13,14 +21,6 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15252",
     "state": "open",
     "updated_at": "2026-08-08T18:51:40Z",
-    "merged_at": null
-  },
-  {
-    "number": 15254,
-    "title": "Remove the copy link action from asset detail pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15254",
-    "state": "open",
-    "updated_at": "2026-08-08T17:27:33Z",
     "merged_at": null
   },
   {
