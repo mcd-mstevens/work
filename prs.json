@@ -1,5 +1,27 @@
 [
   {
+    "number": 15251,
+    "title": "Withhold generated-key dismissal until the list refetch lands",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15251",
+    "state": "closed",
+    "updated_at": "2026-08-10T14:34:43Z",
+    "merged_at": "2026-08-10T14:34:41Z",
+    "additions": 74,
+    "deletions": 7,
+    "changed_files": 3
+  },
+  {
+    "number": 15252,
+    "title": "Render legacy monitor details as metadata list section cards",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15252",
+    "state": "closed",
+    "updated_at": "2026-08-10T14:28:38Z",
+    "merged_at": "2026-08-10T14:28:36Z",
+    "additions": 281,
+    "deletions": 361,
+    "changed_files": 4
+  },
+  {
     "number": 15254,
     "title": "Remove the copy link action from asset detail pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15254",
@@ -19,17 +41,6 @@
     "merged_at": "2026-08-08T22:36:01Z",
     "additions": 91,
     "deletions": 62,
-    "changed_files": 4
-  },
-  {
-    "number": 15252,
-    "title": "Render legacy monitor details as metadata list section cards",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15252",
-    "state": "open",
-    "updated_at": "2026-08-08T18:51:40Z",
-    "merged_at": null,
-    "additions": 281,
-    "deletions": 361,
     "changed_files": 4
   },
   {
@@ -53,17 +64,6 @@
     "additions": 385,
     "deletions": 137,
     "changed_files": 11
-  },
-  {
-    "number": 15251,
-    "title": "Withhold generated-key dismissal until the list refetch lands",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15251",
-    "state": "open",
-    "updated_at": "2026-08-08T12:11:35Z",
-    "merged_at": null,
-    "additions": 74,
-    "deletions": 7,
-    "changed_files": 3
   },
   {
     "number": 15209,
