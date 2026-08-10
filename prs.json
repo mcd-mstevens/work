@@ -1,5 +1,16 @@
 [
   {
+    "number": 15253,
+    "title": "Drop the bespoke styling layer on the Resources menu",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15253",
+    "state": "open",
+    "updated_at": "2026-08-10T16:18:36Z",
+    "merged_at": null,
+    "additions": 171,
+    "deletions": 79,
+    "changed_files": 7
+  },
+  {
     "number": 15251,
     "title": "Withhold generated-key dismissal until the list refetch lands",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15251",
@@ -42,17 +53,6 @@
     "additions": 91,
     "deletions": 62,
     "changed_files": 4
-  },
-  {
-    "number": 15253,
-    "title": "Drop the bespoke styling layer on the Resources menu",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15253",
-    "state": "open",
-    "updated_at": "2026-08-08T17:27:32Z",
-    "merged_at": null,
-    "additions": 171,
-    "deletions": 79,
-    "changed_files": 7
   },
   {
     "number": 15228,
