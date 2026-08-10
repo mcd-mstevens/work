@@ -1,11 +1,22 @@
 [
   {
+    "number": 15228,
+    "title": "Remove deleted alert comments from the Apollo cache",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
+    "state": "closed",
+    "updated_at": "2026-08-10T18:51:10Z",
+    "merged_at": "2026-08-10T18:51:08Z",
+    "additions": 385,
+    "deletions": 137,
+    "changed_files": 11
+  },
+  {
     "number": 15253,
     "title": "Drop the bespoke styling layer on the Resources menu",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15253",
-    "state": "open",
-    "updated_at": "2026-08-10T16:18:36Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-08-10T18:16:01Z",
+    "merged_at": "2026-08-10T18:16:00Z",
     "additions": 171,
     "deletions": 79,
     "changed_files": 7
@@ -53,17 +64,6 @@
     "additions": 91,
     "deletions": 62,
     "changed_files": 4
-  },
-  {
-    "number": 15228,
-    "title": "Remove deleted alert comments from the Apollo cache",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
-    "state": "open",
-    "updated_at": "2026-08-08T17:11:45Z",
-    "merged_at": null,
-    "additions": 385,
-    "deletions": 137,
-    "changed_files": 11
   },
   {
     "number": 15209,
