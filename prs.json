@@ -1,5 +1,16 @@
 [
   {
+    "number": 15279,
+    "title": "Move the expired-invites alert under the Pending invitations heading",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15279",
+    "state": "open",
+    "updated_at": "2026-08-11T09:17:31Z",
+    "merged_at": null,
+    "additions": 3,
+    "deletions": 4,
+    "changed_files": 2
+  },
+  {
     "number": 15228,
     "title": "Remove deleted alert comments from the Apollo cache",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
@@ -537,16 +548,5 @@
     "additions": 20,
     "deletions": 2,
     "changed_files": 2
-  },
-  {
-    "number": 14334,
-    "title": "Replace gold with teal for troubleshooting agent in billing chart",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14334",
-    "state": "closed",
-    "updated_at": "2026-07-01T19:55:47Z",
-    "merged_at": "2026-07-01T19:55:46Z",
-    "additions": 1,
-    "deletions": 1,
-    "changed_files": 1
   }
 ]
