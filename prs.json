@@ -1,5 +1,16 @@
 [
   {
+    "number": 15296,
+    "title": "Data sharing inconsistencies",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15296",
+    "state": "open",
+    "updated_at": "2026-08-11T20:29:56Z",
+    "merged_at": null,
+    "additions": 518,
+    "deletions": 415,
+    "changed_files": 15
+  },
+  {
     "number": 15279,
     "title": "Move the expired-invites alert under the Pending invitations heading",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15279",
@@ -537,16 +548,5 @@
     "additions": 1008,
     "deletions": 25,
     "changed_files": 15
-  },
-  {
-    "number": 14353,
-    "title": "Write Queries table: sparkle agent button for execution history insights",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14353",
-    "state": "closed",
-    "updated_at": "2026-07-01T20:08:59Z",
-    "merged_at": "2026-07-01T20:08:58Z",
-    "additions": 20,
-    "deletions": 2,
-    "changed_files": 2
   }
 ]
