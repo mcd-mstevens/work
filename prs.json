@@ -1,14 +1,25 @@
 [
   {
+    "number": 15346,
+    "title": "Restore Enter-to-submit on the authorization group add and edit pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15346",
+    "state": "open",
+    "updated_at": "2026-08-12T20:13:18Z",
+    "merged_at": null,
+    "additions": 187,
+    "deletions": 219,
+    "changed_files": 11
+  },
+  {
     "number": 15323,
     "title": "Align the network access control screens with settings conventions",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15323",
     "state": "open",
-    "updated_at": "2026-08-12T17:17:23Z",
+    "updated_at": "2026-08-12T19:48:30Z",
     "merged_at": null,
-    "additions": 239,
-    "deletions": 244,
-    "changed_files": 12
+    "additions": 307,
+    "deletions": 255,
+    "changed_files": 14
   },
   {
     "number": 15321,
@@ -537,16 +548,5 @@
     "additions": 968,
     "deletions": 9,
     "changed_files": 17
-  },
-  {
-    "number": 14519,
-    "title": "Remove billing moved hint from settings directory",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14519",
-    "state": "closed",
-    "updated_at": "2026-07-14T15:52:20Z",
-    "merged_at": "2026-07-14T15:52:18Z",
-    "additions": 1,
-    "deletions": 17,
-    "changed_files": 1
   }
 ]
