@@ -115,10 +115,7 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15227",
     "state": "closed",
     "updated_at": "2026-08-07T11:29:33Z",
-    "merged_at": null,
-    "additions": 36,
-    "deletions": 0,
-    "changed_files": 1
+    "merged_at": null
   },
   {
     "number": 15072,
@@ -159,10 +156,7 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15071",
     "state": "closed",
     "updated_at": "2026-07-31T20:05:28Z",
-    "merged_at": "2026-07-31T20:05:27Z",
-    "additions": 131,
-    "deletions": 48,
-    "changed_files": 4
+    "merged_at": "2026-07-31T20:05:27Z"
   },
   {
     "number": 15038,
