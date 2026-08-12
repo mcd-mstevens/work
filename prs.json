@@ -1,12 +1,34 @@
 [
   {
+    "number": 15323,
+    "title": "Align the network access control screens with settings conventions",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15323",
+    "state": "open",
+    "updated_at": "2026-08-12T17:17:23Z",
+    "merged_at": null,
+    "additions": 239,
+    "deletions": 244,
+    "changed_files": 12
+  },
+  {
+    "number": 15321,
+    "title": "Point the settings and pages rules at the patterns the codebase actually uses",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15321",
+    "state": "closed",
+    "updated_at": "2026-08-12T17:08:57Z",
+    "merged_at": "2026-08-12T17:08:56Z",
+    "additions": 68,
+    "deletions": 10,
+    "changed_files": 2
+  },
+  {
     "number": 15296,
     "title": "Data sharing inconsistencies",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15296",
-    "state": "open",
-    "updated_at": "2026-08-12T15:02:03Z",
-    "merged_at": null,
-    "additions": 772,
+    "state": "closed",
+    "updated_at": "2026-08-12T16:48:36Z",
+    "merged_at": "2026-08-12T16:48:34Z",
+    "additions": 774,
     "deletions": 415,
     "changed_files": 19
   },
@@ -526,27 +548,5 @@
     "additions": 1,
     "deletions": 17,
     "changed_files": 1
-  },
-  {
-    "number": 14354,
-    "title": "Home chats: sync active conversation to URL",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14354",
-    "state": "closed",
-    "updated_at": "2026-07-01T21:12:41Z",
-    "merged_at": "2026-07-01T21:12:40Z",
-    "additions": 132,
-    "deletions": 14,
-    "changed_files": 4
-  },
-  {
-    "number": 14352,
-    "title": "Home page: quick-access cards and prompt chips",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14352",
-    "state": "closed",
-    "updated_at": "2026-07-01T21:12:41Z",
-    "merged_at": "2026-07-01T21:12:40Z",
-    "additions": 1008,
-    "deletions": 25,
-    "changed_files": 15
   }
 ]
