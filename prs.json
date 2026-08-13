@@ -1,25 +1,25 @@
 [
   {
-    "number": 15346,
-    "title": "Restore Enter-to-submit on the authorization group add and edit pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15346",
-    "state": "open",
-    "updated_at": "2026-08-13T11:11:46Z",
-    "merged_at": null,
-    "additions": 237,
-    "deletions": 251,
-    "changed_files": 13
-  },
-  {
     "number": 15356,
     "title": "Explain why Save is unavailable on settings form pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15356",
     "state": "open",
-    "updated_at": "2026-08-13T11:08:01Z",
+    "updated_at": "2026-08-13T13:07:35Z",
     "merged_at": null,
     "additions": 125,
     "deletions": 11,
     "changed_files": 5
+  },
+  {
+    "number": 15346,
+    "title": "Restore Enter-to-submit on the authorization group add and edit pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15346",
+    "state": "open",
+    "updated_at": "2026-08-13T13:07:35Z",
+    "merged_at": null,
+    "additions": 237,
+    "deletions": 251,
+    "changed_files": 13
   },
   {
     "number": 15323,
