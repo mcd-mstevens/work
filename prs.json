@@ -1,25 +1,36 @@
 [
   {
-    "number": 15323,
-    "title": "Align the network access control screens with settings conventions",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15323",
-    "state": "open",
-    "updated_at": "2026-08-13T10:05:08Z",
-    "merged_at": null,
-    "additions": 307,
-    "deletions": 255,
-    "changed_files": 14
-  },
-  {
     "number": 15346,
     "title": "Restore Enter-to-submit on the authorization group add and edit pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15346",
     "state": "open",
-    "updated_at": "2026-08-13T09:18:48Z",
+    "updated_at": "2026-08-13T11:11:46Z",
     "merged_at": null,
-    "additions": 239,
-    "deletions": 247,
+    "additions": 237,
+    "deletions": 251,
     "changed_files": 13
+  },
+  {
+    "number": 15356,
+    "title": "Explain why Save is unavailable on settings form pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15356",
+    "state": "open",
+    "updated_at": "2026-08-13T11:08:01Z",
+    "merged_at": null,
+    "additions": 125,
+    "deletions": 11,
+    "changed_files": 5
+  },
+  {
+    "number": 15323,
+    "title": "Align the network access control screens with settings conventions",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15323",
+    "state": "closed",
+    "updated_at": "2026-08-13T10:12:47Z",
+    "merged_at": "2026-08-13T10:12:46Z",
+    "additions": 307,
+    "deletions": 255,
+    "changed_files": 14
   },
   {
     "number": 15321,
@@ -537,16 +548,5 @@
     "additions": 7,
     "deletions": 5,
     "changed_files": 4
-  },
-  {
-    "number": 14523,
-    "title": "Add \"Create monitor\" action to agent health report issues",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14523",
-    "state": "closed",
-    "updated_at": "2026-07-14T20:43:38Z",
-    "merged_at": null,
-    "additions": 968,
-    "deletions": 9,
-    "changed_files": 17
   }
 ]
