@@ -1,5 +1,16 @@
 [
   {
+    "number": 15364,
+    "title": "Only name a date preset the picker actually offers",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15364",
+    "state": "open",
+    "updated_at": "2026-08-13T15:31:25Z",
+    "merged_at": null,
+    "additions": 61,
+    "deletions": 12,
+    "changed_files": 2
+  },
+  {
     "number": 15356,
     "title": "Explain why Save is unavailable on settings form pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15356",
@@ -537,16 +548,5 @@
     "additions": 1085,
     "deletions": 4,
     "changed_files": 19
-  },
-  {
-    "number": 14556,
-    "title": "Rename the agent \"Health\" tab to \"Reinforcement loop\"",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14556",
-    "state": "closed",
-    "updated_at": "2026-07-15T16:46:54Z",
-    "merged_at": "2026-07-15T16:46:53Z",
-    "additions": 7,
-    "deletions": 5,
-    "changed_files": 4
   }
 ]
