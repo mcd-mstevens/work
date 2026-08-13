@@ -4,7 +4,7 @@
     "title": "Align the network access control screens with settings conventions",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15323",
     "state": "open",
-    "updated_at": "2026-08-12T22:31:21Z",
+    "updated_at": "2026-08-13T10:05:08Z",
     "merged_at": null,
     "additions": 307,
     "deletions": 255,
@@ -15,11 +15,11 @@
     "title": "Restore Enter-to-submit on the authorization group add and edit pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15346",
     "state": "open",
-    "updated_at": "2026-08-12T20:13:18Z",
+    "updated_at": "2026-08-13T09:18:48Z",
     "merged_at": null,
-    "additions": 187,
-    "deletions": 219,
-    "changed_files": 11
+    "additions": 239,
+    "deletions": 247,
+    "changed_files": 13
   },
   {
     "number": 15321,
