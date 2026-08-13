@@ -1,11 +1,22 @@
 [
   {
+    "number": 15380,
+    "title": "Let cmd-click open a domain in a new tab from the domains list",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15380",
+    "state": "open",
+    "updated_at": "2026-08-13T17:49:43Z",
+    "merged_at": null,
+    "additions": 39,
+    "deletions": 8,
+    "changed_files": 2
+  },
+  {
     "number": 15364,
     "title": "Only name a date preset the picker actually offers",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15364",
-    "state": "open",
-    "updated_at": "2026-08-13T15:31:25Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-08-13T16:33:08Z",
+    "merged_at": "2026-08-13T16:33:07Z",
     "additions": 61,
     "deletions": 12,
     "changed_files": 2
@@ -537,16 +548,5 @@
     "additions": 109,
     "deletions": 3,
     "changed_files": 2
-  },
-  {
-    "number": 14540,
-    "title": "Add \"Add monitor\" action to agent health report issues",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14540",
-    "state": "closed",
-    "updated_at": "2026-07-15T17:16:58Z",
-    "merged_at": "2026-07-15T17:16:57Z",
-    "additions": 1085,
-    "deletions": 4,
-    "changed_files": 19
   }
 ]
