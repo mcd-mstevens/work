@@ -302,7 +302,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/14856",
     "state": "closed",
     "updated_at": "2026-07-24T19:56:13Z",
-    "merged_at": "2026-07-24T19:56:11Z"
+    "merged_at": "2026-07-24T19:56:11Z",
+    "additions": 232,
+    "deletions": 19,
+    "changed_files": 11
   },
   {
     "number": 14848,
