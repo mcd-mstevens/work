@@ -3,9 +3,9 @@
     "number": 15397,
     "title": "Let cmd-click open a row in a new tab from list pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15397",
-    "state": "open",
-    "updated_at": "2026-08-14T17:51:01Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-08-14T18:05:36Z",
+    "merged_at": "2026-08-14T18:05:34Z",
     "additions": 1238,
     "deletions": 312,
     "changed_files": 42
