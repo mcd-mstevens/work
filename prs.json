@@ -1,5 +1,16 @@
 [
   {
+    "number": 15380,
+    "title": "Let cmd-click open a domain in a new tab from the domains list",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15380",
+    "state": "open",
+    "updated_at": "2026-08-14T13:45:03Z",
+    "merged_at": null,
+    "additions": 39,
+    "deletions": 8,
+    "changed_files": 2
+  },
+  {
     "number": 15397,
     "title": "Let cmd-click open a row in a new tab from list pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15397",
@@ -9,17 +20,6 @@
     "additions": 917,
     "deletions": 268,
     "changed_files": 36
-  },
-  {
-    "number": 15380,
-    "title": "Let cmd-click open a domain in a new tab from the domains list",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15380",
-    "state": "open",
-    "updated_at": "2026-08-13T23:04:17Z",
-    "merged_at": null,
-    "additions": 39,
-    "deletions": 8,
-    "changed_files": 2
   },
   {
     "number": 15364,
