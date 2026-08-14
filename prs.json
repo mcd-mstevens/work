@@ -1,5 +1,16 @@
 [
   {
+    "number": 15397,
+    "title": "Let cmd-click open a row in a new tab from list pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15397",
+    "state": "open",
+    "updated_at": "2026-08-14T12:48:46Z",
+    "merged_at": null,
+    "additions": 917,
+    "deletions": 268,
+    "changed_files": 36
+  },
+  {
     "number": 15380,
     "title": "Let cmd-click open a domain in a new tab from the domains list",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15380",
@@ -537,16 +548,5 @@
     "additions": 1686,
     "deletions": 2558,
     "changed_files": 37
-  },
-  {
-    "number": 14576,
-    "title": "Fix tags filter resetting on first search",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14576",
-    "state": "closed",
-    "updated_at": "2026-07-15T21:20:46Z",
-    "merged_at": "2026-07-15T21:20:44Z",
-    "additions": 109,
-    "deletions": 3,
-    "changed_files": 2
   }
 ]
