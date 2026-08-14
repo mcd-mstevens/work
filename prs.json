@@ -1,5 +1,16 @@
 [
   {
+    "number": 15426,
+    "title": "Simplify the triage priority chips and standardize the add-audience button",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15426",
+    "state": "open",
+    "updated_at": "2026-08-14T19:35:16Z",
+    "merged_at": null,
+    "additions": 13,
+    "deletions": 31,
+    "changed_files": 2
+  },
+  {
     "number": 15397,
     "title": "Let cmd-click open a row in a new tab from list pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15397",
@@ -537,16 +548,5 @@
     "additions": 316,
     "deletions": 48,
     "changed_files": 8
-  },
-  {
-    "number": 14586,
-    "title": "ORB-366: Reinforcement loop tab redesign — cross-workflow issues table + issue detail",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14586",
-    "state": "closed",
-    "updated_at": "2026-07-16T18:56:18Z",
-    "merged_at": "2026-07-16T18:56:16Z",
-    "additions": 1686,
-    "deletions": 2558,
-    "changed_files": 37
   }
 ]
