@@ -1,5 +1,16 @@
 [
   {
+    "number": 15429,
+    "title": "Navigate in place on a plain row click in eight list tables",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15429",
+    "state": "open",
+    "updated_at": "2026-08-15T11:16:50Z",
+    "merged_at": null,
+    "additions": 123,
+    "deletions": 116,
+    "changed_files": 10
+  },
+  {
     "number": 15426,
     "title": "Simplify the triage priority chips and standardize the add-audience button",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15426",
@@ -537,16 +548,5 @@
     "additions": 128,
     "deletions": 191,
     "changed_files": 5
-  },
-  {
-    "number": 14614,
-    "title": "Add Monitors tab to domain detail page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14614",
-    "state": "closed",
-    "updated_at": "2026-07-16T21:01:26Z",
-    "merged_at": "2026-07-16T21:01:24Z",
-    "additions": 316,
-    "deletions": 48,
-    "changed_files": 8
   }
 ]
