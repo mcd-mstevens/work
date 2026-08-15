@@ -1,5 +1,16 @@
 [
   {
+    "number": 15430,
+    "title": "Document and harden the shared row-link contract",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15430",
+    "state": "open",
+    "updated_at": "2026-08-15T17:00:25Z",
+    "merged_at": null,
+    "additions": 484,
+    "deletions": 98,
+    "changed_files": 28
+  },
+  {
     "number": 15429,
     "title": "Navigate in place on a plain row click in eight list tables",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15429",
@@ -537,16 +548,5 @@
     "additions": 0,
     "deletions": 7,
     "changed_files": 1
-  },
-  {
-    "number": 14672,
-    "title": "Refine reinforcement-loop tab tables, sorting, and filters",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14672",
-    "state": "closed",
-    "updated_at": "2026-07-17T19:25:56Z",
-    "merged_at": "2026-07-17T19:25:55Z",
-    "additions": 128,
-    "deletions": 191,
-    "changed_files": 5
   }
 ]
