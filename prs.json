@@ -1,5 +1,16 @@
 [
   {
+    "number": 15429,
+    "title": "Navigate in place on a plain row click in eight list tables",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15429",
+    "state": "closed",
+    "updated_at": "2026-08-20T19:32:44Z",
+    "merged_at": "2026-08-20T19:32:42Z",
+    "additions": 307,
+    "deletions": 155,
+    "changed_files": 18
+  },
+  {
     "number": 15430,
     "title": "Document and harden the shared row-link contract",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15430",
@@ -9,17 +20,6 @@
     "additions": 673,
     "deletions": 112,
     "changed_files": 32
-  },
-  {
-    "number": 15429,
-    "title": "Navigate in place on a plain row click in eight list tables",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15429",
-    "state": "open",
-    "updated_at": "2026-08-20T19:15:52Z",
-    "merged_at": null,
-    "additions": 307,
-    "deletions": 155,
-    "changed_files": 18
   },
   {
     "number": 15426,
