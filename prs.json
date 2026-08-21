@@ -1,5 +1,16 @@
 [
   {
+    "number": 15556,
+    "title": "Pin the connections table actions column",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15556",
+    "state": "open",
+    "updated_at": "2026-08-21T18:20:37Z",
+    "merged_at": null,
+    "additions": 61,
+    "deletions": 2,
+    "changed_files": 3
+  },
+  {
     "number": 15548,
     "title": "Remove the ETL & orchestration integrations announcements",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15548",
@@ -537,16 +548,5 @@
     "additions": 232,
     "deletions": 181,
     "changed_files": 11
-  },
-  {
-    "number": 14687,
-    "title": "Reinforcement loop: priority column + filter, table layout, and standalone issue page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14687",
-    "state": "closed",
-    "updated_at": "2026-07-20T11:10:52Z",
-    "merged_at": "2026-07-20T11:10:50Z",
-    "additions": 579,
-    "deletions": 401,
-    "changed_files": 23
   }
 ]
