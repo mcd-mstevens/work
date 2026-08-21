@@ -1,5 +1,16 @@
 [
   {
+    "number": 15548,
+    "title": "Remove the ETL & orchestration integrations announcements",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15548",
+    "state": "open",
+    "updated_at": "2026-08-21T15:26:05Z",
+    "merged_at": null,
+    "additions": 13,
+    "deletions": 468,
+    "changed_files": 11
+  },
+  {
     "number": 15429,
     "title": "Navigate in place on a plain row click in eight list tables",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15429",
@@ -537,16 +548,5 @@
     "additions": 579,
     "deletions": 401,
     "changed_files": 23
-  },
-  {
-    "number": 14682,
-    "title": "Remove confidence column from agent-health issues list",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14682",
-    "state": "closed",
-    "updated_at": "2026-07-19T01:50:41Z",
-    "merged_at": "2026-07-19T01:50:40Z",
-    "additions": 0,
-    "deletions": 7,
-    "changed_files": 1
   }
 ]
