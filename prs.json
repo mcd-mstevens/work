@@ -3,9 +3,9 @@
     "number": 15556,
     "title": "Pin the connections table actions column",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15556",
-    "state": "open",
-    "updated_at": "2026-08-21T18:20:37Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-08-21T18:53:22Z",
+    "merged_at": "2026-08-21T18:53:21Z",
     "additions": 61,
     "deletions": 2,
     "changed_files": 3
