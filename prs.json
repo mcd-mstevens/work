@@ -4,10 +4,10 @@
     "title": "Remove the ETL & orchestration integrations announcements",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15548",
     "state": "open",
-    "updated_at": "2026-08-21T15:26:05Z",
+    "updated_at": "2026-08-21T16:26:09Z",
     "merged_at": null,
-    "additions": 13,
-    "deletions": 468,
+    "additions": 27,
+    "deletions": 484,
     "changed_files": 11
   },
   {
