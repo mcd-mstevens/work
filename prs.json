@@ -1,13 +1,13 @@
 [
   {
     "number": 15565,
-    "title": "Give Table health, Domains and Jobs the Alerts row skeleton (2 of TBD)",
+    "title": "Give Table health, Domains and Jobs a real row skeleton (2 of TBD)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15565",
     "state": "open",
-    "updated_at": "2026-08-22T15:17:32Z",
+    "updated_at": "2026-08-22T17:25:07Z",
     "merged_at": null,
-    "additions": 49,
-    "deletions": 26,
+    "additions": 131,
+    "deletions": 11,
     "changed_files": 6
   },
   {
