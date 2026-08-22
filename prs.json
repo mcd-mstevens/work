@@ -1,10 +1,21 @@
 [
   {
+    "number": 15565,
+    "title": "Give Table health, Domains and Jobs the Alerts row skeleton (2 of TBD)",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15565",
+    "state": "open",
+    "updated_at": "2026-08-22T15:17:32Z",
+    "merged_at": null,
+    "additions": 49,
+    "deletions": 26,
+    "changed_files": 6
+  },
+  {
     "number": 15564,
     "title": "Give the shared Table a loading state, and adopt it on Domains (2 of TBD)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15564",
-    "state": "open",
-    "updated_at": "2026-08-22T14:03:45Z",
+    "state": "closed",
+    "updated_at": "2026-08-22T14:46:55Z",
     "merged_at": null,
     "additions": 308,
     "deletions": 28,
@@ -537,16 +548,5 @@
     "additions": 11,
     "deletions": 20,
     "changed_files": 6
-  },
-  {
-    "number": 14734,
-    "title": "Adopt MetadataList on monitor detail Details tab and Account information",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14734",
-    "state": "closed",
-    "updated_at": "2026-07-21T17:38:43Z",
-    "merged_at": "2026-07-21T17:38:41Z",
-    "additions": 203,
-    "deletions": 158,
-    "changed_files": 17
   }
 ]
