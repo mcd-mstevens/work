@@ -1,5 +1,16 @@
 [
   {
+    "number": 15563,
+    "title": "Fix Loader variant prop silently ignored at 54 call sites",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15563",
+    "state": "open",
+    "updated_at": "2026-08-22T11:13:15Z",
+    "merged_at": null,
+    "additions": 100,
+    "deletions": 202,
+    "changed_files": 48
+  },
+  {
     "number": 15556,
     "title": "Pin the connections table actions column",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15556",
@@ -537,16 +548,5 @@
     "additions": 183,
     "deletions": 165,
     "changed_files": 10
-  },
-  {
-    "number": 14686,
-    "title": "Add data product About tab and move monitoring agent button to header",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/14686",
-    "state": "closed",
-    "updated_at": "2026-07-20T17:47:35Z",
-    "merged_at": "2026-07-20T17:47:34Z",
-    "additions": 232,
-    "deletions": 181,
-    "changed_files": 11
   }
 ]
