@@ -4,9 +4,9 @@
     "title": "Give the shared Table a loading state, and adopt it on Domains (2 of TBD)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15564",
     "state": "open",
-    "updated_at": "2026-08-22T13:28:37Z",
+    "updated_at": "2026-08-22T14:03:45Z",
     "merged_at": null,
-    "additions": 251,
+    "additions": 308,
     "deletions": 28,
     "changed_files": 5
   },
