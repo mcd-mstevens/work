@@ -1,11 +1,22 @@
 [
   {
+    "number": 15944,
+    "title": "Widen the settings nav rail and match its heading to the page title",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15944",
+    "state": "closed",
+    "updated_at": "2026-09-11T01:04:14Z",
+    "merged_at": "2026-09-11T01:04:13Z",
+    "additions": 11,
+    "deletions": 6,
+    "changed_files": 4
+  },
+  {
     "number": 15946,
     "title": "Align the side nav's bottom row with the page footer's top border",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15946",
-    "state": "open",
-    "updated_at": "2026-09-10T20:26:12Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-09-11T01:01:15Z",
+    "merged_at": "2026-09-11T01:01:13Z",
     "additions": 10,
     "deletions": 0,
     "changed_files": 1
@@ -14,22 +25,11 @@
     "number": 15945,
     "title": "Render the alert feed Source as plain text reading Agent or Manual",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15945",
-    "state": "open",
-    "updated_at": "2026-09-10T20:26:00Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-09-11T01:01:15Z",
+    "merged_at": "2026-09-11T01:01:13Z",
     "additions": 9,
     "deletions": 18,
-    "changed_files": 4
-  },
-  {
-    "number": 15944,
-    "title": "Widen the settings nav rail and match its heading to the page title",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15944",
-    "state": "open",
-    "updated_at": "2026-09-10T20:25:45Z",
-    "merged_at": null,
-    "additions": 11,
-    "deletions": 6,
     "changed_files": 4
   },
   {
