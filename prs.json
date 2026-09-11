@@ -1,25 +1,58 @@
 [
   {
-    "number": 15981,
-    "title": "Match the vertical nav rail's rows to the navs beside it",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15981",
-    "state": "open",
-    "updated_at": "2026-09-11T17:33:56Z",
-    "merged_at": null,
-    "additions": 13,
-    "deletions": 0,
-    "changed_files": 1
+    "number": 15972,
+    "title": "Group the alerts filter menu by topic",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15972",
+    "state": "closed",
+    "updated_at": "2026-09-11T20:24:28Z",
+    "merged_at": "2026-09-11T20:24:27Z",
+    "additions": 297,
+    "deletions": 22,
+    "changed_files": 6
   },
   {
     "number": 15949,
     "title": "Encode coverage dashboard asset tags compactly in the URL",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15949",
-    "state": "open",
-    "updated_at": "2026-09-11T17:18:00Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-09-11T20:17:07Z",
+    "merged_at": "2026-09-11T20:17:06Z",
     "additions": 286,
     "deletions": 49,
     "changed_files": 7
+  },
+  {
+    "number": 15983,
+    "title": "Use the shared bulk action bar on exclusion windows",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15983",
+    "state": "open",
+    "updated_at": "2026-09-11T20:15:38Z",
+    "merged_at": null,
+    "additions": 218,
+    "deletions": 46,
+    "changed_files": 3
+  },
+  {
+    "number": 15980,
+    "title": "Write the network access guidance as prose, not an alert",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15980",
+    "state": "open",
+    "updated_at": "2026-09-11T18:11:01Z",
+    "merged_at": null,
+    "additions": 99,
+    "deletions": 32,
+    "changed_files": 6
+  },
+  {
+    "number": 15981,
+    "title": "Match the vertical nav rail's rows to the navs beside it",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15981",
+    "state": "closed",
+    "updated_at": "2026-09-11T18:01:09Z",
+    "merged_at": "2026-09-11T18:01:07Z",
+    "additions": 13,
+    "deletions": 0,
+    "changed_files": 1
   },
   {
     "number": 15968,
@@ -31,28 +64,6 @@
     "additions": 129,
     "deletions": 9,
     "changed_files": 5
-  },
-  {
-    "number": 15980,
-    "title": "Write the network access guidance as prose, not an alert",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15980",
-    "state": "open",
-    "updated_at": "2026-09-11T16:39:31Z",
-    "merged_at": null,
-    "additions": 87,
-    "deletions": 21,
-    "changed_files": 5
-  },
-  {
-    "number": 15972,
-    "title": "Group the alerts filter menu by topic",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15972",
-    "state": "open",
-    "updated_at": "2026-09-11T16:03:04Z",
-    "merged_at": null,
-    "additions": 297,
-    "deletions": 22,
-    "changed_files": 6
   },
   {
     "number": 15970,
@@ -537,16 +548,5 @@
     "additions": 214,
     "deletions": 12,
     "changed_files": 2
-  },
-  {
-    "number": 15090,
-    "title": "Alert page: remove the header chip row, move priority into the Details rail",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15090",
-    "state": "closed",
-    "updated_at": "2026-08-01T10:23:23Z",
-    "merged_at": "2026-08-01T10:23:22Z",
-    "additions": 96,
-    "deletions": 300,
-    "changed_files": 14
   }
 ]
