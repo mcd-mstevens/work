@@ -1,5 +1,49 @@
 [
   {
+    "number": 15970,
+    "title": "Open the filter bars people actually use on their own filters",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15970",
+    "state": "open",
+    "updated_at": "2026-09-11T13:17:32Z",
+    "merged_at": null,
+    "additions": 275,
+    "deletions": 51,
+    "changed_files": 14
+  },
+  {
+    "number": 15968,
+    "title": "Cap a server-narrowed filter key's checkbox at indeterminate",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15968",
+    "state": "open",
+    "updated_at": "2026-09-11T13:17:24Z",
+    "merged_at": null,
+    "additions": 129,
+    "deletions": 9,
+    "changed_files": 5
+  },
+  {
+    "number": 15972,
+    "title": "Group the alerts filter menu by topic",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15972",
+    "state": "open",
+    "updated_at": "2026-09-11T13:16:02Z",
+    "merged_at": null,
+    "additions": 194,
+    "deletions": 17,
+    "changed_files": 5
+  },
+  {
+    "number": 15949,
+    "title": "Encode coverage dashboard asset tags compactly in the URL",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15949",
+    "state": "open",
+    "updated_at": "2026-09-11T10:48:21Z",
+    "merged_at": null,
+    "additions": 286,
+    "deletions": 49,
+    "changed_files": 7
+  },
+  {
     "number": 15944,
     "title": "Widen the settings nav rail and match its heading to the page title",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15944",
@@ -31,17 +75,6 @@
     "additions": 9,
     "deletions": 18,
     "changed_files": 4
-  },
-  {
-    "number": 15949,
-    "title": "Encode coverage dashboard asset tags compactly in the URL",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15949",
-    "state": "open",
-    "updated_at": "2026-09-10T20:08:11Z",
-    "merged_at": null,
-    "additions": 202,
-    "deletions": 23,
-    "changed_files": 5
   },
   {
     "number": 15920,
@@ -514,39 +547,6 @@
     "merged_at": "2026-07-31T20:05:27Z",
     "additions": 131,
     "deletions": 48,
-    "changed_files": 4
-  },
-  {
-    "number": 15038,
-    "title": "Show the ETL integrations announcement banner on the Integrations settings page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15038",
-    "state": "closed",
-    "updated_at": "2026-07-31T17:22:03Z",
-    "merged_at": "2026-07-31T17:22:02Z",
-    "additions": 5,
-    "deletions": 1,
-    "changed_files": 1
-  },
-  {
-    "number": 15039,
-    "title": "Move the Monitors Columns button onto the bulk-actions row",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15039",
-    "state": "closed",
-    "updated_at": "2026-07-31T15:08:37Z",
-    "merged_at": "2026-07-31T15:08:35Z",
-    "additions": 7,
-    "deletions": 6,
-    "changed_files": 2
-  },
-  {
-    "number": 15037,
-    "title": "Remove Alerts from default Monitors list filters",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15037",
-    "state": "closed",
-    "updated_at": "2026-07-31T15:07:01Z",
-    "merged_at": "2026-07-31T15:06:59Z",
-    "additions": 14,
-    "deletions": 11,
     "changed_files": 4
   }
 ]
