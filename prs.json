@@ -1,5 +1,38 @@
 [
   {
+    "number": 15980,
+    "title": "Write the network access guidance as prose, not an alert",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15980",
+    "state": "open",
+    "updated_at": "2026-09-12T12:23:13Z",
+    "merged_at": null,
+    "additions": 102,
+    "deletions": 32,
+    "changed_files": 6
+  },
+  {
+    "number": 15996,
+    "title": "Add Kieran Williams to the reviewer roster",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15996",
+    "state": "closed",
+    "updated_at": "2026-09-12T12:10:03Z",
+    "merged_at": "2026-09-12T12:10:02Z",
+    "additions": 2,
+    "deletions": 1,
+    "changed_files": 1
+  },
+  {
+    "number": 15983,
+    "title": "Use the shared bulk action bar on exclusion windows",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15983",
+    "state": "open",
+    "updated_at": "2026-09-12T10:35:39Z",
+    "merged_at": null,
+    "additions": 250,
+    "deletions": 49,
+    "changed_files": 3
+  },
+  {
     "number": 15972,
     "title": "Group the alerts filter menu by topic",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15972",
@@ -20,28 +53,6 @@
     "additions": 286,
     "deletions": 49,
     "changed_files": 7
-  },
-  {
-    "number": 15983,
-    "title": "Use the shared bulk action bar on exclusion windows",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15983",
-    "state": "open",
-    "updated_at": "2026-09-11T20:15:38Z",
-    "merged_at": null,
-    "additions": 218,
-    "deletions": 46,
-    "changed_files": 3
-  },
-  {
-    "number": 15980,
-    "title": "Write the network access guidance as prose, not an alert",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15980",
-    "state": "open",
-    "updated_at": "2026-09-11T18:11:01Z",
-    "merged_at": null,
-    "additions": 99,
-    "deletions": 32,
-    "changed_files": 6
   },
   {
     "number": 15981,
@@ -537,16 +548,5 @@
     "additions": 36,
     "deletions": 0,
     "changed_files": 1
-  },
-  {
-    "number": 15072,
-    "title": "Agents list: header Add button, search, and persisted view",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15072",
-    "state": "closed",
-    "updated_at": "2026-08-01T11:04:03Z",
-    "merged_at": "2026-08-01T11:04:02Z",
-    "additions": 214,
-    "deletions": 12,
-    "changed_files": 2
   }
 ]
