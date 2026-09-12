@@ -1,11 +1,22 @@
 [
   {
+    "number": 15998,
+    "title": "Rebuild the activity dashboard around a shared filter bar",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15998",
+    "state": "open",
+    "updated_at": "2026-09-12T15:20:43Z",
+    "merged_at": null,
+    "additions": 1639,
+    "deletions": 928,
+    "changed_files": 47
+  },
+  {
     "number": 15980,
     "title": "Write the network access guidance as prose, not an alert",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15980",
-    "state": "open",
-    "updated_at": "2026-09-12T12:23:13Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-09-12T15:20:22Z",
+    "merged_at": "2026-09-12T15:20:21Z",
     "additions": 102,
     "deletions": 32,
     "changed_files": 6
@@ -537,16 +548,5 @@
     "additions": 256,
     "deletions": 379,
     "changed_files": 25
-  },
-  {
-    "number": 15227,
-    "title": "Add a Claude Code permission allowlist for the repo's read-only commands",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15227",
-    "state": "closed",
-    "updated_at": "2026-08-07T11:29:33Z",
-    "merged_at": null,
-    "additions": 36,
-    "deletions": 0,
-    "changed_files": 1
   }
 ]
