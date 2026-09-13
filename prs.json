@@ -1,10 +1,32 @@
 [
   {
+    "number": 16002,
+    "title": "Add copy-link buttons to the Data quality and Coverage dashboards",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16002",
+    "state": "open",
+    "updated_at": "2026-09-13T13:57:32Z",
+    "merged_at": null,
+    "additions": 78,
+    "deletions": 0,
+    "changed_files": 2
+  },
+  {
+    "number": 16001,
+    "title": "Disable the global domain picker on the Data quality dashboard",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16001",
+    "state": "open",
+    "updated_at": "2026-09-13T13:29:27Z",
+    "merged_at": null,
+    "additions": 221,
+    "deletions": 17,
+    "changed_files": 2
+  },
+  {
     "number": 15998,
     "title": "Rebuild the activity dashboard around a shared filter bar",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15998",
     "state": "open",
-    "updated_at": "2026-09-12T16:05:29Z",
+    "updated_at": "2026-09-13T11:32:07Z",
     "merged_at": null,
     "additions": 1999,
     "deletions": 938,
@@ -526,27 +548,5 @@
     "additions": 91,
     "deletions": 62,
     "changed_files": 4
-  },
-  {
-    "number": 15209,
-    "title": "Rework the SCIM settings page into cards with a modal editor",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15209",
-    "state": "closed",
-    "updated_at": "2026-08-08T11:43:01Z",
-    "merged_at": "2026-08-08T11:43:00Z",
-    "additions": 390,
-    "deletions": 279,
-    "changed_files": 16
-  },
-  {
-    "number": 15196,
-    "title": "Remove noise from the alert page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15196",
-    "state": "closed",
-    "updated_at": "2026-08-07T14:11:28Z",
-    "merged_at": "2026-08-07T14:11:26Z",
-    "additions": 256,
-    "deletions": 379,
-    "changed_files": 25
   }
 ]
