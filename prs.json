@@ -1,36 +1,80 @@
 [
   {
-    "number": 16002,
-    "title": "Add copy-link buttons to the Data quality and Coverage dashboards",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16002",
+    "number": 15998,
+    "title": "Rebuild the activity dashboard around a shared filter bar",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15998",
     "state": "open",
-    "updated_at": "2026-09-13T14:30:29Z",
+    "updated_at": "2026-09-14T16:59:00Z",
     "merged_at": null,
-    "additions": 78,
-    "deletions": 0,
-    "changed_files": 2
+    "additions": 1999,
+    "deletions": 938,
+    "changed_files": 50
   },
   {
     "number": 16001,
     "title": "Disable the global domain picker on the Data quality dashboard",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16001",
-    "state": "open",
-    "updated_at": "2026-09-13T14:24:24Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-09-14T16:41:54Z",
+    "merged_at": "2026-09-14T16:41:52Z",
     "additions": 221,
     "deletions": 17,
     "changed_files": 2
   },
   {
-    "number": 15998,
-    "title": "Rebuild the activity dashboard around a shared filter bar",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15998",
-    "state": "open",
-    "updated_at": "2026-09-13T11:32:07Z",
-    "merged_at": null,
-    "additions": 1999,
-    "deletions": 938,
-    "changed_files": 50
+    "number": 15983,
+    "title": "Use the shared bulk action bar on exclusion windows",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15983",
+    "state": "closed",
+    "updated_at": "2026-09-14T16:41:54Z",
+    "merged_at": "2026-09-14T16:41:52Z",
+    "additions": 315,
+    "deletions": 49,
+    "changed_files": 3
+  },
+  {
+    "number": 16002,
+    "title": "Add copy-link buttons to the Data quality and Coverage dashboards",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16002",
+    "state": "closed",
+    "updated_at": "2026-09-14T16:30:25Z",
+    "merged_at": "2026-09-14T16:30:23Z",
+    "additions": 78,
+    "deletions": 0,
+    "changed_files": 2
+  },
+  {
+    "number": 15634,
+    "title": "a11y: give four controls a stable accessible name",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15634",
+    "state": "closed",
+    "updated_at": "2026-09-14T13:36:45Z",
+    "merged_at": "2026-09-14T13:36:43Z",
+    "additions": 4,
+    "deletions": 3,
+    "changed_files": 4
+  },
+  {
+    "number": 15629,
+    "title": "a11y: remove aria-selected from a roleless element in the agent trace tree",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15629",
+    "state": "closed",
+    "updated_at": "2026-09-14T13:36:44Z",
+    "merged_at": "2026-09-14T13:36:43Z",
+    "additions": 0,
+    "deletions": 1,
+    "changed_files": 1
+  },
+  {
+    "number": 15628,
+    "title": "a11y: remove hidden containers from the keyboard tab order",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15628",
+    "state": "closed",
+    "updated_at": "2026-09-14T13:36:44Z",
+    "merged_at": "2026-09-14T13:36:43Z",
+    "additions": 30,
+    "deletions": 6,
+    "changed_files": 5
   },
   {
     "number": 15980,
@@ -53,17 +97,6 @@
     "additions": 2,
     "deletions": 1,
     "changed_files": 1
-  },
-  {
-    "number": 15983,
-    "title": "Use the shared bulk action bar on exclusion windows",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15983",
-    "state": "open",
-    "updated_at": "2026-09-12T10:35:39Z",
-    "merged_at": null,
-    "additions": 250,
-    "deletions": 49,
-    "changed_files": 3
   },
   {
     "number": 15972,
@@ -176,17 +209,6 @@
     "changed_files": 24
   },
   {
-    "number": 15634,
-    "title": "a11y: give four controls a stable accessible name",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15634",
-    "state": "open",
-    "updated_at": "2026-09-09T21:27:42Z",
-    "merged_at": null,
-    "additions": 4,
-    "deletions": 3,
-    "changed_files": 4
-  },
-  {
     "number": 15900,
     "title": "Give the shared Table its own loading state (4 of TBD)",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15900",
@@ -273,28 +295,6 @@
     "additions": 826,
     "deletions": 164,
     "changed_files": 42
-  },
-  {
-    "number": 15628,
-    "title": "a11y: remove hidden containers from the keyboard tab order",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15628",
-    "state": "open",
-    "updated_at": "2026-08-26T21:15:59Z",
-    "merged_at": null,
-    "additions": 30,
-    "deletions": 6,
-    "changed_files": 5
-  },
-  {
-    "number": 15629,
-    "title": "a11y: remove aria-selected from a roleless element in the agent trace tree",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15629",
-    "state": "open",
-    "updated_at": "2026-08-26T19:58:34Z",
-    "merged_at": null,
-    "additions": 0,
-    "deletions": 1,
-    "changed_files": 1
   },
   {
     "number": 15565,
