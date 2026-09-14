@@ -4,10 +4,10 @@
     "title": "Rebuild the activity dashboard around a shared filter bar",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15998",
     "state": "open",
-    "updated_at": "2026-09-14T16:59:00Z",
+    "updated_at": "2026-09-14T21:08:07Z",
     "merged_at": null,
-    "additions": 1999,
-    "deletions": 938,
+    "additions": 2020,
+    "deletions": 944,
     "changed_files": 50
   },
   {
