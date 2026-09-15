@@ -4,9 +4,9 @@
     "title": "Rebuild the activity dashboard around a shared filter bar",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15998",
     "state": "open",
-    "updated_at": "2026-09-15T01:07:23Z",
+    "updated_at": "2026-09-15T13:04:31Z",
     "merged_at": null,
-    "additions": 2079,
+    "additions": 2114,
     "deletions": 944,
     "changed_files": 50
   },
@@ -14,12 +14,23 @@
     "number": 16042,
     "title": "Raise dimmed and dark-mode error text to WCAG AA contrast",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16042",
-    "state": "open",
-    "updated_at": "2026-09-15T00:25:15Z",
-    "merged_at": null,
-    "additions": 82,
-    "deletions": 3,
-    "changed_files": 2
+    "state": "closed",
+    "updated_at": "2026-09-15T12:58:48Z",
+    "merged_at": "2026-09-15T12:58:47Z",
+    "additions": 84,
+    "deletions": 8,
+    "changed_files": 3
+  },
+  {
+    "number": 16044,
+    "title": "Export Mantine EmptyState from @monte-carlo-data/ui",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16044",
+    "state": "closed",
+    "updated_at": "2026-09-15T11:57:00Z",
+    "merged_at": "2026-09-15T11:56:58Z",
+    "additions": 8,
+    "deletions": 0,
+    "changed_files": 3
   },
   {
     "number": 16001,
@@ -537,16 +548,5 @@
     "additions": 281,
     "deletions": 361,
     "changed_files": 4
-  },
-  {
-    "number": 15254,
-    "title": "Remove the copy link action from asset detail pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15254",
-    "state": "closed",
-    "updated_at": "2026-08-09T10:56:46Z",
-    "merged_at": "2026-08-09T10:56:44Z",
-    "additions": 2,
-    "deletions": 21,
-    "changed_files": 2
   }
 ]
