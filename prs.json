@@ -4,11 +4,22 @@
     "title": "Rebuild the activity dashboard around a shared filter bar",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15998",
     "state": "open",
-    "updated_at": "2026-09-14T21:08:07Z",
+    "updated_at": "2026-09-15T01:07:23Z",
     "merged_at": null,
-    "additions": 2020,
+    "additions": 2079,
     "deletions": 944,
     "changed_files": 50
+  },
+  {
+    "number": 16042,
+    "title": "Raise dimmed and dark-mode error text to WCAG AA contrast",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16042",
+    "state": "open",
+    "updated_at": "2026-09-15T00:25:15Z",
+    "merged_at": null,
+    "additions": 82,
+    "deletions": 3,
+    "changed_files": 2
   },
   {
     "number": 16001,
@@ -537,16 +548,5 @@
     "additions": 2,
     "deletions": 21,
     "changed_files": 2
-  },
-  {
-    "number": 15255,
-    "title": "Fix the data product asset selector layout",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15255",
-    "state": "closed",
-    "updated_at": "2026-08-08T22:36:02Z",
-    "merged_at": "2026-08-08T22:36:01Z",
-    "additions": 91,
-    "deletions": 62,
-    "changed_files": 4
   }
 ]
