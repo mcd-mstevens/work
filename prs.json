@@ -3,9 +3,9 @@
     "number": 16100,
     "title": "Show Triage priority chip by default on the Alerts view",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16100",
-    "state": "open",
-    "updated_at": "2026-09-16T18:17:37Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-09-16T19:30:07Z",
+    "merged_at": "2026-09-16T19:30:05Z",
     "additions": 13,
     "deletions": 7,
     "changed_files": 2
