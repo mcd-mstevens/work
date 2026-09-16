@@ -1,5 +1,16 @@
 [
   {
+    "number": 16100,
+    "title": "Show Triage priority chip by default on the Alerts view",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16100",
+    "state": "open",
+    "updated_at": "2026-09-16T18:17:37Z",
+    "merged_at": null,
+    "additions": 13,
+    "deletions": 7,
+    "changed_files": 2
+  },
+  {
     "number": 15998,
     "title": "Rebuild the activity dashboard around a shared filter bar",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/15998",
@@ -537,16 +548,5 @@
     "additions": 74,
     "deletions": 7,
     "changed_files": 3
-  },
-  {
-    "number": 15252,
-    "title": "Render legacy monitor details as metadata list section cards",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15252",
-    "state": "closed",
-    "updated_at": "2026-08-10T14:28:38Z",
-    "merged_at": "2026-08-10T14:28:36Z",
-    "additions": 281,
-    "deletions": 361,
-    "changed_files": 4
   }
 ]
