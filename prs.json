@@ -1,5 +1,16 @@
 [
   {
+    "number": 16201,
+    "title": "Tighten the asset About tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16201",
+    "state": "open",
+    "updated_at": "2026-09-19T18:05:00Z",
+    "merged_at": null,
+    "additions": 652,
+    "deletions": 305,
+    "changed_files": 16
+  },
+  {
     "number": 16200,
     "title": "Group the activity dashboard into Monitors and Users sections",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16200",
@@ -537,16 +548,5 @@
     "additions": 385,
     "deletions": 137,
     "changed_files": 11
-  },
-  {
-    "number": 15253,
-    "title": "Drop the bespoke styling layer on the Resources menu",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15253",
-    "state": "closed",
-    "updated_at": "2026-08-10T18:16:01Z",
-    "merged_at": "2026-08-10T18:16:00Z",
-    "additions": 171,
-    "deletions": 79,
-    "changed_files": 7
   }
 ]
