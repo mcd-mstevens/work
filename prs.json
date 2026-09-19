@@ -1,5 +1,16 @@
 [
   {
+    "number": 16200,
+    "title": "Group the activity dashboard into Monitors and Users sections",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16200",
+    "state": "open",
+    "updated_at": "2026-09-19T13:46:12Z",
+    "merged_at": null,
+    "additions": 70,
+    "deletions": 60,
+    "changed_files": 4
+  },
+  {
     "number": 16100,
     "title": "Show Triage priority chip by default on the Alerts view",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16100",
@@ -537,16 +548,5 @@
     "additions": 171,
     "deletions": 79,
     "changed_files": 7
-  },
-  {
-    "number": 15251,
-    "title": "Withhold generated-key dismissal until the list refetch lands",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15251",
-    "state": "closed",
-    "updated_at": "2026-08-10T14:34:43Z",
-    "merged_at": "2026-08-10T14:34:41Z",
-    "additions": 74,
-    "deletions": 7,
-    "changed_files": 3
   }
 ]
