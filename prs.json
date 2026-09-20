@@ -1,5 +1,16 @@
 [
   {
+    "number": 16204,
+    "title": "Quiet down the asset Summary tab — DES-640, DES-641, DES-642",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16204",
+    "state": "open",
+    "updated_at": "2026-09-20T18:00:11Z",
+    "merged_at": null,
+    "additions": 370,
+    "deletions": 277,
+    "changed_files": 18
+  },
+  {
     "number": 16201,
     "title": "Tighten the asset About tab",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16201",
@@ -537,16 +548,5 @@
     "additions": 3,
     "deletions": 4,
     "changed_files": 2
-  },
-  {
-    "number": 15228,
-    "title": "Remove deleted alert comments from the Apollo cache",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15228",
-    "state": "closed",
-    "updated_at": "2026-08-10T18:51:10Z",
-    "merged_at": "2026-08-10T18:51:08Z",
-    "additions": 385,
-    "deletions": 137,
-    "changed_files": 11
   }
 ]
