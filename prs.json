@@ -3,9 +3,9 @@
     "number": 16200,
     "title": "Group the activity dashboard into Monitors and Users sections",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16200",
-    "state": "open",
-    "updated_at": "2026-09-21T16:10:33Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-09-21T18:01:26Z",
+    "merged_at": "2026-09-21T18:01:24Z",
     "additions": 70,
     "deletions": 60,
     "changed_files": 4
