@@ -1,5 +1,16 @@
 [
   {
+    "number": 16204,
+    "title": "Quiet down the asset Summary tab — DES-640, DES-641, DES-642",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16204",
+    "state": "open",
+    "updated_at": "2026-09-22T01:14:54Z",
+    "merged_at": null,
+    "additions": 370,
+    "deletions": 277,
+    "changed_files": 18
+  },
+  {
     "number": 16200,
     "title": "Group the activity dashboard into Monitors and Users sections",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16200",
@@ -20,17 +31,6 @@
     "additions": 652,
     "deletions": 305,
     "changed_files": 16
-  },
-  {
-    "number": 16204,
-    "title": "Quiet down the asset Summary tab — DES-640, DES-641, DES-642",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16204",
-    "state": "open",
-    "updated_at": "2026-09-20T18:00:11Z",
-    "merged_at": null,
-    "additions": 370,
-    "deletions": 277,
-    "changed_files": 18
   },
   {
     "number": 16100,
