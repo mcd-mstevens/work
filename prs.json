@@ -3,9 +3,9 @@
     "number": 16204,
     "title": "Quiet down the asset Summary tab — DES-640, DES-641, DES-642",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16204",
-    "state": "open",
-    "updated_at": "2026-09-22T16:15:29Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-09-23T18:41:10Z",
+    "merged_at": "2026-09-23T18:41:08Z",
     "additions": 453,
     "deletions": 265,
     "changed_files": 17
