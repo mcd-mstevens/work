@@ -1,5 +1,16 @@
 [
   {
+    "number": 16248,
+    "title": "Remove unused color exports and use the theme blue for onboarding confetti",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16248",
+    "state": "open",
+    "updated_at": "2026-09-24T12:22:22Z",
+    "merged_at": null,
+    "additions": 6,
+    "deletions": 36,
+    "changed_files": 3
+  },
+  {
     "number": 16204,
     "title": "Quiet down the asset Summary tab — DES-640, DES-641, DES-642",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16204",
@@ -537,16 +548,5 @@
     "additions": 774,
     "deletions": 415,
     "changed_files": 19
-  },
-  {
-    "number": 15279,
-    "title": "Move the expired-invites alert under the Pending invitations heading",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15279",
-    "state": "closed",
-    "updated_at": "2026-08-11T11:35:00Z",
-    "merged_at": "2026-08-11T11:34:59Z",
-    "additions": 3,
-    "deletions": 4,
-    "changed_files": 2
   }
 ]
