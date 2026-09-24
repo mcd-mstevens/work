@@ -3,9 +3,9 @@
     "number": 16248,
     "title": "Remove unused color exports and use the theme blue for onboarding confetti",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16248",
-    "state": "open",
-    "updated_at": "2026-09-24T12:22:22Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-09-24T17:06:47Z",
+    "merged_at": "2026-09-24T17:06:46Z",
     "additions": 6,
     "deletions": 36,
     "changed_files": 3
