@@ -1,5 +1,16 @@
 [
   {
+    "number": 16365,
+    "title": "Unify empty states on Mantine EmptyState, part 1",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16365",
+    "state": "open",
+    "updated_at": "2026-10-02T18:03:31Z",
+    "merged_at": null,
+    "additions": 296,
+    "deletions": 141,
+    "changed_files": 27
+  },
+  {
     "number": 16248,
     "title": "Remove unused color exports and use the theme blue for onboarding confetti",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16248",
@@ -537,16 +548,5 @@
     "additions": 68,
     "deletions": 10,
     "changed_files": 2
-  },
-  {
-    "number": 15296,
-    "title": "Data sharing inconsistencies",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15296",
-    "state": "closed",
-    "updated_at": "2026-08-12T16:48:36Z",
-    "merged_at": "2026-08-12T16:48:34Z",
-    "additions": 774,
-    "deletions": 415,
-    "changed_files": 19
   }
 ]
