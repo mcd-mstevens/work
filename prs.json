@@ -1,5 +1,27 @@
 [
   {
+    "number": 16374,
+    "title": "Move the legacy EmptyState and SearchEmptyState onto Mantine EmptyState",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16374",
+    "state": "open",
+    "updated_at": "2026-10-03T21:54:05Z",
+    "merged_at": null,
+    "additions": 386,
+    "deletions": 282,
+    "changed_files": 40
+  },
+  {
+    "number": 16373,
+    "title": "Unify empty states on Mantine EmptyState, part 2",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16373",
+    "state": "open",
+    "updated_at": "2026-10-03T21:37:52Z",
+    "merged_at": null,
+    "additions": 370,
+    "deletions": 624,
+    "changed_files": 43
+  },
+  {
     "number": 16365,
     "title": "Unify empty states on Mantine EmptyState, part 1",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16365",
@@ -526,27 +548,5 @@
     "additions": 237,
     "deletions": 251,
     "changed_files": 13
-  },
-  {
-    "number": 15323,
-    "title": "Align the network access control screens with settings conventions",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15323",
-    "state": "closed",
-    "updated_at": "2026-08-13T10:12:47Z",
-    "merged_at": "2026-08-13T10:12:46Z",
-    "additions": 307,
-    "deletions": 255,
-    "changed_files": 14
-  },
-  {
-    "number": 15321,
-    "title": "Point the settings and pages rules at the patterns the codebase actually uses",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15321",
-    "state": "closed",
-    "updated_at": "2026-08-12T17:08:57Z",
-    "merged_at": "2026-08-12T17:08:56Z",
-    "additions": 68,
-    "deletions": 10,
-    "changed_files": 2
   }
 ]
