@@ -1,36 +1,58 @@
 [
   {
-    "number": 16374,
-    "title": "Move the legacy EmptyState and SearchEmptyState onto Mantine EmptyState",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16374",
+    "number": 16376,
+    "title": "Use EmptyState for roles, groups, domains, and agent lineage",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16376",
     "state": "open",
-    "updated_at": "2026-10-03T21:54:05Z",
+    "updated_at": "2026-10-04T01:20:59Z",
     "merged_at": null,
-    "additions": 386,
-    "deletions": 282,
-    "changed_files": 40
-  },
-  {
-    "number": 16373,
-    "title": "Unify empty states on Mantine EmptyState, part 2",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16373",
-    "state": "open",
-    "updated_at": "2026-10-03T21:37:52Z",
-    "merged_at": null,
-    "additions": 370,
-    "deletions": 624,
-    "changed_files": 43
+    "additions": 98,
+    "deletions": 53,
+    "changed_files": 10
   },
   {
     "number": 16365,
     "title": "Unify empty states on Mantine EmptyState, part 1",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16365",
     "state": "open",
-    "updated_at": "2026-10-02T18:03:31Z",
+    "updated_at": "2026-10-03T23:48:05Z",
     "merged_at": null,
-    "additions": 296,
+    "additions": 318,
     "deletions": 141,
     "changed_files": 27
+  },
+  {
+    "number": 16375,
+    "title": "Move WidgetInfoMessage and one-off empty states onto Mantine EmptyState",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16375",
+    "state": "open",
+    "updated_at": "2026-10-03T23:42:59Z",
+    "merged_at": null,
+    "additions": 586,
+    "deletions": 646,
+    "changed_files": 45
+  },
+  {
+    "number": 16374,
+    "title": "Move the legacy EmptyState and SearchEmptyState onto Mantine EmptyState",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16374",
+    "state": "open",
+    "updated_at": "2026-10-03T23:42:35Z",
+    "merged_at": null,
+    "additions": 410,
+    "deletions": 291,
+    "changed_files": 44
+  },
+  {
+    "number": 16373,
+    "title": "Unify empty states on Mantine EmptyState, part 2",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16373",
+    "state": "open",
+    "updated_at": "2026-10-03T23:42:34Z",
+    "merged_at": null,
+    "additions": 370,
+    "deletions": 624,
+    "changed_files": 43
   },
   {
     "number": 16248,
@@ -526,27 +548,5 @@
     "additions": 61,
     "deletions": 12,
     "changed_files": 2
-  },
-  {
-    "number": 15356,
-    "title": "Explain why Save is unavailable on settings form pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15356",
-    "state": "closed",
-    "updated_at": "2026-08-13T13:18:54Z",
-    "merged_at": "2026-08-13T13:18:53Z",
-    "additions": 125,
-    "deletions": 11,
-    "changed_files": 5
-  },
-  {
-    "number": 15346,
-    "title": "Restore Enter-to-submit on the authorization group add and edit pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15346",
-    "state": "closed",
-    "updated_at": "2026-08-13T13:16:14Z",
-    "merged_at": "2026-08-13T13:16:12Z",
-    "additions": 237,
-    "deletions": 251,
-    "changed_files": 13
   }
 ]
