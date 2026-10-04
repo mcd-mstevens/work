@@ -1,5 +1,49 @@
 [
   {
+    "number": 16376,
+    "title": "Use EmptyState for roles, groups, domains, and agent lineage",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16376",
+    "state": "closed",
+    "updated_at": "2026-10-04T21:31:53Z",
+    "merged_at": "2026-10-04T21:31:52Z",
+    "additions": 98,
+    "deletions": 53,
+    "changed_files": 10
+  },
+  {
+    "number": 16375,
+    "title": "Move WidgetInfoMessage and one-off empty states onto Mantine EmptyState",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16375",
+    "state": "closed",
+    "updated_at": "2026-10-04T21:07:29Z",
+    "merged_at": "2026-10-04T21:07:27Z",
+    "additions": 586,
+    "deletions": 646,
+    "changed_files": 45
+  },
+  {
+    "number": 16374,
+    "title": "Move the legacy EmptyState and SearchEmptyState onto Mantine EmptyState",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16374",
+    "state": "closed",
+    "updated_at": "2026-10-04T20:25:34Z",
+    "merged_at": "2026-10-04T20:25:33Z",
+    "additions": 443,
+    "deletions": 311,
+    "changed_files": 44
+  },
+  {
+    "number": 16373,
+    "title": "Unify empty states on Mantine EmptyState, part 2",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16373",
+    "state": "closed",
+    "updated_at": "2026-10-04T19:56:12Z",
+    "merged_at": "2026-10-04T19:56:10Z",
+    "additions": 370,
+    "deletions": 624,
+    "changed_files": 43
+  },
+  {
     "number": 16365,
     "title": "Unify empty states on Mantine EmptyState, part 1",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16365",
@@ -9,50 +53,6 @@
     "additions": 318,
     "deletions": 141,
     "changed_files": 27
-  },
-  {
-    "number": 16376,
-    "title": "Use EmptyState for roles, groups, domains, and agent lineage",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16376",
-    "state": "open",
-    "updated_at": "2026-10-04T18:57:38Z",
-    "merged_at": null,
-    "additions": 1810,
-    "deletions": 1770,
-    "changed_files": 163
-  },
-  {
-    "number": 16375,
-    "title": "Move WidgetInfoMessage and one-off empty states onto Mantine EmptyState",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16375",
-    "state": "open",
-    "updated_at": "2026-10-04T18:57:28Z",
-    "merged_at": null,
-    "additions": 1712,
-    "deletions": 1717,
-    "changed_files": 153
-  },
-  {
-    "number": 16374,
-    "title": "Move the legacy EmptyState and SearchEmptyState onto Mantine EmptyState",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16374",
-    "state": "open",
-    "updated_at": "2026-10-04T18:56:01Z",
-    "merged_at": null,
-    "additions": 1127,
-    "deletions": 1072,
-    "changed_files": 109
-  },
-  {
-    "number": 16373,
-    "title": "Unify empty states on Mantine EmptyState, part 2",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16373",
-    "state": "open",
-    "updated_at": "2026-10-04T18:55:59Z",
-    "merged_at": null,
-    "additions": 687,
-    "deletions": 764,
-    "changed_files": 68
   },
   {
     "number": 16248,
