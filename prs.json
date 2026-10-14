@@ -5,7 +5,10 @@
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16382",
     "state": "closed",
     "updated_at": "2026-10-05T16:15:08Z",
-    "merged_at": "2026-10-05T16:15:06Z"
+    "merged_at": "2026-10-05T16:15:06Z",
+    "additions": 86,
+    "deletions": 73,
+    "changed_files": 7
   },
   {
     "number": 16376,
