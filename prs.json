@@ -1,5 +1,27 @@
 [
   {
+    "number": 16684,
+    "title": "K2-604: Persist Alerts feed filters across alert detail navigation",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16684",
+    "state": "open",
+    "updated_at": "2026-10-20T16:47:37Z",
+    "merged_at": null,
+    "additions": 268,
+    "deletions": 10,
+    "changed_files": 12
+  },
+  {
+    "number": 16683,
+    "title": "PRO-3171: Remember Alerts feed rows-per-page selection",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16683",
+    "state": "open",
+    "updated_at": "2026-10-20T16:45:30Z",
+    "merged_at": null,
+    "additions": 268,
+    "deletions": 8,
+    "changed_files": 9
+  },
+  {
     "number": 16382,
     "title": "Give the tuning recommendation card the agent glow border",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16382",
@@ -525,28 +547,6 @@
     "merged_at": "2026-08-14T20:32:16Z",
     "additions": 13,
     "deletions": 31,
-    "changed_files": 2
-  },
-  {
-    "number": 15397,
-    "title": "Let cmd-click open a row in a new tab from list pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15397",
-    "state": "closed",
-    "updated_at": "2026-08-14T18:05:36Z",
-    "merged_at": "2026-08-14T18:05:34Z",
-    "additions": 1238,
-    "deletions": 312,
-    "changed_files": 42
-  },
-  {
-    "number": 15380,
-    "title": "Let cmd-click open a domain in a new tab from the domains list",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15380",
-    "state": "closed",
-    "updated_at": "2026-08-14T15:55:23Z",
-    "merged_at": null,
-    "additions": 39,
-    "deletions": 8,
     "changed_files": 2
   }
 ]
