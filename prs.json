@@ -1,25 +1,25 @@
 [
   {
-    "number": 16684,
-    "title": "K2-604: Persist Alerts feed filters across alert detail navigation",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16684",
-    "state": "open",
-    "updated_at": "2026-10-20T16:47:37Z",
-    "merged_at": null,
-    "additions": 268,
-    "deletions": 10,
-    "changed_files": 12
-  },
-  {
     "number": 16683,
     "title": "PRO-3171: Remember Alerts feed rows-per-page selection",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16683",
     "state": "open",
-    "updated_at": "2026-10-20T16:45:30Z",
+    "updated_at": "2026-10-20T19:31:40Z",
     "merged_at": null,
     "additions": 268,
     "deletions": 8,
     "changed_files": 9
+  },
+  {
+    "number": 16684,
+    "title": "K2-604: Persist Alerts feed filters across alert detail navigation",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16684",
+    "state": "open",
+    "updated_at": "2026-10-20T19:31:05Z",
+    "merged_at": null,
+    "additions": 268,
+    "deletions": 10,
+    "changed_files": 12
   },
   {
     "number": 16382,
