@@ -1,25 +1,36 @@
 [
   {
-    "number": 16683,
-    "title": "PRO-3171: Remember Alerts feed rows-per-page selection",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16683",
+    "number": 16847,
+    "title": "DES-659: Make collapsed nav menus reachable by keyboard",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16847",
     "state": "open",
-    "updated_at": "2026-10-20T19:31:40Z",
+    "updated_at": "2026-10-24T19:08:08Z",
     "merged_at": null,
-    "additions": 268,
-    "deletions": 8,
-    "changed_files": 9
+    "additions": 224,
+    "deletions": 27,
+    "changed_files": 2
   },
   {
     "number": 16684,
     "title": "K2-604: Persist Alerts feed filters across alert detail navigation",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16684",
     "state": "open",
-    "updated_at": "2026-10-20T19:31:05Z",
+    "updated_at": "2026-10-24T18:46:57Z",
     "merged_at": null,
     "additions": 268,
     "deletions": 10,
     "changed_files": 12
+  },
+  {
+    "number": 16683,
+    "title": "PRO-3171: Remember Alerts feed rows-per-page selection",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16683",
+    "state": "open",
+    "updated_at": "2026-10-24T18:45:18Z",
+    "merged_at": null,
+    "additions": 268,
+    "deletions": 8,
+    "changed_files": 9
   },
   {
     "number": 16382,
@@ -537,16 +548,5 @@
     "additions": 673,
     "deletions": 112,
     "changed_files": 32
-  },
-  {
-    "number": 15426,
-    "title": "Simplify the triage priority chips and standardize the add-audience button",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15426",
-    "state": "closed",
-    "updated_at": "2026-08-14T20:32:18Z",
-    "merged_at": "2026-08-14T20:32:16Z",
-    "additions": 13,
-    "deletions": 31,
-    "changed_files": 2
   }
 ]
