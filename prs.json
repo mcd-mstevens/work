@@ -1,13 +1,35 @@
 [
   {
+    "number": 16848,
+    "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
+    "state": "open",
+    "updated_at": "2026-10-24T22:53:54Z",
+    "merged_at": null,
+    "additions": 488,
+    "deletions": 84,
+    "changed_files": 10
+  },
+  {
+    "number": 16849,
+    "title": "DES-655: Run guided tours on Mantine's Tour component",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16849",
+    "state": "open",
+    "updated_at": "2026-10-24T22:52:54Z",
+    "merged_at": null,
+    "additions": 285,
+    "deletions": 1003,
+    "changed_files": 38
+  },
+  {
     "number": 16847,
     "title": "DES-659: Make collapsed nav menus reachable by keyboard",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16847",
     "state": "open",
-    "updated_at": "2026-10-24T19:08:08Z",
+    "updated_at": "2026-10-24T22:00:32Z",
     "merged_at": null,
-    "additions": 224,
-    "deletions": 27,
+    "additions": 276,
+    "deletions": 53,
     "changed_files": 2
   },
   {
@@ -526,27 +548,5 @@
     "additions": 27,
     "deletions": 484,
     "changed_files": 11
-  },
-  {
-    "number": 15429,
-    "title": "Navigate in place on a plain row click in eight list tables",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15429",
-    "state": "closed",
-    "updated_at": "2026-08-20T19:32:44Z",
-    "merged_at": "2026-08-20T19:32:42Z",
-    "additions": 307,
-    "deletions": 155,
-    "changed_files": 18
-  },
-  {
-    "number": 15430,
-    "title": "Document and harden the shared row-link contract",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15430",
-    "state": "closed",
-    "updated_at": "2026-08-20T19:30:45Z",
-    "merged_at": "2026-08-20T19:30:43Z",
-    "additions": 673,
-    "deletions": 112,
-    "changed_files": 32
   }
 ]
