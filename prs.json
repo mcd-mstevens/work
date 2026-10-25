@@ -1,25 +1,69 @@
 [
   {
-    "number": 16848,
-    "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
+    "number": 16860,
+    "title": "DES-648: Drop the MCP servers card that repeats the page title",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16860",
     "state": "open",
-    "updated_at": "2026-10-25T10:51:20Z",
+    "updated_at": "2026-10-25T14:40:34Z",
     "merged_at": null,
-    "additions": 534,
-    "deletions": 135,
-    "changed_files": 11
+    "additions": 202,
+    "deletions": 164,
+    "changed_files": 8
+  },
+  {
+    "number": 16855,
+    "title": "Open the guides card when a Getting started tour is picked",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16855",
+    "state": "closed",
+    "updated_at": "2026-10-25T14:16:06Z",
+    "merged_at": "2026-10-25T14:16:04Z",
+    "additions": 236,
+    "deletions": 79,
+    "changed_files": 3
   },
   {
     "number": 16849,
     "title": "DES-655: Run guided tours on Mantine's Tour component",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16849",
-    "state": "open",
-    "updated_at": "2026-10-25T10:49:09Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-10-25T14:16:06Z",
+    "merged_at": "2026-10-25T14:16:04Z",
     "additions": 316,
     "deletions": 1003,
     "changed_files": 38
+  },
+  {
+    "number": 16854,
+    "title": "DES-661: Label Ops Agent question inputs for screen readers",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16854",
+    "state": "open",
+    "updated_at": "2026-10-25T11:51:37Z",
+    "merged_at": null,
+    "additions": 64,
+    "deletions": 14,
+    "changed_files": 3
+  },
+  {
+    "number": 16683,
+    "title": "PRO-3171: Remember Alerts feed rows-per-page selection",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16683",
+    "state": "closed",
+    "updated_at": "2026-10-25T11:20:49Z",
+    "merged_at": "2026-10-25T11:20:47Z",
+    "additions": 268,
+    "deletions": 8,
+    "changed_files": 9
+  },
+  {
+    "number": 16848,
+    "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
+    "state": "open",
+    "updated_at": "2026-10-25T10:56:24Z",
+    "merged_at": null,
+    "additions": 534,
+    "deletions": 135,
+    "changed_files": 11
   },
   {
     "number": 16684,
@@ -31,17 +75,6 @@
     "additions": 268,
     "deletions": 10,
     "changed_files": 12
-  },
-  {
-    "number": 16683,
-    "title": "PRO-3171: Remember Alerts feed rows-per-page selection",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16683",
-    "state": "open",
-    "updated_at": "2026-10-25T05:09:12Z",
-    "merged_at": null,
-    "additions": 268,
-    "deletions": 8,
-    "changed_files": 9
   },
   {
     "number": 16847,
@@ -515,38 +548,5 @@
     "additions": 113,
     "deletions": 216,
     "changed_files": 53
-  },
-  {
-    "number": 15564,
-    "title": "Give the shared Table a loading state, and adopt it on Domains (2 of TBD)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15564",
-    "state": "closed",
-    "updated_at": "2026-08-22T14:46:55Z",
-    "merged_at": null,
-    "additions": 308,
-    "deletions": 28,
-    "changed_files": 5
-  },
-  {
-    "number": 15556,
-    "title": "Pin the connections table actions column",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15556",
-    "state": "closed",
-    "updated_at": "2026-08-21T18:53:22Z",
-    "merged_at": "2026-08-21T18:53:21Z",
-    "additions": 61,
-    "deletions": 2,
-    "changed_files": 3
-  },
-  {
-    "number": 15548,
-    "title": "Remove the ETL & orchestration integrations announcements",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15548",
-    "state": "closed",
-    "updated_at": "2026-08-21T16:39:15Z",
-    "merged_at": "2026-08-21T16:39:13Z",
-    "additions": 27,
-    "deletions": 484,
-    "changed_files": 11
   }
 ]
