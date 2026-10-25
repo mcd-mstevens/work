@@ -1,25 +1,25 @@
 [
   {
-    "number": 16862,
-    "title": "DES-662: Manage focus for pop-ups that open on page load",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16862",
-    "state": "open",
-    "updated_at": "2026-10-25T21:19:08Z",
-    "merged_at": null,
-    "additions": 176,
-    "deletions": 23,
-    "changed_files": 8
-  },
-  {
     "number": 16861,
     "title": "Move the MCP server add/edit form onto full settings pages",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16861",
     "state": "open",
-    "updated_at": "2026-10-25T17:52:53Z",
+    "updated_at": "2026-10-25T22:24:19Z",
     "merged_at": null,
-    "additions": 1235,
-    "deletions": 842,
-    "changed_files": 29
+    "additions": 1216,
+    "deletions": 837,
+    "changed_files": 28
+  },
+  {
+    "number": 16862,
+    "title": "DES-662: Manage focus for pop-ups that open on page load",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16862",
+    "state": "open",
+    "updated_at": "2026-10-25T22:13:58Z",
+    "merged_at": null,
+    "additions": 176,
+    "deletions": 23,
+    "changed_files": 8
   },
   {
     "number": 16860,
