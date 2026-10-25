@@ -1,5 +1,27 @@
 [
   {
+    "number": 16684,
+    "title": "K2-604: Persist Alerts feed filters across alert detail navigation",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16684",
+    "state": "open",
+    "updated_at": "2026-10-25T05:09:21Z",
+    "merged_at": null,
+    "additions": 268,
+    "deletions": 10,
+    "changed_files": 12
+  },
+  {
+    "number": 16683,
+    "title": "PRO-3171: Remember Alerts feed rows-per-page selection",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16683",
+    "state": "open",
+    "updated_at": "2026-10-25T05:09:12Z",
+    "merged_at": null,
+    "additions": 268,
+    "deletions": 8,
+    "changed_files": 9
+  },
+  {
     "number": 16848,
     "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
@@ -31,28 +53,6 @@
     "additions": 276,
     "deletions": 53,
     "changed_files": 2
-  },
-  {
-    "number": 16684,
-    "title": "K2-604: Persist Alerts feed filters across alert detail navigation",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16684",
-    "state": "open",
-    "updated_at": "2026-10-24T18:46:57Z",
-    "merged_at": null,
-    "additions": 268,
-    "deletions": 10,
-    "changed_files": 12
-  },
-  {
-    "number": 16683,
-    "title": "PRO-3171: Remember Alerts feed rows-per-page selection",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16683",
-    "state": "open",
-    "updated_at": "2026-10-24T18:45:18Z",
-    "merged_at": null,
-    "additions": 268,
-    "deletions": 8,
-    "changed_files": 9
   },
   {
     "number": 16382,
