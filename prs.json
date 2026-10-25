@@ -1,11 +1,33 @@
 [
   {
+    "number": 16848,
+    "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
+    "state": "open",
+    "updated_at": "2026-10-25T10:51:20Z",
+    "merged_at": null,
+    "additions": 534,
+    "deletions": 135,
+    "changed_files": 11
+  },
+  {
+    "number": 16849,
+    "title": "DES-655: Run guided tours on Mantine's Tour component",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16849",
+    "state": "open",
+    "updated_at": "2026-10-25T10:49:09Z",
+    "merged_at": null,
+    "additions": 316,
+    "deletions": 1003,
+    "changed_files": 38
+  },
+  {
     "number": 16684,
     "title": "K2-604: Persist Alerts feed filters across alert detail navigation",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16684",
-    "state": "open",
-    "updated_at": "2026-10-25T05:09:21Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-10-25T10:40:24Z",
+    "merged_at": "2026-10-25T10:40:23Z",
     "additions": 268,
     "deletions": 10,
     "changed_files": 12
@@ -20,28 +42,6 @@
     "additions": 268,
     "deletions": 8,
     "changed_files": 9
-  },
-  {
-    "number": 16848,
-    "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
-    "state": "open",
-    "updated_at": "2026-10-24T22:57:40Z",
-    "merged_at": null,
-    "additions": 488,
-    "deletions": 84,
-    "changed_files": 10
-  },
-  {
-    "number": 16849,
-    "title": "DES-655: Run guided tours on Mantine's Tour component",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16849",
-    "state": "open",
-    "updated_at": "2026-10-24T22:52:54Z",
-    "merged_at": null,
-    "additions": 285,
-    "deletions": 1003,
-    "changed_files": 38
   },
   {
     "number": 16847,
