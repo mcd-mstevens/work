@@ -1,13 +1,35 @@
 [
   {
+    "number": 16861,
+    "title": "Move the MCP server add/edit form onto full settings pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16861",
+    "state": "open",
+    "updated_at": "2026-10-25T17:52:53Z",
+    "merged_at": null,
+    "additions": 1235,
+    "deletions": 842,
+    "changed_files": 29
+  },
+  {
+    "number": 16862,
+    "title": "DES-662: Manage focus for pop-ups that open on page load",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16862",
+    "state": "open",
+    "updated_at": "2026-10-25T17:52:24Z",
+    "merged_at": null,
+    "additions": 86,
+    "deletions": 14,
+    "changed_files": 4
+  },
+  {
     "number": 16860,
     "title": "DES-648: Drop the MCP servers card that repeats the page title",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16860",
     "state": "open",
-    "updated_at": "2026-10-25T14:40:34Z",
+    "updated_at": "2026-10-25T14:57:57Z",
     "merged_at": null,
-    "additions": 202,
-    "deletions": 164,
+    "additions": 198,
+    "deletions": 162,
     "changed_files": 8
   },
   {
@@ -526,27 +548,5 @@
     "additions": 826,
     "deletions": 164,
     "changed_files": 42
-  },
-  {
-    "number": 15565,
-    "title": "Give Table health, Domains, Jobs and Alerts a real row skeleton (2 of TBD)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15565",
-    "state": "closed",
-    "updated_at": "2026-08-24T15:04:21Z",
-    "merged_at": "2026-08-24T15:04:19Z",
-    "additions": 413,
-    "deletions": 34,
-    "changed_files": 12
-  },
-  {
-    "number": 15563,
-    "title": "Fix Loader variant prop silently ignored at 54 call sites (1 of TBD)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15563",
-    "state": "closed",
-    "updated_at": "2026-08-24T15:00:19Z",
-    "merged_at": "2026-08-24T15:00:18Z",
-    "additions": 113,
-    "deletions": 216,
-    "changed_files": 53
   }
 ]
