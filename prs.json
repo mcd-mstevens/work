@@ -1,25 +1,47 @@
 [
   {
-    "number": 16861,
-    "title": "Move the MCP server add/edit form onto full settings pages",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16861",
-    "state": "open",
-    "updated_at": "2026-10-26T14:54:46Z",
-    "merged_at": null,
-    "additions": 1216,
-    "deletions": 837,
-    "changed_files": 28
-  },
-  {
     "number": 16860,
     "title": "DES-648: Drop the MCP servers card that repeats the page title",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16860",
     "state": "open",
-    "updated_at": "2026-10-26T14:54:20Z",
+    "updated_at": "2026-10-26T20:51:11Z",
     "merged_at": null,
-    "additions": 198,
-    "deletions": 162,
-    "changed_files": 8
+    "additions": 0,
+    "deletions": 0,
+    "changed_files": 0
+  },
+  {
+    "number": 16847,
+    "title": "DES-659: Make collapsed nav menus reachable by keyboard",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16847",
+    "state": "closed",
+    "updated_at": "2026-10-26T20:48:31Z",
+    "merged_at": "2026-10-26T20:48:29Z",
+    "additions": 361,
+    "deletions": 53,
+    "changed_files": 2
+  },
+  {
+    "number": 16848,
+    "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
+    "state": "open",
+    "updated_at": "2026-10-26T20:16:19Z",
+    "merged_at": null,
+    "additions": 534,
+    "deletions": 135,
+    "changed_files": 11
+  },
+  {
+    "number": 16861,
+    "title": "Move the MCP server add/edit form onto full settings pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16861",
+    "state": "closed",
+    "updated_at": "2026-10-26T19:44:05Z",
+    "merged_at": "2026-10-26T19:44:02Z",
+    "additions": 1216,
+    "deletions": 837,
+    "changed_files": 28
   },
   {
     "number": 16862,
@@ -77,17 +99,6 @@
     "changed_files": 9
   },
   {
-    "number": 16848,
-    "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
-    "state": "open",
-    "updated_at": "2026-10-25T10:56:24Z",
-    "merged_at": null,
-    "additions": 534,
-    "deletions": 135,
-    "changed_files": 11
-  },
-  {
     "number": 16684,
     "title": "K2-604: Persist Alerts feed filters across alert detail navigation",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16684",
@@ -97,17 +108,6 @@
     "additions": 268,
     "deletions": 10,
     "changed_files": 12
-  },
-  {
-    "number": 16847,
-    "title": "DES-659: Make collapsed nav menus reachable by keyboard",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16847",
-    "state": "open",
-    "updated_at": "2026-10-24T22:00:32Z",
-    "merged_at": null,
-    "additions": 276,
-    "deletions": 53,
-    "changed_files": 2
   },
   {
     "number": 16382,
