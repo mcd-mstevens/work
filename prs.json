@@ -1,5 +1,38 @@
 [
   {
+    "number": 16923,
+    "title": "Pull the asset page context and actions into hooks",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16923",
+    "state": "closed",
+    "updated_at": "2026-10-27T19:39:39Z",
+    "merged_at": "2026-10-27T19:39:37Z",
+    "additions": 454,
+    "deletions": 115,
+    "changed_files": 6
+  },
+  {
+    "number": 16926,
+    "title": "Render BI report pages on the shared asset page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16926",
+    "state": "open",
+    "updated_at": "2026-10-27T19:25:24Z",
+    "merged_at": null,
+    "additions": 823,
+    "deletions": 377,
+    "changed_files": 16
+  },
+  {
+    "number": 16906,
+    "title": "Match the BI report About tab to the table About tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16906",
+    "state": "closed",
+    "updated_at": "2026-10-27T19:06:54Z",
+    "merged_at": "2026-10-27T19:06:52Z",
+    "additions": 392,
+    "deletions": 148,
+    "changed_files": 7
+  },
+  {
     "number": 16848,
     "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
@@ -515,38 +548,5 @@
     "additions": 163,
     "deletions": 93,
     "changed_files": 15
-  },
-  {
-    "number": 15880,
-    "title": "Add search to dashboard audience and tag filters",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15880",
-    "state": "closed",
-    "updated_at": "2026-09-09T11:14:15Z",
-    "merged_at": "2026-09-09T11:14:14Z",
-    "additions": 443,
-    "deletions": 96,
-    "changed_files": 12
-  },
-  {
-    "number": 15845,
-    "title": "Give every route a real browser tab title",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15845",
-    "state": "closed",
-    "updated_at": "2026-09-07T10:45:25Z",
-    "merged_at": "2026-09-07T10:45:24Z",
-    "additions": 882,
-    "deletions": 128,
-    "changed_files": 47
-  },
-  {
-    "number": 15844,
-    "title": "Give every route a real browser tab title",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15844",
-    "state": "closed",
-    "updated_at": "2026-09-06T17:17:14Z",
-    "merged_at": null,
-    "additions": 826,
-    "deletions": 164,
-    "changed_files": 42
   }
 ]
