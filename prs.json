@@ -1,11 +1,22 @@
 [
   {
+    "number": 16848,
+    "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
+    "state": "closed",
+    "updated_at": "2026-10-27T00:21:38Z",
+    "merged_at": "2026-10-27T00:21:36Z",
+    "additions": 829,
+    "deletions": 155,
+    "changed_files": 17
+  },
+  {
     "number": 16860,
     "title": "DES-648: Drop the MCP servers card that repeats the page title",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16860",
-    "state": "open",
-    "updated_at": "2026-10-26T20:51:11Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-10-26T21:28:20Z",
+    "merged_at": "2026-10-26T21:28:18Z",
     "additions": 0,
     "deletions": 0,
     "changed_files": 0
@@ -20,17 +31,6 @@
     "additions": 361,
     "deletions": 53,
     "changed_files": 2
-  },
-  {
-    "number": 16848,
-    "title": "DES-660: Expose the asset tree's hierarchy to screen readers",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16848",
-    "state": "open",
-    "updated_at": "2026-10-26T20:16:19Z",
-    "merged_at": null,
-    "additions": 534,
-    "deletions": 135,
-    "changed_files": 11
   },
   {
     "number": 16861,
