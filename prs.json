@@ -1,5 +1,27 @@
 [
   {
+    "number": 16926,
+    "title": "Render BI report pages on the shared asset page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16926",
+    "state": "open",
+    "updated_at": "2026-10-28T09:48:37Z",
+    "merged_at": null,
+    "additions": 459,
+    "deletions": 352,
+    "changed_files": 14
+  },
+  {
+    "number": 16950,
+    "title": "Shrink the letters in small asset type badges",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16950",
+    "state": "open",
+    "updated_at": "2026-10-28T09:47:49Z",
+    "merged_at": null,
+    "additions": 11,
+    "deletions": 1,
+    "changed_files": 1
+  },
+  {
     "number": 16923,
     "title": "Pull the asset page context and actions into hooks",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16923",
@@ -9,17 +31,6 @@
     "additions": 454,
     "deletions": 115,
     "changed_files": 6
-  },
-  {
-    "number": 16926,
-    "title": "Render BI report pages on the shared asset page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16926",
-    "state": "open",
-    "updated_at": "2026-10-27T19:25:24Z",
-    "merged_at": null,
-    "additions": 823,
-    "deletions": 377,
-    "changed_files": 16
   },
   {
     "number": 16906,
@@ -537,16 +548,5 @@
     "additions": 154,
     "deletions": 13,
     "changed_files": 3
-  },
-  {
-    "number": 15839,
-    "title": "Put the Settings lists on the shared row skeleton (3 of TBD)",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15839",
-    "state": "closed",
-    "updated_at": "2026-09-09T14:46:47Z",
-    "merged_at": "2026-09-09T14:46:46Z",
-    "additions": 163,
-    "deletions": 93,
-    "changed_files": 15
   }
 ]
