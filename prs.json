@@ -1,36 +1,69 @@
 [
   {
+    "number": 16991,
+    "title": "Stop saying \"Table\" on non-table asset pages",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16991",
+    "state": "closed",
+    "updated_at": "2026-10-28T21:24:09Z",
+    "merged_at": "2026-10-28T21:24:08Z",
+    "additions": 92,
+    "deletions": 21,
+    "changed_files": 15
+  },
+  {
+    "number": 16985,
+    "title": "Show asset page errors and empty charts as empty states",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16985",
+    "state": "closed",
+    "updated_at": "2026-10-28T21:24:09Z",
+    "merged_at": "2026-10-28T21:24:08Z",
+    "additions": 193,
+    "deletions": 47,
+    "changed_files": 16
+  },
+  {
+    "number": 16983,
+    "title": "Give job pages their own tabs instead of nesting them in a hidden Summary tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16983",
+    "state": "closed",
+    "updated_at": "2026-10-28T20:31:33Z",
+    "merged_at": "2026-10-28T20:31:31Z",
+    "additions": 261,
+    "deletions": 98,
+    "changed_files": 10
+  },
+  {
     "number": 16980,
     "title": "Fix the Pull requests card's stale View details button and fetch errors",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16980",
-    "state": "open",
-    "updated_at": "2026-10-28T17:51:30Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-10-28T18:33:22Z",
+    "merged_at": "2026-10-28T18:33:20Z",
     "additions": 237,
     "deletions": 26,
     "changed_files": 13
   },
   {
-    "number": 16973,
-    "title": "Simplify the asset page summary type now that jobs never reach it",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16973",
-    "state": "open",
-    "updated_at": "2026-10-28T17:45:16Z",
-    "merged_at": null,
-    "additions": 2,
-    "deletions": 7,
-    "changed_files": 1
-  },
-  {
     "number": 16974,
     "title": "Keep Enable row count monitoring on the Volume tile for byte-reporting assets",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/16974",
-    "state": "open",
-    "updated_at": "2026-10-28T17:45:14Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-10-28T17:57:22Z",
+    "merged_at": "2026-10-28T17:57:20Z",
     "additions": 92,
     "deletions": 44,
     "changed_files": 6
+  },
+  {
+    "number": 16973,
+    "title": "Simplify the asset page summary type now that jobs never reach it",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16973",
+    "state": "closed",
+    "updated_at": "2026-10-28T17:57:22Z",
+    "merged_at": "2026-10-28T17:57:20Z",
+    "additions": 2,
+    "deletions": 7,
+    "changed_files": 1
   },
   {
     "number": 16962,
@@ -515,38 +548,5 @@
     "additions": 11,
     "deletions": 6,
     "changed_files": 4
-  },
-  {
-    "number": 15946,
-    "title": "Align the side nav's bottom row with the page footer's top border",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15946",
-    "state": "closed",
-    "updated_at": "2026-09-11T01:01:15Z",
-    "merged_at": "2026-09-11T01:01:13Z",
-    "additions": 10,
-    "deletions": 0,
-    "changed_files": 1
-  },
-  {
-    "number": 15945,
-    "title": "Render the alert feed Source as plain text reading Agent or Manual",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15945",
-    "state": "closed",
-    "updated_at": "2026-09-11T01:01:15Z",
-    "merged_at": "2026-09-11T01:01:13Z",
-    "additions": 9,
-    "deletions": 18,
-    "changed_files": 4
-  },
-  {
-    "number": 15920,
-    "title": "Bulk alert actions on the detail pages, and toolbar cleanup",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15920",
-    "state": "closed",
-    "updated_at": "2026-09-10T15:12:07Z",
-    "merged_at": "2026-09-10T15:12:05Z",
-    "additions": 434,
-    "deletions": 93,
-    "changed_files": 24
   }
 ]
