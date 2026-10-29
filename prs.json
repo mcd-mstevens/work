@@ -3,12 +3,12 @@
     "number": 17015,
     "title": "Remove Monitoring agent buttons from asset rows, search, asset summary and data products",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17015",
-    "state": "open",
-    "updated_at": "2026-10-29T16:33:53Z",
-    "merged_at": null,
-    "additions": 63,
-    "deletions": 2175,
-    "changed_files": 36
+    "state": "closed",
+    "updated_at": "2026-10-29T18:00:33Z",
+    "merged_at": "2026-10-29T18:00:31Z",
+    "additions": 64,
+    "deletions": 2176,
+    "changed_files": 37
   },
   {
     "number": 17007,
