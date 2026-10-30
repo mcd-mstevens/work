@@ -1,5 +1,71 @@
 [
   {
+    "number": 17040,
+    "title": "Credit Bayes on the alerts list",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17040",
+    "state": "closed",
+    "updated_at": "2026-10-30T15:31:20Z",
+    "merged_at": "2026-10-30T15:31:18Z",
+    "additions": 92,
+    "deletions": 25,
+    "changed_files": 13
+  },
+  {
+    "number": 17043,
+    "title": "Credit Bayes on the Reinforcement loop tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17043",
+    "state": "closed",
+    "updated_at": "2026-10-30T15:28:51Z",
+    "merged_at": "2026-10-30T15:28:49Z",
+    "additions": 44,
+    "deletions": 10,
+    "changed_files": 11
+  },
+  {
+    "number": 17042,
+    "title": "Credit Bayes on the alert agent tabs",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17042",
+    "state": "closed",
+    "updated_at": "2026-10-30T15:28:51Z",
+    "merged_at": "2026-10-30T15:28:49Z",
+    "additions": 71,
+    "deletions": 23,
+    "changed_files": 14
+  },
+  {
+    "number": 17038,
+    "title": "Rename the remaining monitoring agent buttons to Bayes",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17038",
+    "state": "open",
+    "updated_at": "2026-10-30T15:28:51Z",
+    "merged_at": null,
+    "additions": 19,
+    "deletions": 19,
+    "changed_files": 8
+  },
+  {
+    "number": 17044,
+    "title": "Drop the Monte Carlo AI nav heading and finish the Bayes rename in chat",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17044",
+    "state": "closed",
+    "updated_at": "2026-10-30T15:28:15Z",
+    "merged_at": "2026-10-30T15:28:13Z",
+    "additions": 62,
+    "deletions": 20,
+    "changed_files": 7
+  },
+  {
+    "number": 17039,
+    "title": "Credit Bayes on the monitors tuning banner",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17039",
+    "state": "open",
+    "updated_at": "2026-10-30T15:23:10Z",
+    "merged_at": null,
+    "additions": 22,
+    "deletions": 30,
+    "changed_files": 7
+  },
+  {
     "number": 17015,
     "title": "Remove Monitoring agent buttons from asset rows, search, asset summary and data products",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17015",
@@ -482,71 +548,5 @@
     "additions": 78,
     "deletions": 0,
     "changed_files": 2
-  },
-  {
-    "number": 15634,
-    "title": "a11y: give four controls a stable accessible name",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15634",
-    "state": "closed",
-    "updated_at": "2026-09-14T13:36:45Z",
-    "merged_at": "2026-09-14T13:36:43Z",
-    "additions": 4,
-    "deletions": 3,
-    "changed_files": 4
-  },
-  {
-    "number": 15629,
-    "title": "a11y: remove aria-selected from a roleless element in the agent trace tree",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15629",
-    "state": "closed",
-    "updated_at": "2026-09-14T13:36:44Z",
-    "merged_at": "2026-09-14T13:36:43Z",
-    "additions": 0,
-    "deletions": 1,
-    "changed_files": 1
-  },
-  {
-    "number": 15628,
-    "title": "a11y: remove hidden containers from the keyboard tab order",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15628",
-    "state": "closed",
-    "updated_at": "2026-09-14T13:36:44Z",
-    "merged_at": "2026-09-14T13:36:43Z",
-    "additions": 30,
-    "deletions": 6,
-    "changed_files": 5
-  },
-  {
-    "number": 15980,
-    "title": "Write the network access guidance as prose, not an alert",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15980",
-    "state": "closed",
-    "updated_at": "2026-09-12T15:20:22Z",
-    "merged_at": "2026-09-12T15:20:21Z",
-    "additions": 102,
-    "deletions": 32,
-    "changed_files": 6
-  },
-  {
-    "number": 15996,
-    "title": "Add Kieran Williams to the reviewer roster",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15996",
-    "state": "closed",
-    "updated_at": "2026-09-12T12:10:03Z",
-    "merged_at": "2026-09-12T12:10:02Z",
-    "additions": 2,
-    "deletions": 1,
-    "changed_files": 1
-  },
-  {
-    "number": 15972,
-    "title": "Group the alerts filter menu by topic",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15972",
-    "state": "closed",
-    "updated_at": "2026-09-11T20:24:28Z",
-    "merged_at": "2026-09-11T20:24:27Z",
-    "additions": 297,
-    "deletions": 22,
-    "changed_files": 6
   }
 ]
