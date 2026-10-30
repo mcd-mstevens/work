@@ -1,14 +1,80 @@
 [
   {
+    "number": 17047,
+    "title": "Give Bayes's chat replies its avatar and thinking mark",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17047",
+    "state": "closed",
+    "updated_at": "2026-10-30T18:39:16Z",
+    "merged_at": "2026-10-30T18:39:14Z",
+    "additions": 114,
+    "deletions": 13,
+    "changed_files": 7
+  },
+  {
+    "number": 17015,
+    "title": "Remove Monitoring agent buttons from asset rows, search, asset summary and data products",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17015",
+    "state": "closed",
+    "updated_at": "2026-10-30T17:14:53Z",
+    "merged_at": "2026-10-29T18:00:31Z",
+    "additions": 64,
+    "deletions": 2176,
+    "changed_files": 37
+  },
+  {
     "number": 17040,
     "title": "Credit Bayes on the alerts list",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17040",
     "state": "closed",
-    "updated_at": "2026-10-30T15:31:20Z",
+    "updated_at": "2026-10-30T17:14:51Z",
     "merged_at": "2026-10-30T15:31:18Z",
     "additions": 92,
     "deletions": 25,
     "changed_files": 13
+  },
+  {
+    "number": 17042,
+    "title": "Credit Bayes on the alert agent tabs",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17042",
+    "state": "closed",
+    "updated_at": "2026-10-30T17:14:50Z",
+    "merged_at": "2026-10-30T15:28:49Z",
+    "additions": 71,
+    "deletions": 23,
+    "changed_files": 14
+  },
+  {
+    "number": 17044,
+    "title": "Drop the Monte Carlo AI nav heading and finish the Bayes rename in chat",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17044",
+    "state": "closed",
+    "updated_at": "2026-10-30T17:14:48Z",
+    "merged_at": "2026-10-30T15:28:13Z",
+    "additions": 62,
+    "deletions": 20,
+    "changed_files": 7
+  },
+  {
+    "number": 17038,
+    "title": "Rename the remaining monitoring agent buttons to Bayes",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17038",
+    "state": "closed",
+    "updated_at": "2026-10-30T15:43:45Z",
+    "merged_at": "2026-10-30T15:43:43Z",
+    "additions": 19,
+    "deletions": 19,
+    "changed_files": 8
+  },
+  {
+    "number": 17039,
+    "title": "Credit Bayes on the monitors tuning banner",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17039",
+    "state": "closed",
+    "updated_at": "2026-10-30T15:39:07Z",
+    "merged_at": "2026-10-30T15:39:05Z",
+    "additions": 22,
+    "deletions": 30,
+    "changed_files": 7
   },
   {
     "number": 17043,
@@ -20,61 +86,6 @@
     "additions": 44,
     "deletions": 10,
     "changed_files": 11
-  },
-  {
-    "number": 17042,
-    "title": "Credit Bayes on the alert agent tabs",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17042",
-    "state": "closed",
-    "updated_at": "2026-10-30T15:28:51Z",
-    "merged_at": "2026-10-30T15:28:49Z",
-    "additions": 71,
-    "deletions": 23,
-    "changed_files": 14
-  },
-  {
-    "number": 17038,
-    "title": "Rename the remaining monitoring agent buttons to Bayes",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17038",
-    "state": "open",
-    "updated_at": "2026-10-30T15:28:51Z",
-    "merged_at": null,
-    "additions": 19,
-    "deletions": 19,
-    "changed_files": 8
-  },
-  {
-    "number": 17044,
-    "title": "Drop the Monte Carlo AI nav heading and finish the Bayes rename in chat",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17044",
-    "state": "closed",
-    "updated_at": "2026-10-30T15:28:15Z",
-    "merged_at": "2026-10-30T15:28:13Z",
-    "additions": 62,
-    "deletions": 20,
-    "changed_files": 7
-  },
-  {
-    "number": 17039,
-    "title": "Credit Bayes on the monitors tuning banner",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17039",
-    "state": "open",
-    "updated_at": "2026-10-30T15:23:10Z",
-    "merged_at": null,
-    "additions": 22,
-    "deletions": 30,
-    "changed_files": 7
-  },
-  {
-    "number": 17015,
-    "title": "Remove Monitoring agent buttons from asset rows, search, asset summary and data products",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17015",
-    "state": "closed",
-    "updated_at": "2026-10-29T18:00:33Z",
-    "merged_at": "2026-10-29T18:00:31Z",
-    "additions": 64,
-    "deletions": 2176,
-    "changed_files": 37
   },
   {
     "number": 17007,
@@ -537,16 +548,5 @@
     "additions": 315,
     "deletions": 49,
     "changed_files": 3
-  },
-  {
-    "number": 16002,
-    "title": "Add copy-link buttons to the Data quality and Coverage dashboards",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16002",
-    "state": "closed",
-    "updated_at": "2026-09-14T16:30:25Z",
-    "merged_at": "2026-09-14T16:30:23Z",
-    "additions": 78,
-    "deletions": 0,
-    "changed_files": 2
   }
 ]
