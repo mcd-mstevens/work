@@ -1,5 +1,27 @@
 [
   {
+    "number": 17069,
+    "title": "Show Bayes's glyph on the collapsed Monte Carlo AI nav section",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17069",
+    "state": "open",
+    "updated_at": "2026-10-31T20:14:10Z",
+    "merged_at": null,
+    "additions": 6,
+    "deletions": 4,
+    "changed_files": 2
+  },
+  {
+    "number": 17068,
+    "title": "Hide View query in the table drawer and clear query log leftovers",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17068",
+    "state": "open",
+    "updated_at": "2026-10-31T18:59:11Z",
+    "merged_at": null,
+    "additions": 75,
+    "deletions": 717,
+    "changed_files": 17
+  },
+  {
     "number": 17064,
     "title": "Match the table drawer to the table About tab",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17064",
@@ -526,27 +548,5 @@
     "additions": 453,
     "deletions": 265,
     "changed_files": 17
-  },
-  {
-    "number": 16200,
-    "title": "Group the activity dashboard into Monitors and Users sections",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16200",
-    "state": "closed",
-    "updated_at": "2026-09-21T18:01:26Z",
-    "merged_at": "2026-09-21T18:01:24Z",
-    "additions": 70,
-    "deletions": 60,
-    "changed_files": 4
-  },
-  {
-    "number": 16201,
-    "title": "Tighten the asset About tab",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16201",
-    "state": "closed",
-    "updated_at": "2026-09-21T15:55:21Z",
-    "merged_at": "2026-09-21T15:55:20Z",
-    "additions": 652,
-    "deletions": 305,
-    "changed_files": 16
   }
 ]
