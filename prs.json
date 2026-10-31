@@ -1,5 +1,16 @@
 [
   {
+    "number": 17062,
+    "title": "Show Fivetran connectors on the integration detail page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17062",
+    "state": "open",
+    "updated_at": "2026-10-31T13:15:12Z",
+    "merged_at": null,
+    "additions": 143,
+    "deletions": 179,
+    "changed_files": 10
+  },
+  {
     "number": 17047,
     "title": "Give Bayes's chat replies its avatar and thinking mark",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17047",
@@ -537,16 +548,5 @@
     "additions": 221,
     "deletions": 17,
     "changed_files": 2
-  },
-  {
-    "number": 15983,
-    "title": "Use the shared bulk action bar on exclusion windows",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15983",
-    "state": "closed",
-    "updated_at": "2026-09-14T16:41:54Z",
-    "merged_at": "2026-09-14T16:41:52Z",
-    "additions": 315,
-    "deletions": 49,
-    "changed_files": 3
   }
 ]
