@@ -1,14 +1,69 @@
 [
   {
+    "number": 17064,
+    "title": "Match the table drawer to the table About tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17064",
+    "state": "closed",
+    "updated_at": "2026-10-31T18:12:54Z",
+    "merged_at": "2026-10-31T18:12:52Z",
+    "additions": 67,
+    "deletions": 958,
+    "changed_files": 23
+  },
+  {
+    "number": 17067,
+    "title": "Use the standard card header for section labels that are card titles",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17067",
+    "state": "open",
+    "updated_at": "2026-10-31T16:23:44Z",
+    "merged_at": null,
+    "additions": 112,
+    "deletions": 154,
+    "changed_files": 9
+  },
+  {
+    "number": 17066,
+    "title": "Use one size for section labels",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17066",
+    "state": "open",
+    "updated_at": "2026-10-31T16:22:34Z",
+    "merged_at": null,
+    "additions": 123,
+    "deletions": 54,
+    "changed_files": 23
+  },
+  {
+    "number": 17065,
+    "title": "Show dbt settings on the integration detail page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17065",
+    "state": "open",
+    "updated_at": "2026-10-31T16:19:27Z",
+    "merged_at": null,
+    "additions": 914,
+    "deletions": 439,
+    "changed_files": 30
+  },
+  {
+    "number": 17063,
+    "title": "Trim the asset page Monitors controls to the chart/list toggle",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17063",
+    "state": "open",
+    "updated_at": "2026-10-31T14:15:02Z",
+    "merged_at": null,
+    "additions": 93,
+    "deletions": 544,
+    "changed_files": 15
+  },
+  {
     "number": 17062,
     "title": "Show Fivetran connectors on the integration detail page",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17062",
     "state": "open",
-    "updated_at": "2026-10-31T13:15:12Z",
+    "updated_at": "2026-10-31T13:43:47Z",
     "merged_at": null,
-    "additions": 143,
-    "deletions": 179,
-    "changed_files": 10
+    "additions": 326,
+    "deletions": 184,
+    "changed_files": 13
   },
   {
     "number": 17047,
@@ -493,60 +548,5 @@
     "additions": 652,
     "deletions": 305,
     "changed_files": 16
-  },
-  {
-    "number": 16100,
-    "title": "Show Triage priority chip by default on the Alerts view",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16100",
-    "state": "closed",
-    "updated_at": "2026-09-16T19:30:07Z",
-    "merged_at": "2026-09-16T19:30:05Z",
-    "additions": 13,
-    "deletions": 7,
-    "changed_files": 2
-  },
-  {
-    "number": 15998,
-    "title": "Rebuild the activity dashboard around a shared filter bar",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/15998",
-    "state": "closed",
-    "updated_at": "2026-09-15T16:43:32Z",
-    "merged_at": "2026-09-15T16:43:30Z",
-    "additions": 2114,
-    "deletions": 944,
-    "changed_files": 50
-  },
-  {
-    "number": 16042,
-    "title": "Raise dimmed and dark-mode error text to WCAG AA contrast",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16042",
-    "state": "closed",
-    "updated_at": "2026-09-15T12:58:48Z",
-    "merged_at": "2026-09-15T12:58:47Z",
-    "additions": 84,
-    "deletions": 8,
-    "changed_files": 3
-  },
-  {
-    "number": 16044,
-    "title": "Export Mantine EmptyState from @monte-carlo-data/ui",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16044",
-    "state": "closed",
-    "updated_at": "2026-09-15T11:57:00Z",
-    "merged_at": "2026-09-15T11:56:58Z",
-    "additions": 8,
-    "deletions": 0,
-    "changed_files": 3
-  },
-  {
-    "number": 16001,
-    "title": "Disable the global domain picker on the Data quality dashboard",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16001",
-    "state": "closed",
-    "updated_at": "2026-09-14T16:41:54Z",
-    "merged_at": "2026-09-14T16:41:52Z",
-    "additions": 221,
-    "deletions": 17,
-    "changed_files": 2
   }
 ]
