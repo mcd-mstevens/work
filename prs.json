@@ -1,5 +1,38 @@
 [
   {
+    "number": 17062,
+    "title": "Show Fivetran connectors on the integration detail page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17062",
+    "state": "open",
+    "updated_at": "2026-11-02T17:39:39Z",
+    "merged_at": null,
+    "additions": 326,
+    "deletions": 184,
+    "changed_files": 13
+  },
+  {
+    "number": 17080,
+    "title": "Use one size for the remaining section and field labels",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17080",
+    "state": "open",
+    "updated_at": "2026-11-02T17:37:30Z",
+    "merged_at": null,
+    "additions": 494,
+    "deletions": 429,
+    "changed_files": 31
+  },
+  {
+    "number": 17065,
+    "title": "Show dbt settings on the integration detail page",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17065",
+    "state": "closed",
+    "updated_at": "2026-11-02T17:08:25Z",
+    "merged_at": "2026-11-02T17:08:23Z",
+    "additions": 914,
+    "deletions": 439,
+    "changed_files": 30
+  },
+  {
     "number": 17067,
     "title": "Use the standard card header for section labels that are card titles",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17067",
@@ -64,28 +97,6 @@
     "additions": 67,
     "deletions": 958,
     "changed_files": 23
-  },
-  {
-    "number": 17065,
-    "title": "Show dbt settings on the integration detail page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17065",
-    "state": "open",
-    "updated_at": "2026-10-31T16:19:27Z",
-    "merged_at": null,
-    "additions": 914,
-    "deletions": 439,
-    "changed_files": 30
-  },
-  {
-    "number": 17062,
-    "title": "Show Fivetran connectors on the integration detail page",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17062",
-    "state": "open",
-    "updated_at": "2026-10-31T13:43:47Z",
-    "merged_at": null,
-    "additions": 326,
-    "deletions": 184,
-    "changed_files": 13
   },
   {
     "number": 17047,
@@ -537,16 +548,5 @@
     "additions": 6,
     "deletions": 36,
     "changed_files": 3
-  },
-  {
-    "number": 16204,
-    "title": "Quiet down the asset Summary tab — DES-640, DES-641, DES-642",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16204",
-    "state": "closed",
-    "updated_at": "2026-09-23T18:41:10Z",
-    "merged_at": "2026-09-23T18:41:08Z",
-    "additions": 453,
-    "deletions": 265,
-    "changed_files": 17
   }
 ]
