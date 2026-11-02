@@ -1,25 +1,25 @@
 [
   {
-    "number": 17066,
-    "title": "Use one size for section labels",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17066",
-    "state": "open",
-    "updated_at": "2026-11-01T18:02:10Z",
-    "merged_at": null,
-    "additions": 137,
-    "deletions": 75,
-    "changed_files": 26
-  },
-  {
     "number": 17067,
     "title": "Use the standard card header for section labels that are card titles",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17067",
-    "state": "open",
-    "updated_at": "2026-11-01T17:39:42Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-11-01T22:42:37Z",
+    "merged_at": "2026-11-01T22:42:36Z",
     "additions": 116,
     "deletions": 158,
     "changed_files": 9
+  },
+  {
+    "number": 17066,
+    "title": "Use one size for section labels",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17066",
+    "state": "closed",
+    "updated_at": "2026-11-01T22:42:37Z",
+    "merged_at": "2026-11-01T22:42:36Z",
+    "additions": 137,
+    "deletions": 75,
+    "changed_files": 26
   },
   {
     "number": 17063,
