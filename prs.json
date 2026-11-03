@@ -3,9 +3,9 @@
     "number": 17068,
     "title": "Hide View query in the table drawer and clear query log leftovers",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17068",
-    "state": "open",
-    "updated_at": "2026-11-03T15:28:34Z",
-    "merged_at": null,
+    "state": "closed",
+    "updated_at": "2026-11-03T16:54:33Z",
+    "merged_at": "2026-11-03T16:54:32Z",
     "additions": 75,
     "deletions": 717,
     "changed_files": 17
