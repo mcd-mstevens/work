@@ -1,5 +1,38 @@
 [
   {
+    "number": 17206,
+    "title": "Remove card wrappers from Ingestion and auth group Users tables",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17206",
+    "state": "open",
+    "updated_at": "2026-11-07T15:27:16Z",
+    "merged_at": null,
+    "additions": 354,
+    "deletions": 358,
+    "changed_files": 11
+  },
+  {
+    "number": 17205,
+    "title": "Polish the add domain wizard's filter, exclusion and context sections",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17205",
+    "state": "open",
+    "updated_at": "2026-11-07T14:28:35Z",
+    "merged_at": null,
+    "additions": 86,
+    "deletions": 53,
+    "changed_files": 7
+  },
+  {
+    "number": 17204,
+    "title": "Use the standard filter bar on the monitor Exceptions tab",
+    "html_url": "https://github.com/monte-carlo-data/frontend/pull/17204",
+    "state": "open",
+    "updated_at": "2026-11-07T13:13:47Z",
+    "merged_at": null,
+    "additions": 282,
+    "deletions": 346,
+    "changed_files": 11
+  },
+  {
     "number": 17068,
     "title": "Hide View query in the table drawer and clear query log leftovers",
     "html_url": "https://github.com/monte-carlo-data/frontend/pull/17068",
@@ -515,38 +548,5 @@
     "additions": 443,
     "deletions": 311,
     "changed_files": 44
-  },
-  {
-    "number": 16373,
-    "title": "Unify empty states on Mantine EmptyState, part 2",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16373",
-    "state": "closed",
-    "updated_at": "2026-10-04T19:56:12Z",
-    "merged_at": "2026-10-04T19:56:10Z",
-    "additions": 370,
-    "deletions": 624,
-    "changed_files": 43
-  },
-  {
-    "number": 16365,
-    "title": "Unify empty states on Mantine EmptyState, part 1",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16365",
-    "state": "closed",
-    "updated_at": "2026-10-04T19:14:30Z",
-    "merged_at": "2026-10-04T19:14:28Z",
-    "additions": 318,
-    "deletions": 141,
-    "changed_files": 27
-  },
-  {
-    "number": 16248,
-    "title": "Remove unused color exports and use the theme blue for onboarding confetti",
-    "html_url": "https://github.com/monte-carlo-data/frontend/pull/16248",
-    "state": "closed",
-    "updated_at": "2026-09-24T17:06:47Z",
-    "merged_at": "2026-09-24T17:06:46Z",
-    "additions": 6,
-    "deletions": 36,
-    "changed_files": 3
   }
 ]
